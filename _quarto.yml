@@ -20,8 +20,8 @@ website:
         href: research/index.qmd
       #- text: "Notes"
       #  href: notes/index.qmd
-      - text: "Now"
-        href: now.qmd
+      #- text: "Now"
+      #  href: now.qmd
       - text: "About"
         href: about/index.qmd
     right:
