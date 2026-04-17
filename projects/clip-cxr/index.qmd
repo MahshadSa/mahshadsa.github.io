@@ -1,0 +1,23 @@
+---
+title: "radiology-clip-mini"
+description: "CLIP-style vision-language model for chest X-ray text-image retrieval"
+date: 2024-06-01
+categories: [multimodal AI, CLIP, chest X-ray, vision-language]
+---
+
+::: {.project-card}
+[Active]{.project-status .active}
+
+## Problem
+
+Finding relevant prior studies, matching reports to images, and building educational retrieval tools all require models that understand the relationship between radiology images and their associated text. General-purpose vision-language models lack the domain specificity for medical imaging.
+
+## Approach
+
+A CLIP-style contrastive model that aligns chest X-ray images with radiology report text, enabling bidirectional retrieval: find images matching a text query, or find reports matching a query image.
+
+## Links
+
+- [Source code](https://github.com/MahshadSa/radiology-clip-mini)
+
+:::

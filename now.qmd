@@ -1,0 +1,35 @@
+---
+title: "Now"
+subtitle: "What I'm currently focused on"
+date: last-modified
+toc: false
+---
+
+*Last updated: <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>*
+
+This is a [now page](https://nownownow.com/about). It tells you what I'm spending my time and energy on at this point in my life.
+
+---
+
+::: {.now-item}
+**Preparing my first-author manuscript for submission** — targeting *Journal of Crohn's and Colitis* (JCC). <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Brief description of the paper topic, e.g., 'Bayesian ordinal modeling of MRE activity scores in Crohn's disease.'</span>
+:::
+
+::: {.now-item}
+**Scoping the agentic Lémann extraction pipeline** — designing a six-phase research project: an LLM agent that reads free-text radiology reports, extracts Lémann Index fields, calls a scoring tool, and escalates uncertain cases to a radiologist. Early architecture and IRB planning phase.
+:::
+
+::: {.now-item}
+**Preparing presentations for ESGAR 2026** — two first-author oral presentations. Building slides and rehearsing.
+:::
+
+::: {.now-item}
+**Exploring the UK Global Talent Visa** — assembling evidence for the Exceptional Promise route via the Royal College of Radiologists.
+:::
+
+::: {.now-item}
+**Reading** — <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Whatever you're currently reading.</span>
+:::
+
+
+

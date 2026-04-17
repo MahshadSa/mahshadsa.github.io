@@ -1,0 +1,45 @@
+---
+title: "Clinical AI Pipelines: Design Patterns"
+description: "Notes on building AI systems that fit into real clinical workflows"
+date: 2026-01-01
+categories: [clinical AI, LLM, system design]
+draft : true
+---
+
+::: {.note-meta}
+🌱 Seedling · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
+:::
+
+## The gap between model and workflow
+
+Most radiology AI research stops at model performance — AUC, sensitivity, specificity. But deploying a model in a clinical setting requires thinking about the entire pipeline: data ingestion, preprocessing, inference, uncertainty handling, human oversight, and feedback loops.
+
+## Patterns I keep seeing
+
+### Human-in-the-loop escalation
+
+The most defensible pattern for clinical AI: the system handles routine cases autonomously and flags uncertain ones for human review. The key design decisions are where to set the uncertainty threshold and how to present the flagged cases efficiently.
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Expand with examples from your own pipeline design — the agentic Lémann project is a concrete instance of this pattern.</span>
+
+### Tool-calling agents
+
+LLMs that can invoke external tools (calculators, databases, APIs) rather than trying to compute everything internally. This is more reliable for structured medical scoring than asking an LLM to do arithmetic.
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Connect to your pipeline design: LLM extracts fields → calls Lémann calculator as a tool → returns structured result.</span>
+
+### Validation against expert consensus
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Notes on how to validate these systems — inter-rater agreement, comparison to manual extraction, error taxonomy.</span>
+
+## Open questions
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? What are you still figuring out? E.g., how to handle reports that are genuinely ambiguous, calibration of confidence scores, regulatory considerations.</span>
+
+## Related
+
+- [Agentic Lémann Pipeline](/projects/mre-pipeline/index.qmd)
+- [What is the Lémann Index?](/notes/concepts/lemann-index.qmd)
+
+
+

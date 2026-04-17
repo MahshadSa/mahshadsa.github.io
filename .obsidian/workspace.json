@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "657e432dd916be97",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c89ba8dd0d22d4e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f9dc097d8331cdcf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Template 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Template 1"
+            }
+          },
+          {
+            "id": "259cff8c6f71f93f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-Templates/Template 3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Template 3"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "90b97cf4ae383b4b",
+    "type": "split",
+    "children": [
+      {
+        "id": "02fec0ff1cc73008",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9f3cf339eeb0bfe8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "94e4a28de406b271",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "60d130d8aee41e2b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "26f2d466a197a4bf",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a2bea8e0b5fc1b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1c6d672321b2cef4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "99-Templates/Template 1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Template 1"
+            }
+          },
+          {
+            "id": "151644977f5900ee",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "99-Templates/Template 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Template 1"
+            }
+          },
+          {
+            "id": "dbe1aa030cf2b28b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "eca595964b254eee",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "08948401a62804b7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "99-Templates/Template 1.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Template 1"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f9dc097d8331cdcf",
+  "lastOpenFiles": [
+    "site_libs/bootstrap/bootstrap.min.js",
+    "site_libs/bootstrap/bootstrap-icons.woff",
+    "site_libs/bootstrap/bootstrap-icons.css",
+    "site_libs/bootstrap/bootstrap-ab5a7728ff5b58c4218140d7af2cc95a.min.css",
+    "site_libs/bootstrap",
+    "site_libs/quarto-html/tabsets/tabsets.js",
+    "site_libs/quarto-html/axe/axe-check.js",
+    "site_libs/quarto-html/zenscroll-min.js",
+    "site_libs/quarto-html/tippy.umd.min.js",
+    "site_libs/quarto-html/tippy.css",
+    "site_libs/quarto-html/tabsets",
+    "99-Templates/Template 2.md",
+    "99-Templates/Template 3.md",
+    "99-Templates/Template 1.md"
+  ]
+}

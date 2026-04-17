@@ -1,0 +1,55 @@
+---
+title: "Concept Name"
+description: "🌱One-line definition or framing"
+date: 2026-01-01
+date-modified: last-modified
+categories: [IBD, scoring systems]
+---
+
+::: {.note-meta}
+🌱 Seedling · Last tended April 2026
+:::
+
+<!-- Maturity options: 🌱 Seedling / 🌿 Sprout / 🌳 Evergreen -->
+
+## In plain terms
+
+Explain the concept as if to a smart colleague outside your subfield. No jargon without definition. This section is the reason someone lands on this page from a search engine.
+
+## How it works
+
+The technical detail. Use equations if they help:
+
+$$
+\text{Score} = \sum_{i=1}^{n} w_i \cdot s_i
+$$
+
+Or code if the concept is algorithmic:
+
+```python
+# Example implementation
+def compute_score(segments, weights):
+    return sum(w * s for w, s in zip(weights, segments))
+```
+
+## Why it matters
+
+Clinical relevance, research implications, or why you keep coming back to this idea.
+
+## Open questions
+
+Things you haven't resolved yet. Honest uncertainty makes garden notes more useful than polished ones.
+
+- Question 1
+- Question 2
+
+## Related
+
+- [Link to related concept](/notes/concepts/other.qmd)
+- [Link to a project that uses this](/projects/project-name/index.qmd)
+- [Link to a paper note](/notes/papers/author-year.qmd)
+
+::: {.backlinks}
+### Linked from
+- [Page that links here](/path/to/page.qmd)
+:::

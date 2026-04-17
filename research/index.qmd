@@ -1,0 +1,141 @@
+---
+title: "Research"
+toc: true
+---
+
+My research focuses on quantitative magnetic resonance enterography in inflammatory bowel disease, with an emphasis on segment-level modelling, calibration, and reproducibility. Below is the full record of presentations, manuscripts, and peer-reviewed work.
+
+## Oral presentations
+
+::: {.pub-entry}
+[Colonic motility MRI as a quantitative biomarker in ulcerative colitis: validation against endoscopic disease activity]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
+:::
+
+::: {.pub-entry}
+[MRE-derived risk stratification for ulcerative colitis activity: a Bayesian multilevel modelling approach]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
+:::
+
+## Posters
+
+::: {.pub-entry}
+[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[*ECCO 2026* -- Poster.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1093/ecco-jcc/jjae190.0729)
+:::
+:::
+
+::: {.pub-entry}
+[Quantitative assessment of colon motility in ulcerative colitis using MRE: correlation with endoscopic disease activity]{.pub-title}
+
+[**Sarikhani M**, Naim I, Torabi A, Kolahdoozan S, Nouri Najafabadi A, Radmard AR, et al.]{.pub-authors}
+
+[*ECCO 2025* -- Poster. Presenting author.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1093/ecco-jcc/jjaf231.519)
+:::
+:::
+
+## Manuscripts in preparation
+
+::: {.pub-entry}
+[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
+
+[Based on ECCO 2026 and ESGAR 2026 accepted abstracts.]{.pub-venue}
+:::
+
+::: {.pub-entry}
+[Performance loss of quantized large language models in medicine: parameter optimisation and evaluation]{.pub-title}
+
+[Khalafi MA, et al., **Sarikhani M**.]{.pub-authors}
+
+[Manuscript in preparation.]{.pub-venue}
+:::
+
+## Peer-reviewed articles
+
+::: {.pub-entry}
+[Large language models versus classical machine learning performance in COVID-19 mortality prediction using high-dimensional tabular data]{.pub-title}
+
+[Ghaffarzadeh-Esfahani M, Salahi-Niri A, Mohsenzadeh-Kermani A, **Sarikhani M**, et al.]{.pub-authors}
+
+[*Scientific Reports*. 2025;15:42712.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1038/s41598-025-26705-7)
+:::
+:::
+
+::: {.pub-entry}
+[Diagnostic accuracy of Ottawa Knee Rule for diagnosis of fracture in patients with knee trauma: a systematic review and meta-analysis]{.pub-title}
+
+[Kazemi SM, Khorram R, **Sarikhani M**, et al.]{.pub-authors}
+
+[*Archives of Academic Emergency Medicine*. 2023;11(1):e30.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.22037/aaem.v11i1.1934)
+:::
+:::
+
+::: {.pub-entry}
+[Global burden of cardiovascular diseases and risks, 1990--2022]{.pub-title}
+
+[Global Burden of Cardiovascular Diseases and Risks Collaborators (including **Sarikhani M**).]{.pub-authors}
+
+[*Journal of the American College of Cardiology*. 2023;82(25):2350--2473.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1016/j.jacc.2023.11.007)
+:::
+:::
+
+## Book chapters
+
+::: {.pub-entry}
+[SWOT analysis of the integration of MRI in cardiology]{.pub-title}
+
+[**Sarikhani M**, Aarabi A, Ghasemirad H, Dehghanian Z, Mozafarybazargany M.]{.pub-authors}
+
+[In: Ghaffari Jolfayi A (ed.). *Navigating Cardiology's Future*. Springer; 2025. p.115--128.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1007/978-981-95-0313-1_7)
+:::
+:::
+
+::: {.pub-entry}
+[The role of AI and cardiac MRI in identifying inflammatory heart disease]{.pub-title}
+
+[Ghoshouni H, **Sarikhani M**, et al.]{.pub-authors}
+
+[In: Ghaffari Jolfayi A (ed.). *Navigating Cardiology's Future*. Springer; 2025. p.103--114.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1007/978-981-95-0313-1_6)
+:::
+:::
+
+## Peer review
+
+- *Frontiers in Public Health*: thyroid cancer cost prediction (ML). 2024.
+- *Journal of Medical Internet Research*: human-centred design in pancreatic cancer networks. 2024.
+
+---
+
+*For complete records, see my [Google Scholar profile](https://scholar.google.com/citations?user=iKhNW9AAAAAJ).*

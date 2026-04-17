@@ -1,0 +1,25 @@
+---
+title: "Lemann Index Calculator"
+description: "Streamlit app for computing cumulative bowel damage scores in Crohn's disease"
+date: 2024-06-01
+categories: [IBD, tool, Streamlit, Crohn's disease]
+---
+
+::: {.project-card}
+[Live]{.project-status .live}
+
+## Problem
+
+The Lemann Index quantifies cumulative structural bowel damage in Crohn's disease across the entire digestive tract -- strictures, fistulae, resections -- integrating findings across segments and imaging modalities. Computing it by hand is tedious and error-prone. Clinicians and researchers need a fast, structured calculator that enforces consistency.
+
+## Approach
+
+A Streamlit web application that accepts segmental MRI damage inputs, applies the Lemann scoring algorithm, and returns both segment-level and composite scores with exportable outputs. Designed for research workflows, not clinical deployment.
+
+## Links
+
+- [Source code](https://github.com/MahshadSa/lemann-index-calculator)
+- [Zenodo DOI]
+- [What is the Lemann Index?](/notes/concepts/lemann-index.qmd)
+
+:::

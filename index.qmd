@@ -1,0 +1,82 @@
+---
+title: ""
+pagetitle: "Mahshad Sarikhani"
+toc: false
+page-layout: full
+grid:
+  body-width: 900px
+---
+
+::: {.hero-section}
+
+[Mahshad Sarikhani]{.hero-name}
+
+[md · imaging AI researcher · finding what hides in medical data]{.hero-tagline}
+
+::: {.hero-bio}
+I'm interested in the "dark matter" of medical imaging. An MRI holds far more than what ends up in a report. Lab results, clinical notes, imaging features: each tells a fragment of the story, and I want to build the tools that read them together.
+
+My work focuses on **inflammatory bowel disease**, where I develop quantitative MRI pipelines, multimodal models, and scoring tools that make imaging structured, measurable, and clinically useful. Based at Shariati Hospital, Tehran University of Medical Sciences, collaborating with groups at UCL/Motilent and Mount Sinai.
+:::
+
+:::
+
+## Selected work
+
+::: {.proof-grid}
+
+::: {.proof-card}
+::: {.card-label}
+Live Tool
+:::
+::: {.card-title}
+[Lemann Index Calculator](projects/lemann-calculator/index.qmd)
+:::
+::: {.card-desc}
+A Streamlit app for computing cumulative bowel damage in Crohn's disease. Built out of a need for clinical reproducibility.
+:::
+:::
+
+::: {.proof-card}
+::: {.card-label}
+In Progress
+:::
+::: {.card-title}
+[Agentic MRE Pipeline](projects/mre-pipeline/index.qmd)
+:::
+::: {.card-desc}
+Using LLMs to extract structured data from free-text radiology reports. Currently wrestling with hallucinations and ambiguity.
+:::
+:::
+
+::: {.proof-card}
+::: {.card-label}
+ESGAR 2026 · Oral
+:::
+::: {.card-title}
+[Motility MRI as a biomarker in UC](research/index.qmd)
+:::
+::: {.card-desc}
+Validating colonic motility MRI against endoscopic disease activity in ulcerative colitis.
+:::
+:::
+
+::: {.proof-card}
+::: {.card-label}
+ESGAR 2026 · Oral
+:::
+::: {.card-title}
+[Bayesian risk stratification from MRE](research/index.qmd)
+:::
+::: {.card-desc}
+A multilevel modelling approach to segment-level UC activity scoring with calibrated evaluation.
+:::
+:::
+
+:::
+
+---
+
+::: {style="text-align: center; margin: 2rem 0; font-size: 0.88rem; color: #5a7260;"}
+[About](about/index.qmd) · [Research](research/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa)
+:::

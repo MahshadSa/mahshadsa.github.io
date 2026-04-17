@@ -1,0 +1,96 @@
+---
+title: "About"
+toc: true
+---
+
+I'm a medical doctor and imaging AI researcher at Shariati Hospital, Tehran University of Medical Sciences. I believe there is more in medical data than we currently extract. An MRI holds information that gets lost in free-text descriptions. Lab results, imaging, and clinical notes each tell a partial story. I want to build the tools that read them together.
+
+In inflammatory bowel disease, where damage hides, recurs, and accumulates over years, I work on quantitative MRI, multimodal models, and AI pipelines that make imaging findings structured enough to measure change and precise enough to act on. I collaborate with groups at UCL/Motilent in the UK and Mount Sinai in New York, and I'm always looking for people who think this work matters too.
+
+[Download full CV (PDF)](../assets/cv-mahshad.pdf)
+
+## Education
+
+::: {.timeline}
+
+::: {.timeline-item}
+[2015 -- 2022]{.timeline-date}
+[Doctor of Medicine (MD)]{.timeline-title}
+[Shahid Beheshti University of Medical Sciences, Tehran. Full scholarship. GPA: 3.67 / 4.00.]{.timeline-desc}
+:::
+
+:::
+
+## Research positions
+
+::: {.timeline}
+
+::: {.timeline-item}
+[Jan 2024 -- Present]{.timeline-date}
+[Research Associate, Abdominal Imaging and AI]{.timeline-title}
+[Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Supervisor: Prof. Amir Reza Radmard. Leading quantitative MRE research in ulcerative colitis: GIQuant motility, bowel wall activity markers, chronicity features, and segment-level validation against endoscopy. Building reproducible pipelines that integrate imaging, structured radiology features, narrative reports, and clinical endpoints.]{.timeline-desc}
+:::
+
+::: {.timeline-item}
+[Sep 2022 -- Dec 2023]{.timeline-date}
+[Research Assistant, Imaging and Clinical Data Science]{.timeline-title}
+[Shahid Beheshti University of Medical Sciences. CT and MRI research projects spanning protocol review, dataset construction, and statistical analysis. Contributed to PanCanAID-related pipelines including curated datasets and semi-automated CT segmentation workflows.]{.timeline-desc}
+:::
+
+:::
+
+## International collaborations
+
+::: {.timeline}
+
+::: {.timeline-item}
+[Ongoing]{.timeline-date}
+[Motilent / University College London, UK]{.timeline-title}
+[Cross-site coordination on feature definitions, QC, and analysis plans for motility MRI biomarkers. Supporting ECCO and ESGAR outputs and ongoing manuscript development.]{.timeline-desc}
+:::
+
+::: {.timeline-item}
+[Ongoing]{.timeline-date}
+[Icahn School of Medicine at Mount Sinai, New York]{.timeline-title}
+[Collaboration with Prof. Jean-Frederic Colombel's group on IBD imaging research and manuscript development.]{.timeline-desc}
+:::
+
+:::
+
+## Clinical experience
+
+::: {.timeline}
+
+::: {.timeline-item}
+[Aug 2022 -- Aug 2024]{.timeline-date}
+[General Practitioner]{.timeline-title}
+[Valiasr Local Medical Center, Alborz, Iran. Part-time during transition to full-time research.]{.timeline-desc}
+:::
+
+::: {.timeline-item}
+[May 2020 -- May 2022]{.timeline-date}
+[Medical Intern]{.timeline-title}
+[Teaching Hospitals, Shahid Beheshti University of Medical Sciences, Tehran.]{.timeline-desc}
+:::
+
+:::
+
+## Technical skills
+
+**Statistics and modelling**: Multilevel and hierarchical Bayesian modelling, leakage-aware validation for clustered clinical data, decision-curve analysis, calibration.
+
+**Programming**: Python (pandas, NumPy, scikit-learn, PyTorch), reproducible workflows (Jupyter, VS Code, Git).
+
+**Medical AI and imaging**: Deep learning for medical imaging (PyTorch, MONAI), CLIP-style vision-language models, quantitative MRE feature operationalisation, DICOM preprocessing.
+
+**LLM and NLP**: LLM-assisted information extraction from radiology reports, agentic pipeline design with human-in-the-loop escalation.
+
+**Research software**: Modular repo structure, versioned releases with DOIs, Streamlit clinician-facing prototypes.
+
+**Writing and workflow**: LaTeX, Obsidian + Zotero, Quarto.
+
+## Contact
+
+The best way to reach me is by email: ___
+
+[Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/___)

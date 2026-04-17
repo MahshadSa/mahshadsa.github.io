@@ -1,0 +1,59 @@
+---
+title: "Method or Technique Name"
+description: "One-line summary of what this method does and when to use it"
+date: 2026-01-01
+date-modified: last-modified
+categories: [methods, Bayesian, Python]
+---
+
+::: {.note-meta}
+🌱 Seedling · Last tended April 2026
+:::
+
+## When to use this
+
+The decision context. Under what conditions is this the right tool? What alternatives exist and when do they win instead?
+
+## The core idea
+
+Explain the method. Start intuitive, then get precise. Use diagrams or equations as needed:
+
+$$
+p(\theta \mid y) \propto p(y \mid \theta) \, p(\theta)
+$$
+
+## Implementation
+
+Working code you've tested. Annotate decisions — future you will forget why you set that prior.
+
+```python
+import pymc as pm
+
+with pm.Model() as model:
+    # Prior choice: weakly informative
+    beta = pm.Normal("beta", mu=0, sigma=2.5)
+    # Likelihood
+    y_obs = pm.Bernoulli("y_obs", logit_p=beta, observed=data)
+    trace = pm.sample(1000)
+```
+
+## Pitfalls
+
+Things that broke when you tried them, common mistakes, or subtleties the textbook glosses over.
+
+## Resources
+
+- [Textbook or tutorial](https://example.com) — one-line annotation of why it's useful
+- [Package documentation](https://example.com)
+- [Blog post that clarified something](https://example.com)
+
+## Related
+
+- [Concept this method serves](/notes/concepts/related.qmd)
+- [Paper that introduced or validated this](/notes/papers/author-year.qmd)
+- [Project where you applied this](/projects/project-name/index.qmd)
+
+::: {.backlinks}
+### Linked from
+- [Page that links here](/path/to/page.qmd)
+:::

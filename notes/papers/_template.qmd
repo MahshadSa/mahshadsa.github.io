@@ -1,0 +1,46 @@
+---
+title: "Author et al. (Year) — Short Title"
+description: "One-sentence takeaway from the paper"
+date: 2026-01-01
+date-modified: last-modified
+categories: [paper notes, NLP, radiology]
+---
+
+::: {.note-meta}
+🌱 Seedling · Last tended April 2026
+:::
+
+## Citation
+
+> Author A, Author B, Author C, et al. **Full paper title.** *Journal Name*. Year;Volume(Issue):Pages. [DOI](https://doi.org/xxx)
+
+## What they did
+
+2–3 sentences. Study design, dataset, main method.
+
+## Key findings
+
+The results that matter, in your own words. Not a list of every table — just what changes how you think about your work.
+
+## Methods worth noting
+
+Technical details you want to remember or adapt. Quote sparingly; paraphrase and annotate.
+
+## Limitations
+
+What they acknowledge and what they don't. Where does their approach break down?
+
+## What this means for my work
+
+The personal layer. How does this paper connect to your projects, change your approach, or open a new question?
+
+## Related
+
+- [Related concept](/notes/concepts/related.qmd)
+- [Related project](/projects/project-name/index.qmd)
+- [Another paper that contradicts or extends this](/notes/papers/other-author-year.qmd)
+
+::: {.backlinks}
+### Linked from
+- [Page that links here](/path/to/page.qmd)
+:::

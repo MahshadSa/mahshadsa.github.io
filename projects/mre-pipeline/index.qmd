@@ -1,0 +1,27 @@
+---
+title: "Agentic Lemann Extraction Pipeline"
+description: "LLM-powered extraction of structured scoring fields from free-text radiology reports"
+date: 2026-04-01
+categories: [LLM, agentic AI, IBD, NLP]
+---
+
+::: {.project-card}
+[Planned]{.project-status .planned}
+
+## Problem
+
+Retrospective IBD research requires structured Lemann Index data, but existing radiology reports are free-text narratives. Manual extraction is slow and does not scale to hundreds of reports. Existing NLP approaches lack the flexibility to handle ambiguous or incomplete descriptions.
+
+## Approach
+
+An agentic, human-in-the-loop pipeline: an LLM reads a free-text MRI report, extracts structured fields required for Lemann Index computation, calls the [Lemann calculator](/projects/lemann-calculator/index.qmd) as a tool, and escalates uncertain cases to a radiologist for adjudication. The radiologist remains in the loop for uncertain cases.
+
+## Research plan
+
+Six-phase project covering prompt engineering, validation against manual scoring, inter-rater analysis, and prospective evaluation. Target venues include *European Radiology*, *Academic Radiology*, *npj Digital Medicine*.
+
+## Status
+
+Planning phase. Architecture design and IRB preparation underway.
+
+:::

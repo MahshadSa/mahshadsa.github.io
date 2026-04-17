@@ -1,0 +1,63 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Mahshad Sarikhani"
+  description: "Physician-researcher · IBD imaging · Clinical AI"
+  site-url: https://mahshadsa.github.io
+  repo-url: https://github.com/MahshadSa/mahshadsa.github.io
+  favicon: assets/img/favicon.png
+
+  navbar:
+    background: transparent
+    foreground: dark
+    title: "MS"
+    left:
+      #- text: "Projects"
+      # href: projects/index.qmd
+      - text: "Research"
+        href: research/index.qmd
+      #- text: "Notes"
+      #  href: notes/index.qmd
+      - text: "Now"
+        href: now.qmd
+      - text: "About"
+        href: about/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/MahshadSa
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=iKhNW9AAAAAJ
+      - icon: envelope-fill
+        href: "mailto:mahshadsarikhani9696@gmail.com"
+
+  page-footer:
+    left: "© 2026 Mahshad S. · Built with [Quarto](https://quarto.org)"
+    right: "Last updated: {{< meta date >}}"
+
+  search:
+    location: navbar
+    type: overlay
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/css/custom.scss]
+    css: assets/css/garden.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    smooth-scroll: true
+    fontsize: "1.05rem"
+    mainfont: "'Source Serif 4', Georgia, serif"
+    monofont: "'JetBrains Mono', monospace"
+    grid:
+      sidebar-width: 0px
+      body-width: 900px
+      margin-width: 250px
+
+execute:
+  freeze: auto

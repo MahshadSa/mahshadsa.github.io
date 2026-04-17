@@ -1,0 +1,43 @@
+---
+title: "What is the Lémann Index?"
+description: "A primer on quantifying cumulative bowel damage in Crohn's disease"
+date: 2025-06-01
+categories: [IBD, scoring systems, MRI]
+draft : true
+
+---
+
+::: {.note-meta}
+🌿 Growing · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
+:::
+
+## The problem it solves
+
+Crohn's disease causes cumulative structural damage — strictures, fistulae, resections — that inflammatory activity scores alone don't capture. The Lémann Index (also called the Crohn's Disease Digestive Damage Score) was developed to quantify this cumulative burden across the entire digestive tract.
+
+## How it works
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Explain the scoring system: segment-by-segment assessment, damage grades, weighting by location. Keep it accessible — this note should be useful to someone encountering the concept for the first time.</span>
+
+## Why it matters for research
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Discuss how it's used in clinical trials, longitudinal studies, treatment response assessment. Connect to your own work.</span>
+
+## Practical considerations
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Challenges with the index: inter-rater variability, computation complexity (hence your calculator), the gap between what reports describe and what the index needs.</span>
+
+## Related
+
+- [Lémann Index Calculator](/projects/lemann-calculator/index.qmd) — my open-source tool for computing the index
+- [Agentic Lémann Pipeline](/projects/mre-pipeline/index.qmd) — automating extraction from reports
+- <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Link to a paper note on the original Lémann et al. publication</span>
+
+::: {.backlinks}
+### Linked from
+- [Lémann Index Calculator](/projects/lemann-calculator/index.qmd)
+- [Agentic Lémann Pipeline](/projects/mre-pipeline/index.qmd)
+:::
+
+
+

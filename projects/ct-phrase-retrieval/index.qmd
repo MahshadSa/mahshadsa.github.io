@@ -1,0 +1,23 @@
+---
+title: "ct-phrase-retrieval"
+description: "Text-based CT image retrieval system"
+date: 2024-03-01
+categories: [retrieval, CT, NLP]
+---
+
+::: {.project-card}
+[Active]{.project-status .active}
+
+## Problem
+
+Retrieving relevant CT images from natural language queries requires models that bridge the gap between clinical text descriptions and volumetric imaging data.
+
+## Approach
+
+A text-based retrieval pipeline for CT imaging. Matches natural language phrases to relevant CT images.
+
+## Links
+
+- [Source code](https://github.com/MahshadSa/ct-phrase-retrieval)
+
+:::

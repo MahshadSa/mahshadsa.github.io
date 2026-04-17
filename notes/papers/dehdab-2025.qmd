@@ -1,0 +1,43 @@
+---
+title: "Dehdab et al. (2025) — LLM-based Radiology Report Extraction"
+description: "Paper notes on a predecessor study using LLMs to extract structured data from radiology reports"
+date: 2025-10-01
+categories: [paper notes, NLP, radiology, LLM]
+draft: true
+---
+
+::: {.note-meta}
+🌿 Sprout · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
+:::
+
+## Citation
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Dehdab A, et al. [Full title]. *Academic Radiology*. 2025. DOI: [link]</span>
+
+## Summary
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? 2-3 paragraph summary of the paper. What did they do? What was the key finding?</span>
+
+## What I found useful
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? What specific methods, design choices, or findings are relevant to your own work?</span>
+
+## Limitations & gaps
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? What didn't they address? Where does your planned work extend beyond theirs?</span>
+
+## Connection to my work
+
+This paper is a direct predecessor to the [agentic Lémann pipeline](/projects/mre-pipeline/index.qmd) I'm developing. Key differences in my approach:
+
+- <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Difference 1 — e.g., agentic tool-calling vs. direct extraction</span>
+- <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Difference 2 — e.g., human-in-the-loop for uncertain cases</span>
+- <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Difference 3 — e.g., different scoring system (Lémann vs. whatever they used)</span>
+
+## Related
+
+- [Clinical AI pipelines](/notes/concepts/clinical-ai-pipelines.qmd)
+- [What is the Lémann Index?](/notes/concepts/lemann-index.qmd)
+
+
+

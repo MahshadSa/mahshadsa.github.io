@@ -1,0 +1,28 @@
+---
+title: "UC MRE Activity Risk Stratification"
+description: "Bayesian multilevel model for triage-oriented ulcerative colitis activity scoring from MRE"
+date: 2025-12-01
+categories: [Bayesian, IBD, ulcerative colitis, Streamlit]
+---
+
+::: {.project-card}
+[Live]{.project-status .live}
+
+## Problem
+
+Segment-level MRE findings in ulcerative colitis need to be translated into actionable risk categories that account for patient-level clustering and calibration. Standard approaches treat segments independently and ignore the hierarchical structure of the data.
+
+## Approach
+
+A Bayesian multilevel model incorporating patient-level clustering and calibrated evaluation, translated into a triage-oriented MRE risk stratification workflow. The model integrates GIQuant-derived motility with bowel wall imaging markers and validates against the Mayo Endoscopic Subscore. Presented as a Streamlit clinician-facing research prototype.
+
+## Status
+
+Associated with the ESGAR 2026 oral presentation on MRE-derived risk stratification. Manuscript in preparation.
+
+## Links
+
+- [Source code](https://github.com/MahshadSa/uc-mre-risk-tool)
+- [Zenodo DOI]
+
+:::

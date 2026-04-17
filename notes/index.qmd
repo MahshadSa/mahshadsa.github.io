@@ -1,0 +1,23 @@
+---
+title: "Notes"
+subtitle: "A working notebook and digital garden"
+listing:
+  contents: "**/*.qmd"
+  type: default
+  sort: "date desc"
+  fields: [title, description, date, categories]
+  categories: true
+  exclude:
+    title: "Notes"
+toc: false
+---
+
+Papers I've read, methods I'm learning, books that shaped my thinking, and ideas that don't have a home yet. Some of this grows into research. Most of it doesn't. That's fine.
+
+Nothing here is finished. Consider it a working notebook.
+
+🌱 **Seed** -- rough, first pass, might just be a question.
+
+🌿 **Sprout** -- revisited at least once, starting to take shape.
+
+🌳 **Evergreen** -- I'm fairly confident in this one.

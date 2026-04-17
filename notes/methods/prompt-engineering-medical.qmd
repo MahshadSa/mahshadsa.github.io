@@ -1,0 +1,49 @@
+---
+title: "Prompt Engineering for Structured Medical Extraction"
+description: "Working notes on prompting LLMs to extract structured clinical data reliably"
+date: 2026-03-01
+categories: [methods, LLM, prompt engineering]
+draft : true
+
+---
+
+::: {.note-meta}
+🌱 Seedling · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
+:::
+
+## Context
+
+Extracting structured fields from free-text radiology reports is a core task in the [agentic Lémann pipeline](/projects/mre-pipeline/index.qmd). These are my working notes on what works and what doesn't.
+
+## Key principles
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Document your findings as you experiment. E.g.:</span>
+
+### Output format specification
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Notes on JSON schema prompting, XML tags, structured output modes.</span>
+
+### Few-shot example selection
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? How many examples? How to select representative vs. edge cases?</span>
+
+### Handling missing data
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? When a report doesn't mention a segment, is that 'normal' or 'not assessed'? How to prompt the model to distinguish.</span>
+
+## Failure modes
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Document common errors: hallucinated findings, misattributed segments, over-confident extraction from ambiguous text.</span>
+
+## Tools & frameworks
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? What you're using: direct API calls, LangChain, instructor, outlines, etc.</span>
+
+## Related
+
+- [Agentic Lémann Pipeline](/projects/mre-pipeline/index.qmd)
+- [Clinical AI pipelines](/notes/concepts/clinical-ai-pipelines.qmd)
+- [Dehdab et al. 2025](/notes/papers/dehdab-2025.qmd)
+
+
+

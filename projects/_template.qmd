@@ -1,0 +1,36 @@
+---
+title: "Project Title"
+description: "One-line description of what this project does"
+date: 2026-01-01
+categories: [IBD, tool, Python]
+---
+
+::: {.project-card}
+[Live]{.project-status .live}
+<!-- Status options: [Live]{.project-status .live} / [Active]{.project-status .active} / [Planned]{.project-status .planned} -->
+
+## Problem
+
+What clinical or research gap does this address? Why does it matter? Keep it to 2–3 sentences that a non-specialist could follow.
+
+## Approach
+
+How does it work? Describe the architecture, key design decisions, and why you chose this path over alternatives.
+
+## Key details
+
+- **Stack**: Python, Streamlit, PyTorch, etc.
+- **Data**: What it trains on or processes
+- **Evaluation**: Metrics, validation approach
+
+## Status
+
+Where things stand right now. What's deployed, what's in progress, what's next.
+
+## Links
+
+- [Live app](https://example.com)
+- [Source code](https://github.com/MahshadSa/repo-name)
+- [Related note](/notes/concepts/related-concept.qmd)
+
+:::

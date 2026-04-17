@@ -1,0 +1,35 @@
+---
+title: "Bayesian Ordinal Regression for Imaging Scores"
+description: "Why ordinal models matter for radiology severity grading and how Bayesian inference helps"
+date: 2025-08-01
+categories: [Bayesian, statistics, methodology]
+draft : true
+---
+
+::: {.note-meta}
+🌱 Seedling · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
+:::
+
+## The intuition
+
+Many radiology scores are ordinal — severity grades like 0/1/2/3 where the distances between categories aren't necessarily equal. Treating these as continuous (linear regression) or collapsing them to binary (logistic regression) throws away information. Ordinal models respect the ranked structure.
+
+## Why Bayesian?
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Explain the advantages of Bayesian ordinal models for your specific context: uncertainty quantification, small sample sizes typical of imaging studies, incorporating prior clinical knowledge, posterior predictive checks.</span>
+
+## Key references
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? List 3-5 key papers or textbooks you've found useful. Brief annotation for each.</span>
+
+## How I use this
+
+<span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Connect to your own work — the ESGAR abstract, the JCC manuscript. What specific modeling choices did you make and why?</span>
+
+## Related
+
+- <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Link to relevant paper notes</span>
+- <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Link to a methods note on BRMS or Stan if you write one</span>
+
+
+

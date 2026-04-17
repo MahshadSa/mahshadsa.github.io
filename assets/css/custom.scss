@@ -1,0 +1,544 @@
+/*-- scss:defaults --*/
+
+// ── Backgrounds ──────────────────────────────────────
+$light:         #f7f6f3;
+$lightgray:     #efeeea;
+$gray:          #b0b5a8;
+$darkgray:      #354539;
+$dark:          #1b271e;
+
+// ── Accents (sage + periwinkle only) ─────────────────
+$sage:          #5a7260;
+$periwinkle:    #6970a0;
+
+// ── Quarto variable mapping ──────────────────────────
+$body-bg:          $light;
+$body-color:       $darkgray;
+$link-color:       $sage;
+$link-hover-color: $periwinkle;
+
+$font-family-sans-serif: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+// ── Navbar ───────────────────────────────────────────
+$navbar-bg: $dark;
+$navbar-fg: $light;
+
+/*-- scss:rules --*/
+
+// ── Google Fonts ─────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=IM+Fell+English:ital@0;1&display=swap');
+
+// ── Base ─────────────────────────────────────────────
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.82;
+  font-size: 1.05rem;
+  color: $darkgray;
+  background-color: $light;
+}
+
+::selection {
+  background: rgba($sage, 0.2);
+  color: $dark;
+}
+
+// ── Navbar ───────────────────────────────────────────
+.navbar {
+  border-bottom: 1px solid rgba($gray, 0.6);
+  background: $dark !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+  text-transform: lowercase;
+  padding: 0.6rem 0;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.3rem !important;
+  color: $gray !important;
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+
+.navbar-nav .nav-link {
+  color: rgba($gray, 0.55) !important;
+  transition: color 0.3s ease;
+  padding: 0.4rem 0.9rem !important;
+  &:hover { color: $sage !important; }
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: $gray !important;
+}
+
+.navbar .bi {
+  color: rgba($gray, 0.4);
+  transition: color 0.3s ease;
+  &:hover { color: $sage; }
+}
+
+// ── Headings ─────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  color: $dark;
+  line-height: 1.25;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid rgba($gray, 0.5);
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: $darkgray;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: $darkgray;
+}
+
+// ── Links ────────────────────────────────────────────
+a {
+  color: $sage;
+  text-decoration: underline;
+  text-decoration-color: rgba($sage, 0.3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  &:hover {
+    color: $periwinkle;
+    text-decoration-color: $periwinkle;
+  }
+}
+
+// ── Horizontal rules ─────────────────────────────────
+hr {
+  border: none;
+  border-top: 1px solid rgba($gray, 0.5);
+  margin: 2.5rem 0;
+  &::after {
+    content: '§';
+    display: block;
+    text-align: center;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.1rem;
+    color: $gray;
+    margin-top: -0.75em;
+    background: $light;
+    width: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// ── Hero section ─────────────────────────────────────
+.hero-section {
+  padding: 5rem 0 3rem;
+  .hero-name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 3.6rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.25em;
+    color: $dark;
+    display: inline;
+    background-image: linear-gradient(transparent 85%, rgba($sage, 0.15) 85%);
+    background-size: 100% 100%;
+  }
+  .hero-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: $sage;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.2rem;
+    text-transform: lowercase;
+  }
+  .hero-bio {
+    font-size: 1.08rem;
+    line-height: 1.9;
+    max-width: 620px;
+    color: $darkgray;
+    strong { color: $dark; font-weight: 700; }
+  }
+}
+
+// ── Proof-point cards ────────────────────────────────
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.3rem;
+  margin: 2.5rem 0;
+}
+
+.proof-card {
+  background: $lightgray;
+  border: 1px solid rgba($gray, 0.5);
+  border-radius: 2px;
+  padding: 1.5rem 1.6rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  &:hover {
+    border-color: $sage;
+    box-shadow: 0 4px 20px rgba($dark, 0.05);
+    transform: translateY(-2px);
+  }
+  .card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $sage;
+      margin-bottom: 0.6rem;
+      padding-left: 0.6em;
+      border-left: 2px solid $sage;
+    }
+  .card-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    a {
+      color: $dark;
+      text-decoration: none;
+      &:hover {
+        color: $sage;
+        text-decoration: underline;
+        text-decoration-color: rgba($sage, 0.3);
+      }
+    }
+  }
+  .card-desc {
+    font-size: 0.9rem;
+    color: $darkgray;
+    line-height: 1.6;
+  }
+}
+
+// ── Project cards ────────────────────────────────────
+.project-card {
+  background: $lightgray;
+  border: 1px solid rgba($gray, 0.5);
+  border-radius: 2px;
+  padding: 2rem 2.2rem;
+  margin-bottom: 1.8rem;
+  transition: border-color 0.25s ease;
+  &:hover { border-color: $sage; }
+  .project-status {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25em 0.8em;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    &.live {
+      background: rgba($sage, 0.08);
+      color: $sage;
+      border: 1px solid rgba($sage, 0.2);
+    }
+    &.active {
+      background: rgba($periwinkle, 0.06);
+      color: $periwinkle;
+      border: 1px solid rgba($periwinkle, 0.15);
+    }
+    &.planned {
+      background: rgba($dark, 0.04);
+      color: rgba($darkgray, 0.7);
+      border: 1px solid rgba($gray, 0.4);
+    }
+  }
+}
+
+// ── Garden maturity tags ─────────────────────────────
+.maturity-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.2em 0.65em;
+  border-radius: 2px;
+  letter-spacing: 0.03em;
+  &.seedling {
+    background: rgba($sage, 0.06);
+    color: $sage;
+    border: 1px solid rgba($sage, 0.15);
+  }
+  &.growing {
+    background: rgba($periwinkle, 0.06);
+    color: $periwinkle;
+    border: 1px solid rgba($periwinkle, 0.15);
+  }
+  &.evergreen {
+    background: rgba($dark, 0.04);
+    color: $darkgray;
+    border: 1px solid rgba($gray, 0.3);
+  }
+}
+
+// ── Timeline (CV page) ──────────────────────────────
+.timeline {
+  border-left: 2px solid rgba($darkgray, 0.5);
+  padding-left: 2rem;
+  margin: 2.5rem 0;
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.2rem;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2.32rem;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $sage;
+      border: 2px solid $light;
+      box-shadow: 0 0 0 2px rgba($gray, 0.4);
+    }
+    .timeline-date {
+      font-family:'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: $gray;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .timeline-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0.15em 0;
+      color: $dark;
+    }
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: $darkgray;
+      line-height: 1.7;
+    }
+  }
+}
+
+
+
+// ── Now page ─────────────────────────────────────────
+.now-item {
+  padding: 1.2rem 0 1.2rem 1.8rem;
+  border-left: 3px solid $periwinkle;
+  margin-bottom: 1.2rem;
+  transition: border-left-color 0.3s ease;
+  &:hover { border-left-color: $sage; }
+  strong { color: $dark; }
+}
+
+// ── Blockquotes / Epigraphs ─────────────────────────
+blockquote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: $darkgray;
+  border-left: 3px solid $periwinkle;
+  padding: 0.8rem 1.5rem;
+  margin: 2rem 0;
+  background: rgba($lightgray, 0.5);
+  p:last-child { margin-bottom: 0; }
+}
+
+// ── Code ─────────────────────────────────────────────
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  color: $darkgray;
+  background: rgba($gray, 0.18);
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+}
+
+pre {
+  background: $dark !important;
+  border: 1px solid rgba($gray, 0.3);
+  border-radius: 2px;
+  padding: 1.2rem 1.5rem;
+  code {
+    color: $gray;
+    background: none;
+    padding: 0;
+    font-size: 0.82rem;
+  }
+}
+
+// ── Tables ───────────────────────────────────────────
+table {
+  font-size: 0.92rem;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $darkgray;
+    border-bottom: 2px solid rgba($gray, 0.4);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+  }
+  td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba($gray, 0.2);
+    color: $darkgray;
+  }
+  tr:hover td { background: rgba($sage, 0.04); }
+}
+
+// ── Callouts ─────────────────────────────────────────
+.callout {
+  border-radius: 2px !important;
+  border-left-width: 3px !important;
+}
+
+.callout-tip {
+  border-left-color: $sage !important;
+  background: rgba($sage, 0.04) !important;
+}
+
+.callout-note {
+  border-left-color: $periwinkle !important;
+  background: rgba($periwinkle, 0.04) !important;
+}
+
+// ── TOC sidebar ──────────────────────────────────────
+.sidebar nav[role="doc-toc"] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  a {
+    color: $gray;
+    text-decoration: none;
+    &:hover { color: $sage; }
+    &.active { color: $dark; font-weight: 600; }
+  }
+}
+
+// ── Footer ───────────────────────────────────────────
+.nav-footer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: $gray;
+  border-top: 1px solid rgba($gray, 0.4);
+  margin-top: 5rem;
+  padding: 1.5rem 0;
+  letter-spacing: 0.02em;
+  a {
+    color: $sage;
+    &:hover { color: $periwinkle; }
+  }
+}
+
+// ── Quarto listing cards ─────────────────────────────
+.quarto-listing {
+  .listing-title {
+    font-family: 'Source Serif 4', Georgia, serif !important;
+    font-weight: 600;
+    color: $dark;
+  }
+  .listing-description {
+    font-size: 0.92rem;
+    color: $darkgray;
+  }
+  .listing-category .listing-category-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba($gray, 0.15);
+    color: $darkgray;
+    border-radius: 2px;
+  }
+  .listing-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: $gray;
+  }
+}
+// ── Tighter publication list ─────────────────────────
+.pub-entry {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba($gray, 0.2);
+  &:last-child { border-bottom: none; }
+  p {
+    margin-bottom: 0;
+  }
+  .pub-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: $dark;
+    line-height: 1.35;
+    margin-bottom: 0.1em;
+  }
+  .pub-authors {
+    font-size: 0.85rem;
+    color: $darkgray;
+    margin: 0.1em 0;
+    line-height: 1.4;
+    strong { color: $dark; }
+  }
+  .pub-venue {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.84rem;
+    color: $gray;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .pub-links {
+    margin-top: 0.2em;
+    a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-right: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: $sage;
+      text-decoration: none;
+      &:hover {
+        color: $periwinkle;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+// ── Responsive ───────────────────────────────────────
+@media (max-width: 768px) {
+  .hero-section .hero-name { font-size: 2.4rem; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .project-card { padding: 1.4rem 1.5rem; }
+}

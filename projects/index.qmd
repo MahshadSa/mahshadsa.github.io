@@ -1,0 +1,13 @@
+---
+title: "Projects"
+subtitle: "Tools, models, and research software"
+listing:
+  contents: "*/index.qmd"
+  type: default
+  sort: "date desc"
+  fields: [title, description, categories, date]
+  categories: true
+toc: false
+---
+
+Research software and tools I've built -- from deployed calculators to experimental AI pipelines. Each project page describes the problem, approach, and current status. All software is research code for transparent evaluation and reproducible analysis, not clinical deployment.
