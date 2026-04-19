@@ -65,13 +65,13 @@ Validating colonic motility MRI against endoscopic disease activity in ulcerativ
 
 ::: {.proof-card}
 ::: {.card-label}
-ESGAR 2026 · Oral
+Personal Project
 :::
 ::: {.card-title}
-[Bayesian risk stratification from MRE](research/index.qmd)
+[Bookshelf Scanner](projects/bookshelf-scanner/index.qmd)
 :::
 ::: {.card-desc}
-A multilevel modelling approach to segment-level UC activity scoring with calibrated evaluation.
+A vision-language tool for cataloging a bilingual personal library. Persian and English spines, messy fonts, and everything in between.
 :::
 :::
 

@@ -1,0 +1,37 @@
+---
+title: "Bookshelf Scanner"
+description: "Vision-language catalog tool for personal libraries, with bilingual spine recognition"
+date: 2026-04-01
+categories: [VLM, tool, personal, Persian, Streamlit]
+---
+
+::: {.project-card}
+[Active]{.project-status .active}
+
+## Problem
+
+Cataloging a personal library of several hundred books -- especially a bilingual one with Persian and English titles -- is slow work. Existing tools assume barcoded, English-language, commercially published books. They break on decorative Persian fonts, old editions without ISBNs, and shelves where half the spines are in one script and half in another.
+
+## Approach
+
+A three-stage pipeline that treats cataloging as a conversation between a vision model, a human, and an enrichment API:
+
+**Stage 1. Upload and extract.** Shelf photos go to a vision-language model (Llama 3.2 Vision via HuggingFace Inference API). The VLM reads each spine and returns structured data: title and author in the original script, romanized versions for non-Latin text, and a confidence score.
+
+**Stage 2. Review and confirm.** Results appear in an editable table. I fix misreadings (common with decorative Persian fonts or partially occluded spines), delete false detections, and add anything the model missed. Fuzzy deduplication catches books that appear in multiple photos.
+
+**Stage 3. Enrich and browse.** Confirmed books are enriched via the Open Library API (year, pages, ISBN, cover image). When Open Library has no match, an LLM fallback infers metadata from its training knowledge. The final catalog lives in SQLite and renders as a searchable dashboard with statistics by country, language, genre, and decade.
+
+## Why this project
+
+Most of my work is clinical AI, which means the tooling is serious, validated, and slow to build. This is the opposite: a personal project where I get to use VLMs, handle messy multilingual text, and build something that exists for its own sake. It's also the best way I've found to actually learn how vision-language models behave in the wild.
+
+## Status
+
+Local prototype working. Currently refining the bilingual OCR accuracy and the deduplication logic before pushing to a public repo.
+
+## Links
+
+- Source code (coming soon)
+
+:::
