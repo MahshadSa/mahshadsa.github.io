@@ -3,71 +3,9 @@ title: "Research"
 toc: true
 ---
 
-My research focuses on quantitative magnetic resonance enterography in inflammatory bowel disease, with an emphasis on segment-level modelling, calibration, and reproducibility. Below is the full record of presentations, manuscripts, and peer-reviewed work.
+My research focuses on quantitative magnetic resonance enterography in inflammatory bowel disease, with an emphasis on segment-level modelling, calibration, and reproducibility. Below is the full record of peer-reviewed work, manuscripts, and presentations.
 
-## Oral presentations
-
-::: {.pub-entry}
-[Colonic motility MRI as a quantitative biomarker in ulcerative colitis: validation against endoscopic disease activity]{.pub-title}
-
-[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
-
-[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
-:::
-
-::: {.pub-entry}
-[MRE-derived risk stratification for ulcerative colitis activity: a Bayesian multilevel modelling approach]{.pub-title}
-
-[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
-
-[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
-:::
-
-## Posters
-
-::: {.pub-entry}
-[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
-
-[**Sarikhani M**, Menys A, Torabi A, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
-
-[*ECCO 2026* -- Poster.]{.pub-venue}
-
-::: {.pub-links}
-[DOI](https://doi.org/10.1093/ecco-jcc/jjae190.0729)
-:::
-:::
-
-::: {.pub-entry}
-[Quantitative assessment of colon motility in ulcerative colitis using MRE: correlation with endoscopic disease activity]{.pub-title}
-
-[**Sarikhani M**, Naim I, Torabi A, Kolahdoozan S, Nouri Najafabadi A, Radmard AR, et al.]{.pub-authors}
-
-[*ECCO 2025* -- Poster. Presenting author.]{.pub-venue}
-
-::: {.pub-links}
-[DOI](https://doi.org/10.1093/ecco-jcc/jjaf231.519)
-:::
-:::
-
-## Manuscripts in preparation
-
-::: {.pub-entry}
-[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
-
-[**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
-
-[Based on ECCO 2026 and ESGAR 2026 accepted abstracts.]{.pub-venue}
-:::
-
-::: {.pub-entry}
-[Performance loss of quantized large language models in medicine: parameter optimisation and evaluation]{.pub-title}
-
-[Khalafi MA, et al., **Sarikhani M**.]{.pub-authors}
-
-[Manuscript in preparation.]{.pub-venue}
-:::
-
-## Peer-reviewed articles
+## Peer-reviewed *articles*
 
 ::: {.pub-entry}
 [Large language models versus classical machine learning performance in COVID-19 mortality prediction using high-dimensional tabular data]{.pub-title}
@@ -94,23 +32,42 @@ My research focuses on quantitative magnetic resonance enterography in inflammat
 :::
 
 ::: {.pub-entry}
-[Global burden of cardiovascular diseases and risks, 1990--2022]{.pub-title}
+[Global, regional, and national burden of cardiovascular diseases and risk factors in 204 countries and territories, 1990-2023]{.pub-title}
 
-[Global Burden of Cardiovascular Diseases and Risks Collaborators (including **Sarikhani M**).]{.pub-authors}
+[Global Burden of Cardiovascular Diseases and Risks 2023 Collaborators (including **Sarikhani M**).]{.pub-authors}
 
-[*Journal of the American College of Cardiology*. 2023;82(25):2350--2473.]{.pub-venue}
+[*Journal of the American College of Cardiology*. 2025;86 (22), 2167-2243.]{.pub-venue}
 
 ::: {.pub-links}
-[DOI](https://doi.org/10.1016/j.jacc.2023.11.007)
+[DOI](https://www.jacc.org/doi/full/10.1016/j.jacc.2025.08.015)
 :::
+:::
+## Oral *presentations*
+
+::: {.pub-entry}
+[Non-invasive Triage of Ulcerative Colitis Activity: A Bayesian Risk Stratification Model Integrating MR Enterography and Fecal Calprotectin]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
 :::
 
-## Book chapters
+::: {.pub-entry}
+[Colonic motility MRI as a quantitative biomarker in ulcerative colitis: validation against endoscopic disease activity]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
+:::
+
+
+
+## Book *chapters*
 
 ::: {.pub-entry}
 [SWOT analysis of the integration of MRI in cardiology]{.pub-title}
 
-[**Sarikhani M**, Aarabi A, Ghasemirad H, Dehghanian Z, Mozafarybazargany M.]{.pub-authors}
+[**Sarikhani M**, Aarabi A, et al.]{.pub-authors}
 
 [In: Ghaffari Jolfayi A (ed.). *Navigating Cardiology's Future*. Springer; 2025. p.115--128.]{.pub-venue}
 
@@ -131,7 +88,52 @@ My research focuses on quantitative magnetic resonance enterography in inflammat
 :::
 :::
 
-## Peer review
+## Manuscripts *in preparation*
+
+::: {.pub-entry}
+[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
+
+[Based on ECCO 2026 and ESGAR 2026 accepted abstracts.]{.pub-venue}
+:::
+
+::: {.pub-entry}
+[Performance loss of quantized large language models in medicine: parameter optimisation and evaluation]{.pub-title}
+
+[Khalafi MA, et al., **Sarikhani M**.]{.pub-authors}
+
+[Manuscript in preparation.]{.pub-venue}
+:::
+
+
+## Posters
+
+::: {.pub-entry}
+[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
+
+[ Menys A, **Sarikhani M**, Torabi A, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[*ECCO 2026* -- Poster.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1093/ecco-jcc/jjaf231.519)
+:::
+:::
+
+::: {.pub-entry}
+[Quantitative assessment of colon motility in ulcerative colitis using MRE: correlation with endoscopic disease activity]{.pub-title}
+
+[**Sarikhani M**, Naim I, Torabi A, Kolahdoozan S, Nouri Najafabadi A, Radmard AR, et al.]{.pub-authors}
+
+[*ECCO 2025* -- Poster. Presenting author.]{.pub-venue}
+
+::: {.pub-links}
+[DOI](https://doi.org/10.1093/ecco-jcc/jjae190.0729)
+:::
+:::
+
+## Peer *review*
 
 - *Frontiers in Public Health*: thyroid cancer cost prediction (ML). 2024.
 - *Journal of Medical Internet Research*: human-centred design in pancreatic cancer networks. 2024.

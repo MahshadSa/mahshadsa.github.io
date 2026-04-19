@@ -9,7 +9,9 @@ grid:
 
 ::: {.hero-section}
 
-[Mahshad Sarikhani]{.hero-name}
+[A personal site, periodically updated]{.eyebrow}
+
+[Mahshad *Sarikhani*]{.hero-name}
 
 [md · imaging AI researcher · finding what hides in medical data]{.hero-tagline}
 
@@ -21,7 +23,7 @@ My work focuses on **inflammatory bowel disease**, where I develop quantitative 
 
 :::
 
-## Selected work
+## Selected *work*
 
 ::: {.proof-grid}
 
@@ -77,6 +79,6 @@ A multilevel modelling approach to segment-level UC activity scoring with calibr
 
 ---
 
-::: {style="text-align: center; margin: 2rem 0; font-size: 0.88rem; color: #5a7260;"}
+::: {style="text-align: center; margin: 2rem 0; font-size: 0.78rem; color: #5a7260; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}
 [About](about/index.qmd) · [Research](research/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa)
 :::

@@ -1,7 +1,7 @@
 /*-- scss:defaults --*/
 
 // ── Backgrounds ──────────────────────────────────────
-$light:         #f7f6f3;
+$light:         #f9fbf8;
 $lightgray:     #efeeea;
 $gray:          #b0b5a8;
 $darkgray:      #354539;
@@ -25,8 +25,7 @@ $navbar-fg: $light;
 /*-- scss:rules --*/
 
 // ── Google Fonts ─────────────────────────────────────
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=IM+Fell+English:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
 // ── Base ─────────────────────────────────────────────
 body {
   font-family: 'Source Serif 4', Georgia, serif;
@@ -98,13 +97,31 @@ h1 {
 }
 
 h2 {
-  font-weight: 500;
-  font-size: 1.6rem;
-  margin-top: 2.5em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid rgba($gray, 0.5);
+  font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+  letter-spacing: -0.015em;
+  margin-top: 3em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0;
+  border-bottom: none;
+  line-height: 1.1;
+  font-variation-settings: "opsz" 48, "SOFT" 30;
+
+  i, em {
+    font-family: 'Instrument Serif', 'Fraunces', serif;
+    font-style: italic;
+    color: $sage;
+  }
+
+
 }
+
+// Reset counter on body so each page numbers independently
+body {
+  counter-reset: section-counter;
+}
+
 
 h3 {
   font-weight: 600;
@@ -156,33 +173,74 @@ hr {
 // ── Hero section ─────────────────────────────────────
 .hero-section {
   padding: 5rem 0 3rem;
-  .hero-name {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 3.6rem;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 0.25em;
-    color: $dark;
-    display: inline;
-    background-image: linear-gradient(transparent 85%, rgba($sage, 0.15) 85%);
-    background-size: 100% 100%;
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $sage;
+    margin-bottom: 1.8rem;
+    display: block;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 22px;
+      height: 1px;
+      background: $sage;
+      vertical-align: middle;
+      margin-right: 12px;
+      transform: translateY(-3px);
+    }
   }
+
+  .hero-name {
+    font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
+    font-size: clamp(3rem, 5.6vw, 4.8rem);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    margin-bottom: 0.4em;
+    color: $dark;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+    text-wrap: balance;
+
+    i, em {
+      font-family: 'Instrument Serif', 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: $sage;
+    }
+  }
+
   .hero-tagline {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88rem;
-    font-weight: 400;
+    font-size: 0.82rem;
+    font-weight: 500;
     color: $sage;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     margin-bottom: 2.2rem;
     text-transform: lowercase;
   }
+
   .hero-bio {
-    font-size: 1.08rem;
-    line-height: 1.9;
-    max-width: 620px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    max-width: 58ch;
     color: $darkgray;
-    strong { color: $dark; font-weight: 700; }
+    text-wrap: pretty;
+
+    strong {
+      color: $dark;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
   }
 }
 
@@ -217,9 +275,9 @@ hr {
       border-left: 2px solid $sage;
     }
   .card-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.12rem;
-    font-weight: 600;
+    font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
+    font-size: 1.25rem;
+    font-variation-settings: "opsz" 36;    font-weight: 600;
     line-height: 1.35;
     margin-bottom: 0.5rem;
     a {
@@ -541,4 +599,19 @@ table {
   .hero-section .hero-name { font-size: 2.4rem; }
   .proof-grid { grid-template-columns: 1fr; }
   .project-card { padding: 1.4rem 1.5rem; }
+}
+// Subtitle under page title
+.subtitle, .quarto-title-block .subtitle {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: $sage;
+  margin-top: 0.3em;
+  letter-spacing: 0;
+
+  em, i {
+    font-family: 'Instrument Serif', serif;
+    color: $periwinkle;
+  }
 }
