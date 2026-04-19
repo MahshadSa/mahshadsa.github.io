@@ -615,3 +615,33 @@ table {
     color: $periwinkle;
   }
 }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  margin: 2rem 0;
+  
+  .skill-category {
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: $sage;
+      margin-bottom: 0.4rem;
+      padding-left: 0.6em;
+      border-left: 2px solid $sage;
+    }
+    .items {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: $darkgray;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

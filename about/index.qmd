@@ -3,11 +3,10 @@ title: "About"
 toc: true
 ---
 
-I'm a medical doctor and imaging AI researcher at Shariati Hospital, Tehran University of Medical Sciences. I believe there is more in medical data than we currently extract. An MRI holds information that gets lost in free-text descriptions. Lab results, imaging, and clinical notes each tell a partial story. I want to build the tools that read them together.
+I'm a medical doctor and radiology and AI researcher. I believe there is more in medical data than we currently extract. An MRI holds information that gets lost in free-text descriptions. Lab results, imaging, and clinical notes each tell a partial story. I want to build the tools that read them together.
 
 In inflammatory bowel disease, where damage hides, recurs, and accumulates over years, I work on quantitative MRI, multimodal models, and AI pipelines that make imaging findings structured enough to measure change and precise enough to act on. I collaborate with groups at UCL/Motilent in the UK and Mount Sinai in New York, and I'm always looking for people who think this work matters too.
 
-[Download full CV (PDF)](../assets/cv-mahshad.pdf)
 
 ## Education
 
@@ -16,12 +15,12 @@ In inflammatory bowel disease, where damage hides, recurs, and accumulates over 
 ::: {.timeline-item}
 [2015 -- 2022]{.timeline-date}
 [Doctor of Medicine (MD)]{.timeline-title}
-[Shahid Beheshti University of Medical Sciences, Tehran. Full scholarship. GPA: 3.67 / 4.00.]{.timeline-desc}
+[Shahid Beheshti University of Medical Sciences, Tehran.]{.timeline-desc}
 :::
 
 :::
 
-## Research positions
+## Research *positions*
 
 ::: {.timeline}
 
@@ -39,7 +38,7 @@ In inflammatory bowel disease, where damage hides, recurs, and accumulates over 
 
 :::
 
-## International collaborations
+## International *collaborations*
 
 ::: {.timeline}
 
@@ -57,7 +56,7 @@ In inflammatory bowel disease, where damage hides, recurs, and accumulates over 
 
 :::
 
-## Clinical experience
+## Clinical *experience*
 
 ::: {.timeline}
 
@@ -75,22 +74,44 @@ In inflammatory bowel disease, where damage hides, recurs, and accumulates over 
 
 :::
 
-## Technical skills
+## Technical *skills*
 
-**Statistics and modelling**: Multilevel and hierarchical Bayesian modelling, leakage-aware validation for clustered clinical data, decision-curve analysis, calibration.
+::: {.skills-grid}
 
-**Programming**: Python (pandas, NumPy, scikit-learn, PyTorch), reproducible workflows (Jupyter, VS Code, Git).
+::: {.skill-category}
+[Statistics & modelling]{.label}
+[Multilevel Bayesian models, hierarchical regression, calibration, decision-curve analysis, leakage-aware validation for clustered clinical data.]{.items}
+:::
 
-**Medical AI and imaging**: Deep learning for medical imaging (PyTorch, MONAI), CLIP-style vision-language models, quantitative MRE feature operationalisation, DICOM preprocessing.
+::: {.skill-category}
+[Programming & ML]{.label}
+[Python, PyTorch, MONAI, scikit-learn, pandas, NumPy, Jupyter, Git.]{.items}
+:::
 
-**LLM and NLP**: LLM-assisted information extraction from radiology reports, agentic pipeline design with human-in-the-loop escalation.
+::: {.skill-category}
+[Medical AI & imaging]{.label}
+[Deep learning for medical imaging, CLIP-style vision-language models, quantitative MRE feature extraction, DICOM preprocessing, image-text retrieval.]{.items}
+:::
 
-**Research software**: Modular repo structure, versioned releases with DOIs, Streamlit clinician-facing prototypes.
+::: {.skill-category}
+[LLMs & NLP]{.label}
+[Structured information extraction from clinical text, agentic pipelines, tool-calling architectures, human-in-the-loop system design, prompt engineering.]{.items}
+:::
 
-**Writing and workflow**: LaTeX, Obsidian + Zotero, Quarto.
+::: {.skill-category}
+[Research software]{.label}
+[Streamlit prototypes for clinical research, modular repo structure, versioned releases with Zenodo DOIs, reproducible analysis workflows.]{.items}
+:::
 
-## Contact
+::: {.skill-category}
+[Writing & workflow]{.label}
+[LaTeX, Quarto, Obsidian + Zotero, Figma for workflow schematics.]{.items}
+:::
 
-The best way to reach me is by email: mahshadsarikhani9696 at gmail dot com 
+:::
+
+## *Contact*
+
+The best way to reach me is by email: [mahshadsarikhani9696@gmail.com](mahshadsarikhani9696@gmail.com) 
 
 [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/___)
