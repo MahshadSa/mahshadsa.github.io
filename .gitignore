@@ -7,3 +7,8 @@
 node_modules/
 
 **/*.quarto_ipynb
+.obsidian/
+99-Templates/
+01-Drafts/
+00-Inbox/
+.obsidian/

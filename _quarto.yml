@@ -14,14 +14,14 @@ website:
     foreground: dark
     title: "MS"
     left:
-      #- text: "Projects"
-      # href: projects/index.qmd
-      - text: "Research"
-        href: research/index.qmd
-      #- text: "Notes"
-      #  href: notes/index.qmd
-      #- text: "Now"
-      #  href: now.qmd
+    # - text: "Projects"
+    #   href: projects/index.qmd
+    # - text: "Research"
+    #  href: research/index.qmd
+      - text: "Notes"
+        href: notes/index.qmd
+    # - text: "Now"
+    #  href: now.qmd
       - text: "About"
         href: about/index.qmd
     right:

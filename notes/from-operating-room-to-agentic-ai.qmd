@@ -1,0 +1,36 @@
+---
+title: "From the Operating Room to Agentic AI: Why I Became a Clinician-Coder"
+description: "🌱 Notes on going from surgery lover to agentic AI builder, and what changed in between."
+date: 2026-04-23
+categories: [personal, trajectory, reflection, radiology, AI, coding]
+---
+
+::: {.note-meta}
+🌱 Seed · Jotted down April 2026
+:::
+
+**The Core Idea:** I am building a bridge between clinical intuition and medical AI because helping patients one-by-one was not enough for the scale of the problems I saw in practice.
+
+---
+
+During medical school, I was fully convinced surgery was the path for me. I attended every procedure I could, stayed way past my shift in the ER to learn CPR, ascitic taps, and central lines. I remember coming home from internship shifts and telling my parents "I love the smell of blood." That probably scared them a little.
+
+After graduation, I started my two-year mandatory service as a physician doing office work. And I started to feel suffocated. Don't get me wrong, helping patients and pregnant women was meaningful. But my brain was craving something else. Studying. Creating. Building.
+
+Here's the funny part: I was the girl in med school who actively avoided research. My whole thing was "I don't need to be a researcher, clinical work is my thing." One year after graduation, I was asking my peers how to get into research. People change.
+
+I fell in love with radiology. In rotations I kept going back and forth between surgery and radiology: the hands-on work of one, the never-ending learning of the other. Radiology won. It covers the whole body, overlaps with physics, and in recent years, with ML and AI. Subjects I always found fascinating but never thought I could actually work in.
+
+I started taking Python courses. The real turning point was a free week on [DataCamp](https://www.datacamp.com). I watched nine hours of data analysis videos in one sitting and subscribed for a year immediately after. The joy I felt when I successfully created my first scatterplot was so disproportionate that I took a picture of it and sent it to a friend. A scatterplot. I was that happy.
+
+A few months later I discovered [3Blue1Brown](https://www.youtube.com/c/3blue1brown) on YouTube and started actually understanding the math behind everything. Those little "aha" moments made me realize something about myself: I am a lifelong learner. That is not nothing.
+
+My friends kept telling me to skip the fundamentals and just let an LLM write the code. I could not do that. I cannot do serious work if I do not understand what is happening underneath. I use LLMs for brainstorming and refinement, but I learn the concepts first. That part is non-negotiable for me.
+
+Two or three years later, I am a physician, a researcher, and a coder. I build everything from simple statistical tests to full agentic AI pipelines in Python. My past self would not believe it. She really would not.
+
+I have two oral presentations at [ESGAR 2026](https://www.esgar.org), an international congress in abdominal imaging. I am still learning through trial and error, and I work within the real constraints of my country, but I know I can figure out what I need to create something meaningful. Being a doctor first and a builder second is exactly what lets me contribute to where medicine is going.
+
+---
+
+
