@@ -47,7 +47,7 @@ In Progress
 [Agentic MRE Pipeline](projects/mre-pipeline/index.qmd)
 :::
 ::: {.card-desc}
-Using LLMs to extract structured data from free-text radiology reports. Currently wrestling with hallucinations and ambiguity.
+Using LLMs to extract structured data from free-text radiology reports. 
 :::
 :::
 
@@ -59,7 +59,7 @@ ESGAR 2026 · Oral
 [Motility MRI as a biomarker in UC](research/index.qmd)
 :::
 ::: {.card-desc}
-Validating colonic motility MRI against endoscopic disease activity in ulcerative colitis.
+Quantitative colonic motility MRI against endoscopic disease activity in ulcerative colitis.
 :::
 :::
 
