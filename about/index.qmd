@@ -3,7 +3,7 @@ title: "About"
 toc: true
 ---
 
-I'm a medical doctor and radiology and AI researcher. I believe there is more in medical data than we currently extract. An MRI holds information that gets lost in free-text descriptions. Lab results, imaging, and clinical notes each tell a partial story. I want to build the tools that read them together.
+I am a Physician and Clinical AI Researcher based at Tehran University of Medical Sciences, specializing in the intersection of abdominal radiology and artificial intelligence. I believe there is more in medical data than we currently extract. An MRI holds information that gets lost in free-text descriptions. Lab results, imaging, and clinical notes each tell a partial story. I want to build the tools that read them together.
 
 In inflammatory bowel disease, where damage hides, recurs, and accumulates over years, I work on quantitative MRI, multimodal models, and AI pipelines that make imaging findings structured enough to measure change and precise enough to act on. I collaborate with groups at UCL/Motilent in the UK and Mount Sinai in New York, and I'm always looking for people who think this work matters too.
 

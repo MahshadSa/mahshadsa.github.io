@@ -18,7 +18,7 @@ grid:
 ::: {.hero-bio}
 I'm interested in the "dark matter" of medical imaging. An MRI holds far more than what ends up in a report. Lab results, clinical notes, imaging features: each tells a fragment of the story, and I want to build the tools that read them together.
 
-My work focuses on **inflammatory bowel disease**, where I develop quantitative MRI pipelines, multimodal models, and scoring tools that make imaging structured, measurable, and clinically useful. Based at Shariati Hospital, Tehran University of Medical Sciences, collaborating with groups at UCL/Motilent and Mount Sinai.
+My work focuses on **inflammatory bowel disease**, where I develop quantitative MRI pipelines, multimodal models, and scoring tools that make imaging structured, measurable, and clinically useful.
 :::
 
 :::
