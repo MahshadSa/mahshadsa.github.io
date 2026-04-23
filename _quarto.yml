@@ -17,7 +17,7 @@ website:
     # - text: "Projects"
     #   href: projects/index.qmd
       - text: "Research"
-       href: research/index.qmd
+        href: research/index.qmd
       - text: "Notes"
         href: notes/index.qmd
     # - text: "Now"
