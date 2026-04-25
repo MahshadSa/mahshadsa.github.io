@@ -31,6 +31,7 @@ The basic building block, enhanced with three capabilities:
 - Tools
 - Memory
 
+
 ### Workflow Patterns
 
 1. **Prompt Chaining** - Decomposes a task into sequential steps where each LLM call processes the output of the previous one. Includes programmatic gate checks between steps. Best for tasks that can be cleanly split into fixed sub-tasks.
