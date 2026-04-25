@@ -1,0 +1,58 @@
+---
+title: "Notes on Building Effective Agents (Anthropic, Dec 2024)"
+date: 2026-04-25
+status: 🌱
+tags: [agentic-AI, orchestration, IBD-research, LLM-pipelines, notes]
+---
+
+**The Core Idea:** Understanding the spectrum between rigid workflows and autonomous agents is the foundation for building safe, reliable medical AI.
+
+**2026 Context:**
+I am revisiting these notes today as I refine my Agentic Lémann Pipeline. When I first read this Anthropic article in late 2024, it was a turning point for how I understood LLM orchestration. Today, these concepts are no longer just theory for me. They are the architectural rules I use to ensure my IBD research tools remain transparent and clinically accurate.
+
+**The Original Summary (Dec 2024):**
+These notes were my way of breaking down the article to help me understand the core concepts of agentic design.
+
+### Workflows vs. Agents
+
+- **Workflows:** Systems where LLMs and tools are orchestrated through predefined code paths.
+- **Agents:** LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+
+### The Augmented LLM
+
+The basic building block, enhanced with three capabilities:
+
+- Retrieval
+- Tools
+- Memory
+
+### Workflow Patterns
+
+1. **Prompt Chaining** - Decomposes a task into sequential steps where each LLM call processes the output of the previous one. Includes programmatic gate checks between steps. Best for tasks that can be cleanly split into fixed sub-tasks.
+
+2. **Routing** - Classifies an input and directs it to a specialized follow-up task. Allows clean separation of concerns.
+
+3. **Parallelization** - LLMs work simultaneously on independent sub-tasks. Two variants:
+   - *Sectioning:* Breaking a task into independent parallel parts.
+   - *Voting:* Running the same task multiple times to get diverse outputs.
+
+4. **Orchestrator-Workers** - A central LLM dynamically breaks down tasks and delegates to worker LLMs. Best for complex tasks where you cannot predict the sub-tasks in advance.
+
+5. **Evaluator-Optimizer** - One LLM generates a response while another provides feedback in a loop. Essential for iterative refinement.
+
+### Agents
+
+Agents start from a user command or discussion. Once the task is clear, they plan and operate independently. Two things matter here:
+
+- At each step, the agent needs ground truth from the environment to assess its progress.
+- Tool use is driven by that environmental feedback, in a loop.
+
+### Three Design Principles
+
+1. Maintain simplicity in your agent's design.
+2. Prioritize transparency by explicitly showing the agent's planning steps.
+3. Carefully craft your Agent-Computer Interface (ACI) through thorough tool documentation and testing.
+
+---
+
+![Workflow vs. Agent architecture sketch](./media/agent_note1.jpeg)
