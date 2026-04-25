@@ -1,12 +1,17 @@
 ---
-title: "Notes on Building Effective Agents (Anthropic, Dec 2024)"
-date: 2026-04-25
-status: 🌱
-tags: [agentic-AI, orchestration, IBD-research, LLM-pipelines, notes]
+title: "Archived Notes: Anthropic’s Building Effective Agents" 
+description: "🌱 Notes on the spectrum between rigid clinical workflows and autonomous agents."
+date: 2026-04-25 
+categories: [research, AI-agents, radiology, archive, coding]
+--- 
+
+::: {.note-meta}
+🌱 Seed · Jotted down April 2026
+:::
+
+**The Core Idea:** Most clinical tasks are better served by "Workflows" (predefined paths) than "Agents" (autonomous planning). Success in Medical AI is about knowing when to use a rigid pipeline and when to give the LLM control.
+
 ---
-
-**The Core Idea:** Understanding the spectrum between rigid workflows and autonomous agents is the foundation for building safe, reliable medical AI.
-
 **2026 Context:**
 I am revisiting these notes today as I refine my Agentic Lémann Pipeline. When I first read this Anthropic article in late 2024, it was a turning point for how I understood LLM orchestration. Today, these concepts are no longer just theory for me. They are the architectural rules I use to ensure my IBD research tools remain transparent and clinically accurate.
 
