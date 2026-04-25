@@ -12,7 +12,7 @@ categories: [research, AI-agents, radiology, archive, coding]
 **The Core Idea:** Most clinical tasks are better served by "Workflows" (predefined paths) than "Agents" (autonomous planning). Success in Medical AI is about knowing when to use a rigid pipeline and when to give the LLM control.
 
 ---
-**2026 Context:**
+** 2026 Context:**
 I am revisiting these notes today as I refine my Agentic Lémann Pipeline. When I first read this Anthropic article in late 2024, it was a turning point for how I understood LLM orchestration. Today, these concepts are no longer just theory for me. They are the architectural rules I use to ensure my IBD research tools remain transparent and clinically accurate.
 
 **The Original Summary (Dec 2024):**
