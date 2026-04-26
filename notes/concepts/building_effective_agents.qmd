@@ -62,4 +62,4 @@ Agents start from a user command or discussion. Once the task is clear, they pla
 
 ---
 
-![Workflow vs. Agent architecture sketch](./media/agent_note1.jpeg)
+![Workflow vs. Agent architecture sketch](./media/agent_note1.png)
