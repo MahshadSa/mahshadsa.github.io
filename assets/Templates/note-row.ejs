@@ -1,0 +1,29 @@
+<% for (const item of items) { 
+let icon = '🌱';
+if (item.maturity === 'evergreen') icon = '🌳';
+else if (item.maturity === 'sprout') icon = '🌿';
+
+let dateLabel = '';
+if (item.date) {
+  const d = item.date instanceof Date ? item.date : new Date(item.date);
+  if (!isNaN(d)) {
+    dateLabel = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toLowerCase();
+  }
+}
+%>
+<div class="garden-row">
+<div class="garden-row-meta">
+<span class="garden-icon"><%= icon %></span>
+<% if (dateLabel) { %><time class="garden-date"><%= dateLabel %></time><% } %>
+</div>
+<div class="garden-row-body">
+<a class="garden-title" href="<%- item.path %>"><%- item.title %></a>
+<% if (item.description) { %><p class="garden-desc"><%- item.description %></p><% } %>
+<% if (item.categories && item.categories.length) { %>
+<div class="garden-cats">
+<% for (const c of item.categories) { %><span class="garden-cat"><%= c %></span><% } %>
+</div>
+<% } %>
+</div>
+</div>
+<% } %>

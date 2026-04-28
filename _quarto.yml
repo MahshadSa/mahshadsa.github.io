@@ -4,24 +4,20 @@ project:
 
 website:
   title: "Mahshad Sarikhani"
-  description: "Physician-researcher · IBD imaging · Clinical AI"
+  description: "Physician and clinical AI researcher. Quantitative MRI in inflammatory bowel disease, multimodal models, clinical AI pipelines."
   site-url: https://mahshadsa.github.io
   repo-url: https://github.com/MahshadSa/mahshadsa.github.io
   favicon: assets/img/favicon.png
 
   navbar:
-    background: transparent
+    background: light
     foreground: dark
     title: "MS"
     left:
-    # - text: "Projects"
-    #   href: projects/index.qmd
       - text: "Research"
         href: research/index.qmd
       - text: "Notes"
         href: notes/index.qmd
-    # - text: "Now"
-    #  href: now.qmd
       - text: "About"
         href: about/index.qmd
     right:
@@ -33,8 +29,7 @@ website:
         href: "mailto:mahshadsarikhani9696@gmail.com"
 
   page-footer:
-    left: "© 2026 Mahshad S. · Built with [Quarto](https://quarto.org)"
-    right: "Last updated: {{< meta date >}}"
+    left: "© 2026 Mahshad Sa. · Built with [Quarto](https://quarto.org)"
 
   search:
     location: navbar
@@ -44,6 +39,7 @@ format:
   html:
     theme:
       light: [cosmo, assets/css/custom.scss]
+      dark: [cosmo, assets/css/custom-dark.scss]
     css: assets/css/garden.css
     toc: true
     toc-depth: 3

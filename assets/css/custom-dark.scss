@@ -1,0 +1,450 @@
+/*-- scss:defaults --*/
+
+// ── Backgrounds (warm dark, not pure black) ──────────
+$light:         #111812;   // base background, deep but warm
+$lightgray:     #19241b;   // raised surfaces (cards)
+$gray:          #8b9189;   // muted text
+$darkgray:      #c9cdc4;   // body text, high readability
+$dark:          #f1f3ee;   // headings, max contrast
+
+// ── Accents (same hues, slightly lifted for dark bg) ─
+$sage:          #9FBCA5;   // sage shifted lighter
+$periwinkle:    #C2BBF0;   // periwinkle shifted lighter
+
+// ── Quarto variable mapping ──────────────────────────
+$body-bg:          $light;
+$body-color:       $darkgray;
+$link-color:       $sage;
+$link-hover-color: $periwinkle;
+
+$font-family-sans-serif: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+
+/*-- scss:rules --*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.82;
+  font-size: 1.05rem;
+  counter-reset: section-counter sidenote-counter;
+}
+
+::selection {
+  background: rgba($sage, 0.3);
+  color: $dark;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba($gray, 0.25);
+  background: rgb(16, 25, 18, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+  text-transform: lowercase;
+  padding: 0.6rem 0;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.3rem !important;
+  color: $dark !important;
+  letter-spacing: 0.05em;
+}
+
+.navbar-nav .nav-link {
+  color: rgba($darkgray, 0.7) !important;
+  &:hover { color: $sage !important; }
+}
+
+.navbar-nav .nav-link.active {
+  color: $dark !important;
+}
+
+.navbar .bi {
+  color: rgba($darkgray, 0.6);
+  &:hover { color: $sage; }
+}
+
+h1, h2, h3, h4, h5, h6 { color: $dark; }
+
+h2 i, h2 em { color: $sage; }
+
+.hero-section {
+  .eyebrow { 
+    color: $sage;
+    background: rgba($sage, 0.12);
+    border-color: rgba($sage, 0.35); 
+  }
+  .eyebrow::before { background: $sage; }
+  .hero-name { color: $dark; }
+  .hero-name i, .hero-name em { color: $sage; }
+  .hero-tagline { color: $sage; }
+  .hero-bio { color: $darkgray; }
+  .hero-bio strong { color: $dark; }
+}
+.hero-section .hero-name i,
+.hero-section .hero-name em {
+  &::after {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 Q 30 2, 60 7 T 120 6 T 198 8' stroke='%239aa1cf' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.7'/></svg>");
+  }
+}
+
+a {
+  color: $sage;
+  text-decoration-color: rgba($sage, 0.4);
+  &:hover {
+    color: $periwinkle;
+    text-decoration-color: $periwinkle;
+  }
+}
+.hero-notes {
+  background: $lightgray;
+  border-color: rgba($gray, 0.25);
+
+  &::before { border-right-color: rgba($periwinkle, 0.5); }
+
+  .notes-label {
+    color: $periwinkle;
+    border-left-color: $periwinkle;
+    a { color: $gray; &:hover { color: $sage; } }
+  }
+
+  .note-item {
+    border-bottom-color: rgba($gray, 0.2);
+    .note-title { color: $dark; &:hover { color: $sage; } }
+    .note-meta { color: $gray; }
+  }
+}
+
+hr {
+  border-top: 1px solid rgba($gray, 0.3);
+  &::after {
+    color: $gray;
+    background: $body-bg;
+  }
+}
+
+.proof-card,
+.project-card {
+  background: rgba($lightgray, 0.6);
+  border: 1px solid rgba($gray, 0.18);
+  border-radius: 8px;
+  padding: 1.8rem 1.8rem 1.6rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  &:hover {
+    border-color: rgba($sage, 0.5);
+    background: rgba($lightgray, 0.85);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba($sage, 0.1);
+  }
+
+  .card-title a { color: $dark; }
+  .card-title a:hover { color: $sage; }
+  .card-desc { color: $darkgray; }
+}
+
+.proof-card--anchor {
+  padding: 2.2rem 2rem 1.8rem;
+  border-top: 1px solid rgba($sage, 0.6);
+}
+
+.proof-card--quote {
+  padding: 2rem 2rem 1.8rem;
+}
+
+.proof-card--now {
+  padding: 1.8rem 1.8rem 1.6rem;
+}
+
+.project-card .project-status {
+  &.live {
+    background: rgba($sage, 0.12);
+    color: $sage;
+    border-color: rgba($sage, 0.3);
+  }
+  &.active {
+    background: rgba($periwinkle, 0.1);
+    color: $periwinkle;
+    border-color: rgba($periwinkle, 0.25);
+  }
+  &.planned {
+    background: rgba($gray, 0.1);
+    color: rgba($darkgray, 0.8);
+    border-color: rgba($gray, 0.25);
+  }
+}
+
+.maturity-tag {
+  &.seedling {
+    background: rgba($sage, 0.12);
+    color: $sage;
+    border: 1px solid rgba($sage, 0.25);
+  }
+  &.growing {
+    background: rgba($periwinkle, 0.1);
+    color: $periwinkle;
+    border: 1px solid rgba($periwinkle, 0.25);
+  }
+  &.evergreen {
+    background: rgba($gray, 0.1);
+    color: $darkgray;
+    border: 1px solid rgba($gray, 0.3);
+  }
+}
+
+.timeline {
+  border-left-color: rgba($darkgray, 0.3);
+  .timeline-item::before {
+    background: $sage;
+    border-color: $body-bg;
+    box-shadow: 0 0 0 2px rgba($gray, 0.3);
+  }
+  .timeline-date { color: $gray; }
+  .timeline-title { color: $dark; }
+  .timeline-desc { color: $darkgray; }
+}
+
+.now-item {
+  border-left-color: $periwinkle;
+  &:hover { border-left-color: $sage; }
+  strong { color: $dark; }
+}
+
+blockquote {
+  color: $darkgray;
+  border-left: 3px solid $periwinkle;
+  background: rgba($lightgray, 0.5);
+}
+
+code {
+  color: $dark;
+  background: rgba($gray, 0.15);
+}
+
+pre {
+  background: #0e1210 !important;
+  border: 1px solid rgba($gray, 0.2);
+  code { color: $darkgray; background: none; }
+}
+
+table {
+  th { color: $darkgray; border-bottom-color: rgba($gray, 0.3); }
+  td { color: $darkgray; border-bottom-color: rgba($gray, 0.15); }
+  tr:hover td { background: rgba($sage, 0.06); }
+}
+
+.callout-tip {
+  border-left-color: $sage !important;
+  background: rgba($sage, 0.06) !important;
+}
+
+.callout-note {
+  border-left-color: $periwinkle !important;
+  background: rgba($periwinkle, 0.06) !important;
+}
+
+.sidebar nav[role="doc-toc"] a {
+  color: $gray;
+  &:hover { color: $sage; }
+  &.active { color: $dark; }
+}
+
+.nav-footer {
+  color: $gray;
+  border-top-color: rgba($gray, 0.2);
+  a {
+    color: $sage;
+    &:hover { color: $periwinkle; }
+  }
+}
+
+.quarto-listing {
+  .listing-title { color: $dark; }
+  .listing-description { color: $darkgray; }
+  .listing-category .listing-category-item {
+    background: rgba($gray, 0.12);
+    color: $darkgray;
+  }
+  .listing-date { color: $gray; }
+}
+
+.pub-entry {
+  border-bottom-color: rgba($gray, 0.15);
+  .pub-title { color: $dark; }
+  .pub-authors { color: $darkgray; strong { color: $dark; } }
+  .pub-venue { color: $gray; }
+  .pub-links a {
+    color: $sage;
+    &:hover { color: $periwinkle; }
+  }
+}
+
+.subtitle, .quarto-title-block .subtitle {
+  color: $sage;
+  em, i { color: $periwinkle; }
+}
+
+.skills-grid .skill-category {
+  .label { color: $sage; border-left-color: $sage; }
+  .items { color: $darkgray; }
+}
+
+// Sidenotes
+.sidenote {
+  color: $gray;
+  &::before { color: $sage; }
+}
+.sidenote-number { color: $sage; }
+
+@media (max-width: 1100px) {
+  .sidenote {
+    background: rgba($sage, 0.06);
+    border-left-color: rgba($sage, 0.4);
+  }
+}
+.proof-card--anchor {
+  border-top-color: rgba($sage, 0.5);
+  .proof-card--anchor {
+  background: linear-gradient(
+    135deg,
+    rgba($sage, 0.04) 0%,
+    rgba($periwinkle, 0.03) 100%
+  ), rgba($lightgray, 0.7);
+  border: 1px solid rgba($sage, 0.25);
+}
+  &::before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle cx='16' cy='16' r='14' stroke='%238aa491' stroke-width='1' opacity='0.5'/><circle cx='16' cy='16' r='8' stroke='%238aa491' stroke-width='1' opacity='0.7'/><circle cx='16' cy='16' r='2' fill='%238aa491'/></svg>");
+  }
+}
+
+.proof-card--quote {
+  border-top-color: rgba($periwinkle, 0.5);
+  &::before { color: rgba($periwinkle, 0.45); }
+}
+
+.proof-card--now {
+  border-top-color: rgba($periwinkle, 0.45);
+  .now-text { color: $darkgray; strong { color: $dark; } }
+  .now-date { color: $gray; }
+}
+// ── Theme toggle: dark mode overrides ──
+// Hide Quarto's default icon (whatever shape it ships) and render our own
+// glyph on the toggle itself, so we don't get the doubled/stacked icon.
+.quarto-color-scheme-toggle {
+  border-color: rgba($gray, 0.3);
+
+  > i,
+  > svg,
+  .bi {
+    display: none !important;
+  }
+
+  &::before {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1;
+    color: $darkgray;
+    transition: color 0.2s ease, transform 0.4s ease;
+  }
+
+  &:hover {
+    background: rgba($sage, 0.12);
+    border-color: $sage;
+  }
+  &:hover::before {
+    color: $sage;
+    transform: rotate(15deg);
+  }
+}
+
+// Dark mode is currently active: show sun (click → light)
+[data-bs-theme="dark"] .quarto-color-scheme-toggle::before {
+  background-color: $darkgray;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/></svg>") no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/></svg>") no-repeat center / contain;
+}
+
+.quarto-color-scheme-toggle:hover::before {
+  background-color: $sage;
+}
+body {
+  background-color: $light;
+  background-image: 
+    radial-gradient(at 20% 0%, rgba($sage, 0.04) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba($periwinkle, 0.035) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
+  transition: 
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+// ── Notes (digital garden) — dark ────────────────────
+.garden-intro { color: $darkgray; }
+
+.garden-legend {
+  color: $gray;
+  border-color: rgba($gray, 0.22);
+  background: rgba($sage, 0.04);
+  strong { color: $sage; }
+}
+
+.garden-row {
+  border-top-color: rgba($gray, 0.18);
+
+  &:hover {
+    background: linear-gradient(to right, rgba($sage, 0.05), transparent 70%);
+    border-top-color: rgba($sage, 0.5);
+  }
+
+  &:last-child { border-bottom-color: rgba($gray, 0.18); }
+}
+
+.garden-row-meta .garden-date { color: $gray; }
+
+.garden-row-body {
+  .garden-title { color: $dark; &:hover { color: $sage; } }
+  .garden-desc { color: rgba($darkgray, 0.85); }
+  .garden-cat {
+    color: rgba($darkgray, 0.7);
+    border-color: rgba($gray, 0.25);
+  }
+}
+// ── About page — dark ────────────────────────────────
+.about-intro {
+  color: $darkgray;
+  strong { color: $dark; }
+}
+
+.contact-block p { color: $darkgray; }
+
+.contact-links {
+  color: $gray;
+  background: rgba($sage, 0.04);
+  border-color: rgba($gray, 0.22);
+
+  a {
+    color: $sage;
+    border-bottom-color: rgba($sage, 0.3);
+
+    &:hover {
+      color: $periwinkle;
+      border-bottom-color: $periwinkle;
+    }
+  }
+}

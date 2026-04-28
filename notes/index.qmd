@@ -1,23 +1,26 @@
 ---
 title: "Notes"
-subtitle: "A working notebook and digital garden"
-listing:
-  contents: "**/*.qmd"
-  type: default
-  sort: "date desc"
-  fields: [title, description, date, categories]
-  categories: true
-  exclude:
-    title: "Notes"
+pagetitle: "Notes — Mahshad Sarikhani"
+subtitle: "A working notebook"
 toc: false
+listing:
+  id: notes-list
+  contents: "**/*.qmd"
+  type: custom
+  template: ../assets/templates/note-row.ejs
+  sort: "date desc"
+  fields: [title, description, date, maturity, categories, path]
 ---
 
-Papers I've read, methods I'm learning, books that shaped my thinking, and ideas that don't have a home yet. Some of this grows into research. Most of it doesn't. That's fine.
+::: {.garden-intro}
+Papers I've read, methods I'm learning, books that shaped my thinking, ideas that don't have a home yet. Some of this grows into research. Most of it doesn't, and that's fine. Nothing here is finished.
+:::
 
-Nothing here is finished. Consider it a working notebook.
+::: {.garden-legend}
+[🌱]{} **Seed** rough, first pass, might just be a question\
+[🌿]{} **Sprout** revisited, starting to take shape\
+[🌳]{} **Evergreen** fairly confident
+:::
 
-🌱 **Seed** -- rough, first pass, might just be a question.
-
-🌿 **Sprout** -- revisited at least once, starting to take shape.
-
-🌳 **Evergreen** -- I'm fairly confident in this one.
+::: {#notes-list}
+:::

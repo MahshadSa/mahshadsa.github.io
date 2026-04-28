@@ -1,0 +1,37 @@
+---
+title: "The English Bias in Medical AI: What Gets Lost When Models Read Radiology Reports"
+description: "Reading BABEL by R.F. Kuang made me think about how LLMs handle meaning across languages, and what that costs us in clinical settings."
+date: 2026-04-28
+categories: [AI, NLP, radiology, clinical-AI, reading-notes]
+maturity: sprout
+---
+
+::: {.note-meta}
+[🌿 sprout]{.maturity-tag .sprout} · Planted April 28, 2026 · Last tended April 28, 2026
+:::
+
+I have been reading BABEL by R.F. Kuang lately. It is a book dense with historical and etymological detail, and one idea in it has not left me alone.
+
+In the book, silver is the most valuable asset in the world, not just as currency, but as the medium through which magic works. The magic comes from match-pairs: two words in different languages that share a meaning, but not completely. Something is always lost in translation. And that loss, that small gap between what a word means in one language and what its closest equivalent means in another, is exactly where the power lives.
+
+Britain, in the book, gets very good at this. And to get better, they bring children from other nations to Oxford, because native fluency cannot be faked. The depth of meaning that lives inside a language can only be accessed by someone who grew up inside it. You cannot learn your way into that. You are either a native speaker or you are always translating.
+
+This made something click for me about how LLMs actually work.
+
+If silver is data and its embeddings, the refined representation of meaning that a model carries inside it, then compute is the translation ability, the forge that turns raw material into something that can do work. And the native languages, the ones that carry meanings the model can only approximate, are the training inputs themselves.
+
+Most LLMs are trained predominantly on English. When they operate in Persian, Arabic, Cantonese, or French, they do it with an English accent. Not just grammatically. Conceptually. The metaphors stay English. The assumptions stay English. If a concept exists in one language but has no clean English equivalent, the model collapses it into the nearest neighbor it knows. The gap closes. The meaning disappears.
+
+Someone posted on X recently about ChatGPT answering a bilingual user's English question and slipping a Persian verb into the response, conjugated in past tense but following English grammar rules. That is not a glitch. That is the model showing you exactly where it lives: in a space that is fundamentally English-shaped, reaching toward other languages from the inside out.
+
+Now take this into a clinical setting, and the stakes change entirely.
+
+Clinical English is its own native language. "Cannot exclude inflammatory change" is not vague writing. It is a precise phrase carrying a specific degree of uncertainty, a professional signal that has meaning inside a clinical tradition. When an LLM extracts structured data from a radiology report and that phrase becomes a positive flag for inflammation, the loss is not a translation error. It is the same thing Babel describes: a meaning that lived in the gap, flattened into something the system can use.
+
+And it falls unevenly. Reports written by radiologists who trained in other languages and clinical traditions, who carry different conventions for expressing uncertainty, will lose more in that compression. The model was not trained on their native tongue. It has only visited.
+
+In Babel, Britain knows what it is doing. The extraction is deliberate. The children from other nations are brought to Oxford because their native meanings are valuable, and because Britain wants access to something it cannot produce on its own.
+
+In clinical AI, the extraction is quieter. The radiologist writing a hedged, careful, culturally-inflected report does not know that their meaning will be flattened. The patient whose care depends on that meaning does not know either. The loss is diffuse and largely unexamined.
+
+That is the part that stays with me. It is not that the model is bad at clinical language. It is that clinical language, like every native tongue, carries things that cannot survive the translation intact. And right now, we are building systems that depend on that translation being perfect, when something always gets lost on the way.

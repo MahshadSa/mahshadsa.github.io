@@ -27,26 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99-Templates/Template 3_files/Template 1.md",
+                "file": "01-Drafts/Archive- Agents Anthropic- Apr 25th.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Template 1"
+              "title": "Archive- Agents Anthropic- Apr 25th"
             }
           },
           {
-            "id": "259cff8c6f71f93f",
+            "id": "e6f4ced559ff3b84",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00-Inbox/The Silver of 1830 and the Tokens of 2026 Semantic Loss in Babel and LLMs.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "The Silver of 1830 and the Tokens of 2026 Semantic Loss in Babel and LLMs"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -103,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "26f2d466a197a4bf",
@@ -208,25 +213,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "ff7b36cc70f8ee03",
+  "active": "e6f4ced559ff3b84",
   "lastOpenFiles": [
     "site_libs/bootstrap/bootstrap.min.js",
     "site_libs/bootstrap/bootstrap-icons.woff",
+    "site_libs/bootstrap/bootstrap-dark-57bb2f6a35f0ffc8ec0bd8027d443c90.min.css",
     "site_libs/bootstrap/bootstrap-icons.css",
-    "site_libs/bootstrap/bootstrap-61ae4842b125b8dbf31d9eb8308e28e1.min.css",
+    "site_libs/bootstrap/bootstrap-a25aa9a5a903007d5ac6208ea7fe1743.min.css",
     "site_libs/bootstrap",
     "site_libs/quarto-html/tabsets/tabsets.js",
     "site_libs/quarto-html/axe/axe-check.js",
-    "site_libs/quarto-html/tippy.umd.min.js",
     "site_libs/quarto-html/zenscroll-min.js",
+    "site_libs/quarto-html/tippy.umd.min.js",
     "site_libs/quarto-html/tippy.css",
-    "site_libs/quarto-html/tabsets",
+    "assets/img/favicon.png.png",
+    "favicon.png.png",
+    "ms-favicon-512.png",
+    "00-Inbox/BABEL.md",
+    "00-Inbox/The Silver of 1830 and the Tokens of 2026 Semantic Loss in Babel and LLMs.md",
+    "01-Drafts/Archive- Agents Anthropic- Apr 25th.md",
     "00-Inbox/Why Bayesian- April20th.md",
-    "00-Inbox/Who am I- Apr23rd.md",
-    "99-Templates/Template 3_files/Template 3.md",
+    "01-Drafts/Who am I- Apr23rd.md",
+    "01-Drafts/Untitled.md",
+    "notes/media/agent_note1.png",
+    "notes/media/agent_note.png",
+    "notes/media/anthropic_agents_4.jpeg",
+    "notes/media/anthropic_agents_3.jpeg",
+    "notes/media/anthropic_agents_1.jpeg",
+    "notes/media/-.webp",
+    "notes/media/anthropic_agents_2.jpeg",
     "99-Templates/Template 3_files/Template 2.md",
     "99-Templates/Template 3_files/Template 1.md",
-    "01-Drafts/Untitled.md",
+    "99-Templates/Template 3_files/Template 3.md",
     "2026-04-20.md"
   ]
 }

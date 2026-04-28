@@ -1,12 +1,14 @@
 ---
 title: "From the Operating Room to Agentic AI: Why I Became a Clinician-Coder"
-description: "🌱 Notes on going from surgery lover to agentic AI builder, and what changed in between."
+description: "Notes on going from surgery lover to agentic AI builder, and what changed in between."
 date: 2026-04-23
+date-modified: 2026-04-23
 categories: [personal, trajectory, reflection, radiology, AI, coding]
+maturity: seedling
 ---
 
 ::: {.note-meta}
-🌱 Seed · Jotted down April 2026
+[🌱 Seedling]{.maturity-tag .seedling} · Planted April 23, 2026 · Last tended April 23, 2026
 :::
 
 **The Core Idea:** I am building a bridge between clinical intuition and medical AI because helping patients one-by-one was not enough for the scale of the problems I saw in practice.

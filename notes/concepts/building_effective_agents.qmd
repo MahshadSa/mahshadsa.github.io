@@ -1,12 +1,13 @@
 ---
 title: "Archived Notes: Anthropic’s Building Effective Agents" 
-description: "🌱 Notes on the spectrum between rigid clinical workflows and autonomous agents."
+description: "Notes on the spectrum between rigid clinical workflows and autonomous agents."
 date: 2026-04-25 
 categories: [research, AI-agents, radiology, archive, coding]
+maturity: seedling
 --- 
 
 ::: {.note-meta}
-🌱 Seed · Jotted down April 2026
+[🌱 seedling]{.maturity-tag .seedling} · Planted April 25, 2026 · Last tended April 25, 2026
 :::
 
 **The Core Idea:** Most clinical tasks are better served by "Workflows" (predefined paths) than "Agents" (autonomous planning). Success in Medical AI is about knowing when to use a rigid pipeline and when to give the LLM control.

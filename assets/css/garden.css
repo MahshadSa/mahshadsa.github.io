@@ -5,18 +5,23 @@
   gap: 0.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(212, 209, 202, 0.4);
+  border-bottom: 1px solid rgba(176, 181, 168, 0.4);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.78rem;
-  color: #d4d1ca;
+  color: #5a7260;
   letter-spacing: 0.03em;
+}
+
+.note-meta .meta-date,
+.note-meta .meta-updated {
+  color: #b0b5a8;
 }
 
 /* ── Backlinks section ────────────────────────────── */
 .backlinks {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px dashed rgba(212, 209, 202, 0.4);
+  border-top: 1px dashed rgba(176, 181, 168, 0.5);
 }
 
 .backlinks h3 {
@@ -25,7 +30,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #d4d1ca;
+  color: #354539;
   margin-bottom: 0.8rem;
 }
 
@@ -54,4 +59,35 @@
 .backlinks a:hover {
   color: #6970a0;
   text-decoration: underline;
+}
+
+/* ── Dark mode overrides ──────────────────────────── */
+[data-bs-theme="dark"] .note-meta {
+  border-bottom-color: rgba(139, 145, 137, 0.3);
+  color: #8aa491;
+}
+
+[data-bs-theme="dark"] .note-meta .meta-date,
+[data-bs-theme="dark"] .note-meta .meta-updated {
+  color: #8b9189;
+}
+
+[data-bs-theme="dark"] .backlinks {
+  border-top-color: rgba(139, 145, 137, 0.35);
+}
+
+[data-bs-theme="dark"] .backlinks h3 {
+  color: #c9cdc4;
+}
+
+[data-bs-theme="dark"] .backlinks li::before {
+  color: #8aa491;
+}
+
+[data-bs-theme="dark"] .backlinks a {
+  color: #8aa491;
+}
+
+[data-bs-theme="dark"] .backlinks a:hover {
+  color: #9aa1cf;
 }
