@@ -1357,3 +1357,54 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
   }
 }
 
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+ 
+  // Split the dot-separated string into individual pill spans via CSS
+  // Each tag is separated by " · " in the QMD source
+  // We render the whole string and style it as a tag block
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--color-sage, #5a7260);
+  opacity: 0.85;
+ 
+  // Pill appearance for the whole line — 
+  // if you want individual pills, use the JS approach below instead
+  background-color: color-mix(in srgb, var(--color-sage, #5a7260) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-sage, #5a7260) 20%, transparent);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  width: fit-content;
+}
+.timeline-children {
+  margin-top: 1.2rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid color-mix(in srgb, var(--color-sage, #5a7260) 25%, transparent);
+  .timeline-title {
+    color: $dark;
+  }
+}
+
+.timeline-child {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed color-mix(in srgb, var(--color-sage, #5a7260) 15%, transparent);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;  // slightly smaller than parent dates
+  }
+
+  .timeline-title {
+    font-size: 0.9rem;   // slightly smaller than parent titles
+  }
+}

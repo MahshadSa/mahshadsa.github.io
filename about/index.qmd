@@ -8,9 +8,9 @@ toc-depth: 2
 ---
 
 ::: {.about-intro}
-I am a physician based at Tehran University of Medical Sciences. My research lives at the boundary between abdominal radiology and machine learning, where I think there is more in medical data than we currently extract. An MRI holds information that gets lost in the report. Lab values, imaging, and clinical notes each tell a fragment of the story, and I want to build the tools that read them together.
+I am a physician and imaging researcher at Tehran University of Medical Sciences. The question I keep working on is whether MRI can tell us enough about inflammatory bowel disease to reduce how often patients need a scope. It turns out to be a harder question than it first looks, and that difficulty is what built most of what I know how to do.
 
-The work focuses on **inflammatory bowel disease**, where damage hides, recurs, and accumulates over years. I build quantitative MRI pipelines, multimodal models, and scoring tools that make imaging structured enough to measure change and precise enough to act on. I collaborate with groups at UCL/Motilent in the UK and Mount Sinai in New York. If this kind of work matters to you, I would like to hear from you.
+If you want the longer version of how I got here, I wrote it [here](../notes/from-operating-room-to-agentic-ai.qmd).
 :::
 
 ## *Path*
@@ -20,46 +20,25 @@ The work focuses on **inflammatory bowel disease**, where damage hides, recurs, 
 ::: {.timeline-item}
 [Jan 2024 — Present]{.timeline-date}
 [Research Associate, Abdominal Imaging and AI]{.timeline-title}
-[Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Supervisor: Prof. Amir Reza Radmard. Leading quantitative MRE research in ulcerative colitis: GIQuant motility, bowel wall activity markers, chronicity features, and segment-level validation against endoscopy. Building reproducible pipelines that integrate imaging, structured radiology features, narrative reports, and clinical endpoints.]{.timeline-desc}
-:::
+[Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Supervisor: Prof. Amir Reza Radmard.]{.timeline-desc}
 
-::: {.timeline-item}
-[Aug 2022 — Aug 2024]{.timeline-date}
-[General Practitioner · Valiasr Local Medical Center]{.timeline-title}
-[Part-time clinical work in Alborz, Iran during the transition into full-time research.]{.timeline-desc}
-:::
+[The core work is the UC cohort: MRE features, bowel wall activity, motility from GIQuant, chronicity markers, validated segment by segment against endoscopy. Getting the modelling right meant moving from logistic regression through several ML approaches to Bayesian multilevel models, which handle clustered patients, ordered outcomes, and individual-level uncertainty in a way simpler methods could not.]{.timeline-desc}
 
-::: {.timeline-item}
-[Sep 2022 — Dec 2023]{.timeline-date}
-[Research Assistant, Imaging and Clinical Data Science]{.timeline-title}
-[Shahid Beheshti University of Medical Sciences. CT and MRI projects spanning protocol review, dataset construction, and statistical analysis. Contributed to PanCanAID-related pipelines including curated datasets and semi-automated CT segmentation workflows.]{.timeline-desc}
-:::
+[The ideas kept expanding. Reports held structured data no one was extracting, so I built LLM pipelines to do that. Motility and wall features belonged with labs and clinical notes, so I started on multimodal models. Each step came from a gap the previous step revealed.]{.timeline-desc}
 
-::: {.timeline-item}
-[May 2020 — May 2022]{.timeline-date}
-[Medical Internship]{.timeline-title}
-[Teaching hospitals of Shahid Beheshti University of Medical Sciences, Tehran. Two years of rotations across internal medicine, surgery, paediatrics, obstetrics, emergency, and outpatient clinics.]{.timeline-desc}
-:::
+[PyMC · scikit-learn · Bayesian multilevel models · calibration · decision-curve analysis · MONAI · CLIP-style vision-language models · LLM extraction pipelines · agentic systems]{.timeline-tags}
 
-::: {.timeline-item}
-[2015 — 2022]{.timeline-date}
-[Doctor of Medicine (MD)]{.timeline-title}
-[Shahid Beheshti University of Medical Sciences, Tehran. Six-year MD program.]{.timeline-desc}
-:::
+::: {.timeline-children}
 
-:::
-
-## International *collaborations*
-
-::: {.timeline}
-
-::: {.timeline-item}
+::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Motilent · University College London, UK]{.timeline-title}
-[Cross-site coordination on feature definitions, QC, and analysis plans for motility MRI biomarkers. Supporting ECCO and ESGAR outputs and ongoing manuscript development.]{.timeline-desc}
+[Cross-site work on motility MRI biomarkers: feature definitions, QC protocols, analysis plans. Supporting outputs at ECCO and ESGAR and ongoing manuscripts.]{.timeline-desc}
+
+[GIQuant · MRE motility biomarkers · cross-site validation]{.timeline-tags}
 :::
 
-::: {.timeline-item}
+::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Icahn School of Medicine at Mount Sinai, New York]{.timeline-title}
 [Collaboration with Prof. Jean-Frédéric Colombel's group on IBD imaging research and manuscript development.]{.timeline-desc}
@@ -67,38 +46,34 @@ The work focuses on **inflammatory bowel disease**, where damage hides, recurs, 
 
 :::
 
-## Technical *skills*
-
-::: {.skills-grid}
-
-::: {.skill-category}
-[Statistics & modelling]{.label}
-[Multilevel Bayesian models, hierarchical regression, calibration, decision-curve analysis, leakage-aware validation for clustered clinical data.]{.items}
 :::
 
-::: {.skill-category}
-[Programming & ML]{.label}
-[Python, PyTorch, MONAI, scikit-learn, pandas, NumPy, Jupyter, Git.]{.items}
+::: {.timeline-item}
+[Aug 2022 — Aug 2024]{.timeline-date}
+[General Practitioner · Valiasr Local Medical Center]{.timeline-title}
+[Part-time clinical work in Alborz during the transition into full-time research. This is also when I started teaching myself Python properly: DataCamp, then 3Blue1Brown, then building things until they worked.]{.timeline-desc}
+
+[Python · data analysis · self-directed learning]{.timeline-tags}
 :::
 
-::: {.skill-category}
-[Medical AI & imaging]{.label}
-[Deep learning for medical imaging, CLIP-style vision-language models, quantitative MRE feature extraction, DICOM preprocessing, image-text retrieval.]{.items}
+::: {.timeline-item}
+[Sep 2022 — Dec 2023]{.timeline-date}
+[Research Assistant, Imaging and Clinical Data Science]{.timeline-title}
+[Shahid Beheshti University of Medical Sciences. CT and MRI projects: protocol review, dataset construction, statistical analysis. Contributed to PanCanAID-related pipelines including curated datasets and semi-automated CT segmentation workflows.]{.timeline-desc}
+
+[CT segmentation · dataset construction · statistical analysis]{.timeline-tags}
 :::
 
-::: {.skill-category}
-[LLMs & NLP]{.label}
-[Structured information extraction from clinical text, agentic pipelines, tool-calling architectures, human-in-the-loop system design, prompt engineering.]{.items}
+::: {.timeline-item}
+[May 2020 — May 2022]{.timeline-date}
+[Medical Internship]{.timeline-title}
+[Teaching hospitals of Shahid Beheshti University of Medical Sciences, Tehran. Two years of rotations across internal medicine, surgery, paediatrics, obstetrics, emergency, and outpatient clinics. I thought I wanted to be a surgeon. I was wrong, but the clinical instincts stayed.]{.timeline-desc}
 :::
 
-::: {.skill-category}
-[Research software]{.label}
-[Streamlit prototypes for clinical research, modular repo structure, versioned releases with Zenodo DOIs, reproducible analysis workflows.]{.items}
-:::
-
-::: {.skill-category}
-[Writing & workflow]{.label}
-[LaTeX, Quarto, Obsidian + Zotero, Figma for workflow schematics.]{.items}
+::: {.timeline-item}
+[2015 — 2022]{.timeline-date}
+[Doctor of Medicine (MD)]{.timeline-title}
+[Shahid Beheshti University of Medical Sciences, Tehran. The girl who actively avoided research in medical school. People change.]{.timeline-desc}
 :::
 
 :::
@@ -107,10 +82,10 @@ The work focuses on **inflammatory bowel disease**, where damage hides, recurs, 
 
 ::: {.contact-block}
 
-The fastest way to reach me is by email. I read most of what people send me but reply slowly, especially during clinical weeks. If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would love to hear from you.
+The fastest way to reach me is by [email](mailto:mahshadsarikhani9696@gmail.com). If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would like to hear from you.
 
 ::: {.contact-links}
-[mahshadsarikhani9696@gmail.com](mailto:mahshadsarikhani9696@gmail.com) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/___)
+[Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/0000-0002-0475-3064)
 :::
 
 :::
