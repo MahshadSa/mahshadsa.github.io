@@ -206,14 +206,17 @@ hr {
 
 .timeline {
   border-left-color: rgba($darkgray, 0.3);
-  .timeline-item::before {
-    background: $sage;
-    border-color: $body-bg;
-    box-shadow: 0 0 0 2px rgba($gray, 0.3);
+
+  .timeline-item {
+    &::before {
+      background: $sage;
+      border-color: $body-bg;
+      box-shadow: 0 0 0 2px rgba($gray, 0.3);
+    }
+    .timeline-date  { color: $gray; }
+    .timeline-title { color: $dark; }
+    .timeline-desc  { color: $darkgray; }
   }
-  .timeline-date { color: $gray; }
-  .timeline-title { color: $dark; }
-  .timeline-desc { color: $darkgray; }
 }
 .timeline-children {
   border-left-color: rgba($darkgray, 0.2);
@@ -458,8 +461,23 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
     }
   }
 }
+// ── Timeline tags and nested children — dark ────────
 .timeline-tags {
-  color: color-mix(in srgb, var(--color-sage, #5a7260) 80%, white);
-  background-color: color-mix(in srgb, var(--color-sage, #5a7260) 12%, transparent);
-  border-color: color-mix(in srgb, var(--color-sage, #5a7260) 25%, transparent);
+  color: lighten($sage, 15%);
+  background-color: rgba($sage, 0.12);
+  border-color: rgba($sage, 0.3);
+}
+
+.timeline-children {
+  border-left-color: rgba($sage, 0.35);
+  
+  .timeline-title { color: $dark; }
+}
+
+.timeline-child {
+  border-bottom-color: rgba($sage, 0.2);
+  
+  .timeline-date { color: $gray; }
+  .timeline-title { color: $dark; }
+  .timeline-desc { color: $darkgray; }
 }

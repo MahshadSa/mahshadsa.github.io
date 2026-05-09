@@ -5,7 +5,7 @@ $light:         #f9fbf8;
 $lightgray:     #efeeea;
 $gray:          #b0b5a8;
 $darkgray:      #354539;
-$dark:          #1b271e;
+$dark:          #19241c;
 
 // ── Accents (sage + periwinkle only) ─────────────────
 $sage:          #5a7260;
@@ -1362,20 +1362,13 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-top: 0.6rem;
- 
-  // Split the dot-separated string into individual pill spans via CSS
-  // Each tag is separated by " · " in the QMD source
-  // We render the whole string and style it as a tag block
-  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   letter-spacing: 0.02em;
-  color: var(--color-sage, #5a7260);
+  color: $sage;
   opacity: 0.85;
- 
-  // Pill appearance for the whole line — 
-  // if you want individual pills, use the JS approach below instead
-  background-color: color-mix(in srgb, var(--color-sage, #5a7260) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-sage, #5a7260) 20%, transparent);
+  background-color: rgba($sage, 0.08);
+  border: 1px solid rgba($sage, 0.2);
   border-radius: 4px;
   padding: 0.25rem 0.6rem;
   width: fit-content;
