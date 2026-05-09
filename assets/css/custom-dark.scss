@@ -215,7 +215,17 @@ hr {
   .timeline-title { color: $dark; }
   .timeline-desc { color: $darkgray; }
 }
+.timeline-children {
+  border-left-color: rgba($darkgray, 0.2);
+  .timeline-title { color: $dark; }
+}
 
+.timeline-child {
+  border-bottom-color: rgba($darkgray, 0.15);
+  .timeline-date { color: $gray; }
+  .timeline-title { color: $dark; }
+  .timeline-desc { color: $darkgray; }
+}
 .now-item {
   border-left-color: $periwinkle;
   &:hover { border-left-color: $sage; }
