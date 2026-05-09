@@ -12,10 +12,6 @@ This is a [now page](https://nownownow.com/about). It tells you what I'm spendin
 ---
 
 ::: {.now-item}
-targeting *Journal of Crohn's and Colitis* (JCC) — Bayesian risk stratification model integrating MRE and fecal calprotectin for UC activity triage.
-:::
-
-::: {.now-item}
 **Scoping the agentic Lémann extraction pipeline** — designing a six-phase research project: an LLM agent that reads free-text radiology reports, extracts Lémann Index fields, calls a scoring tool, and escalates uncertain cases to a radiologist. Early architecture and IRB planning phase.
 :::
 
