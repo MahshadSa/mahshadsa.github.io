@@ -1,70 +1,37 @@
 {
   "main": {
-    "id": "657e432dd916be97",
+    "id": "e9fa119404544619",
     "type": "split",
     "children": [
       {
-        "id": "0c89ba8dd0d22d4e",
+        "id": "3cd8001c16febc9b",
         "type": "tabs",
         "children": [
           {
-            "id": "f9dc097d8331cdcf",
+            "id": "174dacc45c8abc49",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-Inbox/Who am I- Apr23rd.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Who am I- Apr23rd"
-            }
-          },
-          {
-            "id": "ff7b36cc70f8ee03",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-Drafts/Archive- Agents Anthropic- Apr 25th.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Archive- Agents Anthropic- Apr 25th"
-            }
-          },
-          {
-            "id": "e6f4ced559ff3b84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-Inbox/The Silver of 1830 and the Tokens of 2026 Semantic Loss in Babel and LLMs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Silver of 1830 and the Tokens of 2026 Semantic Loss in Babel and LLMs"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "90b97cf4ae383b4b",
+    "id": "3f90de6952554114",
     "type": "split",
     "children": [
       {
-        "id": "02fec0ff1cc73008",
+        "id": "b62a6660cc74d909",
         "type": "tabs",
         "children": [
           {
-            "id": "9f3cf339eeb0bfe8",
+            "id": "a9ba48669e4d24a0",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -77,7 +44,7 @@
             }
           },
           {
-            "id": "94e4a28de406b271",
+            "id": "cdfb18ce4484853a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -94,7 +61,7 @@
             }
           },
           {
-            "id": "60d130d8aee41e2b",
+            "id": "1d311f9e015c42e1",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -107,24 +74,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "26f2d466a197a4bf",
+    "id": "2f33bc23d2bbc51b",
     "type": "split",
     "children": [
       {
-        "id": "6a2bea8e0b5fc1b7",
+        "id": "99b369bb2551db48",
         "type": "tabs",
         "children": [
           {
-            "id": "1c6d672321b2cef4",
+            "id": "a79c085076765e51",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "99-Templates/Template 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Template 1"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "151644977f5900ee",
+            "id": "17d9fc624099d07d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "99-Templates/Template 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Template 1"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "dbe1aa030cf2b28b",
+            "id": "d3923fe273d17228",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -167,7 +131,7 @@
             }
           },
           {
-            "id": "eca595964b254eee",
+            "id": "a7d3dcc0cb23f23e",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -181,18 +145,17 @@
             }
           },
           {
-            "id": "08948401a62804b7",
+            "id": "1fd0bdf1ee41503d",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "99-Templates/Template 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Template 1"
+              "title": "Outline"
             }
           }
         ]
@@ -213,38 +176,6 @@
       "bases:Create new base": false
     }
   },
-  "active": "e6f4ced559ff3b84",
-  "lastOpenFiles": [
-    "assets/templates/note-row.ejs",
-    "assets/templates/hero-note.ejs",
-    "assets/templates",
-    "assets/templates-tmp/note-row.ejs",
-    "assets/templates-tmp/hero-note.ejs",
-    "assets/templates-tmp",
-    "site_libs/bootstrap/bootstrap.min.js",
-    "site_libs/bootstrap/bootstrap-icons.woff",
-    "site_libs/bootstrap/bootstrap-dark-57bb2f6a35f0ffc8ec0bd8027d443c90.min.css",
-    "site_libs/bootstrap/bootstrap-icons.css",
-    "site_libs/bootstrap/bootstrap-a25aa9a5a903007d5ac6208ea7fe1743.min.css",
-    "assets/img/favicon.png.png",
-    "favicon.png.png",
-    "ms-favicon-512.png",
-    "00-Inbox/BABEL.md",
-    "00-Inbox/The Silver of 1830 and the Tokens of 2026 Semantic Loss in Babel and LLMs.md",
-    "01-Drafts/Archive- Agents Anthropic- Apr 25th.md",
-    "00-Inbox/Why Bayesian- April20th.md",
-    "01-Drafts/Who am I- Apr23rd.md",
-    "01-Drafts/Untitled.md",
-    "notes/media/agent_note1.png",
-    "notes/media/agent_note.png",
-    "notes/media/anthropic_agents_4.jpeg",
-    "notes/media/anthropic_agents_3.jpeg",
-    "notes/media/anthropic_agents_1.jpeg",
-    "notes/media/-.webp",
-    "notes/media/anthropic_agents_2.jpeg",
-    "99-Templates/Template 3_files/Template 2.md",
-    "99-Templates/Template 3_files/Template 1.md",
-    "99-Templates/Template 3_files/Template 3.md",
-    "2026-04-20.md"
-  ]
+  "active": "174dacc45c8abc49",
+  "lastOpenFiles": []
 }

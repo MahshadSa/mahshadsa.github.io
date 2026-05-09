@@ -18,6 +18,8 @@ website:
         href: research/index.qmd
       - text: "Notes"
         href: notes/index.qmd
+      - text: "Now"
+        href: now.qmd
       - text: "About"
         href: about/index.qmd
     right:
@@ -41,7 +43,7 @@ format:
       light: [cosmo, assets/css/custom.scss]
       dark: [cosmo, assets/css/custom-dark.scss]
     css: assets/css/garden.css
-    toc: true
+    toc: false
     toc-depth: 3
     code-copy: true
     code-overflow: wrap
@@ -52,8 +54,8 @@ format:
     monofont: "'JetBrains Mono', monospace"
     grid:
       sidebar-width: 0px
-      body-width: 900px
-      margin-width: 250px
+      body-width: 720px
+      margin-width: 0px
 
 execute:
   freeze: auto

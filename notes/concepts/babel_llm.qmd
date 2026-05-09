@@ -6,7 +6,7 @@ categories: [AI, NLP, radiology, clinical-AI, reading-notes]
 maturity: sprout
 ---
 
-::: {.note-meta}
+::: {.note-page-meta}
 [🌿 sprout]{.maturity-tag .sprout} · Planted April 28, 2026 · Last tended April 28, 2026
 :::
 

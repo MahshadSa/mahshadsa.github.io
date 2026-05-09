@@ -6,7 +6,7 @@ categories: [research, AI-agents, radiology, archive, coding]
 maturity: seedling
 --- 
 
-::: {.note-meta}
+::: {.note-page-meta}
 [🌱 seedling]{.maturity-tag .seedling} · Planted April 25, 2026 · Last tended April 25, 2026
 :::
 

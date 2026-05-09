@@ -1,5 +1,5 @@
 /* ── Garden note metadata bar ──────────────────────── */
-.note-meta {
+.note-page-meta {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -12,8 +12,8 @@
   letter-spacing: 0.03em;
 }
 
-.note-meta .meta-date,
-.note-meta .meta-updated {
+.note-page-meta .meta-date,
+.note-page-meta .meta-updated {
   color: #b0b5a8;
 }
 
@@ -62,13 +62,13 @@
 }
 
 /* ── Dark mode overrides ──────────────────────────── */
-[data-bs-theme="dark"] .note-meta {
+[data-bs-theme="dark"] .note-page-meta {
   border-bottom-color: rgba(139, 145, 137, 0.3);
   color: #8aa491;
 }
 
-[data-bs-theme="dark"] .note-meta .meta-date,
-[data-bs-theme="dark"] .note-meta .meta-updated {
+[data-bs-theme="dark"] .note-page-meta .meta-date,
+[data-bs-theme="dark"] .note-page-meta .meta-updated {
   color: #8b9189;
 }
 

@@ -3,6 +3,7 @@ title: "Dehdab et al. (2025) — LLM-based Radiology Report Extraction"
 description: "Paper notes on a predecessor study using LLMs to extract structured data from radiology reports"
 date: 2025-10-01
 categories: [paper notes, NLP, radiology, LLM]
+maturity: sprout
 draft: true
 ---
 

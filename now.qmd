@@ -5,14 +5,14 @@ date: last-modified
 toc: false
 ---
 
-*Last updated: <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>*
+*Last updated: May 2026*
 
 This is a [now page](https://nownownow.com/about). It tells you what I'm spending my time and energy on at this point in my life.
 
 ---
 
 ::: {.now-item}
-**Preparing my first-author manuscript for submission** — targeting *Journal of Crohn's and Colitis* (JCC). <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Brief description of the paper topic, e.g., 'Bayesian ordinal modeling of MRE activity scores in Crohn's disease.'</span>
+targeting *Journal of Crohn's and Colitis* (JCC) — Bayesian risk stratification model integrating MRE and fecal calprotectin for UC activity triage.
 :::
 
 ::: {.now-item}
@@ -28,7 +28,7 @@ This is a [now page](https://nownownow.com/about). It tells you what I'm spendin
 :::
 
 ::: {.now-item}
-**Reading** — <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Whatever you're currently reading.</span>
+**Reading** — BABEL by R.F. Kuang ,Statistical Rethinking by Richard McElreath, The fixer by Bernard Malamud, The sacred and the profane by Mirca Eliade
 :::
 
 

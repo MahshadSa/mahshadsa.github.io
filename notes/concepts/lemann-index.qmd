@@ -3,11 +3,11 @@ title: "What is the Lémann Index?"
 description: "A primer on quantifying cumulative bowel damage in Crohn's disease"
 date: 2025-06-01
 categories: [IBD, scoring systems, MRI]
-draft : true
-
+maturity: sprout
+draft: true
 ---
 
-::: {.note-meta}
+::: {.note-page-meta}
 🌿 Growing · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
 :::
 

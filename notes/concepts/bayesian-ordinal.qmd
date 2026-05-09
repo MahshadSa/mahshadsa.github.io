@@ -3,10 +3,12 @@ title: "Bayesian Ordinal Regression for Imaging Scores"
 description: "Why ordinal models matter for radiology severity grading and how Bayesian inference helps"
 date: 2025-08-01
 categories: [Bayesian, statistics, methodology]
-draft : true
+
+maturity: seedling
+draft: true
 ---
 
-::: {.note-meta}
+::: {.note-page-meta}
 🌱 Seedling · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
 :::
 

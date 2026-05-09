@@ -6,7 +6,7 @@ date-modified: last-modified
 categories: [IBD, scoring systems]
 ---
 
-::: {.note-meta}
+::: {.note-page-meta}
 🌱 Seedling · Last tended April 2026
 :::
 

@@ -3,8 +3,8 @@ title: "Prompt Engineering for Structured Medical Extraction"
 description: "Working notes on prompting LLMs to extract structured clinical data reliably"
 date: 2026-03-01
 categories: [methods, LLM, prompt engineering]
+maturity: seedling
 draft : true
-
 ---
 
 ::: {.note-meta}

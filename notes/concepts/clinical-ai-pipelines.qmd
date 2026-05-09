@@ -3,10 +3,11 @@ title: "Clinical AI Pipelines: Design Patterns"
 description: "Notes on building AI systems that fit into real clinical workflows"
 date: 2026-01-01
 categories: [clinical AI, LLM, system design]
-draft : true
+maturity: seedling
+draft: true
 ---
 
-::: {.note-meta}
+::: {.note-page-meta}
 🌱 Seedling · Last tended <span style="background:#fff3cd;color:#856404;padding:0.15em 0.5em;border-radius:3px;font-size:0.9em;border:1px dashed #ffc107;">?? Month Year</span>
 :::
 

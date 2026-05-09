@@ -1,5 +1,6 @@
 ---
 title: "Research"
+pagetitle: "Research — Mahshad Sarikhani"
 toc: true
 ---
 

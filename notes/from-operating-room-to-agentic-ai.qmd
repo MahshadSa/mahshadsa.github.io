@@ -7,7 +7,7 @@ categories: [personal, trajectory, reflection, radiology, AI, coding]
 maturity: seedling
 ---
 
-::: {.note-meta}
+::: {.note-page-meta}
 [🌱 Seedling]{.maturity-tag .seedling} · Planted April 23, 2026 · Last tended April 23, 2026
 :::
 

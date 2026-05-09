@@ -10,6 +10,7 @@ listing:
   template: ../assets/templates/note-row.ejs
   sort: "date desc"
   fields: [title, description, date, maturity, categories, path]
+  filter-ui: false
 ---
 
 ::: {.garden-intro}
