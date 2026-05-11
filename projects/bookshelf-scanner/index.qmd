@@ -2,7 +2,7 @@
 title: "Bookshelf Scanner"
 description: "Vision-language catalog tool for personal libraries, with bilingual spine recognition"
 date: 2026-04-01
-categories: [VLM, tool, personal, Persian, Streamlit]
+categories: [VLM, tool, personal, Persian, React]
 ---
 
 ::: {.project-card}
@@ -10,29 +10,32 @@ categories: [VLM, tool, personal, Persian, Streamlit]
 
 ## Problem
 
-Cataloging a personal library of several hundred books -- especially a bilingual one with Persian and English titles -- is slow work. Existing tools assume barcoded, English-language, commercially published books.
+Cataloging a personal library of several hundred books is slow, especially when half of them are in Persian. Existing tools assume barcoded, commercially published, English-language books. Most Persian editions have no ISBN in any accessible database, and barcode-scanning apps either skip them entirely or return nothing.
 
 ## Approach
-I had to use an API that did not require payment, a model that is feasibleto run on my laptop and a model that recognises Persian titles in addition to English. 
-So:
-A three-stage pipeline that treats cataloging as a conversation between a vision model, a human, and an enrichment API:
 
-**Stage 1. Upload and extract.** Shelf photos go to a vision-language model (Llama 3.2 Vision via HuggingFace Inference API). The VLM reads each spine and returns structured data: title and author in the original script, romanized versions for non-Latin text, and a confidence score.
+The constraints were clear: no paid API, no server I need to keep running, a model that handles non-Latin scripts without fine-tuning. The result is a browser-only React app with no backend.
 
-**Stage 2. Review and confirm.** Results appear in an editable table. I fix misreadings (common with decorative Persian fonts or partially occluded spines), delete false detections, and add anything the model missed. Fuzzy deduplication catches books that appear in multiple photos.
+A three-stage pipeline that treats cataloging as a conversation between a vision model, a human, and an enrichment layer:
 
-**Stage 3. Enrich and browse.** Confirmed books are enriched via the Open Library API (year, pages, ISBN, cover image). When Open Library has no match, an LLM fallback infers metadata from its training knowledge. The final catalog lives in SQLite and renders as a searchable dashboard with statistics by country, language, genre, and decade.
+**Stage 1. Upload and extract.** Shelf photos go to Qwen2.5-VL-72B via the HuggingFace Router. The model reads each spine and returns structured data: title and author in the original script, a romanized version for non-Latin text, and a confidence score. Persian/Arabic normalization runs before deduplication, accounting for Unicode variants that look identical but are not (Persian ya versus Arabic ya, kaf variants, ZWNJ, tatweel).
+
+**Stage 2. Review and confirm.** Results appear in an editable table sorted by confidence, so the rows most likely to need a human eye come first. The confidence renders as three buckets rather than a raw percentage, because the model's self-reported score is not a calibrated probability. Fuzzy deduplication catches books that appear in multiple photos.
+
+**Stage 3. Enrich and browse.** Confirmed books are sent to the Open Library API for year, pages, ISBN, and cover image. A second model call fills specific gaps the API leaves, particularly author nationality, which Open Library rarely returns reliably. Genre is normalized to a small controlled vocabulary because Open Library subject arrays include entries like "Accessible book" alongside actual genres. The catalog lives in IndexedDB and renders as a searchable dashboard with breakdowns by country, language, genre, and decade.
 
 ## Why this project
 
-Most of my work is clinical AI, which means the tooling is serious, validated, and slow to build. This is the opposite: a personal project where I get to use VLMs, handle messy multilingual text, and build something that exists for its own sake. It's also the best way I've found to actually learn how vision-language models behave in the wild.
+Most of my work is clinical AI, which means the tooling is serious, validated, and slow to build. This is the opposite: a personal project where I could use VLMs, handle messy multilingual text, and build something that exists for its own sake. It also turned out to be the most direct way I have found to understand how vision-language models actually behave on real, imperfect inputs rather than benchmark images.
+
+An earlier version had a FastAPI backend doing the same work. For a single-user local tool, that meant two processes to run, Python as an installation dependency, and logic written twice. Removing the backend and moving persistence to IndexedDB made the code shorter and the setup trivial: clone, npm install, paste a HuggingFace token, done.
 
 ## Status
 
-Local prototype working. Currently refining the bilingual OCR accuracy and the deduplication logic before pushing to a public repo.
+Public. The pipeline is functional for bilingual libraries. Known limitations: HEIC images from iPhone exports are not yet supported; VLM accuracy on decorative Persian calligraphic spines drops to around 80 to 85 percent, which is why the review step is architectural rather than optional.
 
 ## Links
 
-- Source code (coming soon)
+- [Source code](https://github.com/MahshadSa/bookshelf-scanner)
 
 :::
