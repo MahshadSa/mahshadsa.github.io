@@ -1,7 +1,7 @@
 ---
 title: "Bookshelf Scanner"
 description: "Vision-language catalog tool for personal libraries, with bilingual spine recognition"
-date: 2026-04-01
+date: 2026-05-11
 categories: [VLM, tool, personal, Persian, React]
 ---
 
