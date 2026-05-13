@@ -39,6 +39,9 @@ website:
 
 format:
   html:
+    include-in-header:
+      - text: |
+          <meta name="google-site-verification" content="h-3xdvaDhFjhTCq4gbhij_Dcuitz1axWuYGbUmHf9c0" />
     theme:
       light: [cosmo, assets/css/custom.scss]
       dark: [cosmo, assets/css/custom-dark.scss]
