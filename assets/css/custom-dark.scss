@@ -1,27 +1,30 @@
 /*-- scss:defaults --*/
 
-// ── Backgrounds (warm dark, not pure black) ──────────
-$light:         #111812;   // base background, deep but warm
-$lightgray:     #19241b;   // raised surfaces (cards)
-$gray:          #8b9189;   // muted text
-$darkgray:      #c9cdc4;   // body text, high readability
-$dark:          #f1f3ee;   // headings, max contrast
+// ── Dark backgrounds (teal-black, not pure black) ────
+$light:         #0a1818;   // base bg — deep teal-black
+$lightgray:     #112020;   // raised surfaces (cards, panels)
+$gray:          #6a8888;   // muted text — blue-gray
+$darkgray:      #b8cece;   // body text — cool light
+$dark:          #eef4f4;   // headings — near-white with teal cast
 
-// ── Accents (same hues, slightly lifted for dark bg) ─
-$sage:          #9FBCA5;   // sage shifted lighter
-$periwinkle:    #C2BBF0;   // periwinkle shifted lighter
+// ── Palette: lifted for dark bg ──────────────────────
+$mint:          #5ab8a0;   // mint lifted: brighter on dark
+$navy:          #3a6a9a;   // navy lifted: more mid-blue so it reads on dark bg
+$rose:          #c89aaa;   // dusty rose lifted: soft, warm, legible on dark
+
+// ── Legacy aliases ───────────────────────────────────
+$sage:          $mint;
+$periwinkle:    $rose;
 
 // ── Quarto variable mapping ──────────────────────────
 $body-bg:          $light;
 $body-color:       $darkgray;
-$link-color:       $sage;
-$link-hover-color: $periwinkle;
+$link-color:       $mint;
+$link-hover-color: $navy;
 
 $font-family-sans-serif: 'Source Sans 3', 'Helvetica Neue', sans-serif;
 
 /*-- scss:rules --*/
-
-
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -32,16 +35,23 @@ body {
   line-height: 1.82;
   font-size: 1.05rem;
   counter-reset: section-counter sidenote-counter;
+  background-color: $light;
+  // Subtle radial tints — same technique as your original dark mode
+  background-image:
+    radial-gradient(at 20% 0%,   rgba($mint, 0.05) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba($rose, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: rgba($sage, 0.3);
+  background: rgba($mint, 0.28);
   color: $dark;
 }
 
+// ── Navbar ───────────────────────────────────────────
 .navbar {
   border-bottom: 1px solid rgba($gray, 0.25);
-  background: rgb(16, 25, 18, 0.92) !important;
+  background: rgba(10, 24, 24, 0.92) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   font-family: 'JetBrains Mono', monospace;
@@ -63,69 +73,97 @@ body {
 
 .navbar-nav .nav-link {
   color: rgba($darkgray, 0.7) !important;
-  &:hover { color: $sage !important; }
+  &:hover { color: $mint !important; }
 }
 
-.navbar-nav .nav-link.active {
-  color: $dark !important;
-}
+.navbar-nav .nav-link.active { color: $dark !important; }
 
 .navbar .bi {
   color: rgba($darkgray, 0.6);
-  &:hover { color: $sage; }
+  &:hover { color: $mint; }
 }
 
+// ── Headings ─────────────────────────────────────────
 h1, h2, h3, h4, h5, h6 { color: $dark; }
 
-h2 i, h2 em { color: $sage; }
+h2 i, h2 em { color: $mint; }
 
+// ── Hero ─────────────────────────────────────────────
 .hero-section {
-  .eyebrow { 
-    color: $sage;
-    background: rgba($sage, 0.12);
-    border-color: rgba($sage, 0.35); 
+  .eyebrow {
+    color: $mint;
+    background: rgba($mint, 0.1);
+    border-color: rgba($mint, 0.32);
   }
-  .eyebrow::before { background: $sage; }
+  .eyebrow::before { background: $mint; }
+
   .hero-name { color: $dark; }
-  .hero-name i, .hero-name em { color: $sage; }
-  .hero-tagline { color: $sage; }
-  .hero-bio { color: $darkgray; }
+  .hero-name i,
+  .hero-name em {
+    color: $mint;
+    // Wavy underline: navy lifted for dark bg
+    &::after {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 Q 30 2, 60 7 T 120 6 T 198 8' stroke='%233a6a9a' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.65'/></svg>");
+    }
+  }
+
+  .hero-tagline { color: $mint; }
+  .hero-bio     { color: $darkgray; }
   .hero-bio strong { color: $dark; }
 }
-.hero-section .hero-name i,
-.hero-section .hero-name em {
-  &::after {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 Q 30 2, 60 7 T 120 6 T 198 8' stroke='%239aa1cf' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.7'/></svg>");
-  }
-}
 
-a {
-  color: $sage;
-  text-decoration-color: rgba($sage, 0.4);
-  &:hover {
-    color: $periwinkle;
-    text-decoration-color: $periwinkle;
-  }
-}
+// ── Notes panel ──────────────────────────────────────
 .hero-notes {
-  background: $lightgray;
-  border-color: rgba($gray, 0.25);
-
-  &::before { border-right-color: rgba($periwinkle, 0.5); }
+  background: rgba($lightgray, 0.5);
+  border-left-color: rgba($navy, 0.45);
 
   .notes-label {
-    color: $periwinkle;
-    border-left-color: $periwinkle;
-    a { color: $gray; &:hover { color: $sage; } }
+    color: $navy;
+    border-bottom-color: rgba($gray, 0.2);
+    a { color: $gray; &:hover { color: $mint; } }
   }
 
   .note-item {
-    border-bottom-color: rgba($gray, 0.2);
-    .note-title { color: $dark; &:hover { color: $sage; } }
-    .note-meta { color: $gray; }
+    border-bottom-color: rgba($gray, 0.18);
+    .note-title { color: $dark; &:hover { color: $mint; } }
+    .note-meta  { color: $gray; }
+  }
+
+  .notes-thought {
+    border-top-color: rgba($gray, 0.2);
+    .thought-text  { color: $darkgray; }
+    .thought-label { color: $rose; }
   }
 }
 
+// ── Hero keyword chips (dark) ─────────────────────────
+.chip-mint {
+  background: rgba($mint, 0.1);
+  color: $mint;
+  border-color: rgba($mint, 0.3);
+}
+.chip-navy {
+  background: rgba($navy, 0.12);
+  color: lighten($navy, 25%);
+  border-color: rgba($navy, 0.35);
+}
+.chip-rose {
+  background: rgba($rose, 0.1);
+  color: $rose;
+  border-color: rgba($rose, 0.3);
+}
+
+// ── Links ────────────────────────────────────────────
+a {
+  color: $mint;
+  text-decoration-color: rgba($mint, 0.4);
+  &:hover {
+    color: $navy;
+    text-decoration-color: $navy;
+  }
+}
+
+// ── HR ───────────────────────────────────────────────
 hr {
   border-top: 1px solid rgba($gray, 0.3);
   &::after {
@@ -134,50 +172,114 @@ hr {
   }
 }
 
+// ── Proof cards ──────────────────────────────────────
 .proof-card,
 .project-card {
-  background: rgba($lightgray, 0.6);
-  border: 1px solid rgba($gray, 0.18);
-  border-radius: 8px;
-  padding: 1.8rem 1.8rem 1.6rem;
+  background: rgba($lightgray, 0.7);
+  border: 1px solid rgba($gray, 0.2);
+  border-radius: 6px;
+  padding: 1.6rem 1.4rem 1.4rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
   &:hover {
-    border-color: rgba($sage, 0.5);
-    background: rgba($lightgray, 0.85);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba($sage, 0.1);
+    border-color: rgba($mint, 0.45);
+    background: rgba($lightgray, 0.88);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba($mint, 0.08);
   }
 
-  .card-title a { color: $dark; }
-  .card-title a:hover { color: $sage; }
-  .card-desc { color: $darkgray; }
+  .card-label   { color: $mint; }
+  .card-title a { color: $dark; &:hover { color: $mint; } }
+  .card-desc    { color: $darkgray; }
+  .card-stat    { color: $gray; strong { color: $navy; } }
 }
 
+// ── Anchor card ──────────────────────────────────────
 .proof-card--anchor {
-  padding: 2.2rem 2rem 1.8rem;
-  border-top: 1px solid rgba($sage, 0.6);
+  border: 1px solid rgba($navy, 0.35);
+  border-top: 3px solid $navy;
+  border-radius: 6px;
+  padding: 1.8rem 1.4rem 1.6rem;
+  background: linear-gradient(
+    135deg,
+    rgba($navy, 0.06) 0%,
+    rgba($mint, 0.03) 100%
+  ), rgba($lightgray, 0.7);
+
+  .card-label { color: $navy; }
+
+  &::before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle cx='16' cy='16' r='14' stroke='%233a6a9a' stroke-width='1' opacity='0.5'/><circle cx='16' cy='16' r='8' stroke='%233a6a9a' stroke-width='1' opacity='0.65'/><circle cx='16' cy='16' r='2' fill='%233a6a9a'/></svg>");
+    right: 1rem;
+  }
+
+  &:hover {
+    border-color: rgba($navy, 0.55);
+    border-top-color: $navy;
+    box-shadow: 0 4px 24px rgba($navy, 0.15), 0 0 0 1px rgba($navy, 0.1);
+  }
 }
 
+// ── Quote card ───────────────────────────────────────
 .proof-card--quote {
-  padding: 2rem 2rem 1.8rem;
+  border: 1px solid rgba($rose, 0.28);
+  border-top: 3px solid $rose;
+  border-radius: 6px;
+  padding: 1.8rem 1.4rem 1.6rem;
+  background: rgba($rose, 0.05);
+
+  .card-label    { color: $rose; }
+  .quote-text    { color: $dark; }
+  .quote-author  { color: $rose; }
+
+  &::before { color: rgba($rose, 0.35); right: 1rem; }
+  &:hover::before { color: rgba($rose, 0.6); }
+
+  &:hover {
+    border-color: rgba($rose, 0.45);
+    border-top-color: $rose;
+    box-shadow: 0 4px 24px rgba($rose, 0.1);
+  }
 }
 
+// ── Now card ─────────────────────────────────────────
 .proof-card--now {
-  padding: 1.8rem 1.8rem 1.6rem;
+  border: 1px solid rgba($rose, 0.22);
+  border-top: 2px solid rgba($rose, 0.6);
+  border-radius: 6px;
+  padding: 1.6rem 1.4rem 1.4rem;
+  background: rgba($rose, 0.04);
+
+  .card-label { color: $rose; }
+  .now-text   { color: $darkgray; strong { color: $dark; } }
+  .now-date   { color: $gray; }
+
+  &:hover {
+    border-color: rgba($rose, 0.38);
+    border-top-color: $rose;
+    box-shadow: 0 2px 16px rgba($rose, 0.08);
+  }
 }
 
+// ── Proof section background ─────────────────────────
+.proof-section-wrap {
+  background: rgba($mint, 0.03);
+  border-top-color: rgba($mint, 0.12);
+}
+
+// ── Project cards ────────────────────────────────────
 .project-card .project-status {
   &.live {
-    background: rgba($sage, 0.12);
-    color: $sage;
-    border-color: rgba($sage, 0.3);
+    background: rgba($mint, 0.12);
+    color: $mint;
+    border-color: rgba($mint, 0.3);
   }
   &.active {
-    background: rgba($periwinkle, 0.1);
-    color: $periwinkle;
-    border-color: rgba($periwinkle, 0.25);
+    background: rgba($navy, 0.12);
+    color: lighten($navy, 20%);
+    border-color: rgba($navy, 0.28);
   }
   &.planned {
     background: rgba($gray, 0.1);
@@ -186,30 +288,32 @@ hr {
   }
 }
 
+// ── Maturity tags ────────────────────────────────────
 .maturity-tag {
   &.seedling {
-    background: rgba($sage, 0.12);
-    color: $sage;
-    border: 1px solid rgba($sage, 0.25);
+    background: rgba($mint, 0.1);
+    color: $mint;
+    border: 1px solid rgba($mint, 0.25);
   }
   &.growing {
-    background: rgba($periwinkle, 0.1);
-    color: $periwinkle;
-    border: 1px solid rgba($periwinkle, 0.25);
+    background: rgba($navy, 0.12);
+    color: lighten($navy, 20%);
+    border: 1px solid rgba($navy, 0.28);
   }
   &.evergreen {
-    background: rgba($gray, 0.1);
-    color: $darkgray;
-    border: 1px solid rgba($gray, 0.3);
+    background: rgba($rose, 0.1);
+    color: $rose;
+    border: 1px solid rgba($rose, 0.28);
   }
 }
 
+// ── Timeline ─────────────────────────────────────────
 .timeline {
   border-left-color: rgba($darkgray, 0.3);
 
   .timeline-item {
     &::before {
-      background: $sage;
+      background: $mint;
       border-color: $body-bg;
       box-shadow: 0 0 0 2px rgba($gray, 0.3);
     }
@@ -218,73 +322,82 @@ hr {
     .timeline-desc  { color: $darkgray; }
   }
 }
+
+.timeline-tags {
+  color: $navy;
+  background-color: rgba($navy, 0.12);
+  border-color: rgba($navy, 0.3);
+}
+
 .timeline-children {
-  border-left-color: rgba($darkgray, 0.2);
+  border-left-color: rgba($mint, 0.3);
   .timeline-title { color: $dark; }
 }
 
 .timeline-child {
-  border-bottom-color: rgba($darkgray, 0.15);
-  .timeline-date { color: $gray; }
+  border-bottom-color: rgba($mint, 0.18);
+  .timeline-date  { color: $gray; }
   .timeline-title { color: $dark; }
-  .timeline-desc { color: $darkgray; }
+  .timeline-desc  { color: $darkgray; }
 }
+
+// ── Now page ─────────────────────────────────────────
 .now-item {
-  border-left-color: $periwinkle;
-  &:hover { border-left-color: $sage; }
+  border-left-color: $rose;
+  &:hover { border-left-color: $mint; }
   strong { color: $dark; }
 }
 
+// ── Blockquotes ──────────────────────────────────────
 blockquote {
   color: $darkgray;
-  border-left: 3px solid $periwinkle;
+  border-left: 3px solid $rose;
   background: rgba($lightgray, 0.5);
 }
 
+// ── Code ─────────────────────────────────────────────
 code {
   color: $dark;
   background: rgba($gray, 0.15);
 }
 
 pre {
-  background: #0e1210 !important;
+  background: #060f0f !important;
   border: 1px solid rgba($gray, 0.2);
   code { color: $darkgray; background: none; }
 }
 
+// ── Tables ───────────────────────────────────────────
 table {
   th { color: $darkgray; border-bottom-color: rgba($gray, 0.3); }
   td { color: $darkgray; border-bottom-color: rgba($gray, 0.15); }
-  tr:hover td { background: rgba($sage, 0.06); }
+  tr:hover td { background: rgba($mint, 0.05); }
 }
 
-.callout-tip {
-  border-left-color: $sage !important;
-  background: rgba($sage, 0.06) !important;
-}
+// ── Callouts ─────────────────────────────────────────
+.callout-tip  { border-left-color: $mint !important; background: rgba($mint, 0.06) !important; }
+.callout-note { border-left-color: $navy !important; background: rgba($navy, 0.06) !important; }
 
-.callout-note {
-  border-left-color: $periwinkle !important;
-  background: rgba($periwinkle, 0.06) !important;
-}
-
+// ── TOC sidebar ──────────────────────────────────────
 .sidebar nav[role="doc-toc"] a {
   color: $gray;
-  &:hover { color: $sage; }
+  &:hover  { color: $mint; }
   &.active { color: $dark; }
 }
 
+// ── Footer ───────────────────────────────────────────
 .nav-footer {
   color: $gray;
   border-top-color: rgba($gray, 0.2);
   a {
-    color: $sage;
-    &:hover { color: $periwinkle; }
+    color: $mint;
+    &:hover { color: $navy; }
   }
 }
 
+// ── Quarto listing ───────────────────────────────────
 .quarto-listing {
-  .listing-title { color: $dark; }
+  .listing-title       { color: $dark; }
   .listing-description { color: $darkgray; }
   .listing-category .listing-category-item {
     background: rgba($gray, 0.12);
@@ -293,76 +406,101 @@ table {
   .listing-date { color: $gray; }
 }
 
+// ── Publications ─────────────────────────────────────
 .pub-entry {
   border-bottom-color: rgba($gray, 0.15);
-  .pub-title { color: $dark; }
+  .pub-title   { color: $dark; }
   .pub-authors { color: $darkgray; strong { color: $dark; } }
-  .pub-venue { color: $gray; }
+  .pub-venue   { color: $gray; }
   .pub-links a {
-    color: $sage;
-    &:hover { color: $periwinkle; }
+    color: $mint;
+    &:hover { color: $navy; }
   }
 }
 
+// ── Subtitle ─────────────────────────────────────────
 .subtitle, .quarto-title-block .subtitle {
-  color: $sage;
-  em, i { color: $periwinkle; }
+  color: $mint;
+  em, i { color: $rose; }
 }
 
+// ── Skills ───────────────────────────────────────────
 .skills-grid .skill-category {
-  .label { color: $sage; border-left-color: $sage; }
+  .label { color: $mint; border-left-color: $mint; }
   .items { color: $darkgray; }
 }
 
-// Sidenotes
+// ── About ────────────────────────────────────────────
+.about-intro {
+  color: $darkgray;
+  strong { color: $dark; }
+}
+
+.contact-block p { color: $darkgray; }
+
+.contact-links {
+  color: $gray;
+  background: rgba($mint, 0.04);
+  border-color: rgba($gray, 0.22);
+
+  a {
+    color: $mint;
+    border-bottom-color: rgba($mint, 0.3);
+    &:hover {
+      color: $navy;
+      border-bottom-color: $navy;
+    }
+  }
+}
+
+// ── Digital garden ───────────────────────────────────
+.garden-intro { color: $darkgray; }
+
+.garden-legend {
+  color: $gray;
+  border-color: rgba($gray, 0.22);
+  background: rgba($mint, 0.04);
+  strong { color: $mint; }
+}
+
+.garden-row {
+  border-top-color: rgba($gray, 0.18);
+
+  &:hover {
+    background: linear-gradient(to right, rgba($mint, 0.05), transparent 70%);
+    border-top-color: rgba($mint, 0.45);
+  }
+
+  &:last-child { border-bottom-color: rgba($gray, 0.18); }
+}
+
+.garden-row-meta .garden-date { color: $gray; }
+
+.garden-row-body {
+  .garden-title { color: $dark; &:hover { color: $mint; } }
+  .garden-desc  { color: rgba($darkgray, 0.85); }
+  .garden-cat   { color: rgba($darkgray, 0.7); border-color: rgba($gray, 0.25); }
+}
+
+// ── Sidenotes ────────────────────────────────────────
 .sidenote {
   color: $gray;
-  &::before { color: $sage; }
+  &::before { color: $mint; }
 }
-.sidenote-number { color: $sage; }
+.sidenote-number { color: $mint; }
 
 @media (max-width: 1100px) {
   .sidenote {
-    background: rgba($sage, 0.06);
-    border-left-color: rgba($sage, 0.4);
-  }
-}
-.proof-card--anchor {
-  border-top-color: rgba($sage, 0.5);
-  .proof-card--anchor {
-  background: linear-gradient(
-    135deg,
-    rgba($sage, 0.04) 0%,
-    rgba($periwinkle, 0.03) 100%
-  ), rgba($lightgray, 0.7);
-  border: 1px solid rgba($sage, 0.25);
-}
-  &::before {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle cx='16' cy='16' r='14' stroke='%238aa491' stroke-width='1' opacity='0.5'/><circle cx='16' cy='16' r='8' stroke='%238aa491' stroke-width='1' opacity='0.7'/><circle cx='16' cy='16' r='2' fill='%238aa491'/></svg>");
+    background: rgba($mint, 0.06);
+    border-left-color: rgba($mint, 0.4);
   }
 }
 
-.proof-card--quote {
-  border-top-color: rgba($periwinkle, 0.5);
-  &::before { color: rgba($periwinkle, 0.45); }
-}
-
-.proof-card--now {
-  border-top-color: rgba($periwinkle, 0.45);
-  .now-text { color: $darkgray; strong { color: $dark; } }
-  .now-date { color: $gray; }
-}
-// ── Theme toggle: dark mode overrides ──
-// Hide Quarto's default icon (whatever shape it ships) and render our own
-// glyph on the toggle itself, so we don't get the doubled/stacked icon.
+// ── Theme toggle (dark mode) ─────────────────────────
 .quarto-color-scheme-toggle {
   border-color: rgba($gray, 0.3);
 
-  > i,
-  > svg,
-  .bi {
-    display: none !important;
-  }
+  > i, > svg, .bi { display: none !important; }
 
   &::before {
     font-family: "bootstrap-icons" !important;
@@ -375,109 +513,27 @@ table {
   }
 
   &:hover {
-    background: rgba($sage, 0.12);
-    border-color: $sage;
+    background: rgba($mint, 0.12);
+    border-color: $mint;
   }
   &:hover::before {
-    color: $sage;
+    color: $mint;
     transform: rotate(15deg);
   }
 }
 
-// Dark mode is currently active: show sun (click → light)
 [data-bs-theme="dark"] .quarto-color-scheme-toggle::before {
   background-color: $darkgray;
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/></svg>") no-repeat center / contain;
   mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/></svg>") no-repeat center / contain;
 }
 
-.quarto-color-scheme-toggle:hover::before {
-  background-color: $sage;
-}
-body {
-  background-color: $light;
-  background-image: 
-    radial-gradient(at 20% 0%, rgba($sage, 0.04) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, rgba($periwinkle, 0.035) 0px, transparent 50%);
-  background-attachment: fixed;
-}
+.quarto-color-scheme-toggle:hover::before { background-color: $mint; }
+
+// ── Smooth transitions ────────────────────────────────
 body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
-  transition: 
+  transition:
     background-color 0.4s ease,
     color 0.4s ease,
     border-color 0.4s ease;
-}
-// ── Notes (digital garden) — dark ────────────────────
-.garden-intro { color: $darkgray; }
-
-.garden-legend {
-  color: $gray;
-  border-color: rgba($gray, 0.22);
-  background: rgba($sage, 0.04);
-  strong { color: $sage; }
-}
-
-.garden-row {
-  border-top-color: rgba($gray, 0.18);
-
-  &:hover {
-    background: linear-gradient(to right, rgba($sage, 0.05), transparent 70%);
-    border-top-color: rgba($sage, 0.5);
-  }
-
-  &:last-child { border-bottom-color: rgba($gray, 0.18); }
-}
-
-.garden-row-meta .garden-date { color: $gray; }
-
-.garden-row-body {
-  .garden-title { color: $dark; &:hover { color: $sage; } }
-  .garden-desc { color: rgba($darkgray, 0.85); }
-  .garden-cat {
-    color: rgba($darkgray, 0.7);
-    border-color: rgba($gray, 0.25);
-  }
-}
-// ── About page — dark ────────────────────────────────
-.about-intro {
-  color: $darkgray;
-  strong { color: $dark; }
-}
-
-.contact-block p { color: $darkgray; }
-
-.contact-links {
-  color: $gray;
-  background: rgba($sage, 0.04);
-  border-color: rgba($gray, 0.22);
-
-  a {
-    color: $sage;
-    border-bottom-color: rgba($sage, 0.3);
-
-    &:hover {
-      color: $periwinkle;
-      border-bottom-color: $periwinkle;
-    }
-  }
-}
-// ── Timeline tags and nested children — dark ────────
-.timeline-tags {
-  color: lighten($sage, 15%);
-  background-color: rgba($sage, 0.12);
-  border-color: rgba($sage, 0.3);
-}
-
-.timeline-children {
-  border-left-color: rgba($sage, 0.35);
-  
-  .timeline-title { color: $dark; }
-}
-
-.timeline-child {
-  border-bottom-color: rgba($sage, 0.2);
-  
-  .timeline-date { color: $gray; }
-  .timeline-title { color: $dark; }
-  .timeline-desc { color: $darkgray; }
 }

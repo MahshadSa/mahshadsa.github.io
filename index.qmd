@@ -32,6 +32,16 @@ listing:
 A doctor who codes. 
 I work where abdominal radiology meets machine learning, mostly on **inflammatory bowel disease**, building tools that turn medical imaging into something measurable.
 :::
+
+::: {.hero-chips}
+[quantitative MRI]{.chip .chip-mint}
+[ESGAR 2026]{.chip .chip-navy}
+[agentic pipelines]{.chip .chip-rose}
+[IBD imaging]{.chip .chip-mint}
+[UK global talent]{.chip .chip-navy}
+[Bayesian modeling]{.chip .chip-rose}
+:::
+
 :::
 
 ::: {.hero-notes}
@@ -69,7 +79,7 @@ Quantitative colonic motility MRI mapped against endoscopic disease activity, in
 On obsession
 :::
 ::: {.quote-text}
-[Creation is about edited obsession. It is knowing what to keep and, more importantly, what to set on fire.]{.quote-text}
+Creation is about edited obsession. It is knowing what to keep and, more importantly, what to set on fire.
 :::
 ::: {.quote-author}
 Jonathan Anderson
@@ -117,9 +127,7 @@ A vision-language tool for cataloging a bilingual personal library.
 What's on my mind
 :::
 ::: {.now-text}
-Currently learning about Bayesian modeling and workflows. Reading papers on *agentic ai*. Also reading *The sacred and the profane*, 
-a book by Mircea Eliade.
- 
+Currently learning about Bayesian modeling and workflows. Reading papers on *agentic AI*. Also reading *The Sacred and the Profane* by Mircea Eliade.
 :::
 ::: {.now-date}
 Updated April 2026
@@ -130,6 +138,6 @@ Updated April 2026
 
 ---
 
-::: {style="text-align: center; margin: 2rem 0; font-size: 0.78rem; color: #5a7260; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}
+::: {style="text-align: center; margin: 2rem 0; font-size: 0.78rem; color: #4a9a88; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}
 [About](about/index.qmd) · [Research](research/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa)
 :::

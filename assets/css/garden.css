@@ -5,23 +5,23 @@
   gap: 0.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(176, 181, 168, 0.4);
+  border-bottom: 1px solid rgba(148, 168, 176, 0.4);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.78rem;
-  color: #5a7260;
+  color: #4a9a88;           /* mint */
   letter-spacing: 0.03em;
 }
 
 .note-page-meta .meta-date,
 .note-page-meta .meta-updated {
-  color: #b0b5a8;
+  color: #94a8b0;           /* gray */
 }
 
 /* ── Backlinks section ────────────────────────────── */
 .backlinks {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px dashed rgba(176, 181, 168, 0.5);
+  border-top: 1px dashed rgba(148, 168, 176, 0.5);
 }
 
 .backlinks h3 {
@@ -30,7 +30,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #354539;
+  color: #253038;           /* darkgray — was old forest #354539 */
   margin-bottom: 0.8rem;
 }
 
@@ -46,48 +46,48 @@
 .backlinks li::before {
   content: '←';
   margin-right: 0.5em;
-  color: #5a7260;
+  color: #4a9a88;           /* mint */
   font-size: 0.85em;
 }
 
 .backlinks a {
   font-size: 0.9rem;
-  color: #5a7260;
+  color: #4a9a88;           /* mint */
   text-decoration: none;
 }
 
 .backlinks a:hover {
-  color: #6970a0;
+  color: #1a3a5c;           /* navy */
   text-decoration: underline;
 }
 
 /* ── Dark mode overrides ──────────────────────────── */
 [data-bs-theme="dark"] .note-page-meta {
-  border-bottom-color: rgba(139, 145, 137, 0.3);
-  color: #8aa491;
+  border-bottom-color: rgba(106, 136, 136, 0.3);
+  color: #5ab8a0;           /* mint lifted */
 }
 
 [data-bs-theme="dark"] .note-page-meta .meta-date,
 [data-bs-theme="dark"] .note-page-meta .meta-updated {
-  color: #8b9189;
+  color: #6a8888;           /* gray dark */
 }
 
 [data-bs-theme="dark"] .backlinks {
-  border-top-color: rgba(139, 145, 137, 0.35);
+  border-top-color: rgba(106, 136, 136, 0.35);
 }
 
 [data-bs-theme="dark"] .backlinks h3 {
-  color: #c9cdc4;
+  color: #b8cece;           /* darkgray dark — readable on dark bg */
 }
 
 [data-bs-theme="dark"] .backlinks li::before {
-  color: #8aa491;
+  color: #5ab8a0;           /* mint lifted */
 }
 
 [data-bs-theme="dark"] .backlinks a {
-  color: #8aa491;
+  color: #5ab8a0;           /* mint lifted */
 }
 
 [data-bs-theme="dark"] .backlinks a:hover {
-  color: #9aa1cf;
+  color: #3a6a9a;           /* navy lifted */
 }

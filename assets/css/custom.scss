@@ -1,21 +1,26 @@
 /*-- scss:defaults --*/
 
 // ── Backgrounds ──────────────────────────────────────
-$light:         #f9fbf8;
-$lightgray:     #efeeea;
-$gray:          #b0b5a8;
-$darkgray:      #354539;
-$dark:          #19241c;
+$light:         #f8fafa;   // changed: cooler, cleaner off-white (was warm #f9fbf8)
+$lightgray:     #edf0f0;   // changed: cooler surface tone
+$gray:          #94a8b0;   // changed: blue-gray muted (was green-gray)
+$darkgray:      #253038;   // changed: deep blue-teal body text (was forest green)
+$dark:          #0e1a20;   // changed: near-black with teal undertone (was forest black)
 
-// ── Accents (sage + periwinkle only) ─────────────────
-$sage:          #5a7260;
-$periwinkle:    #6970a0;
+// ── Palette: mint · navy · dusty rose ────────────────
+$mint:          #4a9a88;   // PRIMARY — replaces sage. Brighter, cooler green-teal.
+$navy:          #1a3a5c;   // ACCENT  — anchor card, stat highlights. Deep authority blue.
+$rose:          #9a5a6a;   // SECONDARY — quote card, now card, backlinks. Dusty rose.
+
+// ── Legacy aliases (keeps all existing $sage/$periwinkle references working) ─
+$sage:          $mint;
+$periwinkle:    $rose;
 
 // ── Quarto variable mapping ──────────────────────────
 $body-bg:          $light;
 $body-color:       $darkgray;
-$link-color:       $sage;
-$link-hover-color: $periwinkle;
+$link-color:       $mint;
+$link-hover-color: $navy;
 
 $font-family-sans-serif: 'Source Sans 3', 'Helvetica Neue', sans-serif;
 
@@ -23,6 +28,7 @@ $font-family-sans-serif: 'Source Sans 3', 'Helvetica Neue', sans-serif;
 
 // ── Google Fonts ─────────────────────────────────────
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 // ── Base ─────────────────────────────────────────────
 body {
   font-family: 'Source Serif 4', Georgia, serif;
@@ -34,13 +40,13 @@ body {
 }
 
 ::selection {
-  background: rgba($sage, 0.2);
+  background: rgba($mint, 0.18);
   color: $dark;
 }
 
 // ── Navbar ───────────────────────────────────────────
 .navbar {
-  border-bottom: 1px solid rgba($gray, 0.6);
+  border-bottom: 1px solid rgba($gray, 0.5);
   font-family: 'JetBrains Mono', monospace;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -61,12 +67,12 @@ body {
 .navbar-nav .nav-link {
   transition: color 0.3s ease;
   padding: 0.4rem 0.9rem !important;
-  &:hover { color: $sage !important; }
+  &:hover { color: $mint !important; }
 }
 
 .navbar .bi {
   transition: color 0.3s ease;
-  &:hover { color: $sage; }
+  &:hover { color: $mint; }
 }
 
 // ── Headings ─────────────────────────────────────────
@@ -98,16 +104,15 @@ h2 {
   i, em {
     font-family: 'Instrument Serif', 'Fraunces', serif;
     font-style: italic;
-    color: $sage;
+    color: $mint;
   }
-
-
 }
+
 h2 {
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
-  
+
   &::after {
     content: "";
     flex: 1;
@@ -115,8 +120,6 @@ h2 {
     background: linear-gradient(to right, rgba($gray, 0.3), transparent);
   }
 }
-
-
 
 h3 {
   font-weight: 600;
@@ -133,15 +136,15 @@ h4 {
 
 // ── Links ────────────────────────────────────────────
 a {
-  color: $sage;
+  color: $mint;
   text-decoration: underline;
-  text-decoration-color: rgba($sage, 0.3);
+  text-decoration-color: rgba($mint, 0.3);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
   &:hover {
-    color: $periwinkle;
-    text-decoration-color: $periwinkle;
+    color: $navy;
+    text-decoration-color: $navy;
   }
 }
 
@@ -175,6 +178,7 @@ hr {
 
   .hero-left { min-width: 0; }
   .hero-notes { min-width: 0; }
+
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -184,11 +188,11 @@ hr {
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: $sage;
+    color: $mint;
     margin-bottom: 1.8rem;
     padding: 0.35em 0.9em 0.35em 0.7em;
-    background: rgba($sage, 0.08);
-    border: 1px solid rgba($sage, 0.25);
+    background: rgba($mint, 0.07);
+    border: 1px solid rgba($mint, 0.28);
     border-radius: 2px;
 
     &::before {
@@ -197,8 +201,8 @@ hr {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: $sage;
-      box-shadow: 0 0 0 3px rgba($sage, 0.15);
+      background: $mint;
+      box-shadow: 0 0 0 3px rgba($mint, 0.15);
       animation: pulse-dot 2.4s ease-in-out infinite;
     }
   }
@@ -218,10 +222,11 @@ hr {
       font-family: 'Instrument Serif', 'Fraunces', serif;
       font-style: italic;
       font-weight: 400;
-      color: $sage;
+      color: $mint;
       position: relative;
       display: inline-block;
 
+      // ── Wavy underline: navy, keeps original wave shape ──
       &::after {
         content: "";
         position: absolute;
@@ -229,7 +234,7 @@ hr {
         right: -2%;
         bottom: 0.05em;
         height: 0.42em;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 Q 30 2, 60 7 T 120 6 T 198 8' stroke='%236970a0' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.55'/></svg>");
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 Q 30 2, 60 7 T 120 6 T 198 8' stroke='%231a3a5c' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.5'/></svg>");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         pointer-events: none;
@@ -242,7 +247,7 @@ hr {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.82rem;
     font-weight: 500;
-    color: $sage;
+    color: $mint;
     letter-spacing: 0.08em;
     margin-bottom: 2.2rem;
   }
@@ -264,32 +269,32 @@ hr {
       margin-bottom: 1em;
     }
   }
+
   .hero-bio p:first-of-type::first-letter {
-  font-family: 'Fraunces', 'Source Serif 4', serif;
-  font-size: 3.2em;
-  font-weight: 400;
-  float: left;
-  line-height: 0.85;
-  margin: 0.1em 0.1em 0 -0.05em;
-  color: $sage;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
-}
+    font-family: 'Fraunces', 'Source Serif 4', serif;
+    font-size: 3.2em;
+    font-weight: 400;
+    float: left;
+    line-height: 0.85;
+    margin: 0.1em 0.1em 0 -0.05em;
+    color: $mint;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
 }
 
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 3px rgba($sage, 0.15); }
-  50%      { box-shadow: 0 0 0 6px rgba($sage, 0.05); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba($mint, 0.15); }
+  50%       { box-shadow: 0 0 0 6px rgba($mint, 0.05); }
 }
-// Recent notes panel (right side of hero)
+
+// ── Hero notes panel ─────────────────────────────────
 .hero-notes {
   background: transparent;
   border: none;
-  border-left: 1px solid rgba($periwinkle, 0.4);
+  border-left: 1px solid rgba($navy, 0.35);   // navy border on notes panel
   padding: 0.25rem 0 0.25rem 1.75rem;
   position: relative;
 
-
-  // Eyebrow label
   .notes-label {
     display: flex;
     justify-content: space-between;
@@ -298,7 +303,7 @@ hr {
     font-size: 0.72rem;
     text-transform: lowercase;
     letter-spacing: 0.08em;
-    color: $periwinkle;
+    color: $navy;                              // navy label
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba($gray, 0.2);
@@ -307,11 +312,10 @@ hr {
       color: $gray;
       text-decoration: none;
       font-size: 0.7rem;
-      &:hover { color: $sage; }
+      &:hover { color: $mint; }
     }
   }
 
-  // Individual note (no card, just spacing)
   .note-item {
     display: grid;
     grid-template-columns: 1.5rem 1fr;
@@ -320,7 +324,6 @@ hr {
     border-bottom: none;
     padding: 0;
 
-    // Maturity emoji as bullet
     &::before {
       content: attr(data-maturity);
       font-size: 0.95rem;
@@ -337,8 +340,7 @@ hr {
       text-decoration: none;
       display: block;
       margin-bottom: 0.15rem;
-
-      &:hover { color: $sage; }
+      &:hover { color: $mint; }
     }
 
     .note-subtitle {
@@ -359,7 +361,6 @@ hr {
     }
   }
 
-  // Pull quote at bottom
   .notes-thought {
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -379,7 +380,7 @@ hr {
       font-size: 0.68rem;
       text-transform: lowercase;
       letter-spacing: 0.08em;
-      color: $periwinkle;
+      color: $rose;                            // rose on pull quote attribution
       text-align: right;
       display: block;
 
@@ -390,6 +391,7 @@ hr {
     }
   }
 }
+
 @media (max-width: 1100px) {
   .hero-section {
     grid-template-columns: 1fr;
@@ -397,8 +399,49 @@ hr {
   }
   .hero-notes { order: 2; }
 }
-// ── Proof-point cards ────────────────────────────────
-// ── Bento proof grid ─────────────────────────────────
+
+// ── Hero keyword chips ────────────────────────────────
+// Add these inside .hero-left in index.qmd:
+// ::: {.hero-chips}
+// [quantitative MRI]{.chip .chip-mint} [ESGAR 2026]{.chip .chip-navy} etc.
+// :::
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.09em;
+  text-transform: lowercase;
+  padding: 0.28em 0.7em;
+  border-radius: 2px;
+  border: 1px solid;
+  transition: opacity 0.2s ease;
+}
+
+.chip-mint {
+  background: rgba($mint, 0.08);
+  color: darken($mint, 10%);
+  border-color: rgba($mint, 0.28);
+}
+
+.chip-navy {
+  background: rgba($navy, 0.07);
+  color: $navy;
+  border-color: rgba($navy, 0.28);
+}
+
+.chip-rose {
+  background: rgba($rose, 0.07);
+  color: darken($rose, 5%);
+  border-color: rgba($rose, 0.28);
+}
+
+// ── Proof grid ───────────────────────────────────────
 .proof-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -407,29 +450,23 @@ hr {
   margin: 3rem 0 2rem;
 }
 
-// ── Base card: editorial entry, not box ──────────────
 .proof-card {
   position: relative;
-  background: transparent;
-  border: none;
-  border-top: 1px solid rgba($gray, 0.25);
-  border-radius: 0;
-  padding: 1.6rem 0.5rem 1.4rem;
+  background: #ffffff;
+  border: 1px solid rgba($gray, 0.3);
+  border-radius: 6px;
+  padding: 1.6rem 1.4rem 1.4rem;
   overflow: visible;
-  transition: 
-    border-top-color 0.3s ease,
-    background 0.3s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 
-  // Hairline grows into accent on hover
   &:hover {
-    border-top-color: $sage;
-    background: linear-gradient(
-      to bottom,
-      rgba($sage, 0.04) 0%,
-      transparent 60%
-    );
-
-    .card-title a { color: $sage; }
+    border-color: rgba($mint, 0.55);
+    box-shadow: 0 2px 16px rgba($mint, 0.07);
+    background: #ffffff;
+    .card-title a { color: $mint; }
     .card-label { letter-spacing: 0.1em; }
   }
 
@@ -439,10 +476,8 @@ hr {
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: lowercase;
-    color: $sage;
+    color: $mint;
     margin-bottom: 0.9rem;
-    padding-left: 0;
-    border-left: none;
     transition: letter-spacing 0.3s ease;
   }
 
@@ -477,38 +512,43 @@ hr {
     text-transform: lowercase;
 
     strong {
-      color: $sage;
+      color: $navy;
       font-weight: 500;
     }
   }
 }
 
-// ── Card variants ────────────────────────────────────
-
-// Card 1: Anchor (ESGAR). Sage rule, spans 2x2.
+// ── Anchor card (ESGAR / primary work) ───────────────
 .proof-card--anchor {
   grid-column: span 2;
   grid-row: span 2;
-  background: transparent;
-  border-top: 1px solid rgba($sage, 0.5);
-  padding: 1.8rem 0.5rem 1.6rem;
+  background: #ffffff;
+  border: 1px solid rgba($gray, 0.3);
+  border-top: 3px solid $navy;
+  border-radius: 6px;
+  padding: 1.8rem 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  // Quiet geometric mark, top-right, sage
   &::before {
     content: "";
     position: absolute;
     top: 1.6rem;
-    right: 0.5rem;
+    right: 1rem;
     width: 24px;
     height: 24px;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle cx='16' cy='16' r='14' stroke='%235a7260' stroke-width='1' opacity='0.4'/><circle cx='16' cy='16' r='8' stroke='%235a7260' stroke-width='1' opacity='0.5'/><circle cx='16' cy='16' r='2' fill='%235a7260'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle cx='16' cy='16' r='14' stroke='%231a3a5c' stroke-width='1' opacity='0.35'/><circle cx='16' cy='16' r='8' stroke='%231a3a5c' stroke-width='1' opacity='0.45'/><circle cx='16' cy='16' r='2' fill='%231a3a5c'/></svg>");
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.6;
+    opacity: 0.55;
     transition: opacity 0.3s ease, transform 0.5s ease;
+  }
+
+  &:hover {
+    border-color: rgba($navy, 0.5);
+    border-top-color: $navy;
+    box-shadow: 0 4px 24px rgba($navy, 0.08);
   }
 
   &:hover::before {
@@ -516,7 +556,7 @@ hr {
     transform: rotate(45deg);
   }
 
-  .card-label { color: $sage; }
+  .card-label { color: $navy; }
 
   .card-title {
     font-size: 1.6rem;
@@ -529,49 +569,47 @@ hr {
     font-size: 0.95rem;
     max-width: 92%;
   }
-
-  &:hover {
-    border-top-color: $sage;
-    background: linear-gradient(
-      to bottom,
-      rgba($sage, 0.05) 0%,
-      transparent 70%
-    );
-  }
 }
 
-// Card 2: Quote. Periwinkle rule, italic serif, spans 1x2.
+// ── Quote card ───────────────────────────────────────
 .proof-card--quote {
   grid-column: span 1;
   grid-row: span 2;
-  background: transparent;
-  border-top: 1px solid rgba($periwinkle, 0.5);
+  background: rgba($rose, 0.03);
+  border: 1px solid rgba($rose, 0.25);
+  border-top: 3px solid $rose;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 1.8rem 0.5rem 1.6rem;
+  padding: 1.8rem 1.4rem 1.6rem;
 
-  // Smaller, calmer opening quotation mark
   &::before {
     content: "\201C";
     position: absolute;
-    top: 1.2rem;
-    right: 0.5rem;
+    top: 1rem;
+    right: 1rem;
     font-family: 'Instrument Serif', 'Fraunces', serif;
     font-size: 3rem;
     line-height: 1;
-    color: rgba($periwinkle, 0.35);
+    color: rgba($rose, 0.28);
     pointer-events: none;
     transition: color 0.3s ease, transform 0.3s ease;
   }
 
+  &:hover {
+    border-color: rgba($rose, 0.45);
+    border-top-color: $rose;
+    box-shadow: 0 4px 24px rgba($rose, 0.07);
+  }
+
   &:hover::before {
-    color: rgba($periwinkle, 0.6);
+    color: rgba($rose, 0.5);
     transform: scale(1.05);
   }
 
   .card-label {
-    color: $periwinkle;
+    color: $rose;
     margin-bottom: 1.4rem;
   }
 
@@ -589,7 +627,7 @@ hr {
   .quote-author {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: $periwinkle;
+    color: $rose;
     letter-spacing: 0.08em;
     text-transform: lowercase;
 
@@ -598,36 +636,31 @@ hr {
       opacity: 0.6;
     }
   }
-
-  &:hover {
-    border-top-color: $periwinkle;
-    background: linear-gradient(
-      to bottom,
-      rgba($periwinkle, 0.04) 0%,
-      transparent 70%
-    );
-
-    .card-title a { color: $periwinkle; }
-  }
 }
 
-// Card 5: Now / what's on my mind. Wide, periwinkle, editorial closer.
+// ── Now card ─────────────────────────────────────────
 .proof-card--now {
   grid-column: span 3;
-  background: transparent;
-  border-top: 1px solid rgba($periwinkle, 0.45);
-  border-left: none;
+  background: rgba($rose, 0.025);
+  border: 1px solid rgba($rose, 0.22);
+  border-top: 2px solid rgba($rose, 0.5);
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 0.5rem 1.5rem;
-  margin-top: 1rem;
+  padding: 1.6rem 1.4rem 1.4rem;
+  margin-top: 0;
 
-  // No more dotted pattern, cleaner
   &::before { display: none; }
 
+  &:hover {
+    border-color: rgba($rose, 0.4);
+    border-top-color: $rose;
+    box-shadow: 0 2px 16px rgba($rose, 0.06);
+  }
+
   .card-label {
-    color: $periwinkle;
+    color: $rose;
     margin-bottom: 1rem;
   }
 
@@ -655,15 +688,15 @@ hr {
     letter-spacing: 0.08em;
     text-transform: lowercase;
   }
+}
 
-  &:hover {
-    border-top-color: $periwinkle;
-    background: linear-gradient(
-      to bottom,
-      rgba($periwinkle, 0.04) 0%,
-      transparent 70%
-    );
-  }
+// ── Proof grid section background ────────────────────
+// Apply class="proof-section-wrap" to the div around ## Selected work + .proof-grid
+.proof-section-wrap {
+  background: rgba($mint, 0.025);
+  border-top: 1px solid rgba($mint, 0.1);
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 // ── Responsive ───────────────────────────────────────
@@ -690,6 +723,7 @@ hr {
   .proof-card { padding: 1.3rem 0.5rem 1.2rem; }
   .proof-grid { padding: 0 1.25rem; }
 }
+
 // ── Garden maturity tags ─────────────────────────────
 .maturity-tag {
   font-family: 'JetBrains Mono', monospace;
@@ -698,31 +732,49 @@ hr {
   padding: 0.2em 0.65em;
   border-radius: 2px;
   letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+
+  &::before { font-size: 0.95em; line-height: 1; }
+  &.seedling::before { content: '🌱'; }
+  &.sprout::before  { content: '🌿'; }
+  &.evergreen::before { content: '🌳'; }
+
   &.seedling {
-    background: rgba($sage, 0.06);
-    color: $sage;
-    border: 1px solid rgba($sage, 0.15);
+    background: rgba($mint, 0.06);
+    color: $mint;
+    border: 1px solid rgba($mint, 0.15);
   }
-  &.growing {
-    background: rgba($periwinkle, 0.06);
-    color: $periwinkle;
-    border: 1px solid rgba($periwinkle, 0.15);
+  &.sprout {
+    background: rgba($navy, 0.06);
+    color: $navy;
+    border: 1px solid rgba($navy, 0.18);
   }
   &.evergreen {
-    background: rgba($dark, 0.04);
-    color: $darkgray;
-    border: 1px solid rgba($gray, 0.3);
+    background: rgba($rose, 0.05);
+    color: darken($rose, 5%);
+    border: 1px solid rgba($rose, 0.2);
   }
 }
 
-// ── Timeline (CV page) ──────────────────────────────
+.quarto-listing .maturity-tag,
+.listing-item .maturity-tag {
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  padding: 0.25em 0.7em;
+}
+
+// ── Timeline (About page) ────────────────────────────
 .timeline {
-  border-left: 2px solid rgba($darkgray, 0.5);
+  border-left: 2px solid rgba($darkgray, 0.4);
   padding-left: 2rem;
   margin: 2.5rem 0;
+
   .timeline-item {
     position: relative;
     margin-bottom: 2.2rem;
+
     &::before {
       content: '';
       position: absolute;
@@ -731,18 +783,20 @@ hr {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: $sage;
+      background: $mint;
       border: 2px solid $light;
       box-shadow: 0 0 0 2px rgba($gray, 0.4);
     }
+
     .timeline-date {
-      font-family:'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       font-weight: 500;
       color: $gray;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
+
     .timeline-title {
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 1.15rem;
@@ -750,6 +804,7 @@ hr {
       margin: 0.15em 0;
       color: $dark;
     }
+
     .timeline-desc {
       font-size: 0.92rem;
       color: $darkgray;
@@ -758,26 +813,64 @@ hr {
   }
 }
 
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: $navy;
+  opacity: 0.85;
+  background-color: rgba($navy, 0.06);
+  border: 1px solid rgba($navy, 0.18);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  width: fit-content;
+}
 
+.timeline-children {
+  margin-top: 1.2rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba($mint, 0.25);
+
+  .timeline-title { color: $dark; }
+}
+
+.timeline-child {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba($mint, 0.15);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .timeline-date  { font-size: 0.75rem; }
+  .timeline-title { font-size: 0.9rem; }
+}
 
 // ── Now page ─────────────────────────────────────────
 .now-item {
   padding: 1.2rem 0 1.2rem 1.8rem;
-  border-left: 3px solid $periwinkle;
+  border-left: 3px solid $rose;
   margin-bottom: 1.2rem;
   transition: border-left-color 0.3s ease;
-  &:hover { border-left-color: $sage; }
+  &:hover { border-left-color: $mint; }
   strong { color: $dark; }
 }
 
-// ── Blockquotes / Epigraphs ─────────────────────────
+// ── Blockquotes ──────────────────────────────────────
 blockquote {
   font-family: 'IM Fell English', serif;
   font-style: italic;
   font-size: 1.05rem;
   line-height: 1.75;
   color: $darkgray;
-  border-left: 3px solid $periwinkle;
+  border-left: 3px solid $rose;
   padding: 0.8rem 1.5rem;
   margin: 2rem 0;
   background: rgba($lightgray, 0.5);
@@ -813,6 +906,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 1.5rem 0;
+
   th {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
@@ -824,29 +918,20 @@ table {
     padding: 0.6rem 0.8rem;
     text-align: left;
   }
+
   td {
     padding: 0.6rem 0.8rem;
     border-bottom: 1px solid rgba($gray, 0.2);
     color: $darkgray;
   }
-  tr:hover td { background: rgba($sage, 0.04); }
+
+  tr:hover td { background: rgba($mint, 0.04); }
 }
 
 // ── Callouts ─────────────────────────────────────────
-.callout {
-  border-radius: 2px !important;
-  border-left-width: 3px !important;
-}
-
-.callout-tip {
-  border-left-color: $sage !important;
-  background: rgba($sage, 0.04) !important;
-}
-
-.callout-note {
-  border-left-color: $periwinkle !important;
-  background: rgba($periwinkle, 0.04) !important;
-}
+.callout { border-radius: 2px !important; border-left-width: 3px !important; }
+.callout-tip  { border-left-color: $mint !important; background: rgba($mint, 0.04) !important; }
+.callout-note { border-left-color: $navy !important; background: rgba($navy, 0.04) !important; }
 
 // ── TOC sidebar ──────────────────────────────────────
 .sidebar nav[role="doc-toc"] {
@@ -856,7 +941,7 @@ table {
   a {
     color: $gray;
     text-decoration: none;
-    &:hover { color: $sage; }
+    &:hover  { color: $mint; }
     &.active { color: $dark; font-weight: 600; }
   }
 }
@@ -871,22 +956,19 @@ table {
   padding: 1.5rem 0;
   letter-spacing: 0.02em;
   a {
-    color: $sage;
-    &:hover { color: $periwinkle; }
+    color: $mint;
+    &:hover { color: $navy; }
   }
 }
 
-// ── Quarto listing cards ─────────────────────────────
+// ── Quarto listing ───────────────────────────────────
 .quarto-listing {
   .listing-title {
     font-family: 'Source Serif 4', Georgia, serif !important;
     font-weight: 600;
     color: $dark;
   }
-  .listing-description {
-    font-size: 0.92rem;
-    color: $darkgray;
-  }
+  .listing-description { font-size: 0.92rem; color: $darkgray; }
   .listing-category .listing-category-item {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
@@ -902,14 +984,14 @@ table {
     color: $gray;
   }
 }
-// ── Tighter publication list ─────────────────────────
+
+// ── Publications ─────────────────────────────────────
 .pub-entry {
   padding: 0.7rem 0;
   border-bottom: 1px solid rgba($gray, 0.2);
   &:last-child { border-bottom: none; }
-  p {
-    margin-bottom: 0;
-  }
+  p { margin-bottom: 0; }
+
   .pub-title {
     font-family: 'Source Serif 4', Georgia, serif;
     font-weight: 600;
@@ -941,42 +1023,20 @@ table {
       margin-right: 1em;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: $sage;
+      color: $mint;
       text-decoration: none;
-      &:hover {
-        color: $periwinkle;
-        text-decoration: underline;
-      }
+      &:hover { color: $navy; text-decoration: underline; }
     }
   }
 }
-// ── Responsive ───────────────────────────────────────
-@media (max-width: 768px) {
-  .hero-section .hero-name { font-size: 2.4rem; }
-  .proof-grid { grid-template-columns: 1fr; }
-  .project-card { padding: 1.4rem 1.5rem; }
-}
-// Subtitle under page title
-.subtitle, .quarto-title-block .subtitle {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.25rem;
-  color: $sage;
-  margin-top: 0.3em;
-  letter-spacing: 0;
 
-  em, i {
-    font-family: 'Instrument Serif', serif;
-    color: $periwinkle;
-  }
-}
+// ── Skills grid ──────────────────────────────────────
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem 2rem;
-  margin: 2rem 0;
-  
+  margin: 2rem 0 3rem;
+
   .skill-category {
     .label {
       font-family: 'JetBrains Mono', monospace;
@@ -984,16 +1044,18 @@ table {
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: $sage;
+      color: $mint;
       margin-bottom: 0.4rem;
       padding-left: 0.6em;
-      border-left: 2px solid $sage;
+      border-left: 2px solid $mint;
     }
     .items {
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 0.95rem;
       line-height: 1.55;
       color: $darkgray;
+      max-width: 50ch;
+      text-wrap: pretty;
     }
   }
 }
@@ -1001,279 +1063,7 @@ table {
 @media (max-width: 700px) {
   .skills-grid { grid-template-columns: 1fr; }
 }
-// ── Sidenotes (Tufte-style marginalia) ──────────────
-.sidenote {
-  float: right;
-  clear: right;
-  margin-right: -45%;
-  width: 38%;
-  margin-top: 0.3rem;
-  margin-bottom: 1rem;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: $gray;
-  font-style: italic;
 
-  &::before {
-    content: counter(sidenote-counter) " ";
-    font-family: 'JetBrains Mono', monospace;
-    font-style: normal;
-    font-size: 0.7rem;
-    color: $sage;
-    margin-right: 0.4em;
-    vertical-align: super;
-  }
-}
-
-.sidenote-number {
-  counter-increment: sidenote-counter;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: $sage;
-  vertical-align: super;
-  cursor: pointer;
-}
-
-body { counter-reset: section-counter sidenote-counter; }
-
-@media (max-width: 1100px) {
-  .sidenote {
-    float: none;
-    margin: 1rem 0;
-    width: 100%;
-    padding: 0.8rem 1rem;
-    background: rgba($sage, 0.04);
-    border-left: 2px solid rgba($sage, 0.3);
-    font-size: 0.9rem;
-  }
-}
-
-// ── Elevated maturity badges on listings ────────────
-.maturity-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-
-  &::before {
-    font-size: 0.95em;
-    line-height: 1;
-  }
-
-  &.seedling::before { content: '🌱'; }
-  &.growing::before  { content: '🌿'; }
-  &.evergreen::before { content: '🌳'; }
-}
-
-.quarto-listing .maturity-tag,
-.listing-item .maturity-tag {
-  margin-bottom: 0.4rem;
-  font-size: 0.75rem;
-  padding: 0.25em 0.7em;
-}
-
-
-// Light mode active: show moon (click to go dark)
-[data-bs-theme="light"] .quarto-color-scheme-toggle .bi::before {
-  content: "\f494"; // bi-moon-stars
-}
-
-// Dark mode active: show sun (click to go light)
-[data-bs-theme="dark"] .quarto-color-scheme-toggle .bi::before {
-  content: "\f5a2"; // bi-sun
-}
-// ── Theme toggle: enlarged, padded, with subtle frame ──
-.quarto-color-scheme-toggle {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-left: 0.6rem;
-  border: 1px solid rgba($gray, 0.4);
-  border-radius: 4px;
-  background: transparent;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  cursor: pointer;
-  text-decoration: none;
-  color: $darkgray;
-
-  // Hide Quarto's default icon (i, svg, or .bi child)
-  > i,
-  > svg,
-  .bi {
-    display: none !important;
-  }
-
-  // Our own icon, rendered on the toggle itself
-  &::before {
-    font-family: "bootstrap-icons" !important;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1;
-    color: $darkgray;
-    transition: color 0.2s ease, transform 0.4s ease;
-  }
-
-  &:hover {
-    background: rgba($sage, 0.08);
-    border-color: $sage;
-  }
-  &:hover::before {
-    color: $sage;
-    transform: rotate(15deg);
-  }
-}
-
-[data-bs-theme="light"] .quarto-color-scheme-toggle::before,
-.quarto-color-scheme-toggle::before {
-  content: "";
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-color: $darkgray;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/></svg>") no-repeat center / contain;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/></svg>") no-repeat center / contain;
-  transition: background-color 0.2s ease, transform 0.4s ease;
-  font-family: inherit;
-}
-
-.quarto-color-scheme-toggle:hover::before {
-  background-color: $sage;
-  transform: rotate(15deg);
-}
-
-// Dark mode overrides it
-[data-bs-theme="dark"] .quarto-color-scheme-toggle::before {
-  content: "\f5a2";
-}
-body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
-  transition: 
-    background-color 0.4s ease,
-    color 0.4s ease,
-    border-color 0.4s ease;
-}
-// ── Notes (digital garden) ───────────────────────────
-.garden-intro {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 1.15rem;
-  line-height: 1.65;
-  color: $darkgray;
-  max-width: 60ch;
-  margin: 1rem 0 2rem;
-  text-wrap: pretty;
-}
-
-.garden-legend {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  color: $gray;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid rgba($gray, 0.18);
-  border-radius: 4px;
-  background: rgba($sage, 0.025);
-  margin-bottom: 3rem;
-  line-height: 1.9;
-
-  strong {
-    color: $sage;
-    font-weight: 600;
-    margin: 0 0.2em;
-  }
-}
-
-.garden-row {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 1.5rem;
-  padding: 1.4rem 0;
-  border-top: 1px solid rgba($gray, 0.14);
-  align-items: baseline;
-  transition: background 0.25s ease, border-color 0.25s ease;
-
-  &:hover {
-    background: linear-gradient(to right, rgba($sage, 0.03), transparent 70%);
-    border-top-color: rgba($sage, 0.4);
-  }
-
-  &:last-child {
-    border-bottom: 1px solid rgba($gray, 0.14);
-  }
-}
-
-.garden-row-meta {
-  font-family: 'JetBrains Mono', monospace;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-
-  .garden-icon { font-size: 1.05rem; line-height: 1; }
-  .garden-date {
-    font-size: 0.72rem;
-    color: $gray;
-    letter-spacing: 0.04em;
-  }
-}
-
-.garden-row-body {
-  min-width: 0;
-
-  .garden-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: $dark;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.3rem;
-
-    &:hover { color: $sage; }
-  }
-
-  .garden-desc {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 0.92rem;
-    font-style: italic;
-    line-height: 1.55;
-    color: rgba($darkgray, 0.85);
-    margin: 0 0 0.5rem 0;
-    text-wrap: pretty;
-    max-width: 62ch;
-  }
-
-  .garden-cats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.35rem;
-  }
-
-  .garden-cat {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.06em;
-    color: rgba($gray, 0.85);
-    text-transform: lowercase;
-    padding: 0.15em 0.55em;
-    border: 1px solid rgba($gray, 0.2);
-    border-radius: 2px;
-  }
-}
-
-@media (max-width: 700px) {
-  .garden-row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .garden-row-meta {
-    flex-direction: row;
-    gap: 0.8rem;
-    align-items: center;
-  }
-}
 // ── About page ───────────────────────────────────────
 .about-intro {
   font-family: 'Source Serif 4', Georgia, serif;
@@ -1286,43 +1076,12 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
 
   p { margin-bottom: 1.2em; }
   p:last-child { margin-bottom: 0; }
-
-  strong {
-    color: $dark;
-    font-weight: 600;
-  }
+  strong { color: $dark; font-weight: 600; }
 }
 
-// Soften the timeline so it does not dominate
-.timeline {
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
-
-  .timeline-item {
-    .timeline-desc {
-      max-width: 62ch;
-      text-wrap: pretty;
-    }
-  }
-}
-
-// Skills grid: tighten spacing, match the bento language
-.skills-grid {
-  margin: 2rem 0 3rem;
-
-  .skill-category {
-    .items {
-      max-width: 50ch;
-      text-wrap: pretty;
-    }
-  }
-}
-
-// Contact block
 .contact-block {
   margin: 1.5rem 0 2rem;
   max-width: 62ch;
-
   p {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 1.05rem;
@@ -1341,63 +1100,260 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
   margin-top: 1.5rem;
   border: 1px solid rgba($gray, 0.18);
   border-radius: 4px;
-  background: rgba($sage, 0.025);
+  background: rgba($mint, 0.025);
   line-height: 1.9;
 
   a {
-    color: $sage;
+    color: $mint;
     text-decoration: none;
-    border-bottom: 1px solid rgba($sage, 0.25);
+    border-bottom: 1px solid rgba($mint, 0.25);
     transition: color 0.2s ease, border-color 0.2s ease;
-
     &:hover {
-      color: $periwinkle;
-      border-bottom-color: $periwinkle;
+      color: $navy;
+      border-bottom-color: $navy;
     }
   }
 }
 
-.timeline-tags {
+// ── Digital garden ───────────────────────────────────
+.garden-intro {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: $darkgray;
+  max-width: 60ch;
+  margin: 1rem 0 2rem;
+  text-wrap: pretty;
+}
+
+.garden-legend {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: $gray;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba($gray, 0.18);
+  border-radius: 4px;
+  background: rgba($mint, 0.025);
+  margin-bottom: 3rem;
+  line-height: 1.9;
+
+  strong {
+    color: $mint;
+    font-weight: 600;
+    margin: 0 0.2em;
+  }
+}
+
+.garden-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba($gray, 0.14);
+  align-items: baseline;
+  transition: background 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    background: linear-gradient(to right, rgba($mint, 0.03), transparent 70%);
+    border-top-color: rgba($mint, 0.4);
+  }
+
+  &:last-child { border-bottom: 1px solid rgba($gray, 0.14); }
+}
+
+.garden-row-meta {
+  font-family: 'JetBrains Mono', monospace;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.6rem;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  .garden-icon { font-size: 1.05rem; line-height: 1; }
+  .garden-date { font-size: 0.72rem; color: $gray; letter-spacing: 0.04em; }
+}
+
+.garden-row-body {
+  min-width: 0;
+
+  .garden-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: $dark;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.3rem;
+    &:hover { color: $mint; }
+  }
+
+  .garden-desc {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.92rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba($darkgray, 0.85);
+    margin: 0 0 0.5rem 0;
+    text-wrap: pretty;
+    max-width: 62ch;
+  }
+
+  .garden-cats { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.35rem; }
+
+  .garden-cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: rgba($gray, 0.85);
+    text-transform: lowercase;
+    padding: 0.15em 0.55em;
+    border: 1px solid rgba($gray, 0.2);
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 700px) {
+  .garden-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .garden-row-meta { flex-direction: row; gap: 0.8rem; align-items: center; }
+}
+
+// ── Subtitle ─────────────────────────────────────────
+.subtitle, .quarto-title-block .subtitle {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: $mint;
+  margin-top: 0.3em;
+  letter-spacing: 0;
+
+  em, i {
+    font-family: 'Instrument Serif', serif;
+    color: $rose;
+  }
+}
+
+// ── Sidenotes ────────────────────────────────────────
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -45%;
+  width: 38%;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: $gray;
+  font-style: italic;
+
+  &::before {
+    content: counter(sidenote-counter) " ";
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 0.7rem;
+    color: $mint;
+    margin-right: 0.4em;
+    vertical-align: super;
+  }
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  color: $sage;
-  opacity: 0.85;
-  background-color: rgba($sage, 0.08);
-  border: 1px solid rgba($sage, 0.2);
+  color: $mint;
+  vertical-align: super;
+  cursor: pointer;
+}
+
+body { counter-reset: section-counter sidenote-counter; }
+
+@media (max-width: 1100px) {
+  .sidenote {
+    float: none;
+    margin: 1rem 0;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba($mint, 0.04);
+    border-left: 2px solid rgba($mint, 0.3);
+    font-size: 0.9rem;
+  }
+}
+
+// ── Theme toggle ─────────────────────────────────────
+[data-bs-theme="light"] .quarto-color-scheme-toggle .bi::before {
+  content: "\f494";
+}
+[data-bs-theme="dark"] .quarto-color-scheme-toggle .bi::before {
+  content: "\f5a2";
+}
+
+.quarto-color-scheme-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 0.6rem;
+  border: 1px solid rgba($gray, 0.4);
   border-radius: 4px;
-  padding: 0.25rem 0.6rem;
-  width: fit-content;
-}
-.timeline-children {
-  margin-top: 1.2rem;
-  padding-left: 1.2rem;
-  border-left: 1px solid color-mix(in srgb, var(--color-sage, #5a7260) 25%, transparent);
-  .timeline-title {
-    color: $dark;
+  background: transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: $darkgray;
+
+  > i, > svg, .bi { display: none !important; }
+
+  &::before {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1;
+    color: $darkgray;
+    transition: color 0.2s ease, transform 0.4s ease;
+  }
+
+  &:hover {
+    background: rgba($mint, 0.08);
+    border-color: $mint;
+  }
+  &:hover::before {
+    color: $mint;
+    transform: rotate(15deg);
   }
 }
 
-.timeline-child {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed color-mix(in srgb, var(--color-sage, #5a7260) 15%, transparent);
+[data-bs-theme="light"] .quarto-color-scheme-toggle::before,
+.quarto-color-scheme-toggle::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: $darkgray;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/></svg>") no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/></svg>") no-repeat center / contain;
+  transition: background-color 0.2s ease, transform 0.4s ease;
+  font-family: inherit;
+}
 
-  &:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+.quarto-color-scheme-toggle:hover::before { background-color: $mint; }
 
-  .timeline-date {
-    font-size: 0.75rem;  // slightly smaller than parent dates
-  }
+[data-bs-theme="dark"] .quarto-color-scheme-toggle::before { content: "\f5a2"; }
 
-  .timeline-title {
-    font-size: 0.9rem;   // slightly smaller than parent titles
-  }
+// ── Smooth transitions ────────────────────────────────
+body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+// ── Responsive general ───────────────────────────────
+@media (max-width: 768px) {
+  .hero-section .hero-name { font-size: 2.4rem; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .project-card { padding: 1.4rem 1.5rem; }
 }

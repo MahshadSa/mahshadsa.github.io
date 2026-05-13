@@ -12,19 +12,16 @@ This is a [now page](https://nownownow.com/about). It tells you what I'm spendin
 ---
 
 ::: {.now-item}
-**Scoping the agentic Lémann extraction pipeline** — designing a six-phase research project: an LLM agent that reads free-text radiology reports, extracts Lémann Index fields, calls a scoring tool, and escalates uncertain cases to a radiologist. Early architecture and IRB planning phase.
+**Scoping the agentic/radiology reports pipeline** —  early architecture and IRB planning phase.
 :::
 
 ::: {.now-item}
-**Preparing presentations for ESGAR 2026** — two first-author oral presentations. Building slides and rehearsing.
+**Preparing presentations for ESGAR 2026** — two first-author oral presentations. Building slides and material as I might not be able to attend.
 :::
 
-::: {.now-item}
-**Exploring the UK Global Talent Visa** — assembling evidence for the Exceptional Promise route via the Royal College of Radiologists.
-:::
 
 ::: {.now-item}
-**Reading** — BABEL by R.F. Kuang ,Statistical Rethinking by Richard McElreath, The fixer by Bernard Malamud, The sacred and the profane by Mirca Eliade
+**Reading** — BABEL by *R.F. Kuang* ,Statistical Rethinking by *Richard McElreath*, The fixer by *Bernard Malamud*, The sacred and the profane by *Mirca Eliade*
 :::
 
 
