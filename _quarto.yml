@@ -8,7 +8,6 @@ website:
   site-url: https://mahshadsa.github.io
   repo-url: https://github.com/MahshadSa/mahshadsa.github.io
   favicon: assets/img/favicon.png
-  sitemap: true
 
   navbar:
     background: light
