@@ -31,15 +31,14 @@ This is where GIQuant becomes both useful and complicated. When the algorithm me
 That ambiguity is not a flaw in the tool. It is a feature of the disease. And it is exactly why a low motility score in UC carries information about both current inflammatory activity and accumulated structural damage simultaneously, which is what we found, and what makes this measurement worth paying attention to.
 
 ---
-
+::: {style="font-size: 0.85em;"}
 ## References
 
 Bassotti G, et al. Abnormal gut motility in inflammatory bowel disease: an update. *Techniques in Coloproctology*. 2020.
 
-Menys A, et al. Aberrant motility in unaffected small bowel is linked to inflammatory burden and patient symptoms in Crohn's disease. *Inflammatory Bowel Diseases*. 2016;22(1):163-171.
+Menys A, et al. Quantified terminal ileal motility during MR enterography as a biomarker of Crohn disease activity: prospective multi-institution study. *Radiology*. 2018.
 
-Menys A, et al. Quantified terminal ileal motility during MR enterography as a biomarker of Crohn disease activity: prospective multi-institution study. *Radiology*. 2018;289(2):428-435.
-
-Gordon IO, et al. Fibrosis in ulcerative colitis is directly linked to severity and chronicity of mucosal inflammation. *Alimentary Pharmacology and Therapeutics*. 2018;47(7):922-939.
+Gordon IO, et al. Fibrosis in ulcerative colitis is directly linked to severity and chronicity of mucosal inflammation. *Alimentary Pharmacology and Therapeutics*. 2018.
 
 Plumb AA, et al. Small bowel motility quantified by cine MRI to predict longer-term response in patients with Crohn's disease commencing biological therapy: the Motility Study. *Radiology*. 2025.
+:::
