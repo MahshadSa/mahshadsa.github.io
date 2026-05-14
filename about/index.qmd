@@ -82,7 +82,7 @@ If you want the longer version of how I got here, I wrote it [here](../notes/fro
 
 ::: {.contact-block}
 
-The fastest way to reach me is by [email](mailto:mahshadsarikhani9696@gmail.com). If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would like to hear from you.
+The fastest way to reach me is by [email](mailto:mah.sarikhani.md@gmail.com). If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would like to hear from you.
 
 ::: {.contact-links}
 [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/0000-0002-0475-3064)
