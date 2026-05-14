@@ -1,0 +1,45 @@
+---
+title: "What Colonic Motility Actually Means (And Why That Depends on Who You Ask)"
+description: "The word motility means different things depending on who you ask. What I learned after two years of working on it in UC: what it is, what disturbs it, and why measuring it is harder than it sounds."
+date: 2026-05-14
+categories: [UC, motility, MRI, IBD, GIQuant]
+maturity: sprout
+---
+
+::: {.note-page-meta}
+[🌿 sprout]{.maturity-tag .sprout} · Planted May 14, 2026 · Last tended May 14, 2026
+:::
+
+I have been working on colonic motility in ulcerative colitis for about two years now. It took me longer than I expected to understand what the word actually means, because the answer changes depending on who is talking.
+
+For a gastroenterologist, motility means the movements that drive bowel habit. For a radiologist, it means the contractions visible on a cine MRI screen. For a patient, it is the force keeping them in the bathroom. The word is doing different work in each of those sentences, and the literature does not always flag that clearly.
+
+What the literature does tell us is that colonic movements are not random. The colon produces low-amplitude and high-amplitude contractions, and each type serves a distinct purpose: fluid absorption, propulsion, mass movements. These are regulated by meals, hormones, and the enteric nervous system, and they are disturbed by diseases like UC. Motility is also not the same as transit, though the two are often conflated. Transit is what moves content from one place to another. Motility is the mechanical activity that makes that possible. They correlate, but they are not interchangeable.
+
+For most of history, motility was measured by manometry, pressure used as a proxy for movement. Then around 2014, an algorithm called GIQuant, developed by Motilent, changed what was possible. Applied to cine MRI sequences, it measures pixel-level displacement across a time series using the standard deviation of the Jacobian from a non-rigid registration algorithm. The output is a parametric map: each segment of bowel gets a motility score, and the map runs from blue (still) to red (active). It was built primarily for small bowel assessment in Crohn's disease, where MRE is standard practice and datasets were large enough to validate it.^[The references below trace this history: Menys 2016 established that aberrant motility in unaffected small bowel reflects inflammatory burden, and Menys 2018 validated terminal ileal motility as a prospective multi-institution biomarker in Crohn's.]
+
+So why did it take so long to apply this to the colon in UC? Not because the tool was not ready. Because the data did not exist. MRE is not the standard imaging modality for UC the way it is for Crohn's. The colon is harder to image, the disease sits differently, and most UC monitoring has historically relied on endoscopy and calprotectin rather than cross-sectional imaging. Nobody had a large prospective UC cohort with cine MRI sequences to validate motility quantification against. That gap is part of what our work set out to address.
+
+What disturbs colonic motility in UC turns out to be more than one thing, and the distinction matters.
+
+In active disease, the disruption is neurochemical. Inflammatory mediators, including nitric oxide, vasoactive intestinal peptide, and cytokines, interfere with the enteric nervous system and smooth muscle function. The result is paradoxical: the colon looks relaxed on imaging but the patient has diarrhea. What is actually happening is an absence of normal phasic contractions combined with increased low-amplitude propagating contractions driving urgency and frequency. In the proximal colon, inhibitory reflexes can cause the opposite problem, fecal stasis and constipation even while the distal colon is inflamed. The same disease, different directions, depending on where you look.^[Bassotti et al. review the full spectrum of motility abnormalities in IBD, including the paradox of hypomotility coexisting with diarrhea in active UC.]
+
+In chronic disease, the mechanism shifts. Repeated inflammation remodels the bowel wall structurally. Fibrosis develops in the submucosa and, in advanced cases, extends into the muscle layers and the myenteric plexus. The haustral folds flatten. The wall stiffens. A colon that has lost its haustra has lost the contractions responsible for fluid absorption, which is one reason why chronic UC patients can have diarrhea even in apparent remission: the machinery for normal function has been permanently altered.^[Gordon et al. 2018 showed that submucosal fibrosis is present in 100% of UC colectomy specimens in areas of prior inflammation, and that its severity is directly linked to the chronicity and severity of mucosal inflammation.]
+
+This is where GIQuant becomes both useful and complicated. When the algorithm measures a low motility score on a colon segment, what exactly is it seeing? A wall suppressed by active inflammation, or a wall that has fibrosed and lost its capacity to contract? The motility map cannot distinguish them. A segment with small, rapid trembling movements from neurochemical irritation and a segment with slow, weak contractions from fibrotic stiffening can produce similar standard deviation values through entirely different mechanisms. The score captures the degree of movement. It does not tell you why the movement has changed.
+
+That ambiguity is not a flaw in the tool. It is a feature of the disease. And it is exactly why a low motility score in UC carries information about both current inflammatory activity and accumulated structural damage simultaneously, which is what we found, and what makes this measurement worth paying attention to.
+
+---
+
+## References
+
+Bassotti G, et al. Abnormal gut motility in inflammatory bowel disease: an update. *Techniques in Coloproctology*. 2020.
+
+Menys A, et al. Aberrant motility in unaffected small bowel is linked to inflammatory burden and patient symptoms in Crohn's disease. *Inflammatory Bowel Diseases*. 2016;22(1):163-171.
+
+Menys A, et al. Quantified terminal ileal motility during MR enterography as a biomarker of Crohn disease activity: prospective multi-institution study. *Radiology*. 2018;289(2):428-435.
+
+Gordon IO, et al. Fibrosis in ulcerative colitis is directly linked to severity and chronicity of mucosal inflammation. *Alimentary Pharmacology and Therapeutics*. 2018;47(7):922-939.
+
+Plumb AA, et al. Small bowel motility quantified by cine MRI to predict longer-term response in patients with Crohn's disease commencing biological therapy: the Motility Study. *Radiology*. 2025.
