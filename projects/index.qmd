@@ -10,4 +10,4 @@ listing:
 toc: false
 ---
 
-Research software and tools I've built -- from deployed calculators to experimental AI pipelines. Each project page describes the problem, approach, and current status. All software is research code for transparent evaluation and reproducible analysis, not clinical deployment.
+Research software and tools built at the intersection of clinical imaging, IBD, and applied AI. Some are deployed and in active use; others are experiments that earned their place by teaching something useful. Each project page describes the problem, the design decisions, and where things stand now.

@@ -8,9 +8,9 @@ toc-depth: 2
 ---
 
 ::: {.about-intro}
-I am a physician and imaging researcher at Tehran University of Medical Sciences. The question I keep working on is whether MRI can tell us enough about inflammatory bowel disease to reduce how often patients need a scope. It turns out to be a harder question than it first looks, and that difficulty is what built most of what I know how to do.
+I am a physician and imaging researcher at Tehran University of Medical Sciences. Most of my work circles around one question: can MRI, read with enough precision, tell us enough about inflammatory bowel disease that patients need fewer scopes. Answering that has pulled me into quantitative imaging, machine learning, and eventually into building the tools myself, because the off-the-shelf ones were not quite right.
 
-If you want the longer version of how I got here, I wrote it [here](../notes/from-operating-room-to-agentic-ai.qmd).
+The longer version of how I got here is [here](../notes/from-operating-room-to-agentic-ai.qmd).
 :::
 
 ## *Path*

@@ -1,28 +1,42 @@
 ---
 title: "Now"
-subtitle: "What I'm currently focused on"
-date: last-modified
-toc: false
+pagetitle: "Now — Mahshad Sarikhani"
+subtitle: "What I'm spending time on"
+toc: true
+toc-location: right
+toc-depth: 2
+---
+*Updated May 2026. This is a [now page](https://nownownow.com/about): a periodic record of where attention is actually going, not where it should be going.*
+
 ---
 
-*Last updated: May 2026*
-
-This is a [now page](https://nownownow.com/about). It tells you what I'm spending my time and energy on at this point in my life.
-
----
+## Research *work*
 
 ::: {.now-item}
-**Scoping the agentic/radiology reports pipeline** —  early architecture and IRB planning phase.
+**Agentic Lémann pipeline** — early architecture and IRB planning. The core design question right now is how to make the extraction steps auditable without making them unusable. Balancing traceability against clinical workflow friction.
 :::
 
 ::: {.now-item}
-**Preparing presentations for ESGAR 2026** — two first-author oral presentations. Building slides and material as I might not be able to attend.
+**ESGAR 2026 presentations** — two first-author orals accepted. Building slides for both. The motility paper and the Bayesian risk stratification model.
 :::
-
 
 ::: {.now-item}
-**Reading** — BABEL by *R.F. Kuang* ,Statistical Rethinking by *Richard McElreath*, The fixer by *Bernard Malamud*, The sacred and the profane by *Mirca Eliade*
+**Motility manuscript** — final checks before submission. Based on the ECCO and ESGAR abstracts, with Motilent and the UCL group. I'm excited about it.
 :::
 
+## Reading *now*
 
+## Reading *now*
 
+::: {.now-item}
+- *BABEL* — R.F. Kuang
+- *Statistical Rethinking* — Richard McElreath
+- *The Fixer* — Bernard Malamud
+- *The Sacred and the Profane* — Mircea Eliade
+:::
+
+## On *the side*
+
+::: {.now-item}
+**UK Global Talent Visa** — RCR route, Exceptional Promise. Application in progress. The evidence portfolio is assembled; now it is a waiting game.
+:::

@@ -10,19 +10,19 @@ categories: [VLM, tool, personal, Persian, React]
 
 ## Problem
 
-Cataloging a personal library of several hundred books is slow, especially when half of them are in Persian. Existing tools assume barcoded, commercially published, English-language books. Most Persian editions have no ISBN in any accessible database, and barcode-scanning apps either skip them entirely or return nothing.
+Cataloging a personal library of several hundred books is slow when half of them are in Persian. Existing tools assume barcoded, commercially published, English-language books. Most Persian editions have no ISBN in any accessible database, and barcode-scanning apps either skip them entirely or return nothing.
 
 ## Approach
 
-The constraints were clear: no paid API, no server I need to keep running, a model that handles non-Latin scripts without fine-tuning. The result is a browser-only React app with no backend.
+The constraints were clear from the start: no paid API, no server to maintain, a model that handles non-Latin scripts without fine-tuning. The result is a browser-only React app with no backend.
 
-A three-stage pipeline that treats cataloging as a conversation between a vision model, a human, and an enrichment layer:
+The pipeline treats cataloging as a three-stage conversation between a vision model, a human reviewer, and an enrichment layer.
 
 **Stage 1. Upload and extract.** Shelf photos go to Qwen2.5-VL-72B via the HuggingFace Router. The model reads each spine and returns structured data: title and author in the original script, a romanized version for non-Latin text, and a confidence score. Persian/Arabic normalization runs before deduplication, accounting for Unicode variants that look identical but are not (Persian ya versus Arabic ya, kaf variants, ZWNJ, tatweel).
 
-**Stage 2. Review and confirm.** Results appear in an editable table sorted by confidence, so the rows most likely to need a human eye come first. The confidence renders as three buckets rather than a raw percentage, because the model's self-reported score is not a calibrated probability. Fuzzy deduplication catches books that appear in multiple photos.
+**Stage 2. Review and confirm.** Results appear in an editable table sorted by confidence, so the rows most likely to need a human eye come first. Confidence renders as three buckets rather than a raw percentage, because the model's self-reported score is not a calibrated probability. Fuzzy deduplication catches books that appear across multiple photos.
 
-**Stage 3. Enrich and browse.** Confirmed books are sent to the Open Library API for year, pages, ISBN, and cover image. A second model call fills specific gaps the API leaves, particularly author nationality, which Open Library rarely returns reliably. Genre is normalized to a small controlled vocabulary because Open Library subject arrays include entries like "Accessible book" alongside actual genres. The catalog lives in IndexedDB and renders as a searchable dashboard with breakdowns by country, language, genre, and decade.
+**Stage 3. Enrich and browse.** Confirmed books are sent to the Open Library API for year, page count, ISBN, and cover image. A second model call fills specific gaps the API leaves, particularly author nationality, which Open Library rarely returns reliably. Genre is normalized to a small controlled vocabulary because Open Library subject arrays include entries like "Accessible book" alongside actual genres. The catalog lives in IndexedDB and renders as a searchable dashboard with breakdowns by country, language, genre, and decade.
 
 ## Why this project
 
@@ -32,7 +32,7 @@ An earlier version had a FastAPI backend doing the same work. For a single-user 
 
 ## Status
 
-Public. The pipeline is functional for bilingual libraries. Known limitations: HEIC images from iPhone exports are not yet supported; VLM accuracy on decorative Persian calligraphic spines drops to around 80 to 85 percent, which is why the review step is architectural rather than optional.
+Public. The pipeline works for bilingual libraries. Known limitations: HEIC images from iPhone exports are not yet supported, and VLM accuracy on decorative Persian calligraphic spines drops to around 80 to 85 percent, which is why the review step is architectural rather than optional.
 
 ## Links
 

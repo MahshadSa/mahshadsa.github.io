@@ -11,21 +11,19 @@ categories: [IBD, tool, Python]
 
 ## Problem
 
-What clinical or research gap does this address? Why does it matter? Keep it to 2–3 sentences that a non-specialist could follow.
+What gap does this address, and why does it matter? Aim for 2 to 3 sentences a non-specialist could follow without losing the technical stakes.
 
 ## Approach
 
-How does it work? Describe the architecture, key design decisions, and why you chose this path over alternatives.
+How does it work? Cover the architecture, the key design decisions, and why this path over the alternatives. If there was a previous version you moved away from, say why.
 
-## Key details
+## Why this project
 
-- **Stack**: Python, Streamlit, PyTorch, etc.
-- **Data**: What it trains on or processes
-- **Evaluation**: Metrics, validation approach
+Optional but useful: what drew you to this specifically, what it taught you, or why it exists alongside the more formal work.
 
 ## Status
 
-Where things stand right now. What's deployed, what's in progress, what's next.
+Where things stand now. What is deployed, what is in progress, what are the known limitations.
 
 ## Links
 

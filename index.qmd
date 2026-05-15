@@ -30,7 +30,7 @@ listing:
 
 ::: {.hero-bio}
 A doctor who codes. 
-I work where abdominal radiology meets machine learning, mostly on **inflammatory bowel disease**, building tools that turn medical imaging into something measurable.
+I work where abdominal radiology meets clinical AI, mostly on **inflammatory bowel disease**, building tools that turn medical imaging into something measurable.
 :::
 
 ::: {.hero-chips}
