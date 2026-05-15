@@ -3,6 +3,7 @@ title: "Lemann Index Calculator"
 description: "Streamlit app for computing cumulative bowel damage scores in Crohn's disease"
 date: 2024-06-01
 categories: [IBD, tool, Streamlit, Crohn's disease]
+draft: true
 ---
 
 ::: {.project-card}

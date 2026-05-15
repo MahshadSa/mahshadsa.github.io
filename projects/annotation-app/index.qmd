@@ -3,6 +3,7 @@ title: "UC MRE Activity Risk Stratification"
 description: "Bayesian multilevel model for triage-oriented ulcerative colitis activity scoring from MRE"
 date: 2025-12-01
 categories: [Bayesian, IBD, ulcerative colitis, Streamlit]
+draft: true
 ---
 
 ::: {.project-card}

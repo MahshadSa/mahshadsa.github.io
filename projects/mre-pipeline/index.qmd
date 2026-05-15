@@ -3,6 +3,7 @@ title: "Agentic Lemann Extraction Pipeline"
 description: "LLM-powered extraction of structured scoring fields from free-text radiology reports"
 date: 2026-04-01
 categories: [LLM, agentic AI, IBD, NLP]
+draft: true
 ---
 
 ::: {.project-card}

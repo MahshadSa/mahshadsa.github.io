@@ -3,6 +3,7 @@ title: "radiology-clip-mini"
 description: "CLIP-style vision-language model for chest X-ray text-image retrieval"
 date: 2024-06-01
 categories: [multimodal AI, CLIP, chest X-ray, vision-language]
+draft: true
 ---
 
 ::: {.project-card}

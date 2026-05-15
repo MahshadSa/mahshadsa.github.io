@@ -3,6 +3,7 @@ title: "ct-phrase-retrieval"
 description: "Text-based CT image retrieval system"
 date: 2024-03-01
 categories: [retrieval, CT, NLP]
+draft: true
 ---
 
 ::: {.project-card}
