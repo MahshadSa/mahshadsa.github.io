@@ -14,14 +14,17 @@ website:
     foreground: dark
     title: "MS"
     left:
-      - text: "Research"
-        href: research/index.qmd
-      - text: "Notes"
-        href: notes/index.qmd
-      - text: "Now"
-        href: now.qmd
       - text: "About"
         href: about/index.qmd
+      - text: "Notes"
+        href: notes/index.qmd        
+      - text: "Research"
+        href: research/index.qmd
+      - text: "Projects"
+        href: projects/index.qmd
+      - text: "Now"
+        href: now.qmd
+
     right:
       - icon: github
         href: https://github.com/MahshadSa
