@@ -6,17 +6,17 @@ website:
   title: "Mahshad Sarikhani"
   description: "Physician-researcher at Tehran University. Quantitative MRI in IBD, motility MRI, Bayesian multilevel models, and agentic clinical AI pipelines."
   site-url: https://mahshadsa.github.io
-  favicon: assets/img/favicon.png
 
   open-graph:
     title: "Mahshad Sarikhani"
     description: "Physician-researcher at Tehran University. Quantitative MRI in IBD, motility MRI, Bayesian multilevel models, and agentic clinical AI pipelines."
-    image: /assets/img/og-image.jpg
-
+    image: https://mahshadsa.github.io/assets/img/og-image.jpg
+    image-width: 1200
+    image-height: 630
   twitter-card:
     title: "Mahshad Sarikhani"
     description: "Physician-researcher at Tehran University. Quantitative MRI in IBD, motility MRI, Bayesian multilevel models, and agentic clinical AI pipelines."
-    image: /assets/img/og-image.jpg
+    image: https://mahshadsa.github.io/assets/img/og-image.jpg
     card-style: summary_large_image
 
   navbar:
