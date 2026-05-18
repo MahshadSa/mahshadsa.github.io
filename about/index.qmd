@@ -33,15 +33,15 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Motilent · University College London, UK]{.timeline-title}
-[Cross-site work on motility MRI biomarkers: feature definitions, QC protocols, analysis plans. Supporting outputs at ECCO and ESGAR and ongoing manuscripts.]{.timeline-desc}
-
-[GIQuant · MRE motility biomarkers · cross-site validation]{.timeline-tags}
+[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations accepted at ESGAR 2026. Manuscript in preparation for submission.]{.timeline-desc}
+[GIQuant · colonic displacement metrics · UC MRE · cross-site validation]{.timeline-tags}
 :::
 
 ::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Icahn School of Medicine at Mount Sinai, New York]{.timeline-title}
-[Collaboration with Prof. Jean-Frédéric Colombel's group on IBD imaging research and manuscript development.]{.timeline-desc}
+[Prof. Jean-Frédéric Colombel (Icahn School of Medicine at Mount Sinai) is a co-author on the motility MRI manuscript, contributing clinical expertise and manuscript review.]{.timeline-desc}
+[IBD · ulcerative colitis · clinical validation]{.timeline-tags}
 :::
 
 :::

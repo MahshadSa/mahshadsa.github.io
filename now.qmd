@@ -26,8 +26,6 @@ toc-depth: 2
 
 ## Reading *now*
 
-## Reading *now*
-
 ::: {.now-item}
 - *BABEL* — R.F. Kuang
 - *Statistical Rethinking* — Richard McElreath

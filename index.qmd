@@ -30,12 +30,12 @@ listing:
 
 ::: {.hero-bio}
 A doctor who codes. 
-I work where abdominal radiology meets clinical AI, mostly on **inflammatory bowel disease**, building tools that turn medical imaging into something measurable.
+I work on quantitative MRI in inflammatory bowel disease, building models that turn imaging into something measurable.
 :::
 
 ::: {.hero-chips}
 [quantitative MRI]{.chip .chip-mint}
-[ESGAR 2026]{.chip .chip-navy}
+[2× ESGAR 2026]{.chip .chip-navy}
 [agentic pipelines]{.chip .chip-rose}
 [IBD imaging]{.chip .chip-mint}
 [UK global talent]{.chip .chip-navy}
@@ -59,46 +59,25 @@ I work where abdominal radiology meets clinical AI, mostly on **inflammatory bow
 
 ::: {.proof-grid}
 
-::: {.proof-card .proof-card--anchor}
+<!-- Row 1: wide anchor + narrow project -->
+::: {.proof-card .proof-card--wide .proof-card--anchor}
 ::: {.card-label}
 ESGAR 2026 · Oral Presentation
 :::
 ::: {.card-title}
-[Motility MRI as a biomarker in ulcerative colitis](research/index.qmd)
+[Association of Colonic Motility on MRE with Endoscopic Activity and Chronic Structural Damage in UC](research/index.qmd)
 :::
 ::: {.card-desc}
-Quantitative colonic motility MRI mapped against endoscopic disease activity, in collaboration with Motilent. The first work of its kind in ulcerative colitis.
+GIQuant-derived displacement metrics mapped against Mayo Endoscopic Subscores in a UC cohort. In collaboration with Motilent and Prof. Jean-Frédéric Colombel (Mount Sinai).
 :::
 ::: {.card-stat}
-**June 2026** · Vienna
+**June 2026** · Montpellier
 :::
 :::
 
-::: {.proof-card .proof-card--quote}
-::: {.card-label}
-On obsession
-:::
-::: {.quote-text}
-Creation is about edited obsession. It is knowing what to keep and, more importantly, what to set on fire.
-:::
-::: {.quote-author}
-Jonathan Anderson
-:::
-:::
+::: {.proof-stack}
 
-::: {.proof-card}
-::: {.card-label}
-Live Tool
-:::
-::: {.card-title}
-[Lemann Index Calculator](projects/lemann-calculator/index.qmd)
-:::
-::: {.card-desc}
-A Streamlit app for computing cumulative bowel damage in Crohn's disease.
-:::
-:::
-
-::: {.proof-card}
+::: {.proof-card .proof-card--narrow}
 ::: {.card-label}
 In Progress
 :::
@@ -110,27 +89,59 @@ Using LLMs to extract structured data from free-text radiology reports.
 :::
 :::
 
-::: {.proof-card}
+::: {.proof-card .proof-card--narrow}
 ::: {.card-label}
-Personal Project
+Live Tool
 :::
 ::: {.card-title}
-[Bookshelf Scanner](projects/bookshelf-scanner/index.qmd)
+[Lemann Index Calculator](projects/lemann-calculator/index.qmd)
 :::
 ::: {.card-desc}
-A vision-language tool for cataloging a bilingual personal library.
+A Streamlit app for computing cumulative bowel damage in Crohn's disease.
 :::
 :::
 
-::: {.proof-card .proof-card--now}
+:::
+
+<!-- Row 2: narrow project + wide anchor -->
+::: {.proof-card .proof-card--quote .proof-card--narrow}
+::: {.card-label}
+On obsession
+:::
+::: {.quote-text}
+Creation is about edited obsession. It is knowing what to keep and, more importantly, what to set on fire.
+:::
+::: {.quote-author}
+Jonathan Anderson
+:::
+:::
+
+
+::: {.proof-card .proof-card--wide .proof-card--anchor}
+::: {.card-label}
+ESGAR 2026 · Oral Presentation
+:::
+::: {.card-title}
+[Non-invasive Triage of Ulcerative Colitis Activity: A Bayesian Risk Stratification Model Integrating MRE and Fecal Calprotectin](research/index.qmd)
+:::
+::: {.card-desc}
+A multilevel Bayesian model integrating MR enterography features and fecal calprotectin for non-invasive triage of UC disease activity.
+:::
+::: {.card-stat}
+**June 2026** · Montpellier
+:::
+:::
+
+<!-- Row 3: full-width "now" closer -->
+::: {.proof-card .proof-card--full .proof-card--now}
 ::: {.card-label}
 What's on my mind
 :::
 ::: {.now-text}
-Currently learning about Bayesian modeling and workflows. Reading papers on *agentic AI*. Also reading *The Sacred and the Profane* by Mircea Eliade.
+Two oral presentations at ESGAR 2026 in three weeks. Finishing the motility manuscript for submission. Reading *Thinking, Fast and Slow* and working through PyMC documentation.
 :::
 ::: {.now-date}
-Updated April 2026
+Updated May 2026
 :::
 :::
 

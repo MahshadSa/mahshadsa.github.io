@@ -442,12 +442,54 @@ hr {
 }
 
 // ── Proof grid ───────────────────────────────────────
+// A 6-column grid that allows asymmetric, offset rows.
+// Each card declares its own span via a row modifier class.
+// Row rhythm (desktop):
+//   row 1 → wide (4) + narrow (2)
+//   row 2 → narrow (2) + wide (4)
+//   row 3 → narrow (2) + narrow (2) + narrow (2)
+//   row 4 → full-width (6) → the "now" closer
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: minmax(180px, auto);
-  gap: 1.5rem 2rem;
+  gap: 1.5rem 1.75rem;
   margin: 3rem 0 2rem;
+}
+
+// Row span helpers (apply to any .proof-card)
+.proof-card--wide   { grid-column: span 4; }
+.proof-card--narrow { grid-column: span 2; }
+.proof-card--full   { grid-column: span 6; }
+// ── Stacked narrow slot ──────────────────────────────
+// Two short cards stacked vertically inside a single narrow column.
+// Use when a wide anchor is paired with content that is too thin
+// to fill the full row height on its own.
+.proof-stack {
+  grid-column: span 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem 0;
+
+  .proof-card {
+    margin: 0;
+    padding: 1.3rem 1.2rem 1.2rem;
+  }
+
+  // Compress vertical rhythm inside stacked cards
+  .card-label { margin-bottom: 0.6rem; }
+  .card-title { font-size: 1.05rem; margin-bottom: 0.4rem; }
+  .card-desc  { font-size: 0.85rem; line-height: 1.55; }
+}
+
+// Quote card inside a stack: shrink the giant opening quotation mark
+.proof-stack .proof-card--quote {
+  padding: 1.3rem 1.2rem 1.2rem;
+
+  &::before { font-size: 2rem; top: 0.6rem; right: 0.8rem; }
+
+  .card-label { margin-bottom: 0.8rem; }
+  .quote-text { font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.7rem; }
 }
 
 .proof-card {
@@ -519,9 +561,9 @@ hr {
 }
 
 // ── Anchor card (ESGAR / primary work) ───────────────
+// Layout (span) is controlled by .proof-card--wide / --narrow.
+// This class only sets visual style.
 .proof-card--anchor {
-  grid-column: span 2;
-  grid-row: span 2;
   background: #ffffff;
   border: 1px solid rgba($gray, 0.3);
   border-top: 3px solid $navy;
@@ -573,8 +615,6 @@ hr {
 
 // ── Quote card ───────────────────────────────────────
 .proof-card--quote {
-  grid-column: span 1;
-  grid-row: span 2;
   background: rgba($rose, 0.03);
   border: 1px solid rgba($rose, 0.25);
   border-top: 3px solid $rose;
@@ -639,8 +679,8 @@ hr {
 }
 
 // ── Now card ─────────────────────────────────────────
+// Pair with .proof-card--full for the closer row.
 .proof-card--now {
-  grid-column: span 3;
   background: rgba($rose, 0.025);
   border: 1px solid rgba($rose, 0.22);
   border-top: 2px solid rgba($rose, 0.5);
@@ -700,28 +740,49 @@ hr {
 }
 
 // ── Responsive ───────────────────────────────────────
+// Tablet: collapse to a 2-column grid. Wide cards still span the full row
+// (both columns), narrow cards take one column each. The offset rhythm
+// softens but the visual hierarchy is preserved.
 @media (max-width: 1100px) {
   .proof-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
-    gap: 0.5rem;
+    gap: 1rem 1.25rem;
   }
-  .proof-card--anchor,
-  .proof-card--quote,
-  .proof-card--now {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
+  .proof-card--wide,
+  .proof-card--full,
+  .proof-card--now { grid-column: 1 / -1; }
+  .proof-card--narrow { grid-column: span 1; }
   .proof-card--anchor .card-title { font-size: 1.35rem; }
   .proof-card--quote {
-    padding: 1.5rem 0.5rem 1.4rem;
+    padding: 1.5rem 1.4rem 1.4rem;
     &::before { font-size: 2.5rem; }
   }
+  .proof-stack {
+  grid-column: 1 / -1;
+  grid-template-rows: auto;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
 }
 
+// Mobile: single column stack.
 @media (max-width: 600px) {
-  .proof-card { padding: 1.3rem 0.5rem 1.2rem; }
-  .proof-grid { padding: 0 1.25rem; }
+  .proof-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0 1.25rem;
+  }
+  .proof-card--wide,
+  .proof-card--narrow,
+  .proof-card--full,
+  .proof-card--now { grid-column: 1 / -1; }
+  .proof-card { padding: 1.3rem 1.1rem 1.2rem; }
+  .proof-stack {
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+}
 }
 
 // ── Garden maturity tags ─────────────────────────────
