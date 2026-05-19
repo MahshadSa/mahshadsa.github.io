@@ -1,7 +1,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebSite", "ProfilePage"],
+  "@type": "WebSite",
   "@id": "https://mahshadsa.github.io/#website",
   "url": "https://mahshadsa.github.io",
   "name": "Mahshad Sarikhani",
@@ -24,6 +24,18 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://mahshadsa.github.io/#profilepage",
+  "url": "https://mahshadsa.github.io",
+  "dateCreated": "2026-01-01T00:00:00+00:00",
+  "dateModified": "2026-05-19T00:00:00+00:00",
+  "mainEntity": { "@id": "https://mahshadsa.github.io/#person" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://mahshadsa.github.io/#person",
   "name": "Mahshad Sarikhani",
@@ -39,7 +51,7 @@
   "image": "https://mahshadsa.github.io/assets/profile.jpg",
   "mainEntityOfPage": {
     "@type": "ProfilePage",
-    "@id": "https://mahshadsa.github.io/"
+    "@id": "https://mahshadsa.github.io/#profilepage"
   },
   "affiliation": [
     {
@@ -135,7 +147,7 @@
     {
       "@type": "Person",
       "name": "Alex Menys",
-      "honorificSuffix": "PhD",
+      "Suffix": "PhD",
       "jobTitle": "Honorary Associate Professor and CEO of Motilent",
       "url": "https://scholar.google.co.uk/citations?user=SHfOKpsAAAAJ&hl=en",
       "sameAs": [
