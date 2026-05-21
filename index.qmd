@@ -94,10 +94,10 @@ Using LLMs to extract structured data from free-text radiology reports.
 Live Tool
 :::
 ::: {.card-title}
-[Lemann Index Calculator](projects/lemann-calculator/index.qmd)
+[IBD Imaging Digest](projects/ibd-digest/index.qmd)
 :::
 ::: {.card-desc}
-A Streamlit app for computing cumulative bowel damage in Crohn's disease.
+A daily literature pipeline that fetches, ranks, and tiers new IBD imaging papers into a personal Obsidian digest.
 :::
 :::
 
