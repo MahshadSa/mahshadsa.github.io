@@ -1,0 +1,82 @@
+---
+title: "Log"
+subtitle: "A working ledger of what I am building, writing, and wrestling with."
+description-meta: "Working ledger of Mahshad Sarikhani's active research, software, and clinical validation milestones, updated as work ships or stalls."
+toc: false
+---
+
+::: {.timeline .timeline--log}
+
+::: {.timeline-item}
+::: {.timeline-head}
+[May 2026]{.timeline-date} [Activity project, manuscript start]{.timeline-title}
+:::
+::: {.timeline-desc}
+Started structuring the manuscript. The first pass is always the longest. 
+:::
+[multilevel modeling]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[May 2026]{.timeline-date} [`ibd-digest`, shipped]{.timeline-title}
+:::
+::: {.timeline-desc}
+Automated literature workflow on GitHub Actions, semantic embeddings to surface newly published IBD imaging papers each day. Letting it run for a few days before deciding the next steps.
+:::
+[GitHub Actions]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[May 2026]{.timeline-date} [ESGAR 2026]{.timeline-title}
+:::
+::: {.timeline-desc}
+Closed out slides for two first-author orals at ESGAR 2026 in Montpellier and sent to co-authors.
+:::
+[ESGAR 2026]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[May 2026]{.timeline-date} [Motility manuscript, submission queued]{.timeline-title}
+:::
+::: {.timeline-desc}
+The manuscript is ready to submit. We decided to circulate it for one final read by all authors after ESGAR 2026. The delay bothers me, but the paper will be better for it.
+:::
+[UC MRE]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[May 2026]{.timeline-date} [Edge cases on a clinical extraction pipeline]{.timeline-title}
+:::
+::: {.timeline-desc}
+Spent a few days handling legacy formatting in historical reports that breaks naive parsing. Most of the work in agentic systems lives here, not in the model calls.
+:::
+[agentic systems]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[April 2026]{.timeline-date} [Motility manuscript, final pass]{.timeline-title}
+:::
+::: {.timeline-desc}
+Last structural revisions and cross-site checks before submission. The hardest part has been trimming a well-written paragraph.
+:::
+[UC MRE]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[March 2026]{.timeline-date} [Personal site, live]{.timeline-title}
+:::
+::: {.timeline-desc}
+Quarto build, custom theme, treated as both a professional presence and a digital garden. The harder decision was structural, not technical: deciding what counts as ready to publish.
+:::
+[Quarto]{.timeline-tags}
+:::
+
+:::
+
+*Last entry: May 2026. Updated as work ships or stalls.*

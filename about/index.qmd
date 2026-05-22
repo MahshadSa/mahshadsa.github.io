@@ -1,6 +1,5 @@
 ---
 title: "About"
-pagetitle: "About — Mahshad Sarikhani"
 subtitle: "Physician, imaging researcher, builder of small useful tools"
 toc: true
 toc-location: right

@@ -1,6 +1,5 @@
 ---
 title: "Projects"
-pagetitle: "Research · Mahshad Sarikhani"
 subtitle: "Tools, models, and research software"
 listing:
   contents: "*/index.qmd"

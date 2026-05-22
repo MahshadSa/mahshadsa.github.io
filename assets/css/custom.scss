@@ -1418,3 +1418,44 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
   .proof-grid { grid-template-columns: 1fr; }
   .project-card { padding: 1.4rem 1.5rem; }
 }
+// ── Log page: inline date + title row ────────────────
+// Scoped via .timeline--log so the About timeline is untouched.
+.timeline.timeline--log {
+
+  .timeline-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;        // wraps cleanly on narrow screens
+  }
+
+  .timeline-date {
+    // Inherits font, size, color from the base .timeline-date rule.
+    // Only width/flex behavior changes:
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .timeline-title {
+    margin: 0;              // override the 0.15em block margin from base rule
+    line-height: 1.3;
+  }
+
+  .timeline-desc {
+    margin-bottom: 0.6rem;
+  }
+
+  // One small tag chip, sitting just under the description.
+  .timeline-tags {
+    margin-top: 0;
+  }
+}
+
+// Narrow screens: stack date above title instead of crowding.
+@media (max-width: 540px) {
+  .timeline.timeline--log .timeline-head {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}

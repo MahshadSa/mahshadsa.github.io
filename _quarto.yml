@@ -32,8 +32,8 @@ website:
         href: research/index.qmd
       - text: "Projects"
         href: projects/index.qmd
-      - text: "Now"
-        href: now.qmd
+      - text: "Log"
+        href: log.qmd
     right:
       - icon: github
         href: https://github.com/MahshadSa
