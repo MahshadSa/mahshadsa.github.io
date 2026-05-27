@@ -38,8 +38,7 @@ I work on quantitative MRI in inflammatory bowel disease, building models that t
 [2× ESGAR 2026]{.chip .chip-navy}
 [agentic pipelines]{.chip .chip-rose}
 [IBD imaging]{.chip .chip-mint}
-[UK global talent]{.chip .chip-navy}
-[Bayesian modeling]{.chip .chip-rose}
+[Bayesian modeling]{.chip .chip-navy}
 :::
 
 :::
