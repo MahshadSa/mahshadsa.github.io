@@ -1,13 +1,13 @@
 ---
 title: "About"
-subtitle: "Physician, imaging researcher, builder of small useful tools"
+subtitle: "Physician and imaging AI researcher. I build the tools my research needs."
 toc: true
 toc-location: right
 toc-depth: 2
 ---
 
 ::: {.about-intro}
-I am a physician and imaging researcher at Tehran University of Medical Sciences. Most of my work circles around one question: can MRI, read with enough precision, tell us enough about inflammatory bowel disease that patients need fewer scopes. Answering that has pulled me into quantitative imaging, machine learning, and eventually into building the tools myself, because the off-the-shelf ones were not quite right.
+I am a physician and researcher at Tehran University of Medical Sciences. Most of my work circles around one question: how much can MRI actually tell us about inflammatory bowel disease. Not just whether disease is present, but whether it is active or chronic, reversible or fixed. Answering that has pulled me into quantitative imaging, applied AI, and eventually into building the tools myself, because the off-the-shelf ones were not quite right.
 
 The longer version of how I got here is [here](../notes/from-operating-room-to-agentic-ai.qmd).
 :::
