@@ -112,6 +112,22 @@ h2 i, h2 em { color: $mint; }
   .hero-bio strong { color: $dark; }
 }
 
+// ── Notes band (relocated feed) ──────────────────────
+.notes-band {
+  border-top-color: rgba($gray, 0.2);
+
+  .notes-label {
+    color: $navy;
+    a { color: $gray; &:hover { color: $mint; } }
+  }
+
+  .note-item {
+    .note-title    { color: $dark; &:hover { color: $mint; } }
+    .note-subtitle { color: $gray; }
+    .note-meta     { color: $gray; }
+  }
+}
+
 // ── Notes panel ──────────────────────────────────────
 .hero-notes {
   background: rgba($lightgray, 0.5);
