@@ -19,7 +19,7 @@ listing:
     date-format: "MMM YYYY"
 ---
 
-::: {.hero-section}
+::: {.hero-section .hero-section--solo}
 
 ::: {.hero-left}
 [A personal site, periodically updated]{.eyebrow}
@@ -33,25 +33,17 @@ A doctor who codes.
 I work on quantitative MRI in inflammatory bowel disease, building models that turn imaging into something measurable.
 :::
 
-::: {.hero-chips}
-[quantitative MRI]{.chip .chip-mint}
-[2× ESGAR 2026]{.chip .chip-navy}
-[agentic pipelines]{.chip .chip-rose}
-[IBD imaging]{.chip .chip-mint}
-[Bayesian modeling]{.chip .chip-navy}
 :::
 
 :::
 
-::: {.hero-notes}
+::: {.notes-band}
 ::: {.notes-label}
 [recent notes]{} [[all →](notes/index.qmd)]{}
 :::
 
 ::: {#hero-notes}
 :::
-:::
-
 :::
 
 ## Selected *work*
@@ -137,7 +129,7 @@ A multilevel Bayesian model integrating MR enterography features and fecal calpr
 What's on my mind
 :::
 ::: {.now-text}
-Two oral presentations at ESGAR 2026 in three weeks. Finishing the motility manuscript for submission. Reading *Thinking, Fast and Slow* and working through PyMC documentation.
+Two oral presentations at ESGAR 2026 in three weeks. Finishing the motility manuscript for submission. Cleaning and parsing thousands of abdominal radiology reports into an agentic pipeline, and learning where the LLM can be trusted and where it cannot.
 :::
 ::: {.now-date}
 Updated May 2026
