@@ -6,8 +6,6 @@ categories: [VLM, tool, personal, Persian, React]
 ---
 
 ::: {.project-card}
-[Active]{.project-status .active}
-
 ## Problem
 
 Cataloging a personal library of several hundred books is slow when half of them are in Persian. Existing tools assume barcoded, commercially published, English-language books. Most Persian editions have no ISBN in any accessible database, and barcode-scanning apps either skip them entirely or return nothing.

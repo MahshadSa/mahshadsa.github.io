@@ -658,7 +658,29 @@ hr {
     }
   }
 }
+// ── Project-card panel (note body wrapper) ───────────
+// Matches the dark-mode reading box so framing is
+// consistent across themes.
+.project-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba($gray, 0.25);
+  border-radius: 8px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+// First heading inside the card should not inherit the 3em
+// section spacing. Covers both bare h2 and Quarto's section wrapper.
+.project-card > h2:first-child,
+.project-card > section:first-child > h2:first-child,
+.project-card > .level2:first-child > h2:first-child {
+  margin-top: 0;
+}
 
+// First heading inside the card hugs the top in both themes.
+.project-card > h2:first-child {
+  margin-top: 0;
+}
 // ── Anchor card (ESGAR / primary work) ───────────────
 // Layout (span) is controlled by .proof-card--wide / --narrow.
 // This class only sets visual style.

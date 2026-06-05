@@ -2,8 +2,10 @@
 title: "IBD Imaging Digest"
 description: "An automated daily literature monitor for IBD imaging research. Fetches new papers, ranks by semantic relevance against a personal corpus, and delivers a tiered digest into Obsidian."
 date: 2026-05-20
+date-modified: 2026-06-05
 categories: [tooling, NLP, literature, obsidian]
 ---
+::: {.project-card}
 
 ## What it does
 
@@ -13,18 +15,22 @@ The system pulls from four sources: PubMed via E-utilities and three radiology j
 
 The daily digest renders as an Obsidian Markdown file with callout blocks and checkbox conventions. The checkboxes are not cosmetic: they are intended to feed a future ranking improvement loop (Step 6) once there is enough signal from real use.
 
+***Update: *** Source coverage expanded from 4 to 18. Crossref now covers 17 journals across focused radiology, focused IBD, imaging AI, and broader GI and AI venues. The PubMed query gained a second branch not gated on IBD terms, covering abdominal radiology AI and agentic AI more broadly. European Radiology, which was initially fetched via Springer's RSS feed (returning empty author lists and truncated abstracts), was switched to the Crossref API to match the pattern used for the other journals.
+
+A second checkbox was added to must-read and skim papers: `Read later`. Checked papers route to a persistent rolling note at `Inbox/To Read.md`, with full abstracts included for offline reading, deduplicated by DOI. The `Relevant` checkbox is unchanged; the two are strictly independent.
+
 ```{=html}
-<svg width="100%" viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" viewBox="0 0 680 370" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>IBD Imaging Digest pipeline</title>
-<desc>Five-stage pipeline: fetch from four sources, deduplicate by DOI, rank with SPECTER2 against Zotero corpus, tier into must-read/skim/archive, render Obsidian digest.</desc>
+<desc>Five-stage pipeline: fetch from 18 sources, deduplicate by DOI, rank with SPECTER2, tier into must-read/skim/archive, render Obsidian digest. Read later checkbox routes to a persistent inbox note. Step 6 feedback loop is deferred.</desc>
 <defs>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </marker>
   <style>
-    .t  { font: 400 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .ts { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
-    .th { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
+    .t   { font: 400 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
+    .ts  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
+    .th  { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
     .src  rect { fill: #e8f0eb; stroke: #5a7260; }
     .src  text { fill: #2c3d30; }
     .sem  rect { fill: #eeeef8; stroke: #6970a0; }
@@ -35,14 +41,10 @@ The daily digest renders as an Obsidian Markdown file with callout blocks and ch
     .must text { fill: #4a3200; }
     .arch rect { fill: #faeae8; stroke: #b05040; }
     .arch text { fill: #4a1a14; }
-    .badge-src  rect { fill: #e8f0eb; stroke: #5a7260; }
-    .badge-src  text { fill: #2c3d30; }
-    .badge-neu  rect { fill: #f0f0ee; stroke: #8a8a85; }
-    .badge-neu  text { fill: #3a3a38; }
     @media (prefers-color-scheme: dark) {
-      .t  { fill: #d8d8d4; }
-      .ts { fill: #9a9a94; }
-      .th { fill: #d8d8d4; }
+      .t   { fill: #d8d8d4; }
+      .ts  { fill: #9a9a94; }
+      .th  { fill: #d8d8d4; }
       .src  rect { fill: #1e2e22; stroke: #5a7260; }
       .src  text { fill: #a8c4ac; }
       .sem  rect { fill: #1e1e30; stroke: #6970a0; }
@@ -53,57 +55,75 @@ The daily digest renders as an Obsidian Markdown file with callout blocks and ch
       .must text { fill: #e0c070; }
       .arch rect { fill: #2a1510; stroke: #b05040; }
       .arch text { fill: #e0a090; }
-      .badge-src  rect { fill: #1e2e22; stroke: #5a7260; }
-      .badge-src  text { fill: #a8c4ac; }
-      .badge-neu  rect { fill: #242420; stroke: #6a6a64; }
-      .badge-neu  text { fill: #b0b0a8; }
     }
   </style>
 </defs>
 
 <text class="ts" x="68"  y="18" text-anchor="middle">fetch</text>
-<text class="ts" x="224" y="18" text-anchor="middle">deduplicate</text>
-<text class="ts" x="368" y="18" text-anchor="middle">rank</text>
-<text class="ts" x="510" y="18" text-anchor="middle">tier</text>
-<text class="ts" x="632" y="18" text-anchor="middle">digest</text>
+<text class="ts" x="218" y="18" text-anchor="middle">deduplicate</text>
+<text class="ts" x="360" y="18" text-anchor="middle">rank</text>
+<text class="ts" x="504" y="18" text-anchor="middle">tier</text>
+<text class="ts" x="627" y="18" text-anchor="middle">digest</text>
 
-<g class="src"><rect x="10" y="30"  width="116" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="68" y="52"  text-anchor="middle" dominant-baseline="central">PubMed (E-utilities)</text></g>
-<g class="src"><rect x="10" y="76"  width="116" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="68" y="98"  text-anchor="middle" dominant-baseline="central">Radiology</text></g>
-<g class="src"><rect x="10" y="122" width="116" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="68" y="144" text-anchor="middle" dominant-baseline="central">Radiology: AI</text></g>
-<g class="src"><rect x="10" y="168" width="116" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="68" y="190" text-anchor="middle" dominant-baseline="central">European Radiology</text></g>
-<text class="ts" x="68" y="224" text-anchor="middle">via Crossref</text>
+<g class="src"><rect x="10" y="30" width="116" height="48" rx="4" stroke-width="0.5"/>
+  <text class="th" x="68" y="48" text-anchor="middle" dominant-baseline="central">PubMed</text>
+  <text class="ts" x="68" y="66" text-anchor="middle" dominant-baseline="central">2 query branches</text></g>
+<g class="src"><rect x="10" y="88" width="116" height="48" rx="4" stroke-width="0.5"/>
+  <text class="th" x="68" y="106" text-anchor="middle" dominant-baseline="central">17 journals</text>
+  <text class="ts" x="68" y="124" text-anchor="middle" dominant-baseline="central">via Crossref</text></g>
 
-<line x1="126" y1="48"  x2="148" y2="110" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="126" y1="94"  x2="148" y2="112" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="126" y1="140" x2="148" y2="115" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="126" y1="186" x2="148" y2="118" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="126" y1="54"  x2="156" y2="108" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="126" y1="112" x2="156" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
-<g class="neu"><rect x="150" y="82" width="130" height="72" rx="4" stroke-width="0.5"/><text class="th" x="215" y="108" text-anchor="middle" dominant-baseline="central">DOI dedup</text><text class="ts" x="215" y="130" text-anchor="middle" dominant-baseline="central">SQLite store</text></g>
+<g class="neu"><rect x="158" y="84" width="120" height="60" rx="4" stroke-width="0.5"/>
+  <text class="th" x="218" y="108" text-anchor="middle" dominant-baseline="central">DOI dedup</text>
+  <text class="ts" x="218" y="126" text-anchor="middle" dominant-baseline="central">SQLite store</text></g>
 
-<line x1="280" y1="118" x2="302" y2="118" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="278" y1="114" x2="294" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
-<g class="sem"><rect x="304" y="60" width="128" height="116" rx="4" stroke-width="0.5"/><text class="th" x="368" y="86"  text-anchor="middle" dominant-baseline="central">SPECTER2</text><text class="ts" x="368" y="106" text-anchor="middle" dominant-baseline="central">cosine similarity</text><text class="ts" x="368" y="124" text-anchor="middle" dominant-baseline="central">vs Zotero corpus</text><text class="ts" x="368" y="142" text-anchor="middle" dominant-baseline="central">percentile rank</text><text class="ts" x="368" y="160" text-anchor="middle" dominant-baseline="central">local cache</text></g>
+<g class="sem"><rect x="296" y="68" width="128" height="110" rx="4" stroke-width="0.5"/>
+  <text class="th" x="360" y="92"  text-anchor="middle" dominant-baseline="central">SPECTER2</text>
+  <text class="ts" x="360" y="112" text-anchor="middle" dominant-baseline="central">cosine similarity</text>
+  <text class="ts" x="360" y="130" text-anchor="middle" dominant-baseline="central">vs Zotero corpus</text>
+  <text class="ts" x="360" y="148" text-anchor="middle" dominant-baseline="central">percentile rank</text>
+  <text class="ts" x="360" y="166" text-anchor="middle" dominant-baseline="central">local cache</text></g>
 
-<line x1="432" y1="118" x2="454" y2="118" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="424" y1="114" x2="440" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
-<g class="must"><rect x="456" y="60"  width="128" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="520" y="82"  text-anchor="middle" dominant-baseline="central">Must-read  &#8805; 0.958</text></g>
-<g class="neu" ><rect x="456" y="106" width="128" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="520" y="128" text-anchor="middle" dominant-baseline="central">Skim  0.924 &#8211; 0.958</text></g>
-<g class="arch"><rect x="456" y="152" width="128" height="36" rx="4" stroke-width="0.5"/><text class="ts" x="520" y="174" text-anchor="middle" dominant-baseline="central">Archive  &lt; 0.924</text></g>
+<g class="must"><rect x="442" y="68"  width="124" height="36" rx="4" stroke-width="0.5"/>
+  <text class="ts" x="504" y="90"  text-anchor="middle" dominant-baseline="central">Must-read  &#8805; 0.958</text></g>
+<g class="neu"><rect  x="442" y="114" width="124" height="36" rx="4" stroke-width="0.5"/>
+  <text class="ts" x="504" y="136" text-anchor="middle" dominant-baseline="central">Skim  0.924 &#8211; 0.958</text></g>
+<g class="arch"><rect x="442" y="160" width="124" height="36" rx="4" stroke-width="0.5"/>
+  <text class="ts" x="504" y="182" text-anchor="middle" dominant-baseline="central">Archive  &lt; 0.924</text></g>
 
-<line x1="584" y1="78"  x2="606" y2="110" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="584" y1="124" x2="606" y2="118" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="584" y1="170" x2="606" y2="126" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="566" y1="86"  x2="582" y2="104" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="566" y1="132" x2="582" y2="128" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="566" y1="178" x2="582" y2="152" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
-<g class="sem"><rect x="594" y="82" width="76" height="72" rx="4" stroke-width="0.5"/><text class="th" x="632" y="106" text-anchor="middle" dominant-baseline="central">Obsidian</text><text class="ts" x="632" y="126" text-anchor="middle" dominant-baseline="central">callouts</text><text class="ts" x="632" y="146" text-anchor="middle" dominant-baseline="central">checkboxes</text></g>
+<g class="sem"><rect x="584" y="88" width="86" height="90" rx="4" stroke-width="0.5"/>
+  <text class="th" x="627" y="108" text-anchor="middle" dominant-baseline="central">Obsidian</text>
+  <text class="ts" x="627" y="126" text-anchor="middle" dominant-baseline="central">callouts</text>
+  <text class="ts" x="627" y="144" text-anchor="middle" dominant-baseline="central">&#9745; Relevant</text>
+  <text class="ts" x="627" y="162" text-anchor="middle" dominant-baseline="central">&#9745; Read later</text></g>
 
-<path d="M632 154 Q632 240 510 252 Q388 264 368 196" fill="none" stroke="#6970a0" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-<text class="ts" x="480" y="272" text-anchor="middle">step 6: feedback loop (deferred)</text>
+<line x1="627" y1="178" x2="627" y2="208" stroke="#5a7260" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
-<g class="badge-src"><rect x="10"  y="296" width="108" height="26" rx="3" stroke-width="0.5"/><text class="ts" x="64"  y="313" text-anchor="middle" dominant-baseline="central">GitHub Actions</text></g>
-<g class="badge-src"><rect x="128" y="296" width="96"  height="26" rx="3" stroke-width="0.5"/><text class="ts" x="176" y="313" text-anchor="middle" dominant-baseline="central">daily schedule</text></g>
-<g class="badge-neu"><rect x="234" y="296" width="116" height="26" rx="3" stroke-width="0.5"/><text class="ts" x="292" y="313" text-anchor="middle" dominant-baseline="central">SPECTER2 cached</text></g>
+<g class="src"><rect x="584" y="210" width="86" height="48" rx="4" stroke-width="0.5"/>
+  <text class="th" x="627" y="228" text-anchor="middle" dominant-baseline="central">Inbox/</text>
+  <text class="ts" x="627" y="246" text-anchor="middle" dominant-baseline="central">To Read.md</text></g>
 
-<text class="ts" x="10" y="348" text-anchor="start">deferred: LLM summaries &#183; citation counts &#183; Europe PMC &#183; bioRxiv &#183; notifications</text>
+<path d="M627 258 Q627 310 504 318 Q380 326 360 200" fill="none" stroke="#6970a0" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<text class="ts" x="470" y="336" text-anchor="middle">step 6: feedback loop (deferred)</text>
+
+<g class="src"><rect x="10"  y="296" width="108" height="26" rx="3" stroke-width="0.5"/>
+  <text class="ts" x="64"  y="313" text-anchor="middle" dominant-baseline="central">GitHub Actions</text></g>
+<g class="src"><rect x="128" y="296" width="96"  height="26" rx="3" stroke-width="0.5"/>
+  <text class="ts" x="176" y="313" text-anchor="middle" dominant-baseline="central">daily schedule</text></g>
+<g class="neu"><rect  x="234" y="296" width="120" height="26" rx="3" stroke-width="0.5"/>
+  <text class="ts" x="294" y="313" text-anchor="middle" dominant-baseline="central">SPECTER2 cached</text></g>
+
+<text class="ts" x="10" y="360" text-anchor="start">deferred: LLM summaries &#183; citation counts &#183; Europe PMC &#183; bioRxiv &#183; notifications</text>
 </svg>
 ```
 
@@ -112,6 +132,8 @@ The daily digest renders as an Obsidian Markdown file with callout blocks and ch
 Generic keyword search returns too much and misses context. SPECTER2 is trained on citation graphs, which means papers that are conceptually related to my seed set score higher even if they use different terminology. The Zotero corpus acts as a standing definition of what "relevant" means for my specific research questions: quantitative MRI in IBD, motility, Bayesian modeling, and clinical AI pipelines. The ranker inherits that definition automatically.
 
 The percentile-based thresholds are a deliberate choice over fixed cosine cutoffs. Score distributions shift with topic and corpus size. Calibrating to percentiles keeps the tiers stable relative to each other, independent of those shifts.
+
+***Update: *** The thresholds stated above (must-read ≥ 0.958, skim 0.924 to 0.958) are correct, but were not the original values. The starting thresholds were 0.75 and 0.60, set before any real data existed. After the first run produced 196 papers in must-read, the score distribution was inspected (min ~0.825, median ~0.924, p90 ~0.958) and the thresholds were recalibrated to match observed percentiles. They are empirically derived, not a priori.
 
 ## Infrastructure
 
@@ -125,12 +147,17 @@ The current review workflow is intentionally manual. Each day I pull the reposit
 
 Out of scope for v1: LLM abstract summaries, citation counts, Europe PMC / bioRxiv / medRxiv / arXiv, and Telegram or email notifications.
 
+***Update: *** Step 6 is not next in priority. The observation period is over; the decision is to write the first weekly IBD Digest column before building the feedback loop. Writing will reveal whether ranking quality is actually the bottleneck. The feedback loop remains the one unbuilt pipeline step, but it is deliberately deferred.
+
 ## What is next
 
 A few weeks of daily use will tell me whether the tier thresholds are well calibrated or need adjustment. After that, Step 6 becomes the next meaningful milestone.
 
 Longer term, I plan to publish a weekly IBD Digest on this site: a short roundup of the must-read papers from the previous seven days, with brief commentary on what is interesting and why. That serves two purposes. It forces me to actually read the digest rather than just generate it, and it creates a public record of what is worth paying attention to in this field.
 
+***Update: *** The first weekly column is now the immediate next step, ahead of Step 6. The threshold calibration question has been answered by use; ranking quality is good enough to write from.
+
 ---
 
 *Built in one day using Python, SPECTER2, SQLite, and GitHub Actions, with Claude Code.*
+:::

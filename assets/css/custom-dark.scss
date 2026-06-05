@@ -212,6 +212,15 @@ hr {
   .card-stat    { color: $gray; strong { color: $navy; } }
 }
 
+// ── Project-card as note-body wrapper (dark) ─────────
+// Roomier than the homepage proof-card it shares a base with.
+.project-card {
+  border-radius: 8px;
+  padding: 2rem 2.2rem;
+  backdrop-filter: none;          // full-page panel, no blur cost
+  -webkit-backdrop-filter: none;
+}
+
 // ── Anchor card ──────────────────────────────────────
 .proof-card--anchor {
   border: 1px solid rgba($navy, 0.35);
@@ -285,24 +294,6 @@ hr {
   border-top-color: rgba($mint, 0.12);
 }
 
-// ── Project cards ────────────────────────────────────
-.project-card .project-status {
-  &.live {
-    background: rgba($mint, 0.12);
-    color: $mint;
-    border-color: rgba($mint, 0.3);
-  }
-  &.active {
-    background: rgba($navy, 0.12);
-    color: lighten($navy, 20%);
-    border-color: rgba($navy, 0.28);
-  }
-  &.planned {
-    background: rgba($gray, 0.1);
-    color: rgba($darkgray, 0.8);
-    border-color: rgba($gray, 0.25);
-  }
-}
 
 // ── Maturity tags ────────────────────────────────────
 .maturity-tag {
