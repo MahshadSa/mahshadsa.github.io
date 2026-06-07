@@ -221,6 +221,46 @@ hr {
   -webkit-backdrop-filter: none;
 }
 
+// ── Project status pill (dark) ───────────────────────
+// Mirror of the light block; variables already hold dark-lifted values.
+.project-status {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  padding: 0.28em 0.7em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+
+  &.live    { color: $mint; background: rgba($mint, 0.1);  border-color: rgba($mint, 0.35); }
+  &.active  { color: $navy; background: rgba($navy, 0.12); border-color: rgba($navy, 0.4); }
+  &.planned { color: $gray; background: rgba($gray, 0.12); border-color: rgba($gray, 0.4); }
+}
+
+.project-card > p:first-child { margin: 0 0 1.5rem; }
+.project-card > p:first-child + section > h2,
+.project-card > p:first-child + h2 { margin-top: 0; }
+
+.project-card hr {
+  margin: 2.5rem 0 1.5rem;
+  &::after { display: none; }
+}
+
+// ── Project build-credit footer (dark) ───────────────
+.project-build {
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba($gray, 0.3);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: $gray;
+
+  p { margin: 0; }
+}
+
 // ── Anchor card ──────────────────────────────────────
 .proof-card--anchor {
   border: 1px solid rgba($navy, 0.35);
@@ -543,4 +583,89 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
     background-color 0.4s ease,
     color 0.4s ease,
     border-color 0.4s ease;
+}
+.hero-photo {
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+// ── Worklist: shared title-left / date-right rows ─────
+// Mirror of the light-mode block. Same structure; the
+// theme variables ($navy/$mint/$gray/$dark/$darkgray) are
+// already the dark-lifted values in this file.
+.worklist {
+  margin: 2.5rem 0;
+}
+
+.worklist-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  color: $navy;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba($gray, 0.25);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  a {
+    color: $gray;
+    text-decoration: none;
+    font-size: 0.7rem;
+    &:hover { color: $mint; }
+  }
+}
+
+.worklist-row {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba($gray, 0.12);
+
+  &:last-child { border-bottom: none; }
+
+  .worklist-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+
+  .worklist-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: $dark;
+    text-decoration: none;
+    &:hover { color: $mint; }
+  }
+
+  .worklist-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: $gray;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .worklist-meta {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.9rem;
+    color: $darkgray;
+    margin-top: 0.25rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 540px) {
+  .worklist-row .worklist-head {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
 }

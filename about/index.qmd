@@ -1,9 +1,7 @@
 ---
 title: "About"
 subtitle: "Physician and imaging AI researcher. I build the tools my research needs."
-toc: true
-toc-location: right
-toc-depth: 2
+toc: false
 ---
 
 ::: {.about-intro}

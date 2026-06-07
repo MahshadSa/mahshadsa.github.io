@@ -18,7 +18,7 @@ Papers I've read, methods I'm learning, books that shaped my thinking, ideas tha
 :::
 
 ::: {.garden-legend}
-[🌱]{} **Seed** rough, first pass, might just be a question\
+[🌱]{} **Seedling** rough, first pass, might just be a question\
 [🌿]{} **Sprout** revisited, starting to take shape\
 [🌳]{} **Evergreen** fairly confident
 :::

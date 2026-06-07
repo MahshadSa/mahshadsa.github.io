@@ -4,11 +4,14 @@ description: "One-line summary of what this method does and when to use it"
 date: 2026-01-01
 date-modified: last-modified
 categories: [methods, Bayesian, Python]
+maturity: seedling
 ---
 
-::: {.note-meta}
-🌱 Seedling · Last tended April 2026
+::: {.note-page-meta}
+[🌱 seedling]{.maturity-tag .seedling} · Planted Month DD, YYYY · Last tended Month DD, YYYY
 :::
+
+<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync — it drives the listing icon. -->
 
 ## When to use this
 

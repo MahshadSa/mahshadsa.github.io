@@ -1,34 +1,54 @@
 ---
 title: "Project Title"
-description: "One-line description of what this project does"
+description: "One sentence on what this does and what it is for. This feeds the card on the projects page and the meta description, so make it concrete, not aspirational."
 date: 2026-01-01
-categories: [IBD, tool, Python]
+date-modified: 2026-01-01
+categories: [IBD, tooling, Python]
 ---
 
 ::: {.project-card}
 [Live]{.project-status .live}
 <!-- Status options: [Live]{.project-status .live} / [Active]{.project-status .active} / [Planned]{.project-status .planned} -->
 
-## Problem
+## What it does
 
-What gap does this address, and why does it matter? Aim for 2 to 3 sentences a non-specialist could follow without losing the technical stakes.
+Open with the problem in plain terms, then state what this builds in its place. Two to three sentences a non-specialist could follow without losing the technical stakes. Name the concrete inputs and outputs: what goes in, what comes out, where it lands.
 
-## Approach
+If the system has moving parts, walk them in order. Name the actual tools and methods, not categories: not "an embedding model" but "SPECTER2," not "a database" but "SQLite." Specificity is the signal here; an endorser reading this should see decisions, not vocabulary.
 
-How does it work? Cover the architecture, the key design decisions, and why this path over the alternatives. If there was a previous version you moved away from, say why.
+<!--
+If there is a pipeline or architecture worth showing, embed an inline SVG here.
+Use the same colour grammar as the IBD Digest diagram so the projects read as one body of work:
+  sources / inputs  -> sage green   (.src)
+  semantic / AI     -> periwinkle   (.sem)
+  structural / neutral nodes        (.neu)
+Keep it responsive (width="100%" viewBox=...) and include <title> and <desc> for accessibility and crawlers.
+-->
 
-## Why this project
+## Why these choices
 
-Optional but useful: what drew you to this specifically, what it taught you, or why it exists alongside the more formal work.
+The reasoning layer. For each non-obvious decision, state the alternative you did not take and why. This is where judgment shows, which matters more than the build itself for an expert audience. If a value or threshold was tuned against real data rather than set a priori, say so; empirical calibration reads as rigour.
 
-## Status
+## Infrastructure
 
-Where things stand now. What is deployed, what is in progress, what are the known limitations.
+How and where it runs. Scheduling, hosting, caching, the repository setup. Keep it short and factual.
+
+## Current state
+
+What is complete, stated as finished steps. Then the honest part: what is intentionally manual, what is deferred, and the reasoning behind the deferral. Treat deferred work as a decision with a rationale, not an apology. Naming what is out of scope for the current version is a strength, not a gap.
+
+## What is next
+
+The near-term milestone and the longer-term direction. Tie it back to the research where you can, so the project reads as connected to the work rather than a side artifact.
 
 ## Links
 
-- [Live app](https://example.com)
+- [Live app or output](https://example.com)
 - [Source code](https://github.com/MahshadSa/repo-name)
 - [Related note](/notes/concepts/related-concept.qmd)
+
+::: {.project-build}
+*One factual sentence on the build: language, key libraries, and tooling. Credit Claude Code here without apologetic framing when the architecture decisions are your own.*
+:::
 
 :::

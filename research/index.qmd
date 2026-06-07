@@ -1,9 +1,58 @@
 ---
-title: "Research"
-toc: true
+title: "CV"
+toc: false
 ---
 
-My research focuses on quantitative magnetic resonance enterography in inflammatory bowel disease, with an emphasis on segment-level modelling, calibration, and reproducibility. Below is the full record of peer-reviewed work, manuscripts, and presentations.
+My research applies quantitative magnetic resonance enterography to inflammatory bowel disease, with an emphasis on segment-level modelling, calibration, and reproducibility. This page is the full record: appointments, education, publications and presentations, software, and technical skills.
+
+## Research *appointments*
+
+::: {.worklist}
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Research Associate, Abdominal Imaging and AI · Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences]{.worklist-title}
+[Jan 2024 – present]{.worklist-date}
+:::
+::: {.worklist-meta}
+Supervisor: Prof Amir Reza Radmard. International collaboration with UCL/Motilent partners.
+
+- Led quantitative MRE research in IBD with a focus on ulcerative colitis: GIQuant motility, bowel wall activity markers, chronicity features, and segment-level validation against endoscopy.
+- Coordinated collaboration with Motilent and academic partners, aligning feature definitions, QC, and analysis plans across sites.
+- Built reproducible data and modelling pipelines integrating imaging, structured radiology features, narrative reports, and clinical or laboratory endpoints.
+- Developed report-structured workflows, including LLM-assisted extraction where appropriate, to support scalable research data capture from routine radiology text.
+:::
+:::
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Research Assistant, Imaging and Clinical Data Science · Shahid Beheshti University of Medical Sciences]{.worklist-title}
+[Sep 2022 – Dec 2023]{.worklist-date}
+:::
+::: {.worklist-meta}
+- Supported CT and MRI research projects spanning protocol review, dataset construction, and statistical analysis.
+- Performed diagnostic pathway analyses integrating imaging and clinical data to evaluate system-level outcomes.
+- Contributed to PanCanAID-related pipelines including curated datasets and semi-automated CT segmentation workflows.
+:::
+:::
+
+:::
+
+## *Education*
+
+::: {.worklist}
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Doctor of Medicine (MD) · Shahid Beheshti University of Medical Sciences]{.worklist-title}
+[2015 – 2022]{.worklist-date}
+:::
+::: {.worklist-meta}
+Awarded on full scholarship.
+:::
+:::
+
+:::
 
 ## Oral *presentations*
 
@@ -129,6 +178,87 @@ My research focuses on quantitative magnetic resonance enterography in inflammat
 ::: {.pub-links}
 [DOI](https://doi.org/10.1007/978-981-95-0313-1_6)
 :::
+:::
+
+## Software and open-science *outputs*
+
+*All software listed here is research code intended for transparent evaluation, not clinical deployment.*
+
+::: {.worklist}
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Lémann Index Calculator](https://github.com/MahshadSa/lemann-li-app){.worklist-title}
+[Streamlit]{.worklist-date}
+:::
+::: {.worklist-meta}
+Computes cumulative structural bowel-damage (Lémann) scores in Crohn's disease across segments and modalities. [GitHub](https://github.com/MahshadSa/lemann-li-app) · [Zenodo DOI](https://doi.org/10.5281/zenodo.17514287)
+:::
+:::
+
+::: {.worklist-row}
+::: {.worklist-head}
+[UC MRE Activity Risk Stratification Tool](https://github.com/MahshadSa/uc-mre-activity-risk-stratifier){.worklist-title}
+[ESGAR 2026]{.worklist-date}
+:::
+::: {.worklist-meta}
+Bayesian risk-stratification tool for non-invasive triage of ulcerative colitis activity, associated with the ESGAR 2026 oral presentation. [GitHub](https://github.com/MahshadSa/uc-mre-activity-risk-stratifier) · [Zenodo DOI](https://doi.org/10.5281/zenodo.18171573)
+:::
+:::
+
+::: {.worklist-row}
+::: {.worklist-head}
+[radiology-clip-mini](https://github.com/MahshadSa/radiology-clip-mini){.worklist-title}
+[vision-language]{.worklist-date}
+:::
+::: {.worklist-meta}
+A compact CLIP-style vision-language baseline for radiology image-text pairs. [GitHub](https://github.com/MahshadSa/radiology-clip-mini)
+:::
+:::
+
+::: {.worklist-row}
+::: {.worklist-head}
+[ct-phrase-retrieval](https://github.com/MahshadSa/ct-phrase-retrieval00){.worklist-title}
+[retrieval / NLP]{.worklist-date}
+:::
+::: {.worklist-meta}
+Phrase-level retrieval over CT radiology report text. [GitHub](https://github.com/MahshadSa/ct-phrase-retrieval00)
+:::
+:::
+
+:::
+
+## Methods and technical *skills*
+
+| Area | Detail |
+|------|--------|
+| Core statistics | Multilevel and hierarchical modelling (partial pooling, priors, posterior predictive checks); leakage-aware validation for clustered clinical data; decision-curve analysis; calibration. |
+| Programming | Python: pandas, NumPy, scikit-learn, PyTorch; reproducible workflows (Jupyter, VS Code, Git). |
+| Medical AI and imaging | Deep learning for medical imaging (PyTorch, MONAI); CLIP-style vision-language models; quantitative MRE feature operationalisation (motility and bowel wall markers); DICOM preprocessing (pydicom). |
+| LLM and NLP | LLM-assisted information extraction from radiology reports; agentic pipeline design with human-in-the-loop escalation. |
+| Research software | Modular repo structure; versioned releases with DOIs; Streamlit clinician-facing prototypes; Figma for workflow schematics. |
+
+## Clinical *practice*
+
+::: {.worklist}
+
+::: {.worklist-row}
+::: {.worklist-head}
+[General Practitioner · Valiasr Local Medical Center, Alborz, Iran]{.worklist-title}
+[Aug 2022 – Aug 2024]{.worklist-date}
+:::
+::: {.worklist-meta}
+Part-time during transition to full-time research in 2024.
+:::
+:::
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Medical Intern · Teaching Hospitals (SBMU), Tehran, Iran]{.worklist-title}
+[May 2020 – May 2022]{.worklist-date}
+:::
+:::
+
 :::
 
 ## Peer *review*

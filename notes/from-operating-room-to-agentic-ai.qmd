@@ -8,7 +8,7 @@ maturity: seedling
 ---
 
 ::: {.note-page-meta}
-[🌱 Seedling]{.maturity-tag .seedling} · Planted April 23, 2026 · Last tended April 23, 2026
+[🌱 seedling]{.maturity-tag .seedling} · Planted April 23, 2026 · Last tended April 23, 2026
 :::
 
 **The Core Idea:** I am building a bridge between clinical intuition and medical AI because helping patients one-by-one was not enough for the scale of the problems I saw in practice.

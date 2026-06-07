@@ -681,6 +681,50 @@ hr {
 .project-card > h2:first-child {
   margin-top: 0;
 }
+
+// ── Project status pill ──────────────────────────────
+// Small mono pill, same vocabulary as .chip / .maturity-tag.
+.project-status {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  padding: 0.28em 0.7em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+
+  &.live    { color: $mint; background: rgba($mint, 0.08); border-color: rgba($mint, 0.3); }
+  &.active  { color: $navy; background: rgba($navy, 0.07); border-color: rgba($navy, 0.3); }
+  &.planned { color: $gray; background: rgba($gray, 0.08); border-color: rgba($gray, 0.35); }
+}
+
+// The pill sits on the card's first line. Tighten its paragraph and keep
+// the following heading hugging the top instead of inheriting h2's 3em.
+.project-card > p:first-child { margin: 0 0 1.5rem; }
+.project-card > p:first-child + section > h2,
+.project-card > p:first-child + h2 { margin-top: 0; }
+
+// In-card divider: drop the § section glyph so it reads as a clean rule.
+.project-card hr {
+  margin: 2.5rem 0 1.5rem;
+  &::after { display: none; }
+}
+
+// ── Project build-credit footer ──────────────────────
+.project-build {
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba($gray, 0.25);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: $gray;
+
+  p { margin: 0; }
+}
+
 // ── Anchor card (ESGAR / primary work) ───────────────
 // Layout (span) is controlled by .proof-card--wide / --narrow.
 // This class only sets visual style.
@@ -1578,5 +1622,109 @@ body, .navbar, .proof-card, .project-card, .hero-bio, .hero-name {
   .timeline.timeline--log .timeline-head {
     flex-direction: column;
     gap: 0.15rem;
+  }
+}
+.hero-section--split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin: 2rem 0 3rem;
+}
+
+.hero-photo {
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.hero-right .notes-label {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section--split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+// ── Worklist: shared title-left / date-right rows ─────
+// Reusable across pages. Uses theme variables so it adapts
+// to light and dark automatically. Section label + stacked
+// rows, each with a serif title link and a mono meta line.
+.worklist {
+  margin: 2.5rem 0;
+}
+
+.worklist-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  color: $navy;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba($gray, 0.25);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  a {
+    color: $gray;
+    text-decoration: none;
+    font-size: 0.7rem;
+    &:hover { color: $mint; }
+  }
+}
+
+.worklist-row {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba($gray, 0.12);
+
+  &:last-child { border-bottom: none; }
+
+  .worklist-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+
+  .worklist-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: $dark;
+    text-decoration: none;
+    &:hover { color: $mint; }
+  }
+
+  .worklist-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: $gray;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .worklist-meta {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.9rem;
+    color: $darkgray;
+    margin-top: 0.25rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 540px) {
+  .worklist-row .worklist-head {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 }

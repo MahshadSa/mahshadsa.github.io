@@ -1,16 +1,17 @@
 ---
 title: "Concept Name"
-description: "🌱One-line definition or framing"
+description: "One-line definition or framing"
 date: 2026-01-01
 date-modified: last-modified
 categories: [IBD, scoring systems]
+maturity: seedling
 ---
 
 ::: {.note-page-meta}
-🌱 Seedling · Last tended April 2026
+[🌱 seedling]{.maturity-tag .seedling} · Planted Month DD, YYYY · Last tended Month DD, YYYY
 :::
 
-<!-- Maturity options: 🌱 Seedling / 🌿 Sprout / 🌳 Evergreen -->
+<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync — it drives the listing icon. -->
 
 ## In plain terms
 
