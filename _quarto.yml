@@ -31,7 +31,11 @@ website:
       - text: "CV"
         href: cv/index.qmd
       - text: "Work"
-        href: work/index.qmd
+        menu:
+          - text: "Studies"
+            href: work/index.qmd#studies
+          - text: "Tools"
+            href: work/index.qmd#tools
       - text: "Log"
         href: log.qmd
     right:

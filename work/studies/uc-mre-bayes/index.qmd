@@ -7,20 +7,9 @@ image: "uc-mre-bayes-thumb.png"
 draft: false
 ---
 
+::: {.project-card}
+
 *Can MR enterography, combined with a single biomarker, guide which colonic segments need a scope?*
-
----
-
-## Metadata
-
-| | |
-|---|---|
-| **Full title** | Probabilistic Segment-Level Triage of Ulcerative Colitis Mucosal Activity: A Bayesian Multilevel Ordinal Model Combining MR Enterography with Fecal Calprotectin |
-| **First author** | Mahshad Sarikhani |
-| **Venue** | ESGAR 2026, Montpellier — oral presentation |
-| **Manuscript status** | *[CONFIRM: drafting / under internal review / submitted]* — medRxiv preprint planned *[CONFIRM timing]* |
-| **Collaborators** | *[CONFIRM: full author list, including presenting co-authors if any]* |
-| **Institution** | Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences |
 
 ---
 
@@ -71,3 +60,5 @@ A manuscript based on this work is in preparation. *[CONFIRM: medRxiv preprint e
 ---
 
 *Oral presentation, ESGAR 2026, Montpellier, June 2026.*
+
+:::

@@ -1,0 +1,48 @@
+---
+title: "Study Title"
+description: "One sentence on the question and the method. This feeds the card on the work page and the meta description, so make it concrete and specific, not aspirational."
+date: 2026-01-01
+categories: [research, IBD, Bayesian, MRE, UC]
+image: "thumb.png"
+draft: true
+---
+
+::: {.project-card}
+
+*The one-line question the study answers, in italics. Phrase it as the clinical or methodological problem, not the result.*
+
+---
+
+## Background
+
+The gap this study addresses. State the clinical context and the standard of care, then name what is missing: the evidence, the resolution, or the modelling framework the field currently lacks. Two to three short paragraphs. Lead with substance; an endorser should grasp the niche and the stakes here.
+
+---
+
+## The Model
+
+The methodological core. Name the outcome variable and why it is modelled the way it is. State the design choices as decisions with reasons: why ordinal rather than binary, why multilevel, why Bayesian. Specificity is the signal; name the actual structure, predictors, and the level each enters at.
+
+---
+
+## What It Shows
+
+The results, stated plainly. Lead with the effect sizes or estimates that carry the argument, with intervals. Distinguish what is a headline finding from what is a robustness check. Where a number is contested or hard-won, say so; calibrated honesty reads as rigour.
+
+---
+
+## Why It Matters
+
+What the study offers the field that it did not have before. Tie it to the clinical workflow or the guideline it speaks to. State the contribution without overclaiming: every sentence here must be supported by the result above.
+
+---
+
+## Forward
+
+Where this is in its lifecycle: manuscript in preparation, under review, presented. Name the venue and the target if known. *[CONFIRM: preprint or submission target — add date if known.]*
+
+---
+
+*Presentation or publication line. Venue, location, date.*
+
+:::
