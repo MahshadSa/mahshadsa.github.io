@@ -36,12 +36,12 @@ My focus is colonic motility and disease activity in ulcerative colitis, measure
 
 ::: {.worklist}
 ::: {.worklist-label}
-[selected work]{} [[research →](research/index.qmd)]{}
+[selected work]{} [[research →](cv/index.qmd)]{}
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Colonic motility on MRE and endoscopic activity in ulcerative colitis](research/index.qmd){.worklist-title}
+[Colonic motility on MRE and endoscopic activity in ulcerative colitis](cv/index.qmd){.worklist-title}
 [Jun 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
@@ -51,7 +51,7 @@ ESGAR 2026 oral presentation · Manuscript ready to submit
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Bayesian risk stratification for non-invasive triage of UC activity](research/index.qmd){.worklist-title}
+[Bayesian risk stratification for non-invasive triage of UC activity](cv/index.qmd){.worklist-title}
 [Jun 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
@@ -61,7 +61,7 @@ ESGAR 2026 oral presentation · preprint in preparation
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Agentic MRE pipeline](projects/mre-pipeline/index.qmd){.worklist-title}
+[Agentic MRE pipeline](work/tools/reports-agentic-pipeline/index.qmd){.worklist-title}
 [in progress]{.worklist-date}
 :::
 ::: {.worklist-meta}
@@ -71,7 +71,7 @@ Structuring free-text radiology reports with LLMs
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[IBD Imaging Digest](projects/ibd-digest/index.qmd){.worklist-title}
+[IBD Imaging Digest](work/tools/ibd-digest/index.qmd){.worklist-title}
 [live tool]{.worklist-date}
 :::
 ::: {.worklist-meta}
@@ -91,5 +91,5 @@ A daily pipeline that fetches, ranks, and tiers new IBD imaging papers
 :::
 
 ::: {style="text-align: center; margin: 3rem 0 2rem; font-size: 0.78rem; color: #4a9a88; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}
-[About](about/index.qmd) · [Research](research/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa)
+[About](about/index.qmd) · [CV](cv/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa)
 :::

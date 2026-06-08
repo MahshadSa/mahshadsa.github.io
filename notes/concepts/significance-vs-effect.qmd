@@ -47,6 +47,6 @@ What Bayesian reporting does, practically, is move the uncertainty from the limi
 
 ## Related
 
-- [Bayesian Risk Stratification for UC Activity](/research/index.qmd)
+- [Bayesian Risk Stratification for UC Activity](/cv/index.qmd)
 
 

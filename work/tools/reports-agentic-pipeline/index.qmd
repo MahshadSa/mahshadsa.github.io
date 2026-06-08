@@ -1,0 +1,16 @@
+---
+title: "Agentic MRE Reporting Pipeline"
+description: "An agentic LLM pipeline that structures free-text MR enterography reports into auditable data."
+date: 2026-06-08
+categories: [tooling, LLM, agentic, MRE, NLP]
+draft: true
+---
+
+::: {.project-card}
+[Active]{.project-status .active}
+
+## What it does
+
+Placeholder. To be filled in later.
+
+:::

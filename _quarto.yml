@@ -29,9 +29,9 @@ website:
       - text: "Notes"
         href: notes/index.qmd
       - text: "CV"
-        href: research/index.qmd
-      - text: "Projects"
-        href: projects/index.qmd
+        href: cv/index.qmd
+      - text: "Work"
+        href: work/index.qmd
       - text: "Log"
         href: log.qmd
     right:

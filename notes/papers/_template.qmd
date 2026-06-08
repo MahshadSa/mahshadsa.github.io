@@ -40,7 +40,7 @@ The personal layer. How does this paper connect to your projects, change your ap
 ## Related
 
 - [Related concept](/notes/concepts/related.qmd)
-- [Related project](/projects/project-name/index.qmd)
+- [Related project](/work/tools/project-name/index.qmd)
 - [Another paper that contradicts or extends this](/notes/papers/other-author-year.qmd)
 
 ::: {.backlinks}

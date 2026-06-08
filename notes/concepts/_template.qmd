@@ -47,7 +47,7 @@ Things you haven't resolved yet. Honest uncertainty makes garden notes more usef
 ## Related
 
 - [Link to related concept](/notes/concepts/other.qmd)
-- [Link to a project that uses this](/projects/project-name/index.qmd)
+- [Link to a project that uses this](/work/tools/project-name/index.qmd)
 - [Link to a paper note](/notes/papers/author-year.qmd)
 
 ::: {.backlinks}

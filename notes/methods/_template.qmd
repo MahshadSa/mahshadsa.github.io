@@ -54,7 +54,7 @@ Things that broke when you tried them, common mistakes, or subtleties the textbo
 
 - [Concept this method serves](/notes/concepts/related.qmd)
 - [Paper that introduced or validated this](/notes/papers/author-year.qmd)
-- [Project where you applied this](/projects/project-name/index.qmd)
+- [Project where you applied this](/work/tools/project-name/index.qmd)
 
 ::: {.backlinks}
 ### Linked from

@@ -1,0 +1,73 @@
+---
+title: "Probabilistic Triage of Ulcerative Colitis Activity Using MR Enterography and Fecal Calprotectin"
+description: "A Bayesian multilevel ordinal model for segment-level risk stratification in UC monitoring"
+date: 2026-06-09
+categories: [research, IBD, Bayesian, MRE, UC]
+image: "uc-mre-bayes-thumb.png"
+draft: false
+---
+
+*Can MR enterography, combined with a single biomarker, guide which colonic segments need a scope?*
+
+---
+
+## Metadata
+
+| | |
+|---|---|
+| **Full title** | Probabilistic Segment-Level Triage of Ulcerative Colitis Mucosal Activity: A Bayesian Multilevel Ordinal Model Combining MR Enterography with Fecal Calprotectin |
+| **First author** | Mahshad Sarikhani |
+| **Venue** | ESGAR 2026, Montpellier — oral presentation |
+| **Manuscript status** | *[CONFIRM: drafting / under internal review / submitted]* — medRxiv preprint planned *[CONFIRM timing]* |
+| **Collaborators** | *[CONFIRM: full author list, including presenting co-authors if any]* |
+| **Institution** | Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences |
+
+---
+
+## Background
+
+Treat-to-target strategies in UC, codified by the STRIDE-II consensus, require repeated objective confirmation of mucosal healing. In practice, this demand defaults to colonoscopy, an invasive, resource-intensive procedure that is difficult to justify at the frequency modern monitoring protocols require.
+
+Non-invasive surrogates have improved but remain incomplete. Fecal calprotectin (FC) offers a validated and accessible index of mucosal inflammation, but it is a patient-level summary: it says something is wrong somewhere, not where, and not with what probability. Intestinal ultrasound (IUS) has emerged as a strong bedside tool for real-time assessment across most colonic segments and is now embedded in ECCO guidance (Kucharzik et al. 2025). Its principal limitation is the rectum, where sonographic windows are unreliable, and the structural detail it provides is inherently less rich than cross-sectional imaging.
+
+MR enterography occupies a different position. Its strength in luminal Crohn's disease is well established, and the full transmural, segment-level imaging it provides across the entire colon makes it conceptually well suited to UC monitoring. What has been missing is evidence that MRE features carry independent predictive value for endoscopic disease activity at the segment level, and a modelling framework that translates those features into a clinically actionable output rather than a binary active/inactive classification.
+
+This study addresses both gaps.
+
+---
+
+## The Model
+
+The outcome variable in this study is the Mayo Endoscopic Subscore (MES), scored 0 to 3 per colonic segment. This scale is ordered and ranked, but the steps between categories are not equal in clinical or statistical terms. Collapsing it to a binary active/inactive threshold would discard information and, more importantly, would force a false certainty on the distinction between MES 1 and MES 2, which is precisely the most contested and clinically consequential boundary in UC endoscopy. An ordered logistic regression model preserves the ranked structure of the outcome and estimates separate thresholds between adjacent categories.
+
+The multilevel structure follows from the study design. Each patient contributes five segments, and those segments share the patient's biology, treatment history, and systemic inflammatory burden. Treating 245 segments as 245 independent observations would underestimate uncertainty in the segment-level predictions and produce overconfident interval estimates. A multilevel (random intercept) model explicitly accounts for within-patient correlation, estimating a per-patient intercept that captures unmeasured individual-level heterogeneity.
+
+Inference was conducted in a Bayesian framework. The practical consequence is that every model output is a full posterior probability distribution over the MES categories, rather than a point estimate. For clinical triage, this matters: the output is not "this segment is active," but "this segment has a 78% posterior probability of MES ≥ 2, with a 95% credible interval of 61–91%." Triage thresholds were calibrated against those distributions at 90% sensitivity for rule-out (green tier) and 90% specificity for rule-in (red tier), with segments not meeting either threshold routed to an indeterminate yellow tier.
+
+Predictors entered the model at two levels. At the segment level: bowel wall thickness, length of affected segment as a proportion of total segment length, and presence of arterial enhancement on MRE. At the patient level, shared across all five of that patient's segments: fecal calprotectin.
+
+---
+
+## What It Shows
+
+Across 49 patients and 245 colonic segments, all four predictors showed near-certain positive associations with higher MES. The largest effect belonged to bowel wall thickness (OR 3.08), followed by affected segment length (OR 2.36), fecal calprotectin (OR 2.27), and arterial enhancement (OR 1.72). Critically, MRE features retained their predictive value after accounting for calprotectin, supporting MRE as something more than a structural corroborator of a known biomarker.
+
+Two discrimination estimates are reported, and the distinction between them is not a technicality. The marginal AUC (0.78) describes how well the model performs on a new, previously unseen patient, using only imaging and biomarker features. The conditional AUC (0.93) describes discrimination within patients, after accounting for the individual random intercept. The gap between them reflects how much of the variation in segment-level activity is explained by patient-specific biology that the predictors cannot capture. That gap is a principled argument for image-guided, individualised treatment decisions rather than a universal calprotectin threshold.
+
+Triage classification across the 245 segments: 30% classified as green (confidently inactive, endoscopy deferral supported), 24% as red (confidently active, treatment escalation indicated), and 47% as yellow (indeterminate, colonoscopy indicated). The yellow tier is not a failure of resolution; it is the model's explicit acknowledgement that MES 1 versus MES 2 is a difficult distinction that should not be forced. Fifty-three percent of segments were classified with the confidence required to act without a scope.
+
+---
+
+## Why It Matters
+
+This is, to our knowledge, the first Bayesian multilevel ordinal model applied to segment-level UC activity prediction using MRE combined with a biomarker. It offers three things the field currently lacks: segment-level resolution with full transmural imaging, explicit probabilistic quantification of activity per segment rather than a forced binary output, and a calibrated triage framework directly compatible with STRIDE-II treat-to-target monitoring. MRE and IUS are complementary rather than competing tools: IUS gives rapid bedside access across most segments, MRE provides the transmural depth and rectal coverage that IUS cannot reliably supply.
+
+---
+
+## Forward
+
+A manuscript based on this work is in preparation. *[CONFIRM: medRxiv preprint expected — add target date if known.]*
+
+---
+
+*Oral presentation, ESGAR 2026, Montpellier, June 2026.*

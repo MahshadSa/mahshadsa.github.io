@@ -1,0 +1,30 @@
+---
+title: "Work"
+subtitle: "Studies and research software"
+listing:
+  - id: studies
+    contents: "studies/*/index.qmd"
+    type: default
+    sort: "date desc"
+    fields: [title, description, categories, date]
+    categories: true
+  - id: tools
+    contents: "tools/*/index.qmd"
+    type: default
+    sort: "date desc"
+    fields: [title, description, categories, date]
+    categories: true
+toc: false
+---
+
+Quantitative and computational work at the intersection of clinical imaging, IBD, and applied AI. The studies are research heading to publication; the tools are software built to support that work, some deployed and in active use, others experiments that earned their place by teaching something useful.
+
+## Studies
+
+::: {#studies}
+:::
+
+## Tools
+
+::: {#tools}
+:::
