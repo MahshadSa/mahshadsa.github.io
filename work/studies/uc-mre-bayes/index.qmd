@@ -51,11 +51,7 @@ Triage classification across the 245 segments: 30% classified as green (confiden
 
 This is, to our knowledge, the first Bayesian multilevel ordinal model applied to segment-level UC activity prediction using MRE combined with a biomarker. It offers three things the field currently lacks: segment-level resolution with full transmural imaging, explicit probabilistic quantification of activity per segment rather than a forced binary output, and a calibrated triage framework directly compatible with STRIDE-II treat-to-target monitoring. MRE and IUS are complementary rather than competing tools: IUS gives rapid bedside access across most segments, MRE provides the transmural depth and rectal coverage that IUS cannot reliably supply.
 
----
 
-## Forward
-
-A manuscript based on this work is in preparation. *[CONFIRM: medRxiv preprint expected — add target date if known.]*
 
 ---
 
