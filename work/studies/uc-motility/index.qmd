@@ -1,0 +1,16 @@
+---
+title: "Colonic motiltiy in UC"
+description: ""
+date: 2026-06-09
+categories: []
+draft: true
+---
+
+::: {.project-card}
+[Active]{.project-status .active}
+
+## What it does
+
+Placeholder. To be filled in later.
+
+:::

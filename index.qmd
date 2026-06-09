@@ -36,12 +36,12 @@ My focus is colonic motility and disease activity in ulcerative colitis, measure
 
 ::: {.worklist}
 ::: {.worklist-label}
-[selected work]{} [[research →](cv/index.qmd)]{}
+[selected work]{} [[research →](work\index.qmd)]{}
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Colonic motility on MRE and endoscopic activity in ulcerative colitis](cv/index.qmd){.worklist-title}
+[Colonic motility on MRE and endoscopic activity in ulcerative colitis](work\studies\uc-motility\index.qmd){.worklist-title}
 [Jun 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
@@ -51,7 +51,7 @@ ESGAR 2026 oral presentation · Manuscript ready to submit
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Bayesian risk stratification for non-invasive triage of UC activity](cv/index.qmd){.worklist-title}
+[Bayesian risk stratification for non-invasive triage of UC activity](work\studies\uc-mre-bayes\index.qmd){.worklist-title}
 [Jun 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
