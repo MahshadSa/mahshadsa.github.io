@@ -1,16 +1,55 @@
 ---
-title: "Colonic motiltiy in UC"
-description: ""
-date: 2026-06-09
-categories: []
-draft: true
+title: "Colonic motility on MR enterography in ulcerative colitis"
+description: "A prospective study testing whether quantitative bowel motion on MRI tracks endoscopic activity and chronic structural damage in UC."
+date: 2026-06-01
+categories: [research, IBD, MRE, UC, motility]
+image: "thumb.png"
 ---
 
 ::: {.project-card}
-[Active]{.project-status .active}
 
-## What it does
+*Whether the movement of the colon, measured non-invasively on MRI, reflects how inflamed and how structurally damaged the bowel is in ulcerative colitis.*
 
-Placeholder. To be filled in later.
+## Background
+
+Quantitative motility imaging in IBD grew almost entirely out of the small bowel. The technique that made it possible, cine MRI registered to produce a displacement map of the bowel wall, was developed and validated by the UCL group around Crohn's disease, where the small bowel is the dominant site and where reduced motility was shown to track inflammation and predict response to therapy. A decade of that work established motility as a measurable, reproducible biomarker, and it now sits inside the GIQuant pipeline as a standardised output.
+
+The colon was left behind for understandable reasons. It is harder to image cleanly, its motion is slower and more variable, and ulcerative colitis was long treated as a mucosal disease best read by the endoscope. The result is that the two questions clinicians increasingly care about in UC have had no shared imaging answer. The first is functional: a substantial group of patients stay symptomatic after reaching endoscopic remission, and nothing in the standard toolkit measures the bowel's working capacity to explain it. The second is structural: long-standing UC remodels the colon, producing the loss of haustration, fat deposition and shortening that radiologists recognise but that no framework grades alongside activity.
+
+The current ECCO-ESGAR position, set out by Kucharzik and colleagues in 2025, is instructive here. It gives intestinal ultrasound the leading role for monitoring activity in UC and positions cross-sectional MRI more cautiously, largely for complications and for the small bowel. Motility is not part of that picture for UC, because the evidence to put it there did not yet exist. This study sits at the point where three steps meet: motility imaging was built and proven in Crohn's small bowel, no equivalent quantitative study had been done in the UC colon, and no imaging approach had tried to hold activity and chronic structural damage together in a single non-invasive assessment.
+
+---
+
+## The Model
+
+A prospective single-centre study of 49 adults with established UC who underwent MRI and colonoscopy, with 30 matched healthy controls.
+
+Imaging used MR enterography with cine sequences that capture bowel motion in real time. Motility was quantified with GIQuant (Motilent Ltd.), the FDA-cleared software that derives the magnitude of bowel wall displacement from those sequences and reports it in standardised units. The reference standard was the Mayo Endoscopic Subscore (MES 0 to 3), graded at colonoscopy performed close to the MRI.
+
+The analysis was structured around the three questions rather than a single model. The motility-MES relationship was modelled with ordinal regression, because endoscopic activity is graded, not binary, and collapsing it to present or absent would discard the very gradient the study set out to test. Diagnostic performance against endoscopic activity was assessed by AUC. The third strand, the one that carries most of the contribution, restricted attention to segments with low or absent endoscopic activity and tested whether reduced motility there tracked established MRI features of chronic structural damage.
+
+---
+
+## What It Shows
+
+Colonic motility was markedly lower in UC than in healthy controls, with a mean difference of 136 GIQuant units (95% CI 197 to 75). The relationship with disease activity was graded rather than binary: each standard-deviation rise in motility corresponded to lower endoscopic activity (odds ratio 0.38 per 1 SD, 95% CI 0.27 to 0.53), and motility distinguished any endoscopic activity from none with good discrimination (AUC 0.83), with more modest separation at higher grades.
+
+The result that matters most sits in the segments that look quiet on endoscopy. There, reduced motility was associated with MRI features of chronic structural disease: loss of haustration, pericolic fat, submucosal fat deposition, colonic shortening and pseudopolyps. This is the part the endoscope cannot reach. A segment can score low for activity and still carry the functional signature of accumulated damage, and motility appears to detect it. These are associations from a single-centre cohort, not yet a validated clinical tool, and that is the honest ceiling on what they show.
+
+---
+
+## Why It Matters
+
+The implication is twofold. Persistent dysmotility may help explain why some patients remain symptomatic despite endoscopic remission, where conventional measures report them as quiet. And a single MRE examination may be able to report on activity and chronic damage together, in one non-invasive visit, where colonoscopy reports on neither motility nor chronicity directly. As treat-to-target frameworks reach for deeper endpoints and more potent therapies make functional recovery a realistic goal, a measure that reads the colon's working capacity, not only its mucosal surface, has a clearer place in how UC is monitored.
+
+---
+
+## Forward
+
+The manuscript is ready for submission. Findings have been presented as an oral presentation at ESGAR 2026 and as a poster at ECCO 2026.
+
+---
+
+*First-author study, in collaboration with Motilent Ltd. (London) and Prof. Jean-Frédéric Colombel, Icahn School of Medicine at Mount Sinai. Oral presentation at ESGAR 2026, Montpellier. Poster, ECCO 2026.*
 
 :::

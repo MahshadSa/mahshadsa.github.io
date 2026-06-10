@@ -1,0 +1,155 @@
+---
+title: "Radiology Reports Pipeline"
+description: "A reproducible pipeline for parsing, de-identifying, and structuring ~9,800 free-text abdominal radiology reports to support longitudinal IBD research."
+date: 2026-06-10
+categories: [tooling, NLP, IBD, de-identification, infrastructure]
+draft: false
+---
+
+::: {.project-card}
+
+*Building the infrastructure that makes longitudinal questions askable.*
+
+## The problem
+
+In IBD, imaging is often sparse by necessity. A patient may accumulate three or four MR enterographies across six years, each reported at a different stage of their disease, each sitting in a folder as a free-text Word document. The clinical information is there: bowel wall measurements, activity descriptors, structural findings noted and then effectively lost to follow-up. The question of whether a patient's bowel is quietly accumulating damage between flares is a real and unanswered clinical question, and much of the data needed to approach it already exists. It is simply not in a form that research can use.
+
+That gap, between data that exists and data that is reachable, is the kind of problem I find difficult to leave alone.
+
+
+## The corpus
+
+The dataset is approximately 9,800 abdominal radiology reports from a single institution, spanning nearly a decade. Modalities include MR enterography for IBD and Crohn's disease, MRCP for primary sclerosing cholangitis, liver and biliary MRI, rectal cancer staging, and gynaecological pelvic MRI. One Word document per report. Reports follow a consistent free-text structure: modality, clinical information, optional prior-imaging reference, findings, and impression.
+
+The clinical questions this dataset is positioned to answer, including longitudinal reconstruction of structural damage in IBD, require first building the infrastructure that makes those questions answerable. That is what this pipeline is.
+
+
+## Pipeline
+
+```{=html}
+<svg width="100%" viewBox="0 0 680 176" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Radiology reports pipeline</title>
+<desc>Six-phase pipeline: Phase 0 metadata capture, Phase 1 document parsing, Phase 1b repeat-patient clustering, Phase 2 de-identification, Phase 3 classification, then Phases 4–5 audit and longitudinal linkage. Phases 0–2 complete or in progress; Phases 3–5 designed and pending.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    .t   { font: 400 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
+    .ts  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
+    .th  { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
+    .done  rect { fill: #e8f0eb; stroke: #5a7260; }
+    .done  text { fill: #2c3d30; }
+    .prog  rect { fill: #fdf3e0; stroke: #b07a18; }
+    .prog  text { fill: #4a3200; }
+    .pend  rect { fill: #f0f0ee; stroke: #8a8a85; }
+    .pend  text { fill: #3a3a38; }
+    .sem   rect { fill: #eeeef8; stroke: #6970a0; }
+    .sem   text { fill: #2e2f5a; }
+    @media (prefers-color-scheme: dark) {
+      .t   { fill: #d8d8d4; }
+      .ts  { fill: #9a9a94; }
+      .th  { fill: #d8d8d4; }
+      .done  rect { fill: #1e2e22; stroke: #5a7260; }
+      .done  text { fill: #a8c4ac; }
+      .prog  rect { fill: #2a2010; stroke: #b07a18; }
+      .prog  text { fill: #e0c070; }
+      .pend  rect { fill: #242420; stroke: #6a6a64; }
+      .pend  text { fill: #b0b0a8; }
+      .sem   rect { fill: #1e1e30; stroke: #6970a0; }
+      .sem   text { fill: #b0b4d8; }
+    }
+  </style>
+</defs>
+
+<text class="ts" x="54"  y="16" text-anchor="middle">phase 0</text>
+<text class="ts" x="162" y="16" text-anchor="middle">phase 1</text>
+<text class="ts" x="270" y="16" text-anchor="middle">phase 1b</text>
+<text class="ts" x="386" y="16" text-anchor="middle">phase 2</text>
+<text class="ts" x="502" y="16" text-anchor="middle">phase 3</text>
+<text class="ts" x="619" y="16" text-anchor="middle">phases 4–5</text>
+
+<g class="done"><rect x="10"  y="26" width="88" height="72" rx="4" stroke-width="0.5"/>
+  <text class="th" x="54"  y="46" text-anchor="middle" dominant-baseline="central">Metadata</text>
+  <text class="ts" x="54"  y="64" text-anchor="middle" dominant-baseline="central">archive +</text>
+  <text class="ts" x="54"  y="82" text-anchor="middle" dominant-baseline="central">timestamps</text></g>
+
+<line x1="98" y1="62" x2="118" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+
+<g class="done"><rect x="120" y="26" width="84" height="72" rx="4" stroke-width="0.5"/>
+  <text class="th" x="162" y="46" text-anchor="middle" dominant-baseline="central">Parse</text>
+  <text class="ts" x="162" y="64" text-anchor="middle" dominant-baseline="central">structured</text>
+  <text class="ts" x="162" y="82" text-anchor="middle" dominant-baseline="central">sections</text></g>
+
+<line x1="204" y1="62" x2="224" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+
+<g class="done"><rect x="226" y="26" width="88" height="72" rx="4" stroke-width="0.5"/>
+  <text class="th" x="270" y="46" text-anchor="middle" dominant-baseline="central">Clustering</text>
+  <text class="ts" x="270" y="64" text-anchor="middle" dominant-baseline="central">repeat</text>
+  <text class="ts" x="270" y="82" text-anchor="middle" dominant-baseline="central">patients</text></g>
+
+<line x1="314" y1="62" x2="334" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+
+<g class="prog"><rect x="336" y="26" width="100" height="72" rx="4" stroke-width="0.5"/>
+  <text class="th" x="386" y="46" text-anchor="middle" dominant-baseline="central">De-identify</text>
+  <text class="ts" x="386" y="64" text-anchor="middle" dominant-baseline="central">HIPAA Safe</text>
+  <text class="ts" x="386" y="82" text-anchor="middle" dominant-baseline="central">Harbor</text></g>
+
+<line x1="436" y1="62" x2="456" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+
+<g class="pend"><rect x="458" y="26" width="88" height="72" rx="4" stroke-width="0.5"/>
+  <text class="th" x="502" y="46" text-anchor="middle" dominant-baseline="central">Classify</text>
+  <text class="ts" x="502" y="64" text-anchor="middle" dominant-baseline="central">modality +</text>
+  <text class="ts" x="502" y="82" text-anchor="middle" dominant-baseline="central">disease</text></g>
+
+<line x1="546" y1="62" x2="566" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+
+<g class="pend"><rect x="568" y="26" width="102" height="72" rx="4" stroke-width="0.5"/>
+  <text class="th" x="619" y="46" text-anchor="middle" dominant-baseline="central">Audit + link</text>
+  <text class="ts" x="619" y="64" text-anchor="middle" dominant-baseline="central">longitudinal</text>
+  <text class="ts" x="619" y="82" text-anchor="middle" dominant-baseline="central">table</text></g>
+
+<g class="done"><rect x="10" y="116" width="60" height="22" rx="3" stroke-width="0.5"/>
+  <text class="ts" x="40" y="127" text-anchor="middle" dominant-baseline="central">complete</text></g>
+<g class="prog"><rect x="82" y="116" width="80" height="22" rx="3" stroke-width="0.5"/>
+  <text class="ts" x="122" y="127" text-anchor="middle" dominant-baseline="central">in progress</text></g>
+<g class="pend"><rect x="174" y="116" width="60" height="22" rx="3" stroke-width="0.5"/>
+  <text class="ts" x="204" y="127" text-anchor="middle" dominant-baseline="central">designed</text></g>
+
+<text class="ts" x="10" y="164" text-anchor="start">design commitments: every claim traceable to source · uncertainty flagged, not resolved · patient data never in repository</text>
+</svg>
+```
+
+
+
+## Where the difficulty was
+
+Before any extraction or modelling, the corpus had to be parsed, de-identified, and structured so that every downstream claim is traceable to its source sentence. That is not the intellectually exciting part of the work. It is, however, the part that determines whether the exciting part is trustworthy.
+
+De-identification turned out to be harder than anticipated, for reasons specific to this corpus. The reports span nearly a decade, and Persian names transliterated into English accumulate variation over time: different spellings, different name ordering, entries that are consistent within one reporting period and inconsistent across another. A generic named-entity approach would not hold. The pipeline matches each report only against name tokens derived from its own filename, after a normalisation step that strips modality, anatomy, and date fragments from the filename before any matching begins.
+
+What complicated this further is that numbers in radiology reports carry multiple roles simultaneously. A date fragment, a bowel wall measurement, and a reference to a prior study interval are all numeric, and all appear in close proximity. Collapsing them indiscriminately would destroy clinical content. The de-identification works through ordered passes that distinguish these categories deliberately, flagging ambiguous cases for review rather than resolving them silently.
+
+
+## One design decision
+
+When a radiologist writes "cannot exclude active inflammation," that is not a positive finding. It is a hedge, and it belongs in a different category from "consistent with active inflammation." Any extraction that scores them identically is clinically wrong in a way that matters for downstream research. The pipeline records hedged language as an explicit uncertainty flag and routes it for human review rather than assigning it a label.
+
+That single distinction reflects a broader design commitment: a radiologist reading the outputs should find the uncertainty handling familiar. A system that collapsed ambiguous cases silently would not earn that trust, and should not.
+
+
+## Current state
+
+Phases 0, 1, and 1b are complete on the full corpus. Phase 2 de-identification has been built and run; final validation is in progress. Phases 3 through 5 are designed and pending implementation. The research programme begins once the structured, de-identified corpus is locked.
+
+---
+
+## What is next
+
+Classification and longitudinal linkage are the next phases. What gets built on top of this foundation is worth describing once it is ready to be described properly.
+
+---
+
+*Pipeline built in Python, with python-docx, pandas, and pytest. Phases 0–1b complete; Phase 2 in final validation.*
+
+:::

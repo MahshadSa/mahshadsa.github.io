@@ -25,9 +25,9 @@ listing:
 [MD · quantitative and computational methods for IBD imaging]{.hero-tagline}
 
 ::: {.hero-bio}
-A doctor who codes. I work on quantitative MRI in inflammatory bowel disease, building Bayesian and agentic models that turn imaging into something measurable.
+A doctor who codes. My field is quantitative imaging in inflammatory bowel disease, the problem of turning what radiologists see into numbers that hold up.
 
-My focus is colonic motility and disease activity in ulcerative colitis, measured from MR enterography. The methods carry across that work: multilevel Bayesian models that respect uncertainty, and agentic pipelines that turn unstructured radiology text into data you can audit.
+I came to this as a clinician, which shapes how I work: I sit between the imaging side that knows the disease and the computational side that knows the models, two camps that rarely overlap. Ulcerative colitis is my main focus, mostly through MR enterography.
 :::
 
 :::
@@ -61,11 +61,11 @@ ESGAR 2026 oral presentation · preprint in preparation
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Agentic MRE pipeline](work/tools/reports-agentic-pipeline/index.qmd){.worklist-title}
+[Radiology Reports Pipeline](work/tools/reports-pipeline/index.qmd){.worklist-title}
 [in progress]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Structuring free-text radiology reports with LLMs
+Parsing and de-identifying ~9,800 free-text abdominal reports for longitudinal IBD research
 :::
 :::
 

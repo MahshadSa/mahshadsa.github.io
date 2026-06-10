@@ -11,8 +11,6 @@ draft: false
 
 *Can MR enterography, combined with a single biomarker, guide which colonic segments need a scope?*
 
----
-
 ## Background
 
 Treat-to-target strategies in UC, codified by the STRIDE-II consensus, require repeated objective confirmation of mucosal healing. In practice, this demand defaults to colonoscopy, an invasive, resource-intensive procedure that is difficult to justify at the frequency modern monitoring protocols require.
@@ -49,12 +47,12 @@ Triage classification across the 245 segments: 30% classified as green (confiden
 
 ## Why It Matters
 
-This is, to our knowledge, the first Bayesian multilevel ordinal model applied to segment-level UC activity prediction using MRE combined with a biomarker. It offers three things the field currently lacks: segment-level resolution with full transmural imaging, explicit probabilistic quantification of activity per segment rather than a forced binary output, and a calibrated triage framework directly compatible with STRIDE-II treat-to-target monitoring. MRE and IUS are complementary rather than competing tools: IUS gives rapid bedside access across most segments, MRE provides the transmural depth and rectal coverage that IUS cannot reliably supply.
+This is, to our knowledge, the first Bayesian multilevel ordinal model applied to segment-level UC activity prediction using MRE combined with a biomarker. It offers three things the field currently lacks: segment-level resolution with full transmural imaging, explicit probabilistic quantification of activity per segment rather than a forced binary output, and a calibrated triage framework directly compatible with STRIDE-II treat-to-target monitoring. 
 
 
 
 ---
 
-*Oral presentation, ESGAR 2026, Montpellier, June 2026.*
+*First-author study, in collaboration with Motilent Ltd. (London). Oral presentation at ESGAR 2026, Montpellier.*
 
 :::
