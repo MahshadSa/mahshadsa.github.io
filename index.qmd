@@ -15,11 +15,9 @@ listing:
     date-format: "MMM YYYY"
 ---
 
-::: {.hero-section .hero-section--solo}
+::: {.hero-section .hero-section--split}
 
 ::: {.hero-left}
-![](assets/img/headshot.jpg){.hero-photo}
-
 [Mahshad *Sarikhani*]{.hero-name}
 
 [MD · quantitative and computational methods for IBD imaging]{.hero-tagline}
@@ -30,6 +28,10 @@ A doctor who codes. My field is quantitative imaging in inflammatory bowel disea
 I came to this as a clinician, which shapes how I work: I sit between the imaging side that knows the disease and the computational side that knows the models, two camps that rarely overlap. Ulcerative colitis is my main focus, mostly through MR enterography.
 :::
 
+:::
+
+::: {.hero-portrait}
+![](assets/img/headshot.jpg){.hero-photo}
 :::
 
 :::
@@ -81,13 +83,27 @@ A daily pipeline that fetches, ranks, and tiers new IBD imaging papers
 
 :::
 
-::: {.worklist}
-::: {.worklist-label}
-[recent notes]{} [[all →](notes/index.qmd)]{}
-:::
+::: {.terminal-card .terminal-card--notes}
+
+```{=html}
+<header class="term-bar">
+  <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+  <span class="term-title">~/notes</span>
+  <a class="term-all" href="notes/index.html">all →</a>
+</header>
+```
+
+::: {.term-body}
+
+```{=html}
+<div class="term-prompt-line"><span class="term-prompt">$</span> ls --recent notes/<span class="term-cursor"></span></div>
+```
 
 ::: {#hero-notes}
 :::
+
+:::
+
 :::
 
 ::: {style="text-align: center; margin: 3rem 0 2rem; font-size: 0.78rem; color: #4a9a88; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}

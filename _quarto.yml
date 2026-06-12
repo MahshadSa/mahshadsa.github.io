@@ -60,6 +60,8 @@ format:
           <meta name="google-site-verification" content="h-3xdvaDhFjhTCq4gbhij_Dcuitz1axWuYGbUmHf9c0" />
       - _includes/favicon.html
       - _includes/schema.html
+    include-after-body:
+      - _includes/reveal.html
     theme:
       light: [cosmo, assets/css/custom.scss]
       dark: [cosmo, assets/css/custom-dark.scss]
