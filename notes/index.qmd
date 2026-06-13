@@ -1,6 +1,5 @@
 ---
 title: "Notes"
-pagetitle: "Notes · Mahshad Sarikhani"
 subtitle: "A working notebook"
 toc: false
 listing:
