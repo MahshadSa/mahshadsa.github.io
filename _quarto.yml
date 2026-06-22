@@ -1,6 +1,14 @@
 project:
   type: website
   output-dir: _site
+  # IBD Signal is held back as a draft until the first issue ships: exclude the
+  # whole section from the build. To publish, remove the "!ibd-signal/**" line
+  # and restore the navbar entry below. Render it while drafting with
+  # `quarto preview ibd-signal/`.
+  render:
+    - "*.qmd"
+    - "**/*.qmd"
+    - "!ibd-signal/**"
 
 website:
   title: "Mahshad Sarikhani"
@@ -36,6 +44,8 @@ website:
             href: work/index.qmd#studies
           - text: "Tools"
             href: work/index.qmd#tools
+      # - text: "IBD Signal"        # held back until the first issue ships
+      #   href: ibd-signal/index.qmd
       - text: "Log"
         href: log.qmd
     right:

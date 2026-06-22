@@ -1,16 +1,16 @@
 /*-- scss:defaults --*/
 
 // ── Backgrounds ──────────────────────────────────────
-$light:         #f8fafa;   // changed: cooler, cleaner off-white (was warm #f9fbf8)
-$lightgray:     #edf0f0;   // changed: cooler surface tone
-$gray:          #94a8b0;   // changed: blue-gray muted (was green-gray)
-$darkgray:      #253038;   // changed: deep blue-teal body text (was forest green)
-$dark:          #0e1a20;   // changed: near-black with teal undertone (was forest black)
+$light:         #f8fafa;  
+$lightgray:     #edf0f0;  
+$gray:          #94a8b0;   
+$darkgray:      #253038;   
+$dark:          #0e1a20;   
 
 // ── Palette: mint · navy · dusty rose ────────────────
-$mint:          #4a9a88;   // PRIMARY — replaces sage. Brighter, cooler green-teal.
-$navy:          #1a3a5c;   // ACCENT  — anchor card, stat highlights. Deep authority blue.
-$rose:          #9a5a6a;   // SECONDARY — quote card, now card, backlinks. Dusty rose.
+$mint:          #4a9a88;   
+$navy:          #1a3a5c;   
+$rose:          #9a5a6a;   
 
 // ── Legacy aliases (keeps all existing $sage/$periwinkle references working) ─
 $sage:          $mint;
