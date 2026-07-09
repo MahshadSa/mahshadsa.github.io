@@ -2,27 +2,27 @@
 title: "IBD Imaging Digest"
 description: "An automated daily literature monitor for IBD imaging research. Fetches new papers, ranks by semantic relevance against a personal corpus, and delivers a tiered digest into Obsidian."
 date: 2026-05-20
-date-modified: 2026-06-05
-categories: [tooling, NLP, literature, obsidian]
+date-modified: 2026-07-09
+categories: [tooling, NLP, literature, obsidian, reproducibility, SPECTER2, OpenAlex]
 ---
 ::: {.project-card}
 
 ## What it does
 
-Keeping up with IBD imaging literature is a daily task that, left unstructured, turns into an hour of tab-opening and half-read abstracts. This pipeline replaces that with a ranked digest that arrives every morning in my Obsidian vault.
+Keeping up with IBD imaging literature left unstructured means an hour a day of tab-opening and half-read abstracts. This pipeline replaces that: a ranked digest arrives every morning in my Obsidian vault.
 
-The system pulls from four sources: PubMed via E-utilities and three radiology journals (Radiology, Radiology: AI, European Radiology) via Crossref. Papers are deduplicated by DOI and stored in a local SQLite database. Each new paper is embedded with SPECTER2 and compared by cosine similarity to a seed corpus of papers I have curated in Zotero over the past few years. The resulting similarity scores are converted to percentile ranks and used to assign one of three tiers: Must-read (≥ 0.958), Skim (0.924 to 0.958), or Archive (below that).
+The system pulls from eighteen sources: PubMed via E-utilities, on two query branches, and seventeen journals via Crossref, spanning focused radiology, focused IBD, imaging AI, and the broader GI and AI venues. It began with four. Papers are deduplicated by DOI and stored in a local SQLite database. Each new paper is embedded with SPECTER2 and compared by cosine similarity to a seed corpus of papers I have curated in Zotero over the past few years. The similarity scores are converted to percentile ranks and used to assign one of three tiers: Must-read, Skim, or Archive.
 
-The daily digest renders as an Obsidian Markdown file with callout blocks and checkbox conventions. The checkboxes are not cosmetic: they are intended to feed a future ranking improvement loop (Step 6) once there is enough signal from real use.
+The daily digest renders as an Obsidian Markdown file with each tier in its own callout block. Must-read and skim papers carry two independent checkboxes. `Relevant` feeds the paper back into the ranking corpus. `Read later` routes it to a persistent rolling note at `Inbox/To Read.md`, abstract included, for offline reading. Neither is cosmetic. The first one is the whole learning loop.
 
-***Update: *** Source coverage expanded from 4 to 18. Crossref now covers 17 journals across focused radiology, focused IBD, imaging AI, and broader GI and AI venues. The PubMed query gained a second branch not gated on IBD terms, covering abdominal radiology AI and agentic AI more broadly. European Radiology, which was initially fetched via Springer's RSS feed (returning empty author lists and truncated abstracts), was switched to the Crossref API to match the pattern used for the other journals.
+Each ranked paper states its nearest seed too, the corpus paper that drove its score. I added this because a score with no reason attached can't be reviewed, and seeing why the ranker liked something is the fastest way to catch it liking something for the wrong reason.
 
-A second checkbox was added to must-read and skim papers: `Read later`. Checked papers route to a persistent rolling note at `Inbox/To Read.md`, with full abstracts included for offline reading, deduplicated by DOI. The `Relevant` checkbox is unchanged; the two are strictly independent.
+A wildcard section promotes two randomly sampled archive papers to full rendering, checkboxes and all. A system that only shows me papers like what I already chose narrows quietly over time. The wildcard is the corpus's only route to papers the ranker scores low. Costs two entries a day.
 
 ```{=html}
 <svg width="100%" viewBox="0 0 680 370" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>IBD Imaging Digest pipeline</title>
-<desc>Five-stage pipeline: fetch from 18 sources, deduplicate by DOI, rank with SPECTER2, tier into must-read/skim/archive, render Obsidian digest. Read later checkbox routes to a persistent inbox note. Step 6 feedback loop is deferred.</desc>
+<desc>Five-stage pipeline: fetch from 18 sources, deduplicate by DOI, rank with SPECTER2, tier into must-read/skim/archive, render Obsidian digest. Read later checkbox routes to a persistent inbox note. The Relevant checkbox feeds papers back into the ranking corpus.</desc>
 <defs>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -91,11 +91,11 @@ A second checkbox was added to must-read and skim papers: `Read later`. Checked 
 <line x1="424" y1="114" x2="440" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="must"><rect x="442" y="68"  width="124" height="36" rx="4" stroke-width="0.5"/>
-  <text class="ts" x="504" y="90"  text-anchor="middle" dominant-baseline="central">Must-read  &#8805; 0.958</text></g>
+  <text class="ts" x="504" y="90"  text-anchor="middle" dominant-baseline="central">Must-read  p85+</text></g>
 <g class="neu"><rect  x="442" y="114" width="124" height="36" rx="4" stroke-width="0.5"/>
-  <text class="ts" x="504" y="136" text-anchor="middle" dominant-baseline="central">Skim  0.924 &#8211; 0.958</text></g>
+  <text class="ts" x="504" y="136" text-anchor="middle" dominant-baseline="central">Skim  p40 &#8211; p85</text></g>
 <g class="arch"><rect x="442" y="160" width="124" height="36" rx="4" stroke-width="0.5"/>
-  <text class="ts" x="504" y="182" text-anchor="middle" dominant-baseline="central">Archive  &lt; 0.924</text></g>
+  <text class="ts" x="504" y="182" text-anchor="middle" dominant-baseline="central">Archive  &lt; p40</text></g>
 
 <line x1="566" y1="86"  x2="582" y2="104" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 <line x1="566" y1="132" x2="582" y2="128" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
@@ -114,7 +114,7 @@ A second checkbox was added to must-read and skim papers: `Read later`. Checked 
   <text class="ts" x="627" y="246" text-anchor="middle" dominant-baseline="central">To Read.md</text></g>
 
 <path d="M627 258 Q627 310 504 318 Q380 326 360 200" fill="none" stroke="#6970a0" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
-<text class="ts" x="470" y="336" text-anchor="middle">step 6: feedback loop (deferred)</text>
+<text class="ts" x="470" y="336" text-anchor="middle">step 6: feedback loop (&#9745; Relevant &#8594; corpus)</text>
 
 <g class="src"><rect x="10"  y="296" width="108" height="26" rx="3" stroke-width="0.5"/>
   <text class="ts" x="64"  y="313" text-anchor="middle" dominant-baseline="central">GitHub Actions</text></g>
@@ -127,37 +127,298 @@ A second checkbox was added to must-read and skim papers: `Read later`. Checked 
 </svg>
 ```
 
+## Why two fetch paths
+
+PubMed and Crossref aren't redundant. They fail in opposite directions, so the pipeline needs both.
+
+PubMed is topic-filtered and journal-agnostic. The query gates on IBD terms combined with imaging or AI terms, plus a review and guideline branch, plus a branch not gated on IBD at all, which catches abdominal radiology AI and agentic AI more broadly. It searches every indexed journal, so an on-topic paper in a venue I have never heard of still reaches me.
+
+Crossref is journal-filtered and topic-agnostic. It pulls the most recent papers from a fixed list of seventeen journals regardless of subject. It exists for one reason: Crossref surfaces a DOI within days of online publication, while PubMed indexing can lag by weeks. Direct journal pulls are how I see key-journal papers early rather than late.
+
+That costs noise, and I accept the cost on purpose. Narrow journals, Radiology: AI, the Journal of Crohn's and Colitis, Inflammatory Bowel Diseases, are trusted wholesale. Broad journals, the Gut-class venues, Lancet Gastroenterology and Hepatology, Clinical Gastroenterology and Hepatology, bring in mostly off-topic volume. I take that volume because timeliness matters more to me than a clean digest, and ranking is supposed to handle exactly this: off-topic papers sink to archive. A keyword prefilter on the Crossref path, broad journals only, is planned. Deferred until enough real data shows what the term list needs to catch.
+
 ## Why SPECTER2 and a personal corpus
 
-Generic keyword search returns too much and misses context. SPECTER2 is trained on citation graphs, which means papers that are conceptually related to my seed set score higher even if they use different terminology. The Zotero corpus acts as a standing definition of what "relevant" means for my specific research questions: quantitative MRI in IBD, motility, Bayesian modeling, and clinical AI pipelines. The ranker inherits that definition automatically.
+Generic keyword search returns too much and misses context. SPECTER2 trains on citation graphs, so papers conceptually related to my seed set score higher even with different terminology. The Zotero corpus is my standing definition of what "relevant" means: quantitative MRI in IBD, motility, Bayesian modeling, clinical AI pipelines. The ranker inherits that definition automatically.
 
-The percentile-based thresholds are a deliberate choice over fixed cosine cutoffs. Score distributions shift with topic and corpus size. Calibrating to percentiles keeps the tiers stable relative to each other, independent of those shifts.
+I chose percentile thresholds over fixed cosine cutoffs on purpose. Score distributions shift with topic and corpus size, so percentiles keep the tiers stable relative to each other no matter what shifts underneath.
 
-***Update: *** The thresholds stated above (must-read ≥ 0.958, skim 0.924 to 0.958) are correct, but were not the original values. The starting thresholds were 0.75 and 0.60, set before any real data existed. After the first run produced 196 papers in must-read, the score distribution was inspected (min ~0.825, median ~0.924, p90 ~0.958) and the thresholds were recalibrated to match observed percentiles. They are empirically derived, not a priori.
+That's the principle. Getting the reference distribution right took two attempts and one six-day production failure, most of the build log below. Current cutoffs sit at the 85th and 40th percentiles of the observed candidate score distribution. Empirically derived, and they've been wrong before.
 
 ## Infrastructure
 
-The pipeline runs via GitHub Actions on a daily schedule. SPECTER2 is cached on the runner to avoid repeated downloads. The Obsidian vault doubles as the Git repository.
+The pipeline runs via GitHub Actions at 02:00 UTC, 05:30 Tehran, so the digest is waiting before my day starts. SPECTER2 is cached on the runner. The Obsidian vault doubles as the Git repository.
+
+One rule governs everything else: **only text goes into git, derived data gets regenerated at runtime.** The SQLite database is gitignored and rebuilds empty on every run. Four committed text files carry the state that has to survive, each line-based so merges stay clean:
+
+| File | What it holds | Why it is text |
+|---|---|---|
+| `Corpus/*.md` | Seed papers, title and abstract | Embeddings rebuild from it; the feedback loop appends to it |
+| `data/seen_dois.txt` | Every DOI ever surfaced | Deduplication across ephemeral databases |
+| `data/score_history.txt` | Rolling window of the last 2,000 candidate scores | Thresholds calibrate against it each run |
+| `data/metrics.txt` | One line per run: counts per tier plus the calibrated cutoffs | Tier drift becomes a plottable signal, not an excavation |
+
+Embeddings are expensive but reproducible, so they are rebuilt from committed text on every run rather than stored. The rule was not planned. It was learned, twice, and the build log records how.
 
 ## Current state
 
-Steps 1 through 5 are complete: fetching, deduplication, SPECTER2 ranking, Obsidian formatting, GitHub Actions scheduling, and threshold recalibration.
+Every stage runs: fetch, deduplicate, embed, rank, deliver, learn, and a weekly column packet, scheduled daily at 02:00 UTC.
 
-The current review workflow is intentionally manual. Each day I pull the repository, read the digest, and check off papers in Obsidian before pushing. That checkpoint is where the real filtering happens for now: the ranker proposes, the reading confirms or overrides. Step 6 will eventually parse those checkbox states to sharpen the ranker automatically, but that requires a few weeks of consistent signal before it is worth building.
+The review stays deliberately manual where it matters. Each day I pull the repo, read the digest, check off papers in Obsidian, push. The ranker proposes, I confirm or override. What changed on 2 July: ticking `Relevant` now feeds back. A scanner reads the checkbox states and writes the paper into the corpus as a seed note, so tomorrow's ranking inherits today's judgement. Tick the box, push. That's the whole loop.
 
-Out of scope for v1: LLM abstract summaries, citation counts, Europe PMC / bioRxiv / medRxiv / arXiv, and Telegram or email notifications.
+Once an ISO week closes, a column packet is assembled at `Inbox/Column/YYYY-Www.md`, gathering that week's must-reads plus every ticked paper. That file is the raw material for the weekly column, and it exists so that writing does not begin with a search.
 
-***Update: *** Step 6 is not next in priority. The observation period is over; the decision is to write the first weekly IBD Digest column before building the feedback loop. Writing will reveal whether ranking quality is actually the bottleneck. The feedback loop remains the one unbuilt pipeline step, but it is deliberately deferred.
+The corpus is still provisional, around forty seed DOIs, and only digests from 2 July onward carry the format the feedback loop can read, so it will take some weeks to grow. Preprint servers are not integrated. The system is single-user, because it was never meant to be anything else.
+
+Out of scope for v1: LLM abstract summaries, citation counts, Europe PMC, bioRxiv, medRxiv, arXiv, and notifications of any kind.
+
+## The lineage module
+
+A second tool lives in the same repository and shares nothing with the digest, no code, no database, no output directory. Where the digest asks what's new, this one asks how a topic got here.
+
+Given one or more seed DOIs, it walks backward through references via OpenAlex, optionally merges the trees of sibling seeds, walks forward to the works that cite the groundwork, and writes a topic dossier into the vault: narrative arc, decade-grouped main studies, a consensus chart of shared ancestors, a frontier of recent citing works, and an explicit list of coverage gaps.
+
+Two commitments here, and I only found both by failing first.
+
+**Shared ancestry is the main-study signal.** One citation tree can't tell you what a field considers foundational, because on a capped depth-2 walk almost every node has in-degree one. Merge the trees of two or three independent reviews on the same topic, and the papers all of them cite show up on their own. That's not a heuristic. It's co-citation evidence, and the field produced it, not me.
+
+**The model selects. It never asserts.** Selection runs on a manual paste. The module makes no API call and carries no network client. It prints a payload, I paste it into a Claude session, paste the reply back, and a validator keeps only paper IDs that exist in the crawl. Every citation fact in the rendered note, title, authors, year, DOI, comes from the crawl file by ID. Never from the model's prose. Coverage gaps get described as topics, never as citations, because a fabricated citation is worse than an admitted hole.
+
+The crawl file is immutable and doubles as a test fixture. Selections cache to a sidecar, so re-selecting overwrites the judgement and never touches the record.
+
+## Build log
+
+What follows are the moments where a real problem forced a choice. Routine fixes are left out. I keep this log because the failures were more instructive than the design, and because most of them shared a shape I only recognised in retrospect.
+
+### 5 June 2026: a digest is a re-render, not a re-fetch
+
+A formatting bug had shipped. Two already-published daily notes needed re-rendering with the fix.
+
+Could I even re-render them? The writer accepted a target date internally, but the command line only ever wrote "today". I added a `--date` flag rather than hack a one-liner, and set a hard constraint alongside it: regenerate purely from stored data, never re-fetch, never re-embed. One of the two days had no rows in the database at all. So the run stopped instead of overwriting a published file with an empty digest.
+
+The flag wasn't the real decision. The principle was: a digest re-renders stored, scored data, and regeneration must never quietly reach for the network or produce an empty file by surprise. That principle kept coming back, in different clothes, four more times.
+
+### 14 June 2026: building against a network I could not reach
+
+The lineage module, a separate arm that reconstructs a paper's citation ancestry, started with a hard constraint. OpenAlex, its data source, isn't reachable from the development container. Only from my laptop.
+
+So every stage takes an injectable `fetch` function. Resolve and traverse never touch the network directly. The live implementation sits in one isolated file, and the tests run the same logic against a saved fixture. The pure logic stays testable in the container, and every untestable line lives in one place.
+
+A smaller decision the same session says more about how I think than the architecture does. The obvious run-file id was a UUID, so two machines could never collide. I rejected it for a plain `{slug}-{date}` id instead. A UUID breaks regenerate-by-rerun: the same paper produces a new file every time instead of overwriting, and the runs directory quietly fills with duplicates. I handled collision risk with a refuse-to-overwrite guard, so a same-day rerun means an explicit delete-then-rerun. I chose reproducibility over collision safety, on purpose.
+
+### 14 June 2026: the depth-2 walk that kept killing itself
+
+The first genuine end-to-end run of the traversal failed twice, and the two failures taught different lessons.
+
+First, a single referenced work returned a 404 and aborted the entire walk. OpenAlex genuinely lacks some reference IDs, so this would be common, not exceptional. The fix distinguishes a permanent gap, skip it and record it, from everything else, and threads the skipped IDs into the run metadata as a coverage signal rather than swallowing them.
+
+Then the deeper problem. The walk fanned out into hundreds of sequential requests and the connection eventually dropped mid-run. Because a dropped connection is not a 404, it aborted everything after paying for those fetches. The naive design, follow every reference two levels deep, did not survive contact with a real API on a real network.
+
+The fix had two parts. A per-node fan-out cap bounded the walk using a cheap first-N slice of each paper's references. This is explicitly not quality selection, since ranking references would require fetching them first. I set the default to 15 rather than the proposed 25, on the arithmetic: 25 gives roughly 650 fetches in the worst case, the same order that had just caused the drop, while 15 gives around 240. Light by default, deep on request. Separately, transient failures now retry with backoff and, if they still fail, land in a `failed` bucket kept separate from the permanent `unresolved` one. One means re-running will not help. The other means it might.
+
+The cap wasn't a compromise. A later stage prunes the graph anyway. The raw fan-out is too large to read, so fetching all of it was wasted work from the start.
+
+### 15 to 16 June 2026: removing the binary database, and the two features it silently killed
+
+This is the pivotal infrastructure decision of the project, and it took two days to see properly.
+
+The SQLite database had been committed to git. A binary file that changes on every run makes merges painful, so I untracked it. The next scheduled run crashed on a missing `data/` directory. That surface bug was a one-line fix.
+
+Investigating it, I found two far worse regressions that the one-line fix would only have masked. With the database gone, every run started empty. The ranking corpus, the hand-picked seeds that make semantic ranking work at all, was empty. Scoring found nothing to compare against, so every paper collapsed into archive. And with no dedup history, every journal's rolling fifty-paper pull re-counted as new each day.
+
+The project's whole point had been switched off in production, and nothing would have reported a failure. This is the failure mode I fear most now. Not a crash. A system that keeps running while doing nothing.
+
+My first instinct was to persist the database. I weighed two options: GitHub Actions cache, or a bot-owned `data` branch holding the binary. I rejected the cache. Cache eviction is silent, so the pipeline would just degrade back to empty-database behaviour with no signal, which is exactly the problem I was fixing. I chose the branch because a push step can fail loudly.
+
+Then I found a way to skip both options. Looking again at what was actually lost: the corpus content, DOIs, titles, abstracts, was still fully present in git as text, in the committed notes. Only the derived vectors were gone, and embeddings regenerate from text. So instead of persisting any binary, the run rebuilds corpus embeddings from those notes every time, using the model already cached in CI. A bonus I didn't plan for: corpus and candidates now embed with the same runtime model, so cosine scores stay consistent in a way a pre-baked vector never could.
+
+Deduplication got the same treatment. A committed `seen_dois.txt`, one DOI per line so merges stay clean, seeded from the roughly 1,100 DOIs already sitting in past digests, so the first run wouldn't replay the back catalogue. The database still starts empty by design. Both things that made that unsafe now come from committed text.
+
+A wrinkle the same week. Regenerating the two affected days, I found `seen_date` is stamped at fetch time and can't be backdated. Yesterday could be re-ranked and rewritten offline from stored data. Today needed a fresh fetch, since the two days genuinely had different provenance. The same June 5th reproducibility limit, showing up in a different room.
+
+### 16 to 17 June 2026: three attempts to prune by similarity, all wrong
+
+The hardest and most instructive stretch of the project.
+
+The lineage pruner was meant to cut off-topic ancestors from the citation graph while keeping the genuinely foundational old papers. The intended mechanism was SPECTER2 similarity to the seed paper, with a floor below which nodes are cut.
+
+The discipline paid off before the first line of pruner code. Rather than hardcode a threshold, a throwaway script measured where the real papers actually landed. And I asked it to report not whether the known off-topic papers fell below a floor, but the *margin at the real decision boundary*. The obviously off-topic nodes separate trivially. There is a 1963 paper on rat sexual receptivity sitting in an IBD imaging graph, and any method will cut it. That clean result is misleading, and it flatters the method that produced it.
+
+Three mechanisms were tried. Each failed against real data.
+
+**Hub weighting by in-degree** was degenerate. On these depth-2, capped graphs, roughly 95% of nodes had in-degree exactly 1. The graphs are essentially trees. There were no shared-ancestor hubs to weight on, and nothing to calibrate against.
+
+**A title-only similarity floor** had no gap at the boundary that mattered. Off-thread but IBD-adjacent papers, lymphoma risk, primary sclerosing cholangitis, methotrexate toxicity, interleaved continuously with real imaging papers and with the foundational keepers.
+
+**Adding abstracts** made it worse, exactly as pre-registered. Richer text about IBD pulled the off-thread IBD papers *closer* to the seed. On one graph, off-thread differential-diagnosis papers outscored a genuine on-thread imaging paper.
+
+The real finding here was that the axis was wrong, not the technique. SPECTER2 was working correctly. Topical similarity can't separate an IBD imaging-methods lineage from the IBD clinical-complications literature, because both are genuinely about IBD. Lineage is structural and temporal, what the field built on and when, not topical. A 1961 surgery paper belongs in an imaging lineage because the field built on it, not because its text resembles a 2023 MRI paper.
+
+With similarity ruled out, I asked whether any per-node signal could order a cut. Citation count was actively harmful: it keeps famous off-thread classics, a Kaplan-Meier statistics paper cited 45,000 times, and drops low-cited but genuinely on-thread work, a Doppler ultrasound method cited three times. The direction of that error is the fatal part. You can narrate an off-thread node that got kept. You cannot narrate an on-thread node that got cut.
+
+So I stopped trying to build a precise classifier. The pruner became an annotation pass that keeps everything, groups papers into decades, and leaves the interpretive work to a later stage. `pruned_count = 0`, as a real and honest result, is the purest version of the actual experiment: does off-thread inclusion confuse a reader? I recorded an explicit exit condition for when a cut would be justified, so a future session would not relitigate the question from scratch.
+
+Three sessions had narrowed onto "separate on-thread from off-thread" as if it were the goal. It was a sub-problem. The real goal was a readable ancestry story.
+
+### 18 June 2026: the chart nobody could read, and the empty decade that was real
+
+Rendering the kept graph confirmed the coarse-prune bet's largest risk. At roughly 190 nodes the flowchart is an unreadable hairball. Shorter node labels make individual nodes legible and do nothing whatsoever for the chart as a whole.
+
+I did not treat this as a rendering bug. Per the reframe, the unreadability *was* the signal I had set out to observe. I recorded the trigger for a future cut, chart only the shared ancestors, rather than acting on it. The trajectory text, not the chart, turned out to be the readable artefact.
+
+A separate check the same session was really about testing an assumption, not fixing a bug. The rendered lineage had a nearly empty 2020s decade. Was the seed genuinely citing older work, or was the fan-out cap truncating recent references? A one-off run at four times the cap settled it: more 2010s papers came in, still zero from the 2020s. The newest thing a 2025 review cited was from 2019. A six-year citation lag from a review is exactly what backward traversal should produce. True absence, not a truncation bug. No change needed.
+
+### 18 June 2026: letting a model select, without letting it invent
+
+The legibility problem reframed the final lineage stage. Rather than narrate all 190 nodes, an LLM would select the roughly fifteen groundwork papers and narrate only those. That's a real risk. A language model asked about citations will happily fabricate titles, DOIs, and years, fluently.
+
+I made the anti-hallucination contract the central constraint rather than an afterthought. The model receives node IDs plus text, and returns only IDs drawn from the run file, plus one rationale sentence each. The renderer looks up every citation fact from the run file by ID, never from the model's text. Any returned ID absent from the run is dropped with a warning, and the guard runs at both ingest and render, because a cached selection can outlive a re-crawl of its seed. Coverage gaps are described as topics, never as fabricated citations.
+
+The transport is deliberately manual. The module makes zero API calls and adds no network dependency: I copy the prompt into a Claude session and paste the reply back, and the validator gates the result regardless of where the text came from.
+
+### 28 June 2026: a review that reframed the goal around recall
+
+A code review of the lineage arm found one genuine latent crash, a seed paper lacking a DOI in OpenAlex would crash the note writer because two code paths derived the filename differently, plus a few smaller robustness gaps. I fixed those.
+
+The bigger outcome was a shift in how I think about the goal. The stated aim is "find the most important previous papers that show how a topic developed." The review argued the binding constraint is recall, not selection quality. The model can only pick from papers the crawl actually reached, and the crawl followed an arbitrary first-N slice of each paper's references. A foundational paper sitting at reference sixteen was simply invisible, and no amount of improving the selector would ever fix that.
+
+The highest-leverage change: order references by citation count *before* applying the cap, biasing the crawl toward canonical work at no extra cost. And use structural signals, how many of the seed's own references also cite a given paper, as the real importance measure that similarity could never provide. This seeded the topic-dossier reframe a few days later.
+
+### 2 July 2026: the overhaul, and the reframe from one paper to a whole topic
+
+A broad review of both arms produced a batch of changes applied together.
+
+On the digest side: the ranking score moved from a single nearest-neighbour cosine to the mean of the top three, since one atypical seed could otherwise drag an off-topic paper into must-read. The frozen thresholds were made self-calibrating. The feedback loop was finally built. A wildcard section was added. And run telemetry began appending one line per run to a committed metrics file, so that threshold drift would become a plottable signal rather than an archaeology exercise.
+
+That self-calibrating threshold change carried the seed of the next crisis. I'll say it plainly rather than let the log pretend I saw it coming: the thresholds were calibrated from the corpus's own leave-one-out similarity distribution. I flagged it at the time as something to watch. It was wrong. Took six days to show.
+
+The larger idea was the lineage reframe. Two of the module's own findings, that a backward walk cannot see past the seed, and that a single capped tree carries no honest main-study signal, pointed at a bigger goal: a **topic dossier** rather than one paper's lineage. Two cheap structural additions delivered it. A forward citation walk adds the frontier a backward walk structurally cannot see. And a multi-seed merge crawls two or three known reviews of a topic and unions their trees, so that papers cited by several independent reviews emerge, by the field's own consensus, as the main studies. That resurrected exactly the shared-ancestor signal that had been degenerate on a single tree, and obtained it for free, because independent trees overlapping is genuine co-citation evidence. The previously useless "chart only shared ancestors" cut finally became principled, because merged in-degree now carries meaning.
+
+### 8 to 9 July 2026: six days of empty digests
+
+I noticed a guideline paper directly relevant to my own work sitting in the archive tier and asked whether the threshold change was responsible.
+
+It was. Worse than one paper, actually. The metrics file showed six straight days since the overhaul where 100% of papers went to archive. Nothing had cleared even skim. The pipeline had been running perfectly, on schedule, delivering nothing.
+
+The root cause is embarrassing in the way obvious things are. The self-calibrating thresholds were computed from corpus-versus-corpus self-similarity, but candidates get scored candidate-versus-corpus. The forty-two hand-picked seeds cluster tightly and score similar to each other, median around 0.967. Fresh literature, even excellent on-topic literature, never scores that close to a curated corpus. Against the real distribution of roughly 1,233 candidate scores in the local database, the skim cutoff was landing at the 96th percentile and must-read at the 98th. Only the top few percent could ever escape archive.
+
+The telemetry file, added in the same overhaul that introduced the bug, is what made this diagnosable at all. Otherwise I'd have been guessing.
+
+```{=html}
+<svg width="100%" viewBox="0 0 680 300" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Tier distribution before and after threshold recalibration</title>
+<desc>Bar chart. Under corpus self-similarity calibration, 0 percent of papers reached must-read, 4 percent skim, 96 percent archive. Under candidate-distribution calibration, 20 percent must-read, 49 percent skim, 31 percent archive.</desc>
+<defs>
+  <style>
+    .ct  { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
+    .cs  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
+    .cv  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
+    .axis { stroke: #b8b8b2; stroke-width: 0.8; }
+    .bmust { fill: #b07a18; }
+    .bskim { fill: #6970a0; }
+    .barch { fill: #b05040; }
+    @media (prefers-color-scheme: dark) {
+      .ct  { fill: #d8d8d4; }
+      .cs  { fill: #9a9a94; }
+      .cv  { fill: #d8d8d4; }
+      .axis { stroke: #55554f; }
+      .bmust { fill: #b07a18; }
+      .bskim { fill: #6970a0; }
+      .barch { fill: #b05040; }
+    }
+  </style>
+</defs>
+
+<text class="ct" x="10" y="18">Where the same 1,233 papers land, under each calibration</text>
+
+<text class="cs" x="150" y="46" text-anchor="middle">Calibrated on corpus self-similarity</text>
+<text class="cs" x="150" y="62" text-anchor="middle">(2 July, broken)</text>
+<text class="cs" x="470" y="46" text-anchor="middle">Calibrated on candidate score distribution</text>
+<text class="cs" x="470" y="62" text-anchor="middle">(9 July, fixed)</text>
+
+<line class="axis" x1="90" y1="240" x2="290" y2="240"/>
+<line class="axis" x1="410" y1="240" x2="610" y2="240"/>
+
+<rect class="bmust" x="100" y="240" width="44" height="0" rx="2"/>
+<text class="cv" x="122" y="234" text-anchor="middle">0%</text>
+<rect class="bskim" x="168" y="234" width="44" height="6" rx="2"/>
+<text class="cv" x="190" y="228" text-anchor="middle">4%</text>
+<rect class="barch" x="236" y="96" width="44" height="144" rx="2"/>
+<text class="cv" x="258" y="90" text-anchor="middle">96%</text>
+
+<rect class="bmust" x="420" y="210" width="44" height="30" rx="2"/>
+<text class="cv" x="442" y="204" text-anchor="middle">20%</text>
+<rect class="bskim" x="488" y="167" width="44" height="73" rx="2"/>
+<text class="cv" x="510" y="161" text-anchor="middle">49%</text>
+<rect class="barch" x="556" y="194" width="44" height="46" rx="2"/>
+<text class="cv" x="578" y="188" text-anchor="middle">31%</text>
+
+<text class="cs" x="122" y="258" text-anchor="middle">Must-read</text>
+<text class="cs" x="190" y="258" text-anchor="middle">Skim</text>
+<text class="cs" x="258" y="258" text-anchor="middle">Archive</text>
+<text class="cs" x="442" y="258" text-anchor="middle">Must-read</text>
+<text class="cs" x="510" y="258" text-anchor="middle">Skim</text>
+<text class="cs" x="578" y="258" text-anchor="middle">Archive</text>
+
+<text class="cs" x="10" y="288">Anchor percentiles after the fix: 85th for must-read, 40th for skim.</text>
+</svg>
+```
+
+Diagnosing it surfaced something quietly worse. The feedback loop, though built, had never once run end-to-end in production. The corpus was still the original forty-two papers. Everything was archiving, archived papers show no checkboxes, so there was nothing to tick `Relevant` on. The broken cutoff was starving the exact loop meant to fix it.
+
+The fix calibrates thresholds from the distribution of *actual candidate scores* rather than corpus self-similarity. Those scores persist in a rolling window file, capped at the last 2,000, following the same committed-text pattern as the seen-DOI list, and seeded from the 1,233-score database snapshot so the first CI run has a real distribution to work with. The digests could not have supplied that seed: archived papers never had their scores rendered, and only the snapshot held the full noise tail.
+
+### 9 July 2026: regenerating the broken week from DOIs alone
+
+The fix left a hole behind it. The six digests from the broken window were still wrong, and I wanted them redone properly, not just left as an archive of a bad week.
+
+This hit the reproducibility limit one last time, at its sharpest. I couldn't just re-render the digests: the archived papers, which was all of them, never had their abstracts or scores stored anywhere durable. The database is ephemeral by design, and the digest files recorded only titles, authors, and DOIs for archived papers. The only stable identifier left was the DOI.
+
+So I rehydrated from that. A helper re-fetches each abstract from Crossref, falling back to PubMed. A script re-ranks the rehydrated papers under the fixed calibration. Six digests rewritten.
+
+The abstract, the one piece needed for embedding and scoring, is recoverable from the DOI even when everything else is gone. Same text-not-binary, regenerate-from-a-durable-key principle that ran through the whole project, applied one more time to dig out of a hole the calibration bug left.
+
+## On building this with Claude Code
+
+Everything above was built with Claude Code. I want to be precise about what that means, because the phrase gets used loosely and usually means something weaker than it sounds.
+
+I didn't state a goal and collect a finished system. I tried that early on, and what came back was plausible, well-organised, and quietly wrong in the way that matters most: it worked. A pipeline that fetches, ranks, and writes a file will do all three whether or not the ranking means anything. June 15th is the clearest example. The database was gone, the corpus was empty, every paper was archiving, and nothing anywhere reported a problem. No test failed. The scheduled run went green. The model had built exactly what I asked for, and I'd asked for the wrong guarantee.
+
+So the working relationship changed. I stopped describing outcomes and started describing constraints, and held them.
+
+Some of those constraints were mine, and the model wouldn't have volunteered them. Never re-fetch when regenerating. Never write an empty digest. Reject the GitHub Actions cache, not because it fails but because it fails silently, and silent failure was exactly the bug that had just bitten me. Prefer reproducibility to collision safety, and accept the delete-then-rerun friction that follows. Report the margin at the real decision boundary, not the obvious cases, because separating a 1963 paper on rat sexual receptivity from an IBD imaging graph proves nothing at all.
+
+Some were disagreements. The fan-out cap was proposed at 25. I set it to 15, after doing the arithmetic on what had just dropped the connection. Twenty-five gives roughly 650 fetches worst case, the same order of magnitude that had failed an hour earlier. Fifteen gives around 240. That's not a matter of preference, and no fluency substitutes for it.
+
+And some were parts nothing in the tooling could have done. The pruner failed three times. The model would have tuned the similarity floor a fourth time, and honestly, so would I have, if I hadn't stopped to ask what three consistent failures were evidence of. The answer: similarity is the wrong axis for a structural relationship, and no better threshold exists to find. That reframe redirected the whole lineage arm. It came from staring at real papers and recognising that a 1961 surgery paper belongs in an imaging lineage because the field built on it, not because its text resembles anything. Domain knowledge did that. Not the assistant.
+
+The place this shows most starkly is the anti-hallucination design in the lineage module. A language model asked about citations will invent titles and DOIs, fluently and without hesitation. So the model is permitted to *select*, by returning IDs, and permitted to *explain*, in a sentence each, and permitted to assert nothing whatsoever. I built the tool that way because I do not trust the tool, and because a fabricated citation in a lineage note is worse than an admitted gap. Working with these systems seriously means designing for their failure modes rather than hoping to have avoided them.
+
+What it was genuinely excellent at: holding a whole codebase in view, writing the tests I specified before the code that had to pass them, refactoring across a dozen files without dropping a thread, and being wrong quickly enough that I could see it. That last one is underrated. A bad implementation that exists in twenty minutes teaches more than a good design still sitting in my head.
+
+What it couldn't do: decide what the system was for. Notice the feedback loop had never once run, because everything was archiving, because archived papers show no checkboxes. Recognise that a guideline paper sitting in archive wasn't one misplaced result but a six-day total failure. That came from reading my own digest and finding something missing that I knew should be there. The telemetry file made it diagnosable. Reading made it visible.
+
+I write this out because the honest version is more useful than either fiction on offer. This wasn't built for me, and it wasn't built without help. It was built the way most good things are, by someone with domain judgement holding a fast, confident, occasionally wrong collaborator to a standard it couldn't set for itself.
+
+## What the failures had in common
+
+Four habits recur across everything above. They're closer to the real story of this project than any diagram.
+
+**Keep text in git, regenerate derived data at runtime.** The binary database caused the worst production failures. Every fix moved state into committed text, corpus notes, seen-DOI list, score-history window, and rebuilt the expensive derived artefacts from it. The July regeneration showed the payoff: even discarded data was recoverable, because a durable key survived.
+
+**Measure the real distribution before hardcoding a threshold.** The lineage pruner's similarity floor and the digest's tier cutoffs were the same mistake in different clothes: a threshold calibrated against the wrong reference distribution. I caught both by insisting on looking at where real data actually lands. The telemetry file exists precisely so the second one would surface loudly instead of rotting silently.
+
+**When a technique keeps failing, question the axis, not the tuning.** The pruner's three failed similarity attempts weren't a weak implementation. They were evidence that content similarity is the wrong axis for a structural relationship. Recognising that, instead of tuning the floor a fourth time, redirected the whole lineage arm toward structure and consensus. That's what finally worked.
+
+**Prefer a loud failure to a quiet success.** I rejected the cache for failing silently. The regenerator refuses to write an empty file. The writer refuses to overwrite a digest without being told twice. The validator drops any paper ID it can't find rather than trusting the text it came from. Every one of these choices makes the system a bit more annoying to use and a lot harder to be wrong with. The worst bug in this project was never a crash. It was six days of a green pipeline delivering nothing.
 
 ## What is next
 
-A few weeks of daily use will tell me whether the tier thresholds are well calibrated or need adjustment. After that, Step 6 becomes the next meaningful milestone.
+The weekly IBD Digest column on this site: a short roundup of the must-read papers from the previous seven days, with brief commentary on what is interesting and why. It serves two purposes. It forces me to actually read the digest rather than merely generate it, and it creates a public record of what is worth paying attention to in this field.
 
-Longer term, I plan to publish a weekly IBD Digest on this site: a short roundup of the must-read papers from the previous seven days, with brief commentary on what is interesting and why. That serves two purposes. It forces me to actually read the digest rather than just generate it, and it creates a public record of what is worth paying attention to in this field.
-
-***Update: *** The first weekly column is now the immediate next step, ahead of Step 6. The threshold calibration question has been answered by use; ranking quality is good enough to write from.
+The threshold calibration question has now been answered the hard way. Ranking quality is good enough to write from.
 
 ---
 
-*Built in one day using Python, SPECTER2, SQLite, and GitHub Actions, with Claude Code.*
+*Python, SQLite, SPECTER2 via HuggingFace Transformers, NumPy, NCBI E-utilities, the Crossref REST API, OpenAlex, GitHub Actions, and Obsidian.*
 :::

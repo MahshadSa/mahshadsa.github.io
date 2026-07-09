@@ -58,7 +58,11 @@
           entry.target.classList.add("is-visible");
           io.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      // Trigger on entry, not on an area fraction: a section taller than
+      // ~8x the viewport can never reach a 0.12 ratio, which would leave it
+      // stuck at opacity:0. The negative bottom margin keeps the reveal
+      // firing a little after the element enters, regardless of its height.
+      }, { threshold: 0, rootMargin: "0px 0px -12% 0px" });
 
       nodes.forEach(function (el) { io.observe(el); });
     }
