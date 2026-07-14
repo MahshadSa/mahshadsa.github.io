@@ -9,6 +9,116 @@ toc: false
 
 ::: {.timeline-item}
 ::: {.timeline-head}
+[July 2026]{.timeline-date} [Loop engineering?]{.timeline-title}
+:::
+::: {.timeline-desc}
+Looked into where a verification loop actually belongs in the lineage pipeline. Landed on Stage 6 selection as the right place for it, and just as clearly on writing as the wrong one.
+:::
+[agentic systems]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[July 2026]{.timeline-date} [Content format taxonomy, drafted]{.timeline-title}
+:::
+::: {.timeline-desc}
+Worked out a full backlog of content formats the tooling could support: lineage pieces, pipeline meta-posts, living reference pages, methods close reads, a reproducibility ledger. Filed it as backlog, not a prerequisite. The first piece still comes first.
+:::
+[content strategy]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [Lineage module, stages 3 through 6 built]{.timeline-title}
+:::
+::: {.timeline-desc}
+Reframed the pruner after similarity-based cuts failed to separate on-thread from off-thread papers. The distinction turned out to be structural and temporal, not topical. Stage 6 shipped as a two-step selection-plus-narration system with a strict anti-hallucination contract.
+:::
+[lineage]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [Corpus persistence, diagnosed]{.timeline-title}
+:::
+::: {.timeline-desc}
+Untracking papers.db to stop binary merge conflicts quietly broke corpus accumulation along with it. Fixed the conflict, lost the persistence, now rebuilding the data branch and reseeding from Zotero.
+:::
+[ibd-digest]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[Juune 2026]{.timeline-date} [Patient-level triage, ruled out]{.timeline-title}
+:::
+::: {.timeline-desc}
+Spent real time on whether patient-level accuracy claims could be supported, testing worst-segment, mean, and count-based rollups against each other. They agreed on outcomes barely 6 times in 10, which settled it: no independent patient-level ground truth means no patient-level accuracy metric.
+:::
+[UC MRE]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [Risk Stratifier app, v0.5.0]{.timeline-title}
+:::
+::: {.timeline-desc}
+Replaced two inconsistent hardcoded parameter files with a single artifact-driven design, so the app now loads directly from the notebook's exported JSON. Pushed a UI cleanup alongside it and cut a new Zenodo release.
+:::
+[Streamlit]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [Methods and Results, drafted]{.timeline-title}
+:::
+::: {.timeline-desc}
+Worked through the manuscript's Methods and Results paragraph by paragraph, locking prior specification, sampling settings, and exclusions along the way. Delivered as a validated file with placeholders marked for what's still missing.
+:::
+[manuscript]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [ESGAR 2026, presented]{.timeline-title}
+:::
+::: {.timeline-desc}
+Dr. Bhatnagar presented the work in Montpellier on June 11th and it landed well.
+:::
+[ESGAR 2026]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [`ibd-reports`, section-splitter bug fixed]{.timeline-title}
+:::
+::: {.timeline-desc}
+Found a quiet parsing bug where soft line breaks were hiding section headers on later lines. Fixed it and re-ran the affected phases; recovered dozens of impressions that had gone missing.
+:::
+[agentic systems]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [`ibd-reports`, duplicate review closed out]{.timeline-title}
+:::
+::: {.timeline-desc}
+Manually reviewed thousands of fuzzy-matched filename clusters to confirm genuine multi-report patients versus false merges. Tedious, but it locks the input for later longitudinal linkage.
+:::
+[agentic systems]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[June 2026]{.timeline-date} [`ibd-reports`, de-identification validated]{.timeline-title}
+:::
+::: {.timeline-desc}
+Passed the second manual validation layer on the de-identification scrub with a clean stratified read. Locked the design for the final anonymous-ID rekey.
+:::
+[de-identification]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
 [May 2026]{.timeline-date} [Activity project, manuscript start]{.timeline-title}
 :::
 ::: {.timeline-desc}
@@ -79,4 +189,4 @@ Quarto build, custom theme, treated as both a professional presence and a digita
 
 :::
 
-*Last entry: May 2026. Updated as work ships or stalls.*
+*Last entry: July 2026. Updated as work ships or stalls.*

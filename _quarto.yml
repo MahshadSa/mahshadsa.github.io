@@ -32,12 +32,8 @@ website:
     foreground: dark
     title: "MS"
     left:
-      - text: "About"
-        href: about/index.qmd
       - text: "Notes"
         href: notes/index.qmd
-      - text: "CV"
-        href: cv/index.qmd
       - text: "Work"
         menu:
           - text: "Studies"
@@ -48,6 +44,10 @@ website:
       #   href: ibd-signal/index.qmd
       - text: "Log"
         href: log.qmd
+      - text: "About"
+        href: about/index.qmd
+      - text: "CV"
+        href: cv/index.qmd
     right:
       - icon: github
         href: https://github.com/MahshadSa
