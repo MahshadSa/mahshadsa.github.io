@@ -107,5 +107,5 @@ A daily pipeline that fetches, ranks, and tiers new IBD imaging papers
 :::
 
 ::: {style="text-align: center; margin: 3rem 0 2rem; font-size: 0.78rem; color: #4a9a88; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}
-[About](about/index.qmd) · [CV](cv/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa)
+[About](about/index.qmd) · [CV](cv/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) . [LinkedIn](www.linkedin.com/in/mahshad-sarikhani-md-297b9a26b)
 :::
