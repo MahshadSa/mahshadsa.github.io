@@ -15,8 +15,8 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline}
 
 ::: {.timeline-item}
-[Jan 2024 — Present]{.timeline-date}
-[Research Associate, Abdominal Imaging and AI]{.timeline-title}
+[Jul 2023 — Present]{.timeline-date}
+[Research Associate, Lead, Ulcerative Colitis Imaging Programme]{.timeline-title}
 [Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Supervisor: Prof. Amir Reza Radmard.]{.timeline-desc}
 
 [The core work is the UC cohort: MRE features, bowel wall activity, motility from GIQuant, chronicity markers, validated segment by segment against endoscopy. Getting the modelling right meant moving from logistic regression through several ML approaches to Bayesian multilevel models, which handle clustered patients, ordered outcomes, and individual-level uncertainty in a way simpler methods could not.]{.timeline-desc}
@@ -30,7 +30,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Motilent · University College London, UK]{.timeline-title}
-[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations accepted at ESGAR 2026. Manuscript in preparation for submission.]{.timeline-desc}
+[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations delivered at ESGAR 2026, Montpellier. Manuscript under review at *Inflammatory Bowel Diseases*.]{.timeline-desc}
 [GIQuant · colonic displacement metrics · UC MRE · cross-site validation]{.timeline-tags}
 :::
 
@@ -46,7 +46,15 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 :::
 
 ::: {.timeline-item}
-[Aug 2022 — Aug 2024]{.timeline-date}
+[Mar 2023 — Jun 2023]{.timeline-date}
+[Research Contributor, Abdominal Imaging Group]{.timeline-title}
+[Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Began work on Crohn's disease structural damage and Lémann Index scoring, which preceded the UC imaging programme, and developed the openly released Lémann Index Calculator. Explored abdominal imaging research questions with Prof. Radmard before proposing the UC activity programme in July 2023.]{.timeline-desc}
+
+[Lémann Index · structural damage scoring · Crohn's disease]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+[Jul 2022 — Jul 2024]{.timeline-date}
 [General Practitioner · Valiasr Local Medical Center]{.timeline-title}
 [Part-time clinical work in Alborz during the transition into full-time research. This is also when I started teaching myself Python properly: DataCamp, then 3Blue1Brown, then building things until they worked.]{.timeline-desc}
 
@@ -54,8 +62,8 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 :::
 
 ::: {.timeline-item}
-[Sep 2022 — Dec 2023]{.timeline-date}
-[Research Assistant, Imaging and Clinical Data Science]{.timeline-title}
+[Dec 2022 — Jun 2023]{.timeline-date}
+[Research Contributor, Imaging and Clinical Data Science]{.timeline-title}
 [Shahid Beheshti University of Medical Sciences. CT and MRI projects: protocol review, dataset construction, statistical analysis. Contributed to PanCanAID-related pipelines including curated datasets and semi-automated CT segmentation workflows.]{.timeline-desc}
 
 [CT segmentation · dataset construction · statistical analysis]{.timeline-tags}
@@ -79,7 +87,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 
 ::: {.contact-block}
 
-The fastest way to reach me is by [email](mailto:mah.sarikhani.md@gmail.com). If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would like to hear from you.
+The fastest way to reach me is by [email](mailto:mahshadsarikhani9696@gmail.com). If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would like to hear from you.
 
 ::: {.contact-links}
 [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/0000-0002-0475-3064)

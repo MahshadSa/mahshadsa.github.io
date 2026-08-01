@@ -11,8 +11,8 @@ My research applies quantitative magnetic resonance enterography to inflammatory
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Research Associate, Abdominal Imaging and AI · Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences]{.worklist-title}
-[Jan 2024 – present]{.worklist-date}
+[Research Associate, Lead, Ulcerative Colitis Imaging Programme · Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences]{.worklist-title}
+[Jul 2023 – present]{.worklist-date}
 :::
 ::: {.worklist-meta}
 Supervisor: Prof Amir Reza Radmard. International collaboration with UCL/Motilent partners.
@@ -26,8 +26,19 @@ Supervisor: Prof Amir Reza Radmard. International collaboration with UCL/Motilen
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Research Assistant, Imaging and Clinical Data Science · Shahid Beheshti University of Medical Sciences]{.worklist-title}
-[Sep 2022 – Dec 2023]{.worklist-date}
+[Research Contributor, Abdominal Imaging Group · Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences]{.worklist-title}
+[Mar 2023 – Jun 2023]{.worklist-date}
+:::
+::: {.worklist-meta}
+- Began work on Crohn's disease structural damage and Lémann Index scoring, which preceded the UC imaging programme.
+- Explored abdominal imaging research questions with Prof Radmard before proposing the UC activity programme.
+:::
+:::
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Research Contributor, Imaging and Clinical Data Science · Shahid Beheshti University of Medical Sciences]{.worklist-title}
+[Dec 2022 – Jun 2023]{.worklist-date}
 :::
 ::: {.worklist-meta}
 - Supported CT and MRI research projects spanning protocol review, dataset construction, and statistical analysis.
@@ -61,7 +72,7 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
 
-[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
+[*ESGAR 2026, Montpellier* -- Oral presentation. Presenting author.]{.pub-venue}
 :::
 
 ::: {.pub-entry}
@@ -69,7 +80,7 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
 
-[*ESGAR 2026* -- Oral presentation. Presenting author.]{.pub-venue}
+[*ESGAR 2026, Montpellier* -- Oral presentation. Presenting author.]{.pub-venue}
 :::
 
 ## Posters
@@ -79,7 +90,7 @@ Awarded on full scholarship.
 
 [Menys A, **Sarikhani M**, Torabi A, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
 
-[*ECCO 2026* -- Poster.]{.pub-venue}
+[*ECCO 2026, Stockholm* -- Poster.]{.pub-venue}
 
 ::: {.pub-links}
 [DOI](https://doi.org/10.1093/ecco-jcc/jjaf231.519)
@@ -91,7 +102,7 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Naim I, Torabi A, Kolahdoozan S, Nouri Najafabadi A, Radmard AR, et al.]{.pub-authors}
 
-[*ECCO 2025* -- Poster. Presenting author.]{.pub-venue}
+[*ECCO 2025, Berlin* -- Poster. Presenting author.]{.pub-venue}
 
 ::: {.pub-links}
 [DOI](https://doi.org/10.1093/ecco-jcc/jjae190.0729)
@@ -105,7 +116,7 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
 
-[Based on ECCO 2026 and ESGAR 2026 accepted abstracts.]{.pub-venue}
+[Under review, *Inflammatory Bowel Diseases*.]{.pub-venue}
 :::
 
 ::: {.pub-entry}
@@ -245,10 +256,10 @@ Phrase-level retrieval over CT radiology report text. [GitHub](https://github.co
 ::: {.worklist-row}
 ::: {.worklist-head}
 [General Practitioner · Valiasr Local Medical Center, Alborz, Iran]{.worklist-title}
-[Aug 2022 – Aug 2024]{.worklist-date}
+[Jul 2022 – Jul 2024]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Part-time during transition to full-time research in 2024.
+Part-time during transition to full-time research in 2023.
 :::
 :::
 
