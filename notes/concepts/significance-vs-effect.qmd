@@ -1,32 +1,40 @@
 ---
 title: "When significance is not the same as meaning"
-description: "A p-value tells you a result probably exists. It does not tell you it matters. On the gap between statistical significance and clinical meaning, and why Bayesian inference handles it more honestly."
+description: "A p-value tells you a result probably exists. It does not tell you it matters. On the gap between statistical significance and clinical meaning, and why the fix is reporting practice rather than a change of statistical framework."
 date: 2026-05-27
 categories: [statistics, Bayesian, IBD, research methods]
 maturity: seedling
 ---
 
 ::: {.note-page-meta}
-[🌱 seedling]{.maturity-tag .seedling} · Planted May 27, 2026 · Last tended May 27, 2026
+[🌱 seedling]{.maturity-tag .seedling} · Planted May 27, 2026 · Last tended August 2, 2026
 :::
 
 ## In plain terms
 
-In medical research, two numbers are often treated as interchangeable when they answer completely different questions. The p-value answers: how likely is it that this result appeared by chance? The effect size answers: how large is this relationship, assuming it is real?
+In medical research, two numbers are often treated as interchangeable when they answer completely different questions. The p-value answers: how likely is a result at least this extreme, if the null hypothesis were true? The effect size answers: how large is this relationship, and how precisely do we know it?
 
-A study can clear the first and fail the second. When that happens, the honest conclusion is: this association exists, and it is small. What often gets written instead is: this association exists, and it matters clinically. A lot of published medical literature lives in that gap, and mostly does not say so.
+A study can clear the first and fail the second. When that happens, the honest conclusion is: this association is unlikely to be noise, and it is small. What often gets written instead is: this association exists, and it matters clinically. A lot of published medical literature lives in that gap, and mostly does not say so.
 
 ## How it works
 
-Statistical significance, conventionally p < 0.05, means the result would appear by chance less than 5% of the time under the null hypothesis. It is a binary gate. Once you pass it, frequentist inference stops telling you anything about magnitude.
+Statistical significance, conventionally p < 0.05, is a decision rule about one question. The test answers that question correctly. It says nothing on its own about how large the effect is.
 
-Effect sizes do that. For rank correlations, Spearman's r below 0.3 is negligible, 0.3 to 0.4 is weak, 0.4 to 0.6 is moderate. An AUC of 0.65 means the model is right 65% of the time, against 50% for a coin flip. These are not impressive numbers. But they can pass the threshold, and often do.
+The framework is not the limitation here. Point estimates, standard errors and confidence intervals are all frequentist tools, and they are about magnitude and precision. A confidence interval read as an interval, rather than as a device for checking whether zero is inside it, carries most of the information a reader needs. What fails is the reporting habit that stops at the threshold and never returns to the interval.
 
-The overreach is not in the test. Frequentist inference was designed to answer a narrow question and it answers it correctly. The problem comes in the next sentence, where "statistically significant" becomes "clinically relevant" without passing through effect size at all. That translation happens in discussion sections, in abstracts, in citations. It compounds.
+Effect size conventions have the same problem in reverse. Rules of thumb that call Spearman's r below 0.3 negligible and 0.4 to 0.6 moderate are conventions borrowed from behavioural research. They are not properties of the data and they do not transfer across fields without argument. What counts as adequate depends on what the measurement is for. An r of 0.4 between two candidate imaging biomarkers can be interesting in early methodological work and clearly insufficient for a measurement meant to inform a treatment decision.
 
-Bayesian inference asks a different question: not "does this effect exist?" but "what is the distribution of plausible effect sizes, given the data?" The output is a posterior distribution. An effect that is real but small shows up as a posterior concentrated around small values. There is no threshold to cross, so there is nothing to hide behind.
+Discrimination metrics get read loosely in the same way. An AUC of 0.65 means that if I draw one patient with active disease and one without, the model gives the first a higher score about 65% of the time. It is a property of ranking, not classification accuracy, and 0.5 is what random ordering produces. It also says nothing about where the cut-off should sit, what the predictive values would be at the prevalence in my own clinic, or whether the model is calibrated at all.
 
-For IBD imaging data specifically, this matters more than it might elsewhere. Bowel segments are nested within patients, patients within disease phenotypes, measurements taken at different locations and timepoints. A single correlation coefficient collapses that structure into one number. A multilevel Bayesian model keeps the hierarchy in the model rather than averaging it away. The estimates come out more conservative, because partial pooling pulls extreme segment-level values toward the group mean. It is harder to overstate a finding when the model is already doing that work.
+The overreach is not in the test. It comes in the next sentence, where "statistically significant" becomes "clinically relevant" without passing through effect size, interval width or calibration. That translation happens in discussion sections, in abstracts, in citations. It compounds.
+
+Bayesian inference makes a different object available. The output is a posterior distribution over effect sizes, so an effect that is real but small appears as a posterior concentrated on small values, with its spread visible in the same figure.
+
+None of that is automatic. A Bayesian model can be poorly specified, with priors doing work the author never inspected or reported. A posterior can be confidently wrong when the likelihood is wrong. And it is easy to rebuild the same binary gate by asking only whether the 95% credible interval excludes zero, which is the p-value habit wearing different notation. What makes a report honest is showing the distribution, stating in advance what magnitude would change clinical practice, and being explicit about the priors. The framework makes that easier to do. It does not do it for me.
+
+For IBD imaging data specifically, the structure of the data is the reason I reach for multilevel models. Bowel segments are nested within patients, patients within disease phenotypes, measurements taken at different locations and timepoints. A single pooled correlation coefficient collapses that structure into one number. Partial pooling keeps the hierarchy in the model, so segment-level estimates built on few observations get pulled toward the group mean and contribute less weight.
+
+I used to describe this as producing more conservative estimates, which is too broad. Shrinkage applies to the group-level estimates, not uniformly to every quantity of interest. Pooling can also narrow intervals and make a population-level effect look stronger than a naive average over noisy per-segment values, and if the hierarchy is misspecified it can pull estimates toward the wrong place. What partial pooling reliably does is force me to state the structure I am assuming, which puts the assumption in the open where a reviewer can argue with it.
 
 ## Why it matters
 
@@ -34,19 +42,18 @@ Clinical guidelines cite papers. Papers cite statistical significance. If the in
 
 I do not think this is primarily a knowledge problem. Researchers who understand effect sizes still work inside publication systems that reward significant results. A result with p < 0.05 and r = 0.33 is publishable. The r rarely makes it into the abstract.
 
-For IBD imaging research, where the actual question is whether non-invasive tools can replace or supplement endoscopy, effect size is not a methodological nuance. It is the clinical question. An imaging score that weakly correlates with an endoscopic index in some segments but not others is not a candidate for replacing endoscopy, regardless of the p-value in the pooled analysis. That conclusion requires being honest about what "correlation" means and where it holds, which is harder to publish than the significant p-value in the same table.
+For IBD imaging research, where the actual question is whether non-invasive tools can replace or supplement endoscopy, effect size is not a methodological detail. It is the clinical question. An imaging score that correlates weakly with an endoscopic index in some segments but not others is not a candidate for replacing endoscopy, whatever the p-value in the pooled analysis says. Stating that requires being explicit about how strong the correlation is and where it holds, which is harder to publish than the significant p-value sitting in the same table.
 
-What Bayesian reporting does, practically, is move the uncertainty from the limitations section into the result itself. When you show a posterior distribution, the reader sees the spread. When you report r = 0.33, p < 0.05, many readers see "significant" and do not read further.
+What a full posterior does, or a confidence interval reported as an interval, is move the uncertainty out of the limitations section and into the result itself. When the spread is in the figure, the reader sees it. When the line reads r = 0.33, p < 0.05, many readers see "significant" and do not read further.
 
 ## Open questions
 
 - How much of this is a training problem and how much is an incentive problem? My guess is mostly the second.
 - Pre-registration with mandatory effect size reporting has changed some fields. Whether that is realistic in clinical imaging research, where most studies are retrospective analyses of existing cohorts, I am not sure.
-- If Bayesian methods produce more honest uncertainty quantification, why has adoption been slow in clinical radiology? Familiarity explains some of it. Probably not all.
-- At what point does a weak correlation become worth reporting? When the paper is honest about what weak means, I think.
+- Specifying a minimum clinically important difference before the analysis is the cleanest fix I know of. For imaging biomarkers with no accepted scale and no anchor to patient-reported outcomes, I do not know how to set that number defensibly.
+- If Bayesian methods make uncertainty easier to display, why has adoption been slow in clinical radiology? Familiarity explains part of it. Reviewer expectations and the absence of agreed reporting conventions probably explain more.
+- At what point does a weak correlation become worth reporting? When the paper is explicit about what weak means, I think.
 
 ## Related
 
 - [Bayesian Risk Stratification for UC Activity](/cv/index.qmd)
-
-
