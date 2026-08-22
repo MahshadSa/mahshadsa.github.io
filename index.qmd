@@ -23,9 +23,10 @@ listing:
 [MD · quantitative and computational methods for IBD imaging]{.hero-tagline}
 
 ::: {.hero-bio}
-A doctor who codes. My field is quantitative imaging in inflammatory bowel disease, the problem of turning what radiologists see into numbers that hold up.
+A doctor who codes. I work on quantitative imaging in inflammatory bowel disease: how to turn an MRI finding into a measurement we can trust, and how to know when that measurement is useful.
 
-I came to this as a clinician, which shapes how I work: I sit between the imaging side that knows the disease and the computational side that knows the models, two camps that rarely overlap. Ulcerative colitis is my main focus, mostly through MR enterography.
+I came to this as a clinician, so the disease question comes first for me. Most of my work is in ulcerative colitis, using MR enterography and motility MRI to study inflammation, structural change, and bowel function.
+
 :::
 
 :::
