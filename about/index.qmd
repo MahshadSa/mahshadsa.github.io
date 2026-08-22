@@ -1,11 +1,11 @@
 ---
 title: "About"
-subtitle: "Physician and imaging AI researcher. I build the tools my research needs."
+subtitle: "Physician-researcher in quantitative MRI and inflammatory bowel disease."
 toc: false
 ---
 
 ::: {.about-intro}
-I am a physician and researcher at Tehran University of Medical Sciences. Most of my work circles around one question: how much can MRI actually tell us about inflammatory bowel disease. Not just whether disease is present, but whether it is active or chronic, reversible or fixed. Answering that has pulled me into quantitative imaging, applied AI, and eventually into building the tools myself, because the off-the-shelf ones were not quite right.
+I am a physician and researcher at Tehran University of Medical Sciences. Most of my work circles around one question: how much can MRI actually tell us about inflammatory bowel disease. Not just whether disease is present, but whether it is active or chronic, reversible or fixed. Answering that has pulled me into quantitative imaging, measurement and validation, multilevel modelling, and eventually into building the computational tools myself, because the off-the-shelf ones were not quite right.
 
 The longer version of how I got here is [here](../notes/from-operating-room-to-agentic-ai.qmd).
 :::
@@ -21,9 +21,9 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 
 [The core work is the UC cohort: MRE features, bowel wall activity, motility from GIQuant, chronicity markers, validated segment by segment against endoscopy. Getting the modelling right meant moving from logistic regression through several ML approaches to Bayesian multilevel models, which handle clustered patients, ordered outcomes, and individual-level uncertainty in a way simpler methods could not.]{.timeline-desc}
 
-[The ideas kept expanding. Reports held structured data no one was extracting, so I built LLM pipelines to do that. Motility and wall features belonged with labs and clinical notes, so I started on multimodal models. Each step came from a gap the previous step revealed.]{.timeline-desc}
+[The questions kept expanding: how motility relates to inflammation and chronic structural change, how imaging indices are measured and validated, and how segment-level findings belong with biomarkers, endoscopy, histology, and symptoms. AI, LLMs, and other computational tools remain part of that work, but they serve the imaging questions rather than define them.]{.timeline-desc}
 
-[PyMC · scikit-learn · Bayesian multilevel models · calibration · decision-curve analysis · MONAI · CLIP-style vision-language models · LLM extraction pipelines · agentic systems]{.timeline-tags}
+[quantitative MRE · colonic motility · imaging biomarkers · structural bowel change · Bayesian multilevel models · measurement and validation · multimodal study design · computational tools]{.timeline-tags}
 
 ::: {.timeline-children}
 
@@ -87,7 +87,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 
 ::: {.contact-block}
 
-The fastest way to reach me is by [email](mailto:mahshadsarikhani9696@gmail.com). If you are working on imaging in IBD, on multimodal medical models, or on any of the methods above, I would like to hear from you.
+The fastest way to reach me is by [email](mailto:mahshadsarikhani9696@gmail.com). If you are working on quantitative imaging in IBD, imaging measurement and validation, multimodal studies, or any of the methods above, I would like to hear from you.
 
 ::: {.contact-links}
 [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/0000-0002-0475-3064)

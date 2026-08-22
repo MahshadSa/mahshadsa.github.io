@@ -47,17 +47,17 @@ I came to this as a clinician, which shapes how I work: I sit between the imagin
 [Jun 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-ESGAR 2026 oral presentation · Manuscript ready to submit
+ESGAR 2026 oral presentation · Under review at *Inflammatory Bowel Diseases*
 :::
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Bayesian risk stratification for non-invasive triage of UC activity](work\studies\uc-mre-bayes\index.qmd){.worklist-title}
+[Segment-level prediction of endoscopic activity in ulcerative colitis](work\studies\uc-mre-bayes\index.qmd){.worklist-title}
 [Jun 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-ESGAR 2026 oral presentation · preprint in preparation
+Bayesian multilevel study · Final co-author review before submission*
 :::
 :::
 
@@ -107,5 +107,5 @@ A daily pipeline that fetches, ranks, and tiers new IBD imaging papers
 :::
 
 ::: {style="text-align: center; margin: 3rem 0 2rem; font-size: 0.78rem; color: #4a9a88; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase;"}
-[About](about/index.qmd) · [CV](cv/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) . [LinkedIn](www.linkedin.com/in/mahshad-sarikhani-md-297b9a26b)
+[About](about/index.qmd) · [CV](cv/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [LinkedIn](https://www.linkedin.com/in/mahshad-sarikhani-md-297b9a26b)
 :::

@@ -9,6 +9,36 @@ toc: false
 
 ::: {.timeline-item}
 ::: {.timeline-head}
+[August 2026]{.timeline-date} [UC activity manuscript, circulated]{.timeline-title}
+:::
+::: {.timeline-desc}
+Completed the Bayesian multilevel manuscript and sent it to co-authors for a final review before submission.
+:::
+[UC MRE]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[August 2026]{.timeline-date} [Next motility question, taking shape]{.timeline-title}
+:::
+::: {.timeline-desc}
+Moved the next UC motility project into concept development: whether MRI motility helps explain symptoms, and how it relates to inflammation, structural disease, endoscopy, and histology.
+:::
+[motility MRI]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[August 2026]{.timeline-date} [Review directions, scoped]{.timeline-title}
+:::
+::: {.timeline-desc}
+Started mapping critical reviews around persistent mural disease despite mucosal healing, how MRE activity indices are measured and validated, the reference standards behind them, and inflammation–fibrosis separation.
+:::
+[measurement and validation]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
 [July 2026]{.timeline-date} [Loop engineering?]{.timeline-title}
 :::
 ::: {.timeline-desc}
@@ -152,7 +182,7 @@ Closed out slides for two first-author orals at ESGAR 2026 in Montpellier and se
 [May 2026]{.timeline-date} [Motility manuscript, submission queued]{.timeline-title}
 :::
 ::: {.timeline-desc}
-The manuscript is ready to submit. We decided to circulate it for one final read by all authors after ESGAR 2026. The delay bothers me, but the paper will be better for it.
+The manuscript reached a submission-ready draft. We decided to circulate it for one final read by all authors after ESGAR 2026. The delay bothers me, but the paper will be better for it.
 :::
 [UC MRE]{.timeline-tags}
 :::
@@ -189,4 +219,4 @@ Quarto build, custom theme, treated as both a professional presence and a digita
 
 :::
 
-*Last entry: July 2026. Updated as work ships or stalls.*
+*Last entry: August 2026. Updated as work ships or stalls.*

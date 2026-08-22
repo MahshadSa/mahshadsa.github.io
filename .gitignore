@@ -14,4 +14,8 @@ node_modules/
 .obsidian/
 
 CLAUDE.md
-ibd-signal/
+
+# Unpublished IBD Sequence section and private publishing checklist
+ibd-sequence/
+assets/templates/ibd-sequence-item.ejs
+IBD-SEQUENCE-PUBLISHING.md

@@ -72,7 +72,7 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
 
-[*ESGAR 2026, Montpellier* -- Oral presentation. Presenting author.]{.pub-venue}
+[*ESGAR 2026, Montpellier* -- Oral presentation. First author; presented by Gauraang Bhatnagar.]{.pub-venue}
 :::
 
 ::: {.pub-entry}
@@ -80,7 +80,7 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
 
-[*ESGAR 2026, Montpellier* -- Oral presentation. Presenting author.]{.pub-venue}
+[*ESGAR 2026, Montpellier* -- Oral presentation. First author; presented by Gauraang Bhatnagar.]{.pub-venue}
 :::
 
 ## Posters
@@ -109,7 +109,15 @@ Awarded on full scholarship.
 :::
 :::
 
-## Manuscripts *in preparation*
+## *Manuscripts*
+
+::: {.pub-entry}
+[Segment-level prediction of endoscopic activity in ulcerative colitis using magnetic resonance enterography and fecal calprotectin: a Bayesian multilevel study]{.pub-title}
+
+[**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
+
+[Final co-author review; preparing for submission to *Alimentary Pharmacology & Therapeutics*.]{.pub-venue}
+:::
 
 ::: {.pub-entry}
 [Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
@@ -120,11 +128,11 @@ Awarded on full scholarship.
 :::
 
 ::: {.pub-entry}
-[Performance loss of quantized large language models in medicine: parameter optimisation and evaluation]{.pub-title}
+[The Impact of Quantization on the Medical Question-Answering Performance of Large Language Models: A Comparative Study]{.pub-title}
 
 [Khalafi MA, et al., **Sarikhani M**.]{.pub-authors}
 
-[Manuscript in preparation.]{.pub-venue}
+[Unpublished manuscript. 2026.]{.pub-venue}
 :::
 
 ## Peer-reviewed *articles*
