@@ -1,30 +1,36 @@
 project:
   type: website
   output-dir: _site
+  post-render: scripts/homepage-semantics.ts
   render:
     - "*.qmd"
     - "**/*.qmd"
     # Keep the IBD Sequence private until the section is ready to launch.
     - "!ibd-sequence/**"
 
+quarto-required: ">= 1.9.0"
+
+# Used by the page-schema Lua filter. Keep this aligned with website.site-url.
+schema-site-url: https://mahshadsa.github.io
+
 website:
   title: "Mahshad Sarikhani"
   description: "Physician-researcher working on quantitative MRI, motility, imaging biomarkers, and computational methods in inflammatory bowel disease."
   site-url: https://mahshadsa.github.io
+  llms-txt: true
   # Draft IBD Sequence pieces can be developed in-repository without being
   # emitted into the public build or surfaced by listings.
   draft-mode: gone
 
   open-graph:
-    title: "Mahshad Sarikhani | IBD Imaging Researcher"
-    description: "Physician-researcher working on quantitative MRI, motility, imaging biomarkers, and computational methods in inflammatory bowel disease."
+    site-name: "Mahshad Sarikhani"
     image: https://mahshadsa.github.io/assets/img/og-image.jpg
+    image-alt: "Portrait of Mahshad Sarikhani beside her name and research focus."
     image-width: 1201
     image-height: 630
   twitter-card:
-    title: "Mahshad Sarikhani | IBD Imaging Researcher"
-    description: "Physician-researcher working on quantitative MRI, motility, imaging biomarkers, and computational methods in inflammatory bowel disease."
     image: https://mahshadsa.github.io/assets/img/og-image.jpg
+    image-alt: "Portrait of Mahshad Sarikhani beside her name and research focus."
     card-style: summary_large_image
 
   navbar:
@@ -70,6 +76,9 @@ format:
       - _includes/schema.html
     include-after-body:
       - _includes/reveal.html
+      - _includes/cloudflare-analytics.html
+    filters:
+      - _filters/page-schema.lua
     theme:
       light: [cosmo, assets/css/custom.scss]
       dark: [cosmo, assets/css/custom-dark.scss]

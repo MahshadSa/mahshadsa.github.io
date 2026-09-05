@@ -63,4 +63,4 @@ Agents start from a user command or discussion. Once the task is clear, they pla
 
 ---
 
-![Workflow vs. Agent architecture sketch](/media/agent_note1.png)
+![](../media/agent_note1.png){alt="Side-by-side diagram comparing a predefined clinical workflow with a dynamically planning medical AI agent and human feedback loop."}

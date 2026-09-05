@@ -1,6 +1,8 @@
 ---
 title: "Work"
 subtitle: "Studies and research software"
+description: "Studies and research software for quantitative MRI, inflammatory bowel disease imaging, and clinical research workflows."
+schema-type: none
 listing:
   - id: studies-list
     contents: "studies/*/index.qmd"

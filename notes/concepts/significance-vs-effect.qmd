@@ -2,6 +2,7 @@
 title: "When significance is not the same as meaning"
 description: "A p-value tells you a result probably exists. It does not tell you it matters. On the gap between statistical significance and clinical meaning, and why the fix is reporting practice rather than a change of statistical framework."
 date: 2026-05-27
+date-modified: 2026-08-02
 categories: [statistics, Bayesian, IBD, research methods]
 maturity: seedling
 ---

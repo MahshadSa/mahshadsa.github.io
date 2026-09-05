@@ -1,6 +1,9 @@
 ---
-title: ""
-pagetitle: "Mahshad Sarikhani"
+title: "Mahshad Sarikhani"
+pagetitle: "Mahshad Sarikhani, MD | Quantitative MRI & IBD Imaging"
+title-prefix: ""
+description: "Physician-researcher working on quantitative MRI, motility, imaging biomarkers, and computational methods in inflammatory bowel disease."
+schema-type: ProfilePage
 toc: false
 listing:
   - id: hero-notes
@@ -18,7 +21,7 @@ listing:
 ::: {.hero-section .hero-section--split}
 
 ::: {.hero-left}
-[Mahshad *Sarikhani*]{.hero-name}
+[Mahshad *Sarikhani*]{.hero-name data-semantic-h1="true"}
 
 [MD · quantitative and computational methods for IBD imaging]{.hero-tagline}
 
@@ -32,7 +35,7 @@ I came to this as a clinician, so the disease question comes first for me. Most 
 :::
 
 ::: {.hero-portrait}
-![](assets/img/headshot.jpg){.hero-photo}
+![](assets/img/headshot.jpg){.hero-photo alt="Portrait of Mahshad Sarikhani"}
 :::
 
 :::

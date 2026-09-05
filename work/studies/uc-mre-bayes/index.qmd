@@ -3,7 +3,6 @@ title: "Segment-level prediction of endoscopic activity in ulcerative colitis us
 description: "An internally validated Bayesian multilevel ordinal model for segment-level UC activity prediction"
 date: 2026-06-09
 categories: [research, IBD, Bayesian, MRE, UC]
-image: "uc-mre-bayes-thumb.png"
 draft: false
 ---
 

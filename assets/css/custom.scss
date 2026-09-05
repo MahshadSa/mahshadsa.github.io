@@ -218,7 +218,8 @@ hr {
     font-weight: 300;
     letter-spacing: -0.025em;
     line-height: 1.02;
-    margin-bottom: 0.4em;
+    // Match the paragraph spacing used before the name became a semantic H1.
+    margin: 0 0 1rem;
     color: $dark;
     font-variation-settings: "SOFT" 50, "opsz" 144;
     text-wrap: balance;
