@@ -1,5 +1,5 @@
 ---
-title: "Colonic Motility Is Not One Thing"
+title: "What Colonic Motility Actually Means (And Why That Depends on Who You Ask)"
 description: "The word motility means different things depending on who you ask. What I learned after two years of working on it in UC: what the colon actually does, what cine MRI sees, and why a quantitative motility score is only one view of a much larger system."
 date: 2026-09-05
 date-modified: 2026-09-06
@@ -11,7 +11,7 @@ maturity: evergreen
 [🌲 evergreen]{.maturity-tag .evergreen} · Planted May 14, 2026 · Last tended September 6, 2026
 :::
 
-I have been working with quantitative colonic motility on MRI in ulcerative colitis for about two years.
+Much of my recent work in ulcerative colitis has involved quantitative colonic motility on MRI.
 
 At first, the question seemed simple:
 
@@ -39,7 +39,7 @@ What we see as a contraction is already several steps downstream of the neural a
 
 Even a visible contraction tells us only part of the story.
 
-Some contractions stay local. A haustrum narrows, contents shift a little, and then shift back. Other contractions propagate along the colon. Propagation itself can be antegrade or retrograde. Retrograde cyclic activity in the distal colon is part of normal physiology and may help delay rectal filling — the so-called rectosigmoid brake. At the other extreme, relatively rare high-amplitude propagated contractions can accompany large-volume distal movement and defaecation.
+Some contractions stay local. A haustrum narrows, contents shift a little, and then shift back. Other contractions propagate along the colon. Propagation itself can be antegrade or retrograde. Retrograde cyclic activity in the distal colon is part of normal physiology and may help delay rectal filling, the so-called rectosigmoid brake. At the other extreme, relatively rare high-amplitude propagated contractions can accompany large-volume distal movement and defaecation.
 
 The colon also has tone: a sustained background contractile state on which these faster events occur.
 
@@ -212,7 +212,7 @@ Something has to deliver contents toward the distal colon and rectum. But what h
 
 The same volume entering two rectums can therefore produce very different experiences.
 
-![**Figure 9.** Motor delivery is only one route to symptoms. What happens when contents arrive — reservoir function and sensation — also matters.](colonic-motility/09-hierarchy-of-defensible-claims.png){fig-alt="Delivery and reception both contribute to symptoms" width="100%"}
+![**Figure 9.** Motor delivery is only one route to symptoms. What happens when contents arrive, reservoir function and sensation, also matters.](colonic-motility/09-hierarchy-of-defensible-claims.png){fig-alt="Delivery and reception both contribute to symptoms" width="100%"}
 
 Frequency can reflect repeated distal delivery, inflammation, stool consistency and reduced effective rectal capacity. Bloating can coexist with urgency if proximal retention occurs alongside rapid distal transit. Pain depends partly on inflammation and distension, but also on how strongly those signals are perceived.
 
@@ -268,7 +268,7 @@ The harder part is deciding what we can infer from that measurement, and what st
 
 GIQuant measures one part of that chain.
 
-So my original question — does an inflamed colon move differently? — now feels too broad.
+So my original question, *does an inflamed colon move differently?*, now feels too broad.
 
 I still want to know why regional deformation is lower in some UC segments. I want to know how much of that reduction follows current inflammation and how much persists with chronic remodelling. I want to know whether repeated observations reveal something that one short cine misses, and whether a stimulated response tells us something different from resting movement.
 
