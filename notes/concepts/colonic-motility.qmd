@@ -1,8 +1,7 @@
 ---
 title: "What Colonic Motility Actually Means (And Why That Depends on Who You Ask)"
 description: "The word motility means different things depending on who you ask. What I learned after two years of working on it in UC: what the colon actually does, what cine MRI sees, and why a quantitative motility score is only one view of a much larger system."
-date: 2026-09-05
-date-modified: 2026-09-06
+date: 2026-09-06
 categories: [UC, motility, MRI, IBD, GIQuant]
 maturity: evergreen
 ---
