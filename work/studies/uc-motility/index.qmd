@@ -1,5 +1,6 @@
 ---
 title: "Colonic motility on MR enterography in ulcerative colitis"
+pagetitle: "Colonic Motility MRI in Ulcerative Colitis"
 description: "A prospective study testing whether quantitative bowel motion on MRI tracks endoscopic activity and chronic structural damage in UC."
 date: 2026-06-01
 categories: [research, IBD, MRE, UC, motility]

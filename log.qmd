@@ -2,6 +2,7 @@
 title: "Log"
 subtitle: "A working ledger of what I am building, writing, and wrestling with."
 description: "Working ledger of Mahshad Sarikhani's active research, software, and clinical validation milestones, updated as work ships or stalls."
+schema-type: CollectionPage
 toc: false
 ---
 

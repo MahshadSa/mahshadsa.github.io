@@ -19,6 +19,7 @@ Each ranked paper states its nearest seed too, the corpus paper that drove its s
 
 A wildcard section promotes two randomly sampled archive papers to full rendering, checkboxes and all. A system that only shows me papers like what I already chose narrows quietly over time. The wildcard is the corpus's only route to papers the ranker scores low. Costs two entries a day.
 
+:::: {.content-hidden when-format="llms-txt"}
 ::: {.diagram-scroll tabindex="0" role="region" aria-labelledby="digest-pipeline-title"}
 ```{=html}
 <svg width="100%" viewBox="0 0 680 370" role="img" aria-labelledby="digest-pipeline-title digest-pipeline-desc" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +113,11 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
 <text class="ts" x="10" y="360" text-anchor="start">deferred: LLM summaries &#183; citation counts &#183; Europe PMC &#183; bioRxiv &#183; notifications</text>
 </svg>
 ```
+:::
+::::
+
+::: {.content-visible when-format="llms-txt"}
+**IBD Imaging Digest pipeline.** Five-stage pipeline: fetch from 18 sources, deduplicate by DOI, rank with SPECTER2, tier into must-read/skim/archive, render Obsidian digest. Read later checkbox routes to a persistent inbox note. The Relevant checkbox feeds papers back into the ranking corpus.
 :::
 
 ## Why two fetch paths
@@ -291,6 +297,7 @@ The root cause is embarrassing in the way obvious things are. The self-calibrati
 
 The telemetry file, added in the same overhaul that introduced the bug, is what made this diagnosable at all. Otherwise I'd have been guessing.
 
+:::: {.content-hidden when-format="llms-txt"}
 ::: {.diagram-scroll tabindex="0" role="region" aria-labelledby="tier-chart-title"}
 ```{=html}
 <svg width="100%" viewBox="0 0 680 300" role="img" aria-labelledby="tier-chart-title tier-chart-desc" xmlns="http://www.w3.org/2000/svg">
@@ -342,6 +349,11 @@ The telemetry file, added in the same overhaul that introduced the bug, is what 
 <text class="cs" x="10" y="288">Anchor percentiles after the fix: 85th for must-read, 40th for skim.</text>
 </svg>
 ```
+:::
+::::
+
+::: {.content-visible when-format="llms-txt"}
+**Tier distribution before and after threshold recalibration.** Under corpus self-similarity calibration, 0 percent of papers reached must-read, 4 percent skim, 96 percent archive. Under candidate-distribution calibration, 20 percent must-read, 49 percent skim, 31 percent archive.
 :::
 
 Diagnosing it surfaced something quietly worse. The feedback loop, though built, had never once run end-to-end in production. The corpus was still the original forty-two papers. Everything was archiving, archived papers show no checkboxes, so there was nothing to tick `Relevant` on. The broken cutoff was starving the exact loop meant to fix it.

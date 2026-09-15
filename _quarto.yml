@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: _site
-  post-render: scripts/homepage-semantics.ts
+  post-render: scripts/site-post-render.ts
   render:
     - "*.qmd"
     - "**/*.qmd"
@@ -12,6 +12,8 @@ quarto-required: ">= 1.9.0"
 
 # Used by the page-schema Lua filter. Keep this aligned with website.site-url.
 schema-site-url: https://mahshadsa.github.io
+schema-language: en
+schema-default-image: https://mahshadsa.github.io/assets/img/og-image.jpg
 
 website:
   title: "Mahshad Sarikhani"

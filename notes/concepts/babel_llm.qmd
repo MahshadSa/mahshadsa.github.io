@@ -1,5 +1,6 @@
 ---
 title: "The English Bias in Medical AI: What Gets Lost When Models Read Radiology Reports"
+pagetitle: "English Bias in Medical AI"
 description: "Reading BABEL by R.F. Kuang made me think about how LLMs handle meaning across languages, and what that costs us in clinical settings."
 date: 2026-04-28
 categories: [AI, NLP, radiology, clinical-AI, reading-notes]

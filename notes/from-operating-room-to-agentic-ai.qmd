@@ -1,5 +1,6 @@
 ---
 title: "From the Operating Room to Agentic AI: Why I Became a Clinician-Coder"
+pagetitle: "From Surgery to Agentic AI"
 description: "Notes on going from surgery lover to agentic AI builder, and what changed in between."
 date: 2026-04-23
 date-modified: 2026-04-23

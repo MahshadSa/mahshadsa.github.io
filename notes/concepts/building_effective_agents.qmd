@@ -1,5 +1,6 @@
 ---
 title: "Archived Notes: Anthropic’s Building Effective Agents" 
+pagetitle: "Building Effective Agents: Notes"
 description: "Notes on the spectrum between rigid clinical workflows and autonomous agents."
 date: 2026-04-25 
 categories: [research, AI-agents, radiology, archive, coding]

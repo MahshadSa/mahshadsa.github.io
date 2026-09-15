@@ -2,6 +2,7 @@
 title: "About"
 subtitle: "Physician-researcher in quantitative MRI and inflammatory bowel disease."
 description: "About Mahshad Sarikhani's clinical research path in quantitative MRI, inflammatory bowel disease imaging, and computational methods."
+schema-type: AboutPage
 toc: false
 ---
 

@@ -43,6 +43,69 @@ local function metadata_date(meta, key)
   return pandoc.utils.normalize_date(value) or value
 end
 
+local function metadata_list(meta, key)
+  local value = meta[key]
+  if value == nil then
+    return nil
+  end
+
+  local result = {}
+  if pandoc.utils.type(value) == "List" then
+    for _, item in ipairs(value) do
+      local text = pandoc.utils.stringify(item)
+      if text ~= "" then
+        table.insert(result, text)
+      end
+    end
+  else
+    local text = pandoc.utils.stringify(value)
+    if text ~= "" then
+      table.insert(result, text)
+    end
+  end
+
+  if #result == 0 then
+    return nil
+  end
+  return result
+end
+
+local function absolute_url(value, page_url, site_url)
+  if value == nil then
+    return nil
+  end
+  if value:match("^https?://") then
+    return value
+  end
+
+  local root_url = site_url:gsub("/+$", "")
+  if value:sub(1, 1) == "/" then
+    return root_url .. value
+  end
+
+  local page_directory = page_url:match("^(.*)/[^/]*$") or root_url
+  return page_directory .. "/" .. value:gsub("^%./", "")
+end
+
+local function person_entity(person_id, root_url)
+  return {
+    ["@type"] = "Person",
+    ["@id"] = person_id,
+    name = "Mahshad Sarikhani",
+    url = root_url .. "/",
+  }
+end
+
+local creative_work_types = {
+  AboutPage = true,
+  Article = true,
+  CollectionPage = true,
+  CreativeWork = true,
+  ProfilePage = true,
+  SoftwareSourceCode = true,
+  WebPage = true,
+}
+
 function Meta(meta)
   if not quarto.doc.is_format("html") then
     return meta
@@ -61,6 +124,13 @@ function Meta(meta)
   )
 
   local schema_type = metadata_text(meta, "schema-type")
+  local og_type = schema_type == "Article" and "article" or "website"
+  quarto.doc.include_text(
+    "in-header",
+    '<meta property="og:url" content="' .. html_attribute_escape(url) .. '">\n' ..
+    '<meta property="og:type" content="' .. og_type .. '">'
+  )
+
   if schema_type == nil or schema_type == "none" then
     return meta
   end
@@ -69,32 +139,50 @@ function Meta(meta)
   local description = metadata_text(meta, "description")
   local date_published = metadata_date(meta, "date")
   local date_modified = metadata_date(meta, "date-modified")
+  local keywords = metadata_list(meta, "categories")
   local root_url = site_url:gsub("/+$", "")
   local person_id = root_url .. "/#person"
   local website_id = root_url .. "/#website"
+  local language = metadata_text(meta, "schema-language") or "en"
+  local default_image = metadata_text(meta, "schema-default-image")
+  local page_image = metadata_text(meta, "schema-image") or metadata_text(meta, "image")
+  local image = absolute_url(page_image or default_image, url, site_url)
+  local person = person_entity(person_id, root_url)
   local entity = {
     ["@context"] = "https://schema.org",
     ["@type"] = schema_type,
     ["@id"] = url .. "#" .. schema_type:lower(),
     url = url,
     description = description,
-    isPartOf = { ["@id"] = website_id },
+    mainEntityOfPage = url,
+    image = image,
+    keywords = keywords,
   }
 
   if schema_type == "ProfilePage" then
     entity.name = title
     entity.mainEntity = { ["@id"] = person_id }
+    entity.inLanguage = language
+    entity.isPartOf = { ["@id"] = website_id }
   elseif schema_type == "Article" then
     entity.headline = title
-    entity.author = { ["@id"] = person_id }
-    entity.mainEntityOfPage = url
+    entity.author = person
     entity.datePublished = date_published
     entity.dateModified = date_modified
+    entity.inLanguage = language
+    entity.isPartOf = { ["@id"] = website_id }
+  elseif schema_type == "ResearchProject" then
+    entity.name = title
+    entity.member = person
+  elseif creative_work_types[schema_type] then
+    entity.name = title
+    entity.author = person
+    entity.datePublished = date_published
+    entity.dateModified = date_modified
+    entity.inLanguage = language
+    entity.isPartOf = { ["@id"] = website_id }
   else
     entity.name = title
-    entity.author = { ["@id"] = person_id }
-    entity.datePublished = date_published
-    entity.dateModified = date_modified
   end
 
   quarto.doc.include_text(

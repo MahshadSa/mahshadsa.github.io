@@ -26,6 +26,7 @@ The clinical questions this dataset is positioned to answer, including longitudi
 
 ## Pipeline
 
+:::: {.content-hidden when-format="llms-txt"}
 ::: {.diagram-scroll tabindex="0" role="region" aria-labelledby="reports-pipeline-title"}
 ```{=html}
 <svg width="100%" viewBox="0 0 680 176" role="img" aria-labelledby="reports-pipeline-title reports-pipeline-desc" xmlns="http://www.w3.org/2000/svg">
@@ -107,6 +108,11 @@ The clinical questions this dataset is positioned to answer, including longitudi
 <text class="ts" x="10" y="164" text-anchor="start">design commitments: every claim traceable to source · uncertainty flagged, not resolved · patient data never in repository</text>
 </svg>
 ```
+:::
+::::
+
+::: {.content-visible when-format="llms-txt"}
+**Radiology reports pipeline.** Six-phase pipeline: Phase 0 metadata capture, Phase 1 document parsing, Phase 1b repeat-patient clustering, Phase 2 de-identification, Phase 3 classification, then Phases 4–5 audit and longitudinal linkage. Phases 0–2 complete or in progress; Phases 3–5 designed and pending.
 :::
 
 

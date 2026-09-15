@@ -1,5 +1,6 @@
 ---
 title: "What Colonic Motility Actually Means (And Why That Depends on Who You Ask)"
+pagetitle: "Colonic Motility in Ulcerative Colitis"
 description: "The word motility means different things depending on who you ask. What I learned after two years of working on it in UC: what it is, what disturbs it, and why measuring it is harder than it sounds."
 date: 2026-05-14
 categories: [UC, motility, MRI, IBD, GIQuant]
