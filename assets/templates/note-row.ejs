@@ -11,13 +11,14 @@ if (item.date) {
   }
 }
 %>
-<div class="garden-row">
+```{=html}
+<article class="garden-row">
 <div class="garden-row-meta">
 <span class="garden-icon"><%= icon %></span>
 <% if (dateLabel) { %><time class="garden-date"><%= dateLabel %></time><% } %>
 </div>
 <div class="garden-row-body">
-<a class="garden-title" href="<%- item.path %>"><%- item.title %></a>
+<h2 class="garden-entry-title"><a class="garden-title" href="<%- item.path %>"><%- item.title %></a></h2>
 <% if (item.description) { %><p class="garden-desc"><%- item.description %></p><% } %>
 <% if (item.categories && item.categories.length) { %>
 <div class="garden-cats">
@@ -25,5 +26,6 @@ if (item.date) {
 </div>
 <% } %>
 </div>
-</div>
+</article>
+```
 <% } %>

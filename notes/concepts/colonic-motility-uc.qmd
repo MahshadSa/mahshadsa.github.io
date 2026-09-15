@@ -31,7 +31,7 @@ This is where GIQuant becomes both useful and complicated. When the algorithm me
 That ambiguity is not a flaw in the tool. It is a feature of the disease. And it is exactly why a low motility score in UC carries information about both current inflammatory activity and accumulated structural damage simultaneously, which is what we found, and what makes this measurement worth paying attention to.
 
 ---
-::: {style="font-size: 0.85em;"}
+::: {.reference-list}
 ## References
 
 Bassotti G, et al. Abnormal gut motility in inflammatory bowel disease: an update. *Techniques in Coloproctology*. 2020.

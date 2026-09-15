@@ -6,16 +6,18 @@ schema-type: none
 listing:
   - id: studies-list
     contents: "studies/*/index.qmd"
-    type: default
+    type: custom
+    template: ../assets/templates/work-item.ejs
     sort: "date desc"
     fields: [title, description, categories, date]
-    categories: true
+    categories: false
   - id: tools-list
     contents: "tools/*/index.qmd"
-    type: default
+    type: custom
+    template: ../assets/templates/work-item.ejs
     sort: "date desc"
     fields: [title, description, categories, date]
-    categories: true
+    categories: false
 toc: false
 ---
 

@@ -1,0 +1,22 @@
+```{=html}
+<div class="list">
+<% for (const item of items) { %>
+<article class="quarto-post image-left" <%= metadataAttrs(item) %>>
+  <div class="body">
+    <h3 class="no-anchor listing-title"><a href="<%- item.path %>" class="no-external"><%- item.title %></a></h3>
+    <% if (item.categories && item.categories.length) { %>
+    <div class="listing-categories" aria-label="Filter by category">
+      <% for (const category of item.categories) { %>
+      <button type="button" class="listing-category" onclick="window.quartoListingCategory('<%= utils.b64encode(category) %>'); return false;"><%- category %></button>
+      <% } %>
+    </div>
+    <% } %>
+    <% if (item.description) { %><div class="listing-description"><a href="<%- item.path %>" class="no-external"><%- item.description %></a></div><% } %>
+  </div>
+  <% if (item.date) { %>
+  <div class="metadata"><a href="<%- item.path %>" class="no-external"><time class="listing-date"><%= item.date %></time></a></div>
+  <% } %>
+</article>
+<% } %>
+</div>
+```

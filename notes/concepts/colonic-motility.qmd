@@ -277,13 +277,13 @@ The word *motility* covers too many steps for that question to be enough.
 
 For me, motility MRI became more interesting once I stopped treating it as one variable and started asking what, exactly, was moving.
 
-::: {style="font-size: 0.85em; font-style: italic;"}
+::: {.note-aside}
 **Figure note:** The concepts and scientific content of the figures are my own. The figures were created with assistance from OpenAI's ChatGPT image-generation tools.
 :::
 
 ---
 
-::: {style="font-size: 0.85em;"}
+::: {.reference-list}
 ## References
 
 1. Corsetti M, Costa M, Bassotti G, et al. First translational consensus on terminology and definitions of colonic motility. *Nat Rev Gastroenterol Hepatol.* 2019;16:559–579. <https://doi.org/10.1038/s41575-019-0167-1>

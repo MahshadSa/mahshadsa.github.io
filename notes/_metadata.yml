@@ -2,5 +2,5 @@ schema-type: Article
 
 format:
   html:
-    toc: true
+    toc: false
     toc-depth: 2

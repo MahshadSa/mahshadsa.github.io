@@ -1,28 +1,4 @@
-<!-- Sitewide scroll-in reveals. Self-contained: no SCSS re-render needed.
-     Degrades to fully-visible if JS is off or IntersectionObserver is
-     unsupported, and is disabled under prefers-reduced-motion. -->
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
-      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-    will-change: opacity, transform;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .reveal.is-visible {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-  }
-</style>
+<!-- Sitewide scroll-in reveals. Styling lives in the shared theme CSS. -->
 <script>
   (function () {
     var REVEAL = [

@@ -1,42 +1,48 @@
-/* ── Garden note metadata bar ──────────────────────── */
+/* Note-page additions use the semantic tokens emitted by the active Quarto
+   theme. Layout is therefore identical in light and dark modes. */
 .note-page-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.45rem 0.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(148, 168, 176, 0.4);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  color: #4a9a88;           /* mint */
-  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--site-rule);
+  color: var(--site-text-secondary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--site-meta-size);
+  letter-spacing: var(--site-meta-tracking);
 }
 
-.note-page-meta .meta-date,
-.note-page-meta .meta-updated {
-  color: #94a8b0;           /* gray */
+.note-page-meta > p {
+  display: contents;
+  margin: 0;
 }
 
-/* ── Backlinks section ────────────────────────────── */
+.note-page-meta .maturity-tag {
+  color: var(--site-text-accent);
+}
+
 .backlinks {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px dashed rgba(148, 168, 176, 0.5);
+  border-top: 1px dashed var(--site-rule);
 }
 
 .backlinks h3 {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #253038;           /* darkgray — was old forest #354539 */
   margin-bottom: 0.8rem;
+  color: var(--site-text-strong);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--site-meta-size);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .backlinks ul {
-  list-style: none;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .backlinks li {
@@ -44,50 +50,19 @@
 }
 
 .backlinks li::before {
-  content: '←';
+  content: "←";
   margin-right: 0.5em;
-  color: #4a9a88;           /* mint */
+  color: var(--site-text-accent);
   font-size: 0.85em;
 }
 
 .backlinks a {
+  color: var(--site-text-accent);
   font-size: 0.9rem;
-  color: #4a9a88;           /* mint */
   text-decoration: none;
 }
 
 .backlinks a:hover {
-  color: #1a3a5c;           /* navy */
+  color: var(--site-text-strong);
   text-decoration: underline;
-}
-
-/* ── Dark mode overrides ──────────────────────────── */
-[data-bs-theme="dark"] .note-page-meta {
-  border-bottom-color: rgba(106, 136, 136, 0.3);
-  color: #5ab8a0;           /* mint lifted */
-}
-
-[data-bs-theme="dark"] .note-page-meta .meta-date,
-[data-bs-theme="dark"] .note-page-meta .meta-updated {
-  color: #6a8888;           /* gray dark */
-}
-
-[data-bs-theme="dark"] .backlinks {
-  border-top-color: rgba(106, 136, 136, 0.35);
-}
-
-[data-bs-theme="dark"] .backlinks h3 {
-  color: #b8cece;           /* darkgray dark — readable on dark bg */
-}
-
-[data-bs-theme="dark"] .backlinks li::before {
-  color: #5ab8a0;           /* mint lifted */
-}
-
-[data-bs-theme="dark"] .backlinks a {
-  color: #5ab8a0;           /* mint lifted */
-}
-
-[data-bs-theme="dark"] .backlinks a:hover {
-  color: #3a6a9a;           /* navy lifted */
 }

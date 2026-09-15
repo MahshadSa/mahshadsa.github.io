@@ -14,18 +14,18 @@ maturity: seedling
 
 ---
 
-### 2026 Context:
+## 2026 Context:
 I am revisiting these notes today as I refine my Agentic Lémann Pipeline. When I first read this Anthropic article in late 2024, it was a turning point for how I understood LLM orchestration. Today, these concepts are no longer just theory for me. They are the architectural rules I use to ensure my IBD research tools remain transparent and clinically accurate.
 
 **The Original Summary (Dec 2024):**
 These notes were my way of breaking down the article to help me understand the core concepts of agentic design.
 
-### Workflows vs. Agents
+## Workflows vs. Agents
 
 - **Workflows:** Systems where LLMs and tools are orchestrated through predefined code paths.
 - **Agents:** LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
 
-### The Augmented LLM
+## The Augmented LLM
 
 The basic building block, enhanced with three capabilities:
 
@@ -34,7 +34,7 @@ The basic building block, enhanced with three capabilities:
 - Memory
 
 
-### Workflow Patterns
+## Workflow Patterns
 
 1. **Prompt Chaining** - Decomposes a task into sequential steps where each LLM call processes the output of the previous one. Includes programmatic gate checks between steps. Best for tasks that can be cleanly split into fixed sub-tasks.
 
@@ -48,14 +48,14 @@ The basic building block, enhanced with three capabilities:
 
 5. **Evaluator-Optimizer** - One LLM generates a response while another provides feedback in a loop. Essential for iterative refinement.
 
-### Agents
+## Agents
 
 Agents start from a user command or discussion. Once the task is clear, they plan and operate independently. Two things matter here:
 
 - At each step, the agent needs ground truth from the environment to assess its progress.
 - Tool use is driven by that environmental feedback, in a loop.
 
-### Three Design Principles
+## Three Design Principles
 
 1. Maintain simplicity in your agent's design.
 2. Prioritize transparency by explicitly showing the agent's planning steps.

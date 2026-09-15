@@ -19,6 +19,7 @@ Each ranked paper states its nearest seed too, the corpus paper that drove its s
 
 A wildcard section promotes two randomly sampled archive papers to full rendering, checkboxes and all. A system that only shows me papers like what I already chose narrows quietly over time. The wildcard is the corpus's only route to papers the ranker scores low. Costs two entries a day.
 
+::: {.diagram-scroll tabindex="0" role="region" aria-labelledby="digest-pipeline-title"}
 ```{=html}
 <svg width="100%" viewBox="0 0 680 370" role="img" aria-labelledby="digest-pipeline-title digest-pipeline-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="digest-pipeline-title">IBD Imaging Digest pipeline</title>
@@ -41,21 +42,6 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
     .must text { fill: #4a3200; }
     .arch rect { fill: #faeae8; stroke: #b05040; }
     .arch text { fill: #4a1a14; }
-    @media (prefers-color-scheme: dark) {
-      .t   { fill: #d8d8d4; }
-      .ts  { fill: #9a9a94; }
-      .th  { fill: #d8d8d4; }
-      .src  rect { fill: #1e2e22; stroke: #5a7260; }
-      .src  text { fill: #a8c4ac; }
-      .sem  rect { fill: #1e1e30; stroke: #6970a0; }
-      .sem  text { fill: #b0b4d8; }
-      .neu  rect { fill: #242420; stroke: #6a6a64; }
-      .neu  text { fill: #b0b0a8; }
-      .must rect { fill: #2a2010; stroke: #b07a18; }
-      .must text { fill: #e0c070; }
-      .arch rect { fill: #2a1510; stroke: #b05040; }
-      .arch text { fill: #e0a090; }
-    }
   </style>
 </defs>
 
@@ -126,6 +112,7 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
 <text class="ts" x="10" y="360" text-anchor="start">deferred: LLM summaries &#183; citation counts &#183; Europe PMC &#183; bioRxiv &#183; notifications</text>
 </svg>
 ```
+:::
 
 ## Why two fetch paths
 
@@ -304,6 +291,7 @@ The root cause is embarrassing in the way obvious things are. The self-calibrati
 
 The telemetry file, added in the same overhaul that introduced the bug, is what made this diagnosable at all. Otherwise I'd have been guessing.
 
+::: {.diagram-scroll tabindex="0" role="region" aria-labelledby="tier-chart-title"}
 ```{=html}
 <svg width="100%" viewBox="0 0 680 300" role="img" aria-labelledby="tier-chart-title tier-chart-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="tier-chart-title">Tier distribution before and after threshold recalibration</title>
@@ -317,15 +305,6 @@ The telemetry file, added in the same overhaul that introduced the bug, is what 
     .bmust { fill: #b07a18; }
     .bskim { fill: #6970a0; }
     .barch { fill: #b05040; }
-    @media (prefers-color-scheme: dark) {
-      .ct  { fill: #d8d8d4; }
-      .cs  { fill: #9a9a94; }
-      .cv  { fill: #d8d8d4; }
-      .axis { stroke: #55554f; }
-      .bmust { fill: #b07a18; }
-      .bskim { fill: #6970a0; }
-      .barch { fill: #b05040; }
-    }
   </style>
 </defs>
 
@@ -363,6 +342,7 @@ The telemetry file, added in the same overhaul that introduced the bug, is what 
 <text class="cs" x="10" y="288">Anchor percentiles after the fix: 85th for must-read, 40th for skim.</text>
 </svg>
 ```
+:::
 
 Diagnosing it surfaced something quietly worse. The feedback loop, though built, had never once run end-to-end in production. The corpus was still the original forty-two papers. Everything was archiving, archived papers show no checkboxes, so there was nothing to tick `Relevant` on. The broken cutoff was starving the exact loop meant to fix it.
 

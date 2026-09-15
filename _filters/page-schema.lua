@@ -104,3 +104,108 @@ function Meta(meta)
 
   return meta
 end
+
+local function has_class(element, class_name)
+  if element == nil or element.classes == nil then
+    return false
+  end
+  for _, class in ipairs(element.classes) do
+    if class == class_name then
+      return true
+    end
+  end
+  return false
+end
+
+local function first_inline_with_class(inlines, class_name)
+  for _, inline in ipairs(inlines) do
+    if has_class(inline, class_name) then
+      return inline
+    end
+  end
+  return nil
+end
+
+-- Quarto wraps consecutive inline spans in a paragraph. Convert shared row
+-- headers to the block structure their CSS and document hierarchy require.
+function Div(div)
+  if has_class(div, "worklist-label") and #div.content == 1 and div.content[1].t == "Para" then
+    local inlines = div.content[1].content
+    local label = inlines[1]
+    local link = inlines[#inlines]
+    if label and label.t == "Span" and link and link.t == "Span" then
+      div.content = {
+        pandoc.Header(2, label.content, pandoc.Attr("", { "worklist-section-title", "no-anchor" })),
+        pandoc.Para({ link }),
+      }
+    end
+  elseif has_class(div, "worklist-head") and #div.content == 1 and div.content[1].t == "Para" then
+    local inlines = div.content[1].content
+    local title = first_inline_with_class(inlines, "worklist-title")
+    local date = first_inline_with_class(inlines, "worklist-date")
+    if title and date then
+      div.content = {
+        pandoc.Header(3, { title }, pandoc.Attr("", { "worklist-entry-title", "no-anchor" })),
+        pandoc.Para({ date }),
+      }
+    end
+  elseif has_class(div, "timeline-head") and #div.content == 1 and div.content[1].t == "Para" then
+    local inlines = div.content[1].content
+    local date = first_inline_with_class(inlines, "timeline-date")
+    local title = first_inline_with_class(inlines, "timeline-title")
+    if title and date then
+      div.content = {
+        pandoc.Para({ date }),
+        pandoc.Header(2, title.content, pandoc.Attr("", { "timeline-title", "no-anchor" })),
+      }
+    end
+  elseif has_class(div, "pub-entry") and #div.content > 0 and div.content[1].t == "Para" then
+    local title = first_inline_with_class(div.content[1].content, "pub-title")
+    if title then
+      div.content[1] = pandoc.Header(3, title.content, pandoc.Attr("", { "pub-title", "no-anchor" }))
+    end
+  elseif has_class(div, "timeline-item") or has_class(div, "timeline-child") then
+    local heading_level = has_class(div, "timeline-child") and 4 or 3
+    local content = {}
+    for _, block in ipairs(div.content) do
+      if block.t == "Para" then
+        local title = first_inline_with_class(block.content, "timeline-title")
+        if title then
+          for _, inline in ipairs(block.content) do
+            if inline.t == "Span" then
+              if has_class(inline, "timeline-title") then
+                table.insert(content, pandoc.Header(
+                  heading_level,
+                  inline.content,
+                  pandoc.Attr("", { "timeline-title", "no-anchor" })
+                ))
+              else
+                table.insert(content, pandoc.Para({ inline }))
+              end
+            end
+          end
+        else
+          table.insert(content, block)
+        end
+      else
+        table.insert(content, block)
+      end
+    end
+    div.content = content
+  end
+
+  return div
+end
+
+-- All authored Markdown tables receive the same keyboard-accessible scroll
+-- region. This preserves table semantics while preventing page overflow.
+function Table(table)
+  return pandoc.Div(
+    { table },
+    pandoc.Attr("", { "table-scroll" }, {
+      { "role", "region" },
+      { "aria-label", "Scrollable table" },
+      { "tabindex", "0" },
+    })
+  )
+end

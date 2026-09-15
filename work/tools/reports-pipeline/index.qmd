@@ -26,6 +26,7 @@ The clinical questions this dataset is positioned to answer, including longitudi
 
 ## Pipeline
 
+::: {.diagram-scroll tabindex="0" role="region" aria-labelledby="reports-pipeline-title"}
 ```{=html}
 <svg width="100%" viewBox="0 0 680 176" role="img" aria-labelledby="reports-pipeline-title reports-pipeline-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="reports-pipeline-title">Radiology reports pipeline</title>
@@ -46,19 +47,6 @@ The clinical questions this dataset is positioned to answer, including longitudi
     .pend  text { fill: #3a3a38; }
     .sem   rect { fill: #eeeef8; stroke: #6970a0; }
     .sem   text { fill: #2e2f5a; }
-    @media (prefers-color-scheme: dark) {
-      .t   { fill: #d8d8d4; }
-      .ts  { fill: #9a9a94; }
-      .th  { fill: #d8d8d4; }
-      .done  rect { fill: #1e2e22; stroke: #5a7260; }
-      .done  text { fill: #a8c4ac; }
-      .prog  rect { fill: #2a2010; stroke: #b07a18; }
-      .prog  text { fill: #e0c070; }
-      .pend  rect { fill: #242420; stroke: #6a6a64; }
-      .pend  text { fill: #b0b0a8; }
-      .sem   rect { fill: #1e1e30; stroke: #6970a0; }
-      .sem   text { fill: #b0b4d8; }
-    }
   </style>
 </defs>
 
@@ -119,6 +107,7 @@ The clinical questions this dataset is positioned to answer, including longitudi
 <text class="ts" x="10" y="164" text-anchor="start">design commitments: every claim traceable to source · uncertainty flagged, not resolved · patient data never in repository</text>
 </svg>
 ```
+:::
 
 
 
