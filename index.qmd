@@ -2,7 +2,8 @@
 title: "Mahshad Sarikhani"
 pagetitle: "Mahshad Sarikhani, MD | Quantitative MRI & IBD Imaging"
 title-prefix: ""
-description: "Physician-researcher working on quantitative MRI, motility, imaging biomarkers, and computational methods in inflammatory bowel disease."
+description: "Physician-researcher in quantitative MR enterography for ulcerative colitis: colonic motility, Bayesian modelling of disease activity, and clinical AI."
+date-modified: 2026-10-04
 schema-type: ProfilePage
 toc: false
 listing:
@@ -42,36 +43,36 @@ I came to this as a clinician, so the disease question comes first for me. Most 
 
 ::: {.worklist}
 ::: {.worklist-label}
-[selected work]{} [[research →](work\index.qmd)]{}
+[selected work]{} [[research →](work/index.qmd)]{}
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Colonic motility on MRE and endoscopic activity in ulcerative colitis](work\studies\uc-motility\index.qmd){.worklist-title}
-[Jun 2026]{.worklist-date}
+[Colonic motility on MR enterography in ulcerative colitis](work/studies/uc-motility/index.qmd){.worklist-title}
+[Sep 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-ESGAR 2026 oral presentation · Under review at *Inflammatory Bowel Diseases*
+Accepted for publication in *Inflammatory Bowel Diseases* (September 2026). DOI to follow. · ESGAR 2026 oral presentation
 :::
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Segment-level prediction of endoscopic activity in ulcerative colitis](work\studies\uc-mre-bayes\index.qmd){.worklist-title}
-[Jun 2026]{.worklist-date}
+[Bayesian multilevel model combining MRE and faecal calprotectin for segment-level UC activity](work/studies/uc-mre-bayes/index.qmd){.worklist-title}
+[Sep 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Bayesian multilevel study · Final co-author review before submission*
+Under review · ESGAR 2026 oral presentation
 :::
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
 [Radiology Reports Pipeline](work/tools/reports-pipeline/index.qmd){.worklist-title}
-[in progress]{.worklist-date}
+[paused]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Parsing and de-identifying ~9,800 free-text abdominal reports for longitudinal IBD research
+De-identification and structuring of ~9,800 free-text abdominal radiology reports
 :::
 :::
 
@@ -81,7 +82,7 @@ Parsing and de-identifying ~9,800 free-text abdominal reports for longitudinal I
 [live tool]{.worklist-date}
 :::
 ::: {.worklist-meta}
-A daily pipeline that fetches, ranks, and tiers new IBD imaging papers
+Lightweight daily literature surveillance: fetches, ranks, and tiers new IBD imaging papers
 :::
 :::
 

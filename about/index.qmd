@@ -2,6 +2,7 @@
 title: "About"
 subtitle: "Physician-researcher in quantitative MRI and inflammatory bowel disease."
 description: "About Mahshad Sarikhani's clinical research path in quantitative MRI, inflammatory bowel disease imaging, and computational methods."
+date-modified: 2026-10-04
 schema-type: AboutPage
 toc: false
 ---
@@ -17,7 +18,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline}
 
 ::: {.timeline-item}
-[Jul 2023 — Present]{.timeline-date}
+[Jul 2023 – Present]{.timeline-date}
 [Research Associate, Lead, Ulcerative Colitis Imaging Programme]{.timeline-title}
 [Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Supervisor: Prof. Amir Reza Radmard.]{.timeline-desc}
 
@@ -32,7 +33,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Motilent · University College London, UK]{.timeline-title}
-[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations delivered at ESGAR 2026, Montpellier. Manuscript under review at *Inflammatory Bowel Diseases*.]{.timeline-desc}
+[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations delivered at ESGAR 2026, Montpellier. Manuscript accepted for publication in *Inflammatory Bowel Diseases* (September 2026).]{.timeline-desc}
 [GIQuant · colonic displacement metrics · UC MRE · cross-site validation]{.timeline-tags}
 :::
 
@@ -48,7 +49,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 :::
 
 ::: {.timeline-item}
-[Mar 2023 — Jun 2023]{.timeline-date}
+[Mar 2023 – Jun 2023]{.timeline-date}
 [Research Contributor, Abdominal Imaging Group]{.timeline-title}
 [Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Began work on Crohn's disease structural damage and Lémann Index scoring, which preceded the UC imaging programme, and developed the openly released Lémann Index Calculator. Explored abdominal imaging research questions with Prof. Radmard before proposing the UC activity programme in July 2023.]{.timeline-desc}
 
@@ -56,7 +57,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 :::
 
 ::: {.timeline-item}
-[Jul 2022 — Jul 2024]{.timeline-date}
+[Jul 2022 – Jul 2024]{.timeline-date}
 [General Practitioner · Valiasr Local Medical Center]{.timeline-title}
 [Part-time clinical work in Alborz during the transition into full-time research. This is also when I started teaching myself Python properly: DataCamp, then 3Blue1Brown, then building things until they worked.]{.timeline-desc}
 
@@ -64,7 +65,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 :::
 
 ::: {.timeline-item}
-[Dec 2022 — Jun 2023]{.timeline-date}
+[Dec 2022 – Jun 2023]{.timeline-date}
 [Research Contributor, Imaging and Clinical Data Science]{.timeline-title}
 [Shahid Beheshti University of Medical Sciences. CT and MRI projects: protocol review, dataset construction, statistical analysis. Contributed to PanCanAID-related pipelines including curated datasets and semi-automated CT segmentation workflows.]{.timeline-desc}
 
@@ -72,13 +73,13 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 :::
 
 ::: {.timeline-item}
-[May 2020 — May 2022]{.timeline-date}
+[May 2020 – May 2022]{.timeline-date}
 [Medical Internship]{.timeline-title}
 [Teaching hospitals of Shahid Beheshti University of Medical Sciences, Tehran. Two years of rotations across internal medicine, surgery, paediatrics, obstetrics, emergency, and outpatient clinics. I thought I wanted to be a surgeon. I was wrong, but the clinical instincts stayed.]{.timeline-desc}
 :::
 
 ::: {.timeline-item}
-[2015 — 2022]{.timeline-date}
+[2015 – 2022]{.timeline-date}
 [Doctor of Medicine (MD)]{.timeline-title}
 [Shahid Beheshti University of Medical Sciences, Tehran. The girl who actively avoided research in medical school. People change.]{.timeline-desc}
 :::
@@ -92,7 +93,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 The fastest way to reach me is by [email](mailto:mahshadsarikhani9696@gmail.com). If you are working on quantitative imaging in IBD, imaging measurement and validation, multimodal studies, or any of the methods above, I would like to hear from you.
 
 ::: {.contact-links}
-[Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/0000-0002-0475-3064)
+[Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [ORCID](https://orcid.org/0000-0002-0475-3064) · [LinkedIn](https://www.linkedin.com/in/mahshad-sarikhani-md-297b9a26b)
 :::
 
 :::

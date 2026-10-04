@@ -1,6 +1,7 @@
 ---
 title: "CV"
 description: "Mahshad Sarikhani's research appointments, education, publications, presentations, software, and technical skills."
+date-modified: 2026-10-04
 toc: false
 ---
 
@@ -117,23 +118,23 @@ Awarded on full scholarship.
 
 [**Sarikhani M**, Menys A, Torabi A, Bhatnagar G, Colombel JF, Radmard AR, et al.]{.pub-authors}
 
-[Final co-author review; preparing for submission to *Alimentary Pharmacology & Therapeutics*.]{.pub-venue}
+[Under review.]{.pub-venue}
+
+::: {.pub-links}
+[Study page](../work/studies/uc-mre-bayes/index.qmd)
+:::
 :::
 
 ::: {.pub-entry}
-[Decreased colonic peristalsis assessed with motility MRI is associated with chronic structural damage as well as disease activity against the Mayo Endoscopic Subscore]{.pub-title}
+[Association of Colonic Motility on MR Enterography with Endoscopic Disease Activity and Chronic Structural Damage in Ulcerative Colitis]{.pub-title}
 
 [**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
 
-[Under review, *Inflammatory Bowel Diseases*.]{.pub-venue}
+[Accepted for publication, *Inflammatory Bowel Diseases*, September 2026. DOI to follow.]{.pub-venue}
+
+::: {.pub-links}
+[Study page](../work/studies/uc-motility/index.qmd)
 :::
-
-::: {.pub-entry}
-[The Impact of Quantization on the Medical Question-Answering Performance of Large Language Models: A Comparative Study]{.pub-title}
-
-[Khalafi MA, et al., **Sarikhani M**.]{.pub-authors}
-
-[Unpublished manuscript. 2026.]{.pub-venue}
 :::
 
 ## Peer-reviewed *articles*

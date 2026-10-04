@@ -17,7 +17,7 @@ schema-default-image: https://mahshadsa.github.io/assets/img/og-image.jpg
 
 website:
   title: "Mahshad Sarikhani"
-  description: "Physician-researcher working on quantitative MRI, motility, imaging biomarkers, and computational methods in inflammatory bowel disease."
+  description: "Physician-researcher in quantitative MR enterography for ulcerative colitis: colonic motility, Bayesian modelling of disease activity, and clinical AI."
   site-url: https://mahshadsa.github.io
   llms-txt: true
   # Draft IBD Sequence pieces can be developed in-repository without being

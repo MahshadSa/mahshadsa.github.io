@@ -1,8 +1,9 @@
 ---
 title: "Colonic motility on MR enterography in ulcerative colitis"
-pagetitle: "Colonic Motility MRI in Ulcerative Colitis"
-description: "A prospective study testing whether quantitative bowel motion on MRI tracks endoscopic activity and chronic structural damage in UC."
+pagetitle: "Colonic Motility in Ulcerative Colitis"
+description: "Accepted in Inflammatory Bowel Diseases: whether colonic motility on MR enterography tracks endoscopic activity and chronic structural damage in UC."
 date: 2026-06-01
+date-modified: 2026-10-04
 categories: [research, IBD, MRE, UC, motility]
 ---
 
@@ -44,12 +45,49 @@ The implication is twofold. Persistent dysmotility may help explain why some pat
 
 ---
 
-## Forward
+## Status
 
-Manuscript under review at Inflammatory Bowel Diseases. Findings have been presented as an oral presentation at ESGAR 2026 and as a poster at ECCO 2026.
+Accepted for publication in *Inflammatory Bowel Diseases* (September 2026). DOI to follow. <!-- TODO: add DOI when issued -->
+
+*Association of Colonic Motility on MR Enterography with Endoscopic Disease Activity and Chronic Structural Damage in Ulcerative Colitis.* Sarikhani M, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR. <!-- TODO: MS to confirm the author list matches the accepted version (copied from the CV) -->
+
+Findings were presented as an oral presentation at ESGAR 2026 and as a poster at ECCO 2026.
+
+<!-- TODO: add the Zenodo software DOI for the motility analysis if one exists; none was found in this repository -->
+
+---
+
+## Companion study
+
+This paper and the [Bayesian activity study](../uc-mre-bayes/index.qmd) are two questions asked of one prospective cohort: 49 adults with UC, 30 controls, and 245 colonic segments. This one asks whether colonic motion tracks endoscopic activity and chronic structural damage. The other asks how well MRE features and faecal calprotectin together estimate endoscopic activity in each segment. It is under review.
 
 ---
 
 *First-author study, in collaboration with Motilent Ltd. (London) and Prof. Jean-Frédéric Colombel, Icahn School of Medicine at Mount Sinai. Oral presentation at ESGAR 2026, Montpellier. Poster, ECCO 2026.*
 
+*Last updated: October 2026.*
+
 :::
+
+<!-- TODO: add "identifier" with the DOI (https://doi.org/...) and the full author list once issued -->
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": "https://mahshadsa.github.io/work/studies/uc-motility/#article",
+  "headline": "Association of Colonic Motility on MR Enterography with Endoscopic Disease Activity and Chronic Structural Damage in Ulcerative Colitis",
+  "creativeWorkStatus": "Accepted",
+  "isPartOf": {
+    "@type": "Periodical",
+    "name": "Inflammatory Bowel Diseases"
+  },
+  "author": [
+    { "@type": "Person", "@id": "https://mahshadsa.github.io/#person", "name": "Mahshad Sarikhani" }
+  ],
+  "about": ["Ulcerative colitis", "Colonic motility", "MR enterography"],
+  "inLanguage": "en",
+  "mainEntityOfPage": "https://mahshadsa.github.io/work/studies/uc-motility/"
+}
+</script>
+```

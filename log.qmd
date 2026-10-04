@@ -2,11 +2,62 @@
 title: "Log"
 subtitle: "A working ledger of what I am building, writing, and wrestling with."
 description: "Working ledger of Mahshad Sarikhani's active research, software, and clinical validation milestones, updated as work ships or stalls."
+date-modified: 2026-10-04
 schema-type: CollectionPage
 toc: false
 ---
 
 ::: {.timeline .timeline--log}
+
+::: {.timeline-item}
+::: {.timeline-head}
+[September 2026]{.timeline-date} [UC activity manuscript, under review]{.timeline-title}
+:::
+::: {.timeline-desc}
+Submitted the Bayesian multilevel manuscript on 27 September. The study combines MR enterography features with faecal calprotectin to estimate endoscopic activity in individual colonic segments, in a prospective cohort of 49 adults with UC and 245 segments. It is now under review. [Study page](work/studies/uc-mre-bayes/index.qmd).
+:::
+[UC MRE]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[September 2026]{.timeline-date} [Motility manuscript, accepted]{.timeline-title}
+:::
+::: {.timeline-desc}
+On 24 September the colonic motility manuscript was accepted for publication in *Inflammatory Bowel Diseases*. DOI to follow. [Study page](work/studies/uc-motility/index.qmd).
+:::
+[UC MRE]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[September 2026]{.timeline-date} [Clinical research ethics course, started]{.timeline-title}
+:::
+::: {.timeline-desc}
+Started the NIH course *Ethical and Regulatory Aspects of Clinical Research* on 23 September. It runs for seven weeks.
+:::
+[research ethics]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[August 2026]{.timeline-date} [Radiopaedia, daily]{.timeline-title}
+:::
+::: {.timeline-desc}
+Since August I have been taking Radiopaedia courses. I watch and learn from them every day.
+:::
+[radiology]{.timeline-tags}
+:::
+
+::: {.timeline-item}
+::: {.timeline-head}
+[August 2026]{.timeline-date} [Motility manuscript, major revision]{.timeline-title}
+:::
+::: {.timeline-desc}
+Completed a major revision of the [motility manuscript](work/studies/uc-motility/index.qmd). The revision narrowed "motility" to what GIQuant actually measures: regional bowel-wall deformation, not transit or propulsion. <!-- MS: reflect -->
+:::
+[UC MRE]{.timeline-tags}
+:::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
@@ -16,26 +67,6 @@ toc: false
 Completed the Bayesian multilevel manuscript and sent it to co-authors for a final review before submission.
 :::
 [UC MRE]{.timeline-tags}
-:::
-
-::: {.timeline-item}
-::: {.timeline-head}
-[August 2026]{.timeline-date} [Next motility question, taking shape]{.timeline-title}
-:::
-::: {.timeline-desc}
-Moved the next UC motility project into concept development: whether MRI motility helps explain symptoms, and how it relates to inflammation, structural disease, endoscopy, and histology.
-:::
-[motility MRI]{.timeline-tags}
-:::
-
-::: {.timeline-item}
-::: {.timeline-head}
-[August 2026]{.timeline-date} [Review directions, scoped]{.timeline-title}
-:::
-::: {.timeline-desc}
-Started mapping critical reviews around persistent mural disease despite mucosal healing, how MRE activity indices are measured and validated, the reference standards behind them, and inflammation–fibrosis separation.
-:::
-[measurement and validation]{.timeline-tags}
 :::
 
 ::: {.timeline-item}
@@ -80,20 +111,10 @@ Untracking papers.db to stop binary merge conflicts quietly broke corpus accumul
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[Juune 2026]{.timeline-date} [Patient-level triage, ruled out]{.timeline-title}
-:::
-::: {.timeline-desc}
-Spent real time on whether patient-level accuracy claims could be supported, testing worst-segment, mean, and count-based rollups against each other. They agreed on outcomes barely 6 times in 10, which settled it: no independent patient-level ground truth means no patient-level accuracy metric.
-:::
-[UC MRE]{.timeline-tags}
-:::
-
-::: {.timeline-item}
-::: {.timeline-head}
 [June 2026]{.timeline-date} [Risk Stratifier app, v0.5.0]{.timeline-title}
 :::
 ::: {.timeline-desc}
-Replaced two inconsistent hardcoded parameter files with a single artifact-driven design, so the app now loads directly from the notebook's exported JSON. Pushed a UI cleanup alongside it and cut a new Zenodo release.
+Moved the app to a single artifact-driven design, so it now loads directly from the notebook's exported JSON. Pushed a UI cleanup alongside it and cut a new Zenodo release.
 :::
 [Streamlit]{.timeline-tags}
 :::
@@ -103,7 +124,7 @@ Replaced two inconsistent hardcoded parameter files with a single artifact-drive
 [June 2026]{.timeline-date} [Methods and Results, drafted]{.timeline-title}
 :::
 ::: {.timeline-desc}
-Worked through the manuscript's Methods and Results paragraph by paragraph, locking prior specification, sampling settings, and exclusions along the way. Delivered as a validated file with placeholders marked for what's still missing.
+Worked through the manuscript's Methods and Results paragraph by paragraph.
 :::
 [manuscript]{.timeline-tags}
 :::
@@ -125,7 +146,7 @@ Dr. Bhatnagar presented the work in Montpellier on June 11th and it landed well.
 ::: {.timeline-desc}
 Found a quiet parsing bug where soft line breaks were hiding section headers on later lines. Fixed it and re-ran the affected phases; recovered dozens of impressions that had gone missing.
 :::
-[agentic systems]{.timeline-tags}
+[radiology reports]{.timeline-tags}
 :::
 
 ::: {.timeline-item}
@@ -133,9 +154,9 @@ Found a quiet parsing bug where soft line breaks were hiding section headers on 
 [June 2026]{.timeline-date} [`ibd-reports`, duplicate review closed out]{.timeline-title}
 :::
 ::: {.timeline-desc}
-Manually reviewed thousands of fuzzy-matched filename clusters to confirm genuine multi-report patients versus false merges. Tedious, but it locks the input for later longitudinal linkage.
+Manually reviewed thousands of fuzzy-matched filename clusters to confirm genuine multi-report patients versus false merges. Tedious, but it locks the input.
 :::
-[agentic systems]{.timeline-tags}
+[radiology reports]{.timeline-tags}
 :::
 
 ::: {.timeline-item}
@@ -220,4 +241,4 @@ Quarto build, custom theme, treated as both a professional presence and a digita
 
 :::
 
-*Last entry: August 2026. Updated as work ships or stalls.*
+*Last updated: October 2026. Updated as work ships or stalls.*
