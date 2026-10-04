@@ -52,27 +52,17 @@ I came to this as a clinician, so the disease question comes first for me. Most 
 [Sep 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Accepted for publication in *Inflammatory Bowel Diseases* (September 2026). DOI to follow. · ESGAR 2026 oral presentation
+Accepted for publication in *Inflammatory Bowel Diseases*, DOI to follow · ESGAR 2026 oral · ECCO 2026 poster
 :::
 :::
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Bayesian multilevel model combining MRE and faecal calprotectin for segment-level UC activity](work/studies/uc-mre-bayes/index.qmd){.worklist-title}
+[Segment-level UC activity from MRE and faecal calprotectin: a Bayesian multilevel model](work/studies/uc-mre-bayes/index.qmd){.worklist-title}
 [Sep 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Under review · ESGAR 2026 oral presentation
-:::
-:::
-
-::: {.worklist-row}
-::: {.worklist-head}
-[Radiology Reports Pipeline](work/tools/reports-pipeline/index.qmd){.worklist-title}
-[paused]{.worklist-date}
-:::
-::: {.worklist-meta}
-De-identification and structuring of ~9,800 free-text abdominal radiology reports
+Under review · ESGAR 2026 oral  
 :::
 :::
 
@@ -83,6 +73,17 @@ De-identification and structuring of ~9,800 free-text abdominal radiology report
 :::
 ::: {.worklist-meta}
 Lightweight daily literature surveillance: fetches, ranks, and tiers new IBD imaging papers
+:::
+:::
+
+
+::: {.worklist-row}
+::: {.worklist-head}
+[Radiology Reports Pipeline](work/tools/reports-pipeline/index.qmd){.worklist-title}
+[paused]{.worklist-date}
+:::
+::: {.worklist-meta}
+De-identification and structuring of ~9,800 free-text abdominal radiology reports
 :::
 :::
 
