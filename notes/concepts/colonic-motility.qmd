@@ -1,13 +1,14 @@
 ---
 title: "What I Mean When I Say Colonic Motility"
-description: "The word motility means different things depending on who you ask. What I learned after two years of working on it in UC: what the colon actually does, what cine MRI sees, and why a quantitative motility score is only one view of a much larger system."
+description: "What the colon actually does, what cine MRI sees, and why a quantitative motility score is only one view of a much larger system."
+date-modified: 2026-10-17
 date: 2026-09-06
 categories: [UC, motility, MRI, IBD, GIQuant]
 maturity: evergreen
 ---
 
 ::: {.note-page-meta}
-[🌲 evergreen]{.maturity-tag .evergreen} · Planted May 14, 2026 · Last tended September 6, 2026
+[🌲 evergreen]{.maturity-tag .evergreen} · Planted May 14, 2026, last tended September 6, 2026
 :::
 
 Much of my recent work in ulcerative colitis has involved quantitative colonic motility on MRI.
@@ -286,19 +287,19 @@ For me, motility MRI became more interesting once I stopped treating it as one v
 ::: {.reference-list}
 ## References
 
-1. Corsetti M, Costa M, Bassotti G, et al. First translational consensus on terminology and definitions of colonic motility. *Nat Rev Gastroenterol Hepatol.* 2019;16:559–579. <https://doi.org/10.1038/s41575-019-0167-1>
+1. Corsetti M, Costa M, Bassotti G, et al. First translational consensus on terminology and definitions of colonic motility. *Nat Rev Gastroenterol Hepatol.* 2019;16:559-579. <https://doi.org/10.1038/s41575-019-0167-1>
 
-2. Spencer NJ, Dinning PG, Brookes SJH, Costa M. Insights into the mechanisms underlying colonic motor patterns. *J Physiol.* 2016;594:4099–4116. <https://doi.org/10.1113/JP271919>
+2. Spencer NJ, Dinning PG, Brookes SJH, Costa M. Insights into the mechanisms underlying colonic motor patterns. *J Physiol.* 2016;594:4099-4116. <https://doi.org/10.1113/JP271919>
 
 3. Huizinga JD, Hussain A, Chen J-H. Interstitial cells of Cajal and human colon motility in health and disease. *Am J Physiol Gastrointest Liver Physiol.* <https://doi.org/10.1152/ajpgi.00264.2021>
 
-4. Dinning PG, et al. Quantification of in vivo colonic motor patterns in healthy humans before and after a meal revealed by high-resolution fibre-optic manometry. *Neurogastroenterol Motil.* 2014;26:1443–1457. <https://doi.org/10.1111/nmo.12408>
+4. Dinning PG, et al. Quantification of in vivo colonic motor patterns in healthy humans before and after a meal revealed by high-resolution fibre-optic manometry. *Neurogastroenterol Motil.* 2014;26:1443-1457. <https://doi.org/10.1111/nmo.12408>
 
-5. Lin AY, et al. High-resolution anatomic correlation of cyclic motor patterns in the human colon: evidence of a rectosigmoid brake. *Am J Physiol Gastrointest Liver Physiol.* 2017;312:G508–G515. <https://doi.org/10.1152/ajpgi.00021.2017>
+5. Lin AY, et al. High-resolution anatomic correlation of cyclic motor patterns in the human colon: evidence of a rectosigmoid brake. *Am J Physiol Gastrointest Liver Physiol.* 2017;312:G508-G515. <https://doi.org/10.1152/ajpgi.00021.2017>
 
-6. Kirchhoff S, et al. Assessment of colon motility using simultaneous manometric and functional cine-MRI analysis: preliminary results. *Abdom Imaging.* 2011;36:24–30. <https://doi.org/10.1007/s00261-010-9599-3>
+6. Kirchhoff S, et al. Assessment of colon motility using simultaneous manometric and functional cine-MRI analysis: preliminary results. *Abdom Imaging.* 2011;36:24-30. <https://doi.org/10.1007/s00261-010-9599-3>
 
-7. Hoad CL, et al. Colon wall motility: comparison of novel quantitative semi-automatic measurements using cine MRI. *Neurogastroenterol Motil.* 2016;28:327–335. <https://doi.org/10.1111/nmo.12727>
+7. Hoad CL, et al. Colon wall motility: comparison of novel quantitative semi-automatic measurements using cine MRI. *Neurogastroenterol Motil.* 2016;28:327-335. <https://doi.org/10.1111/nmo.12727>
 
 8. Pritchard SE, et al. Assessment of motion of colonic contents in the human colon using MRI tagging. *Neurogastroenterol Motil.* 2017;29:e13091. <https://doi.org/10.1111/nmo.13091>
 
@@ -306,21 +307,21 @@ For me, motility MRI became more interesting once I stopped treating it as one v
 
 10. Vriesman MH, et al. Simultaneous assessment of colon motility in children with functional constipation by cine-MRI and colonic manometry. *Eur Radiol Exp.* 2021;5:8. <https://doi.org/10.1186/s41747-021-00205-5>
 
-11. Rao SS, Read NW. Gastrointestinal motility in patients with ulcerative colitis. *Scand J Gastroenterol Suppl.* 1990;172:22–28. <https://doi.org/10.3109/00365529009091905>
+11. Rao SS, Read NW. Gastrointestinal motility in patients with ulcerative colitis. *Scand J Gastroenterol Suppl.* 1990;172:22-28. <https://doi.org/10.3109/00365529009091905>
 
-12. Reddy SN, et al. Colonic motility and transit in health and ulcerative colitis. *Gastroenterology.* 1991;101:1289–1297. <https://doi.org/10.1016/0016-5085(91)90079-Z>
+12. Reddy SN, et al. Colonic motility and transit in health and ulcerative colitis. *Gastroenterology.* 1991;101:1289-1297. <https://doi.org/10.1016/0016-5085(91)90079-Z>
 
-13. Cleveland NK, et al. Ulcerative Colitis Patients Have Reduced Rectal Compliance Compared With Non-IBD Controls. *Gastroenterology.* 2022;162:331–333.e1. <https://doi.org/10.1053/j.gastro.2021.09.052>
+13. Cleveland NK, et al. Ulcerative Colitis Patients Have Reduced Rectal Compliance Compared With Non-IBD Controls. *Gastroenterology.* 2022;162:331-333.e1. <https://doi.org/10.1053/j.gastro.2021.09.052>
 
-14. Gordon IO, et al. Fibrosis in ulcerative colitis is directly linked to severity and chronicity of mucosal inflammation. *Aliment Pharmacol Ther.* 2018;47:922–939. <https://doi.org/10.1111/apt.14526>
+14. Gordon IO, et al. Fibrosis in ulcerative colitis is directly linked to severity and chronicity of mucosal inflammation. *Aliment Pharmacol Ther.* 2018;47:922-939. <https://doi.org/10.1111/apt.14526>
 
-15. Bernardini N, et al. Immunohistochemical analysis of myenteric ganglia and interstitial cells of Cajal in ulcerative colitis. *J Cell Mol Med.* 2012;16:318–327. <https://doi.org/10.1111/j.1582-4934.2011.01298.x>
+15. Bernardini N, et al. Immunohistochemical analysis of myenteric ganglia and interstitial cells of Cajal in ulcerative colitis. *J Cell Mol Med.* 2012;16:318-327. <https://doi.org/10.1111/j.1582-4934.2011.01298.x>
 
-16. Rimola J, et al. Magnetic Resonance Imaging Features Indicative of Permanent Colon Damage in Ulcerative Colitis: An Exploratory Study. *J Crohns Colitis.* 2024;18:1690–1700. <https://doi.org/10.1093/ecco-jcc/jjae075>
+16. Rimola J, et al. Magnetic Resonance Imaging Features Indicative of Permanent Colon Damage in Ulcerative Colitis: An Exploratory Study. *J Crohns Colitis.* 2024;18:1690-1700. <https://doi.org/10.1093/ecco-jcc/jjae075>
 
 17. Sarikhani M, et al. Quantitative assessment of colon motility in ulcerative colitis using magnetic resonance enterography: correlation with endoscopic disease activity. *J Crohns Colitis.* 2025;19(Suppl 1). <https://doi.org/10.1093/ecco-jcc/jjae190.0729>
 
 18. Wilkinson-Smith V, et al. The MRI colonic function test: reproducibility of the Macrogol stimulus challenge. *Neurogastroenterol Motil.* 2020;32:e13942. <https://doi.org/10.1111/nmo.13942>
 
-19. Wilkinson-Smith V, et al. Combined MRI, high-resolution manometry and a randomised trial of bisacodyl versus hyoscine: the RECLAIM study. *Gut.* 2025;74:35–44. <https://doi.org/10.1136/gutjnl-2024-332755>
+19. Wilkinson-Smith V, et al. Combined MRI, high-resolution manometry and a randomised trial of bisacodyl versus hyoscine: the RECLAIM study. *Gut.* 2025;74:35-44. <https://doi.org/10.1136/gutjnl-2024-332755>
 :::

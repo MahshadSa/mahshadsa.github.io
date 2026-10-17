@@ -3,7 +3,7 @@ title: "Mahshad Sarikhani"
 pagetitle: "Mahshad Sarikhani, MD | Quantitative MRI & IBD Imaging"
 title-prefix: ""
 description: "Physician-researcher in quantitative MR enterography for ulcerative colitis: colonic motility, Bayesian modelling of disease activity, and clinical AI."
-date-modified: 2026-10-04
+date-modified: 2026-10-17
 schema-type: ProfilePage
 toc: false
 listing:
@@ -43,7 +43,7 @@ I came to this as a clinician, so the disease question comes first for me. Most 
 
 ::: {.worklist}
 ::: {.worklist-label}
-[selected work]{} [[research →](work/index.qmd)]{}
+[selected work]{} [[all work →](work/index.qmd)]{}
 :::
 
 ::: {.worklist-row}
@@ -52,7 +52,7 @@ I came to this as a clinician, so the disease question comes first for me. Most 
 [Sep 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Accepted for publication in *Inflammatory Bowel Diseases*, DOI to follow · ESGAR 2026 oral · ECCO 2026 poster
+Accepted for publication in *Inflammatory Bowel Diseases*, DOI to follow. ESGAR 2026 oral and ECCO 2026 poster.
 :::
 :::
 
@@ -89,29 +89,16 @@ De-identification and structuring of ~9,800 free-text abdominal radiology report
 
 :::
 
-::: {.terminal-card .terminal-card--notes}
-
-```{=html}
-<header class="term-bar">
-  <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
-  <span class="term-title">~/notes</span>
-  <a class="term-all" href="notes/index.html">all →</a>
-</header>
-```
-
-::: {.term-body}
-
-```{=html}
-<div class="term-prompt-line"><span class="term-prompt">$</span> ls --recent notes/<span class="term-cursor"></span></div>
-```
+::: {.worklist .worklist--notes}
+::: {.worklist-label}
+[recent notes]{} [[all notes →](notes/index.qmd)]{}
+:::
 
 ::: {#hero-notes}
 :::
 
 :::
 
-:::
-
 ::: {.home-links}
-[About](about/index.qmd) · [CV](cv/index.qmd) · [Google Scholar](https://scholar.google.com/citations?user=iKhNW9AAAAAJ) · [GitHub](https://github.com/MahshadSa) · [LinkedIn](https://www.linkedin.com/in/mahshad-sarikhani-md-297b9a26b)
+Also on [LinkedIn](https://www.linkedin.com/in/mahshad-sarikhani-md-297b9a26b) and [ORCID](https://orcid.org/0000-0002-0475-3064).
 :::

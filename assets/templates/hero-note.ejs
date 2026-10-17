@@ -1,17 +1,18 @@
-<% for (const item of items) { 
+<% for (const item of items) {
+  let maturity = item.maturity === 'evergreen' || item.maturity === 'sprout' ? item.maturity : 'seedling';
   let maturityIcon = '🌱';
-  if (item.maturity === 'evergreen') maturityIcon = '🌳';
-  else if (item.maturity === 'sprout') maturityIcon = '🌿';
+  if (maturity === 'evergreen') maturityIcon = '🌳';
+  else if (maturity === 'sprout') maturityIcon = '🌿';
   let dateLabel = '';
   if (item.date) {
     const d = item.date instanceof Date ? item.date : new Date(item.date);
     if (!isNaN(d)) {
-      dateLabel = d.toLocaleDateString('en-US', { 
-        month: 'short', 
-        year: 'numeric' 
-      }).toLowerCase();
+      dateLabel = d.toLocaleDateString('en-US', {
+        month: 'short',
+        year: 'numeric'
+      });
     }
   }
 %>
-<article class="note-item" data-maturity="<%= maturityIcon %>"><div class="note-content"><a class="note-title" href="<%- item.path %>"><%- item.title %></a><% if (dateLabel) { %><div class="note-meta"><%= dateLabel %></div><% } %></div></article>
+<article class="worklist-row note-item"><div class="worklist-head"><span class="note-title-line"><span class="note-glyph" role="img" aria-label="<%= maturity %> note"><%= maturityIcon %></span><a class="worklist-title" href="<%- item.path %>"><%- item.title %></a></span><% if (dateLabel) { %><span class="worklist-date"><%= dateLabel %></span><% } %></div></article>
 <% } %>

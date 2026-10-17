@@ -2,7 +2,7 @@
 title: "IBD Imaging Digest"
 description: "A lightweight daily literature-surveillance tool for IBD imaging: PubMed and 17 journals, ranked with SPECTER2 against a personal corpus."
 date: 2026-05-20
-date-modified: 2026-10-04
+date-modified: 2026-10-17
 categories: [tooling, NLP, literature, obsidian, reproducibility, SPECTER2, OpenAlex]
 ---
 ::: {.project-card}
@@ -80,7 +80,7 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
 <g class="must"><rect x="442" y="68"  width="124" height="36" rx="4" stroke-width="0.5"/>
   <text class="ts" x="504" y="90"  text-anchor="middle" dominant-baseline="central">Must-read  p85+</text></g>
 <g class="neu"><rect  x="442" y="114" width="124" height="36" rx="4" stroke-width="0.5"/>
-  <text class="ts" x="504" y="136" text-anchor="middle" dominant-baseline="central">Skim  p40 &#8211; p85</text></g>
+  <text class="ts" x="504" y="136" text-anchor="middle" dominant-baseline="central">Skim  p40 - p85</text></g>
 <g class="arch"><rect x="442" y="160" width="124" height="36" rx="4" stroke-width="0.5"/>
   <text class="ts" x="504" y="182" text-anchor="middle" dominant-baseline="central">Archive  &lt; p40</text></g>
 

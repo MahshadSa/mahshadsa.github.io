@@ -21,6 +21,13 @@ $rule-color:      rgba(136, 165, 165, 0.32);
 $surface:         #112020;
 $navbar-bg:       rgba(10, 24, 24, 0.94);
 
+// Shape rule, mirrored from custom.scss so Bootstrap components match.
+$radius-small:     2px;
+$radius-container: 8px;
+$border-radius:    $radius-small;
+$border-radius-sm: $radius-small;
+$border-radius-lg: $radius-container;
+
 $body-bg:          $light;
 $body-color:       $text-primary;
 $link-color:       $text-accent;

@@ -2,7 +2,7 @@
 title: "Radiology Reports Pipeline"
 description: "Paused. A pipeline that parses, de-identifies, and structures ~9,800 free-text abdominal radiology reports, with synthetic-only tests."
 date: 2026-06-10
-date-modified: 2026-10-04
+date-modified: 2026-10-17
 categories: [tooling, NLP, IBD, de-identification, infrastructure]
 draft: false
 ---
@@ -79,7 +79,7 @@ The dataset is approximately 9,800 abdominal radiology reports from a single ins
   <text class="ts" x="40" y="127" text-anchor="middle" dominant-baseline="central">built</text></g>
 <text class="ts" x="82" y="127" text-anchor="start" dominant-baseline="central">paused after phase 2</text>
 
-<text class="ts" x="10" y="164" text-anchor="start">design commitments: ambiguous cases flagged, not resolved · patient data never in repository · synthetic-only tests</text>
+<text class="ts" x="10" y="164" text-anchor="start">design commitments: ambiguous cases flagged, not resolved; patient data never in repository; synthetic-only tests</text>
 </svg>
 ```
 :::

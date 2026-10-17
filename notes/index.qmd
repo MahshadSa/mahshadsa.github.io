@@ -2,6 +2,7 @@
 title: "Notes"
 subtitle: "A working notebook"
 description: "Papers, methods, books, and developing ideas from Mahshad Sarikhani's working notebook."
+date-modified: 2026-09-15
 schema-type: CollectionPage
 toc: false
 listing:

@@ -181,5 +181,34 @@ async function normalizeSitemap() {
   await Deno.writeTextFile(sitemapPath, normalizedSitemap);
 }
 
+// Quarto joins page and site titles with an en dash and offers no option to
+// change it. The site bans en and em dashes in visible text, so swap the
+// separator for " | " in the tab title and the Open Graph / Twitter titles.
+const EN_DASH = String.fromCharCode(0x2013);
+
+async function normalizeTitleSeparator(directory = normalizedOutputDirectory) {
+  for await (const entry of Deno.readDir(directory)) {
+    const path = `${directory}/${entry.name}`;
+    if (entry.isDirectory) {
+      if (entry.name !== "site_libs") await normalizeTitleSeparator(path);
+      continue;
+    }
+    if (!entry.name.endsWith(".html")) continue;
+
+    const html = await Deno.readTextFile(path);
+    const normalized = html
+      .replace(new RegExp(`(<title>[^<]*?) ${EN_DASH} `, "g"), "$1 | ")
+      .replace(
+        new RegExp(
+          `(<meta (?:property="og:title"|name="twitter:title") content="[^"]*?) ${EN_DASH} `,
+          "g",
+        ),
+        "$1 | ",
+      );
+    if (normalized !== html) await Deno.writeTextFile(path, normalized);
+  }
+}
+
 await finalizeHomepageHeading();
 await normalizeSitemap();
+await normalizeTitleSeparator();

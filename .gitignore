@@ -19,3 +19,8 @@ CLAUDE.md
 ibd-sequence/
 assets/templates/ibd-sequence-item.ejs
 IBD-SEQUENCE-PUBLISHING.md
+
+# Local design skill and its working files (not part of the site)
+.agents/
+.taste-skill/
+skills-lock.json

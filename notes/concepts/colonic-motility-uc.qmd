@@ -1,14 +1,15 @@
 ---
 title: "What Colonic Motility Actually Means (And Why That Depends on Who You Ask)"
-pagetitle: "Colonic Motility in Ulcerative Colitis"
-description: "The word motility means different things depending on who you ask. What I learned after two years of working on it in UC: what it is, what disturbs it, and why measuring it is harder than it sounds."
+pagetitle: "What Colonic Motility Means in UC"
+description: "Motility means different things depending on who you ask. What two years of work on it in UC taught me, and why it is harder to measure than it sounds."
+date-modified: 2026-10-17
 date: 2026-05-14
 categories: [UC, motility, MRI, IBD, GIQuant]
 maturity: sprout
 ---
 
 ::: {.note-page-meta}
-[🌿 sprout]{.maturity-tag .sprout} · Planted May 14, 2026 · Last tended May 14, 2026
+[🌿 sprout]{.maturity-tag .sprout} · Planted May 14, 2026, last tended May 14, 2026
 :::
 
 I have been working on colonic motility in ulcerative colitis for about two years now. It took me longer than I expected to understand what the word actually means, because the answer changes depending on who is talking.

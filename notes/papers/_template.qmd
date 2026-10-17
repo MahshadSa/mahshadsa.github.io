@@ -1,5 +1,5 @@
 ---
-title: "Author et al. (Year) — Short Title"
+title: "Author et al. (Year): Short Title"
 description: "One-sentence takeaway from the paper"
 date: 2026-01-01
 date-modified: last-modified
@@ -11,7 +11,7 @@ maturity: seedling
 [🌱 seedling]{.maturity-tag .seedling} · Planted Month DD, YYYY · Last tended Month DD, YYYY
 :::
 
-<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync — it drives the listing icon. -->
+<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync; it drives the listing icon. -->
 
 ## Citation
 
@@ -19,11 +19,11 @@ maturity: seedling
 
 ## What they did
 
-2–3 sentences. Study design, dataset, main method.
+2-3 sentences. Study design, dataset, main method.
 
 ## Key findings
 
-The results that matter, in your own words. Not a list of every table — just what changes how you think about your work.
+The results that matter, in your own words. Not a list of every table, just what changes how you think about your work.
 
 ## Methods worth noting
 

@@ -11,7 +11,7 @@ maturity: seedling
 [🌱 seedling]{.maturity-tag .seedling} · Planted Month DD, YYYY · Last tended Month DD, YYYY
 :::
 
-<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync — it drives the listing icon. -->
+<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync; it drives the listing icon. -->
 
 ## When to use this
 
@@ -27,7 +27,7 @@ $$
 
 ## Implementation
 
-Working code you've tested. Annotate decisions — future you will forget why you set that prior.
+Working code you've tested. Annotate decisions: future you will forget why you set that prior.
 
 ```python
 import pymc as pm
@@ -46,7 +46,7 @@ Things that broke when you tried them, common mistakes, or subtleties the textbo
 
 ## Resources
 
-- [Textbook or tutorial](https://example.com) — one-line annotation of why it's useful
+- [Textbook or tutorial](https://example.com): one-line annotation of why it's useful
 - [Package documentation](https://example.com)
 - [Blog post that clarified something](https://example.com)
 

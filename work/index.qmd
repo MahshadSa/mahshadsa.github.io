@@ -2,6 +2,7 @@
 title: "Work"
 subtitle: "Studies and research software"
 description: "Studies and research software for quantitative MRI, inflammatory bowel disease imaging, and clinical research workflows."
+date-modified: 2026-09-15
 schema-type: CollectionPage
 listing:
   - id: studies-list

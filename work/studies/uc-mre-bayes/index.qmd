@@ -3,7 +3,7 @@ title: "Segment-level prediction of endoscopic activity in ulcerative colitis us
 pagetitle: "Bayesian MRE Prediction of UC Activity"
 description: "Under review. A Bayesian multilevel model combining MR enterography and faecal calprotectin to estimate endoscopic activity in each colonic segment in UC."
 date: 2026-06-09
-date-modified: 2026-10-04
+date-modified: 2026-10-17
 categories: [research, IBD, Bayesian, MRE, UC]
 draft: false
 ---
@@ -30,7 +30,7 @@ The outcome variable in this study is the Mayo Endoscopic Subscore (MES), scored
 
 The multilevel structure follows from the study design. Each patient contributes five segments, and those segments share the patient's biology, treatment history, and systemic inflammatory burden. Treating 245 segments as 245 independent observations would underestimate uncertainty in the segment-level predictions and produce overconfident interval estimates. A multilevel ordinal model with a patient random intercept explicitly accounts for this within-patient correlation and captures unmeasured individual-level heterogeneity.
 
-Inference was conducted in a Bayesian framework. The practical consequence is that the model returns a posterior probability distribution over MES 0–3 rather than only a point classification. The primary threshold was MES ≥2. For triage, a predicted probability below 0.387 was assigned GREEN, a probability of 0.766 or above was assigned RED, and intermediate values were assigned YELLOW. These are risk strata for further clinical assessment, not automatic decisions about colonoscopy or treatment.
+Inference was conducted in a Bayesian framework. The practical consequence is that the model returns a posterior probability distribution over MES 0-3 rather than only a point classification. The primary threshold was MES ≥2. For triage, a predicted probability below 0.387 was assigned GREEN, a probability of 0.766 or above was assigned RED, and intermediate values were assigned YELLOW. These are risk strata for further clinical assessment, not automatic decisions about colonoscopy or treatment.
 
 Predictors entered the model at two levels. At the segment level: bowel wall thickness, length of affected segment as a proportion of total segment length, and presence of arterial enhancement on MRE. At the patient level, shared across all five of that patient's segments: fecal calprotectin.
 
