@@ -58,7 +58,7 @@ Accepted for publication in *Inflammatory Bowel Diseases*, DOI to follow. ESGAR 
 
 ::: {.worklist-row}
 ::: {.worklist-head}
-[Segment-level UC activity from MRE and faecal calprotectin: a Bayesian multilevel model](work/studies/uc-mre-bayes/index.qmd){.worklist-title}
+[Segment-level prediction of endoscopic activity in ulcerative colitis using magnetic resonance enterography and fecal calprotectin: a Bayesian multilevel study](work/studies/uc-mre-bayes/index.qmd){.worklist-title}
 [Sep 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}

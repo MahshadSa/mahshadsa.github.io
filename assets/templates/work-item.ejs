@@ -5,9 +5,9 @@
   <div class="body">
     <h3 class="no-anchor listing-title"><a href="<%- item.path %>" class="no-external"><%- item.title %></a></h3>
     <% if (item.categories && item.categories.length) { %>
-    <div class="listing-categories" aria-label="Filter by category">
+    <div class="listing-categories">
       <% for (const category of item.categories) { %>
-      <button type="button" class="listing-category" onclick="window.quartoListingCategory('<%= utils.b64encode(category) %>'); return false;"><%- category %></button>
+      <span class="tag"><%- category %></span>
       <% } %>
     </div>
     <% } %>

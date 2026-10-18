@@ -1,7 +1,7 @@
 ---
 title: "Segment-level prediction of endoscopic activity in ulcerative colitis using magnetic resonance enterography and fecal calprotectin: a Bayesian multilevel study"
 pagetitle: "Bayesian MRE Prediction of UC Activity"
-description: "Under review. A Bayesian multilevel model combining MR enterography and faecal calprotectin to estimate endoscopic activity in each colonic segment in UC."
+description: "Under review. A Bayesian multilevel model combining MR enterography and fecal calprotectin to estimate endoscopic activity in each colonic segment in UC."
 date: 2026-06-09
 date-modified: 2026-10-17
 categories: [research, IBD, Bayesian, MRE, UC]

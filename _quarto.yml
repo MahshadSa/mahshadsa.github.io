@@ -2,6 +2,10 @@ project:
   type: website
   output-dir: _site
   post-render: scripts/site-post-render.ts
+  # The web manifest is not scanned for dependencies; copy its icons explicitly.
+  resources:
+    - assets/android-chrome-192x192.png
+    - assets/android-chrome-512x512.png
   render:
     - "*.qmd"
     - "**/*.qmd"
@@ -60,7 +64,7 @@ website:
       - icon: mortarboard-fill
         href: https://scholar.google.com/citations?user=iKhNW9AAAAAJ
       - icon: envelope-fill
-        href: "mailto:mah.sarikhani.md@gmail.com"
+        href: "mailto:mahshadsarikhani9696@gmail.com"
 
   page-footer:
     left: "© 2026 MS · Built with [Quarto](https://quarto.org)"
@@ -85,6 +89,7 @@ format:
       light: [cosmo, assets/css/custom.scss]
       dark: [cosmo, assets/css/custom-dark.scss]
     css: assets/css/garden.css
+    respect-user-color-scheme: true
     toc: false
     toc-depth: 3
     code-copy: true

@@ -839,6 +839,24 @@ body.quarto-dark .diagram-scroll {
   }
 }
 
+// ── Tag ──────────────────────────────────────────────
+// The one non-interactive tag style, taken from the Notes chip above.
+// Used on Work rows, Log entries and study-page categories.
+.tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--site-meta-size);
+  font-weight: 400;
+  letter-spacing: var(--site-meta-tracking);
+  line-height: 1.5;
+  color: $text-secondary;
+  text-transform: lowercase;
+  padding: 0.15em 0.55em;
+  background: none;
+  border: 1px solid $rule-color;
+  border-radius: $radius-small;
+}
+
 @media (max-width: 700px) {
   .garden-row { grid-template-columns: 1fr; gap: 0.5rem; }
   .garden-row-meta { flex-direction: row; gap: 0.8rem; align-items: center; }
