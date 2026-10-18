@@ -1,7 +1,5 @@
 <% for (const item of items) { 
-let icon = '🌱';
-if (item.maturity === 'evergreen') icon = '🌳';
-else if (item.maturity === 'sprout') icon = '🌿';
+const maturity = item.maturity === 'evergreen' || item.maturity === 'sprout' ? item.maturity : 'seedling';
 
 let dateLabel = '';
 if (item.date) {
@@ -14,7 +12,7 @@ if (item.date) {
 ```{=html}
 <article class="garden-row">
 <div class="garden-row-meta">
-<span class="garden-icon"><%= icon %></span>
+<span class="maturity-tag"><%= maturity %></span>
 <% if (dateLabel) { %><time class="garden-date"><%= dateLabel %></time><% } %>
 </div>
 <div class="garden-row-body">

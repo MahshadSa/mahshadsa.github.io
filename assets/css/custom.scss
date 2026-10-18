@@ -46,6 +46,9 @@ $link-hover-color: $navy !default;
 
 $font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif !default;
 
+// Cosmo imports Source Sans Pro, which no rule uses.
+$web-font-path: false;
+
 /*-- scss:rules --*/
 
 // ── Google Fonts ─────────────────────────────────────
@@ -106,7 +109,7 @@ body {
 .navbar-nav .nav-link {
   transition: color 0.3s ease;
   padding: 0.4rem 0.9rem !important;
-  &:hover { color: $mint !important; }
+  &:hover { color: $navy !important; }
 }
 
 .navbar .bi {
@@ -358,7 +361,7 @@ hr {
   align-items: center;
   gap: 0.4em;
 
-  // One treatment for all stages: the glyph and word carry the stage.
+  // One treatment for all stages: the word carries the stage.
   background: rgba($mint, 0.06);
   color: $text-accent;
   border: 1px solid rgba($mint, 0.2);
@@ -581,24 +584,37 @@ body.quarto-dark .diagram-scroll {
   a {
     color: $text-secondary;
     text-decoration: none;
-    &:hover  { color: $mint; }
+    &:hover  { color: $navy; }
     &.active { color: $dark; font-weight: 600; }
   }
 }
 
 // ── Footer ───────────────────────────────────────────
+// Rule and text sit on the 720px body column; phones keep a 16px gutter.
 .nav-footer {
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--site-meta-size);
   color: $text-secondary;
   border-top: 1px solid rgba($gray, 0.4);
-  margin-top: 5rem;
+  width: min(720px, calc(100% - 32px));
+  margin: 5rem auto 0;
   padding: 1.5rem 0;
+  text-align: left;
   letter-spacing: 0.02em;
   a {
     color: $text-accent;
     &:hover { color: $navy; }
   }
+}
+
+// Quarto pads the footer 1em and centres its columns; the column edge
+// above replaces both.
+footer.footer div.nav-footer {
+  padding-left: 0;
+  padding-right: 0;
+
+  .nav-footer-left,
+  .nav-footer-left p { text-align: left; }
 }
 
 // ── Quarto listing ───────────────────────────────────
@@ -740,6 +756,22 @@ body.quarto-dark .diagram-scroll {
     font-weight: 600;
     margin: 0 0.2em;
   }
+
+  // One paragraph per stage; the hanging indent keeps wrapped text clear
+  // of the tag on narrow screens.
+  p {
+    margin: 0 0 0.3rem;
+    padding-left: 7.1rem;
+    text-indent: -7.1rem;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  .maturity-tag {
+    min-width: 6.5rem;
+    justify-content: center;
+    margin-right: 0.6rem;
+    text-indent: 0;
+  }
 }
 
 .garden-row {
@@ -765,7 +797,7 @@ body.quarto-dark .diagram-scroll {
   flex-direction: column;
   gap: 0.3rem;
 
-  .garden-icon { font-size: 1.05rem; line-height: 1; }
+  .maturity-tag { align-self: flex-start; }
   > p {
     display: contents;
     margin: 0;
@@ -799,7 +831,7 @@ body.quarto-dark .diagram-scroll {
     color: $dark;
     text-decoration: none;
     display: inline;
-    &:hover { color: $mint; }
+    &:hover { color: $navy; }
   }
 
   .garden-desc {
@@ -916,6 +948,20 @@ body.quarto-dark .diagram-scroll {
 }
 
 .quarto-color-scheme-toggle:hover::before { background-color: $mint; }
+
+// Touch targets: 44x44px minimum once the navbar collapses.
+@media (max-width: 991.98px) {
+  .navbar-toggler,
+  .quarto-color-scheme-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .navbar-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 body.quarto-dark .quarto-color-scheme-toggle::before {
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/></svg>") no-repeat center / contain;
@@ -1092,7 +1138,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     color: $text-secondary;
     text-decoration: none;
     font-size: var(--site-meta-size);
-    &:hover { color: $mint; }
+    &:hover { color: $navy; }
   }
 }
 
@@ -1121,7 +1167,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     line-height: 1.4;
     color: $dark;
     text-decoration: none;
-    &:hover { color: $mint; }
+    &:hover { color: $navy; }
   }
 
   .worklist-date {
@@ -1149,18 +1195,16 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     margin-top: 0.5rem;
   }
 
-  // Recent-notes rows (hero-note.ejs): maturity glyph before the title.
+  // Recent-notes rows (hero-note.ejs): maturity word after the title.
   .note-title-line {
-    display: grid;
-    grid-template-columns: 1.4rem minmax(0, 1fr);
-    align-items: baseline;
-    gap: 0.35rem;
     min-width: 0;
-  }
 
-  .note-glyph {
-    font-size: 0.9rem;
-    line-height: 1;
+    .maturity-tag {
+      margin: 0 0 0 0.4rem;
+      padding: 0.05em 0.5em;
+      vertical-align: 0.1em;
+      font-weight: 400;
+    }
   }
 }
 

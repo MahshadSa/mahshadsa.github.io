@@ -44,20 +44,16 @@ website:
     foreground: dark
     title: "MS"
     left:
-      - text: "Notes"
-        href: notes/index.qmd
       - text: "Work"
-        menu:
-          - text: "Studies"
-            href: work/index.qmd#studies
-          - text: "Tools"
-            href: work/index.qmd#tools
-      - text: "Log"
-        href: log.qmd
+        href: work/index.qmd
       - text: "About"
         href: about/index.qmd
       - text: "CV"
         href: cv/index.qmd
+      - text: "Notes"
+        href: notes/index.qmd
+      - text: "Log"
+        href: log.qmd
     right:
       - icon: github
         href: https://github.com/MahshadSa

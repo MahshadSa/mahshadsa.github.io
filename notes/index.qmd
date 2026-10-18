@@ -21,9 +21,11 @@ Papers I've read, methods I'm learning, books that shaped my thinking, ideas tha
 :::
 
 ::: {.garden-legend}
-[🌱]{} **Seedling** rough, first pass, might just be a question\
-[🌿]{} **Sprout** revisited, starting to take shape\
-[🌳]{} **Evergreen** fairly confident
+[seedling]{.maturity-tag} rough, first pass, might just be a question
+
+[sprout]{.maturity-tag} revisited, starting to take shape
+
+[evergreen]{.maturity-tag} fairly confident
 :::
 
 ::: {#notes-list}

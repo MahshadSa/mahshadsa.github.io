@@ -1,8 +1,5 @@
 <% for (const item of items) {
   let maturity = item.maturity === 'evergreen' || item.maturity === 'sprout' ? item.maturity : 'seedling';
-  let maturityIcon = '🌱';
-  if (maturity === 'evergreen') maturityIcon = '🌳';
-  else if (maturity === 'sprout') maturityIcon = '🌿';
   let dateLabel = '';
   if (item.date) {
     const d = item.date instanceof Date ? item.date : new Date(item.date);
@@ -14,5 +11,5 @@
     }
   }
 %>
-<article class="worklist-row note-item"><div class="worklist-head"><span class="note-title-line"><span class="note-glyph" role="img" aria-label="<%= maturity %> note"><%= maturityIcon %></span><a class="worklist-title" href="<%- item.path %>"><%- item.title %></a></span><% if (dateLabel) { %><span class="worklist-date"><%= dateLabel %></span><% } %></div></article>
+<article class="worklist-row note-item"><div class="worklist-head"><span class="note-title-line"><a class="worklist-title" href="<%- item.path %>"><%- item.title %></a> <span class="maturity-tag"><%= maturity %></span></span><% if (dateLabel) { %><span class="worklist-date"><%= dateLabel %></span><% } %></div></article>
 <% } %>

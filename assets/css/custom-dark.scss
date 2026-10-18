@@ -33,6 +33,12 @@ $body-color:       $text-primary;
 $link-color:       $text-accent;
 $link-hover-color: #a9c9e5;
 
+$font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+
+// Cosmo imports Source Sans Pro, which no rule uses. The dark layer's
+// defaults do not include custom.scss, so it is switched off here too.
+$web-font-path: false;
+
 /*-- scss:rules --*/
 
 @import "custom";
