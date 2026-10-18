@@ -10,14 +10,16 @@ listing:
     type: custom
     template: ../assets/templates/work-item.ejs
     sort: "date desc"
-    fields: [title, description, categories, date]
+    fields: [title, description, categories, date, status]
+    date-format: "MMM YYYY"
     categories: false
   - id: tools-list
     contents: "tools/*/index.qmd"
     type: custom
     template: ../assets/templates/work-item.ejs
     sort: "date desc"
-    fields: [title, description, categories, date]
+    fields: [title, description, categories, date, status]
+    date-format: "MMM YYYY"
     categories: false
 toc: false
 ---

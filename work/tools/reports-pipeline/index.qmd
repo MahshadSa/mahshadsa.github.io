@@ -2,6 +2,7 @@
 title: "Radiology Reports Pipeline"
 description: "Paused. A pipeline that parses, de-identifies, and structures ~9,800 free-text abdominal radiology reports, with synthetic-only tests."
 date: 2026-06-10
+status: "paused"
 date-modified: 2026-10-17
 categories: [tooling, NLP, IBD, de-identification, infrastructure]
 draft: false

@@ -2,6 +2,7 @@
 title: "Log"
 subtitle: "A working ledger of what I am building, writing, and wrestling with."
 description: "Working ledger of Mahshad Sarikhani's active research, software, and clinical validation milestones, updated as work ships or stalls."
+body-classes: hide-title-meta
 date-modified: 2026-10-04
 schema-type: CollectionPage
 toc: false
@@ -11,162 +12,162 @@ toc: false
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[September 2026]{.timeline-date} [UC activity manuscript, under review]{.timeline-title}
+[Sep 2026]{.timeline-date} [UC activity manuscript, under review]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Submitted the Bayesian multilevel manuscript on 27 September. The study combines MR enterography features with faecal calprotectin to estimate endoscopic activity in individual colonic segments, in a prospective cohort of 49 adults with UC and 245 segments. It is now under review. [Study page](work/studies/uc-mre-bayes/index.qmd).
 :::
-[UC MRE]{.timeline-tags}
+[UC MRE]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[September 2026]{.timeline-date} [Motility manuscript, accepted]{.timeline-title}
+[Sep 2026]{.timeline-date} [Motility manuscript, accepted]{.timeline-title}
 :::
 ::: {.timeline-desc}
 On 24 September the colonic motility manuscript was accepted for publication in *Inflammatory Bowel Diseases*. DOI to follow. [Study page](work/studies/uc-motility/index.qmd).
 :::
-[UC MRE]{.timeline-tags}
+[UC MRE]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[September 2026]{.timeline-date} [Clinical research ethics course, started]{.timeline-title}
+[Sep 2026]{.timeline-date} [Clinical research ethics course, started]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Started the NIH course *Ethical and Regulatory Aspects of Clinical Research* on 23 September. It runs for seven weeks.
 :::
-[research ethics]{.timeline-tags}
+[research ethics]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[August 2026]{.timeline-date} [Radiopaedia, daily]{.timeline-title}
+[Aug 2026]{.timeline-date} [Radiopaedia, daily]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Since August I have been taking Radiopaedia courses. I watch and learn from them every day.
 :::
-[radiology]{.timeline-tags}
+[radiology]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[August 2026]{.timeline-date} [Motility manuscript, major revision]{.timeline-title}
+[Aug 2026]{.timeline-date} [Motility manuscript, major revision]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Completed a major revision of the [motility manuscript](work/studies/uc-motility/index.qmd). The revision narrowed "motility" to what GIQuant actually measures: regional bowel-wall deformation, not transit or propulsion. <!-- MS: reflect -->
 :::
-[UC MRE]{.timeline-tags}
+[UC MRE]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[August 2026]{.timeline-date} [UC activity manuscript, circulated]{.timeline-title}
+[Aug 2026]{.timeline-date} [UC activity manuscript, circulated]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Completed the Bayesian multilevel manuscript and sent it to co-authors for a final review before submission.
 :::
-[UC MRE]{.timeline-tags}
+[UC MRE]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[July 2026]{.timeline-date} [Loop engineering?]{.timeline-title}
+[Jul 2026]{.timeline-date} [Loop engineering?]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Looked into where a verification loop actually belongs in the lineage pipeline. Landed on Stage 6 selection as the right place for it, and just as clearly on writing as the wrong one.
 :::
-[agentic systems]{.timeline-tags}
+[agentic systems]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[July 2026]{.timeline-date} [Content format taxonomy, drafted]{.timeline-title}
+[Jul 2026]{.timeline-date} [Content format taxonomy, drafted]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Worked out a full backlog of content formats the tooling could support: lineage pieces, pipeline meta-posts, living reference pages, methods close reads, a reproducibility ledger. Filed it as backlog, not a prerequisite. The first piece still comes first.
 :::
-[content strategy]{.timeline-tags}
+[content strategy]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [Lineage module, stages 3 through 6 built]{.timeline-title}
+[Jun 2026]{.timeline-date} [Lineage module, stages 3 through 6 built]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Reframed the pruner after similarity-based cuts failed to separate on-thread from off-thread papers. The distinction turned out to be structural and temporal, not topical. Stage 6 shipped as a two-step selection-plus-narration system with a strict anti-hallucination contract.
 :::
-[lineage]{.timeline-tags}
+[lineage]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [Corpus persistence, diagnosed]{.timeline-title}
+[Jun 2026]{.timeline-date} [Corpus persistence, diagnosed]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Untracking papers.db to stop binary merge conflicts quietly broke corpus accumulation along with it. Fixed the conflict, lost the persistence, now rebuilding the data branch and reseeding from Zotero.
 :::
-[ibd-digest]{.timeline-tags}
+[ibd-digest]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [Risk Stratifier app, v0.5.0]{.timeline-title}
+[Jun 2026]{.timeline-date} [Risk Stratifier app, v0.5.0]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Moved the app to a single artifact-driven design, so it now loads directly from the notebook's exported JSON. Pushed a UI cleanup alongside it and cut a new Zenodo release.
 :::
-[Streamlit]{.timeline-tags}
+[Streamlit]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [Methods and Results, drafted]{.timeline-title}
+[Jun 2026]{.timeline-date} [Methods and Results, drafted]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Worked through the manuscript's Methods and Results paragraph by paragraph.
 :::
-[manuscript]{.timeline-tags}
+[manuscript]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [ESGAR 2026, presented]{.timeline-title}
+[Jun 2026]{.timeline-date} [ESGAR 2026, presented]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Dr. Bhatnagar presented the work in Montpellier on June 11th and it landed well.
 :::
-[ESGAR 2026]{.timeline-tags}
+[ESGAR 2026]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [`ibd-reports`, section-splitter bug fixed]{.timeline-title}
+[Jun 2026]{.timeline-date} [`ibd-reports`, section-splitter bug fixed]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Found a quiet parsing bug where soft line breaks were hiding section headers on later lines. Fixed it and re-ran the affected phases; recovered dozens of impressions that had gone missing.
 :::
-[radiology reports]{.timeline-tags}
+[radiology reports]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [`ibd-reports`, duplicate review closed out]{.timeline-title}
+[Jun 2026]{.timeline-date} [`ibd-reports`, duplicate review closed out]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Manually reviewed thousands of fuzzy-matched filename clusters to confirm genuine multi-report patients versus false merges. Tedious, but it locks the input.
 :::
-[radiology reports]{.timeline-tags}
+[radiology reports]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[June 2026]{.timeline-date} [`ibd-reports`, de-identification validated]{.timeline-title}
+[Jun 2026]{.timeline-date} [`ibd-reports`, de-identification validated]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Passed the second manual validation layer on the de-identification scrub with a clean stratified read. Locked the design for the final anonymous-ID rekey.
 :::
-[de-identification]{.timeline-tags}
+[de-identification]{.tag}
 :::
 
 ::: {.timeline-item}
@@ -176,7 +177,7 @@ Passed the second manual validation layer on the de-identification scrub with a 
 ::: {.timeline-desc}
 Started structuring the manuscript. The first pass is always the longest. 
 :::
-[multilevel modeling]{.timeline-tags}
+[multilevel modeling]{.tag}
 :::
 
 ::: {.timeline-item}
@@ -186,7 +187,7 @@ Started structuring the manuscript. The first pass is always the longest.
 ::: {.timeline-desc}
 Automated literature workflow on GitHub Actions, semantic embeddings to surface newly published IBD imaging papers each day. Letting it run for a few days before deciding the next steps.
 :::
-[GitHub Actions]{.timeline-tags}
+[GitHub Actions]{.tag}
 :::
 
 ::: {.timeline-item}
@@ -196,7 +197,7 @@ Automated literature workflow on GitHub Actions, semantic embeddings to surface 
 ::: {.timeline-desc}
 Closed out slides for two first-author orals at ESGAR 2026 in Montpellier and sent to co-authors.
 :::
-[ESGAR 2026]{.timeline-tags}
+[ESGAR 2026]{.tag}
 :::
 
 ::: {.timeline-item}
@@ -206,7 +207,7 @@ Closed out slides for two first-author orals at ESGAR 2026 in Montpellier and se
 ::: {.timeline-desc}
 The manuscript reached a submission-ready draft. We decided to circulate it for one final read by all authors after ESGAR 2026. The delay bothers me, but the paper will be better for it.
 :::
-[UC MRE]{.timeline-tags}
+[UC MRE]{.tag}
 :::
 
 ::: {.timeline-item}
@@ -216,27 +217,27 @@ The manuscript reached a submission-ready draft. We decided to circulate it for 
 ::: {.timeline-desc}
 Spent a few days handling legacy formatting in historical reports that breaks naive parsing. Most of the work in agentic systems lives here, not in the model calls.
 :::
-[agentic systems]{.timeline-tags}
+[agentic systems]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[April 2026]{.timeline-date} [Motility manuscript, final pass]{.timeline-title}
+[Apr 2026]{.timeline-date} [Motility manuscript, final pass]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Last structural revisions and cross-site checks before submission. The hardest part has been trimming a well-written paragraph.
 :::
-[UC MRE]{.timeline-tags}
+[UC MRE]{.tag}
 :::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
-[March 2026]{.timeline-date} [Personal site, live]{.timeline-title}
+[Mar 2026]{.timeline-date} [Personal site, live]{.timeline-title}
 :::
 ::: {.timeline-desc}
 Quarto build, custom theme, treated as both a professional presence and a digital garden. The harder decision was structural, not technical: deciding what counts as ready to publish.
 :::
-[Quarto]{.timeline-tags}
+[Quarto]{.tag}
 :::
 
 :::

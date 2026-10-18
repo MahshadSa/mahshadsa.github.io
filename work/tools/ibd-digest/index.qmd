@@ -2,6 +2,7 @@
 title: "IBD Imaging Digest"
 description: "A lightweight daily literature-surveillance tool for IBD imaging: PubMed and 17 journals, ranked with SPECTER2 against a personal corpus."
 date: 2026-05-20
+status: "live"
 date-modified: 2026-10-17
 categories: [tooling, NLP, literature, obsidian, reproducibility, SPECTER2, OpenAlex]
 ---

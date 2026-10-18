@@ -1,6 +1,7 @@
 ---
 title: "CV"
 description: "Mahshad Sarikhani's research appointments, education, publications, presentations, software, and technical skills."
+body-classes: hide-title-meta
 date-modified: 2026-10-17
 toc: false
 ---

@@ -1,20 +1,11 @@
 ```{=html}
 <div class="list">
 <% for (const item of items) { %>
-<article class="quarto-post image-left" <%= metadataAttrs(item) %>>
-  <div class="body">
-    <h3 class="no-anchor listing-title"><a href="<%- item.path %>" class="no-external"><%- item.title %></a></h3>
-    <% if (item.categories && item.categories.length) { %>
-    <div class="listing-categories">
-      <% for (const category of item.categories) { %>
-      <span class="tag"><%- category %></span>
-      <% } %>
-    </div>
-    <% } %>
-    <% if (item.description) { %><div class="listing-description"><a href="<%- item.path %>" class="no-external"><%- item.description %></a></div><% } %>
-  </div>
-  <% if (item.date) { %>
-  <div class="metadata"><a href="<%- item.path %>" class="no-external"><time class="listing-date"><%= item.date %></time></a></div>
+<article class="worklist-row" <%= metadataAttrs(item) %>>
+  <div class="worklist-head"><a class="worklist-title no-external" href="<%- item.path %>"><%- item.title %></a><% if (item.status || item.date) { %><span class="worklist-date"><%= item.status || item.date %></span><% } %></div>
+  <% if (item.description) { %><div class="worklist-meta"><%- item.description %></div><% } %>
+  <% if (item.categories && item.categories.length) { %>
+  <div class="worklist-tags"><% for (const category of item.categories) { %><span class="tag"><%- category %></span><% } %></div>
   <% } %>
 </article>
 <% } %>

@@ -3,6 +3,7 @@ title: "Colonic motility on MR enterography in ulcerative colitis"
 pagetitle: "Colonic Motility in Ulcerative Colitis"
 description: "Accepted in Inflammatory Bowel Diseases: whether colonic motility on MR enterography tracks endoscopic activity and chronic structural damage in UC."
 date: 2026-06-01
+status: "accepted"
 date-modified: 2026-10-04
 categories: [research, IBD, MRE, UC, motility]
 ---

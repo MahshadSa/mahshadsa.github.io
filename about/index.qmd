@@ -2,6 +2,7 @@
 title: "About"
 subtitle: "Physician-researcher in quantitative MRI and inflammatory bowel disease."
 description: "About Mahshad Sarikhani's clinical research path in quantitative MRI, inflammatory bowel disease imaging, and computational methods."
+body-classes: hide-title-meta
 date-modified: 2026-10-17
 schema-type: AboutPage
 toc: false
@@ -18,7 +19,7 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline}
 
 ::: {.timeline-item}
-[Jul 2023 - Present]{.timeline-date}
+[Jul 2023 - present]{.timeline-date}
 [Research Associate, Lead, Ulcerative Colitis Imaging Programme]{.timeline-title}
 [Department of Radiology, Shariati Hospital, Tehran University of Medical Sciences. Supervisor: Prof. Amir Reza Radmard.]{.timeline-desc}
 

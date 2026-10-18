@@ -7,7 +7,7 @@ let dateLabel = '';
 if (item.date) {
   const d = item.date instanceof Date ? item.date : new Date(item.date);
   if (!isNaN(d)) {
-    dateLabel = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toLowerCase();
+    dateLabel = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   }
 }
 %>
@@ -22,7 +22,7 @@ if (item.date) {
 <% if (item.description) { %><p class="garden-desc"><%- item.description %></p><% } %>
 <% if (item.categories && item.categories.length) { %>
 <div class="garden-cats">
-<% for (const c of item.categories) { %><span class="garden-cat"><%= c %></span><% } %>
+<% for (const c of item.categories) { %><span class="tag"><%= c %></span><% } %>
 </div>
 <% } %>
 </div>

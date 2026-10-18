@@ -121,11 +121,23 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
 }
 
+// Display face: Fraunces carries the hero name, page H1s and section H2s.
+// Line-height of at least 1.1 plus a little bottom padding keeps italic
+// descenders (the "p" in "appointments") from clipping.
 h1 {
-  font-weight: 600;
+  font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
   font-size: 2.4rem;
   letter-spacing: -0.02em;
+  line-height: 1.1;
+  padding-bottom: 0.08em;
   margin-bottom: 0.5em;
+  font-variation-settings: "opsz" 144;
+
+  i, em {
+    font-style: italic;
+    color: $text-accent;
+  }
 }
 
 h2 {
@@ -138,7 +150,8 @@ h2 {
   display: block;
   padding-bottom: 0;
   border-bottom: none;
-  line-height: 1.1;
+  line-height: 1.15;
+  padding-bottom: 0.08em;
   font-variation-settings: "opsz" 48, "SOFT" 30;
 
   // Emphasis is the italic of the same family, never a second face.
@@ -224,7 +237,8 @@ hr {
     font-size: clamp(2.6rem, 4.6vw, 3.4rem);
     font-weight: 300;
     letter-spacing: -0.025em;
-    line-height: 1.02;
+    line-height: 1.1;
+    padding-bottom: 0.08em;
     // Match the paragraph spacing used before the name became a semantic H1.
     margin: 0 0 1rem;
     color: $dark;
@@ -386,7 +400,6 @@ hr {
       font-weight: 500;
       color: $text-secondary;
       letter-spacing: var(--site-meta-tracking);
-      text-transform: uppercase;
     }
 
     .timeline-title {
@@ -405,20 +418,16 @@ hr {
   }
 }
 
+// About: comma-separated keyword lines, plain small mono, no box.
+// Single tags (Log) use .tag instead.
 .timeline-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  display: block;
   margin-top: 0.6rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--site-meta-size);
   letter-spacing: var(--site-meta-tracking);
-  color: $text-technical;
-  background-color: rgba($gray, 0.08);
-  border: 1px solid $rule-color;
-  border-radius: $radius-small;
-  padding: 0.25rem 0.6rem;
-  width: fit-content;
+  line-height: 1.6;
+  color: $text-secondary;
 }
 
 .timeline-children {
@@ -600,15 +609,6 @@ body.quarto-dark .diagram-scroll {
     color: $dark;
   }
   .listing-description { font-size: 0.92rem; color: $darkgray; }
-  .listing-category {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: var(--site-meta-size);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background: rgba($gray, 0.15);
-    color: $text-secondary;
-    border-radius: $radius-small;
-  }
   .listing-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: var(--site-meta-size);
@@ -826,23 +826,14 @@ body.quarto-dark .diagram-scroll {
       margin: 0;
     }
   }
-
-  .garden-cat {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: var(--site-meta-size);
-    letter-spacing: var(--site-meta-tracking);
-    color: $text-secondary;
-    text-transform: lowercase;
-    padding: 0.15em 0.55em;
-    border: 1px solid rgba($gray, 0.2);
-    border-radius: $radius-small;
-  }
 }
 
 // ── Tag ──────────────────────────────────────────────
-// The one non-interactive tag style, taken from the Notes chip above.
-// Used on Work rows, Log entries and study-page categories.
-.tag {
+// The one non-interactive tag style: Notes, Work rows, Log entries and
+// study-page categories. The second selector outranks Quarto's own
+// category chip (4px radius, uppercase, faded).
+.tag,
+.quarto-title .quarto-categories .quarto-category {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--site-meta-size);
@@ -855,6 +846,14 @@ body.quarto-dark .diagram-scroll {
   background: none;
   border: 1px solid $rule-color;
   border-radius: $radius-small;
+  opacity: 1;
+}
+
+.quarto-title .quarto-categories {
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+
+  .quarto-category { margin: 0; }
 }
 
 @media (max-width: 700px) {
@@ -965,11 +964,6 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   .timeline-desc {
     margin-bottom: 0.6rem;
   }
-
-  // One small tag chip, sitting just under the description.
-  .timeline-tags {
-    margin-top: 0;
-  }
 }
 
 // Narrow screens: stack date above title instead of crowding.
@@ -1023,17 +1017,38 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   display: block;
 }
 
+// Below 900px: small portrait beside the name and tagline, bio full width
+// underneath, so the first work row lands on the first phone screen.
+// .hero-left dissolves so its children join the grid; text order is kept.
 @media (max-width: 900px) {
   .hero-section--split {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-areas:
+      "photo name"
+      "photo tagline"
+      "bio   bio";
+    grid-template-rows: auto 1fr auto;
+    column-gap: 1rem;
+    row-gap: 0;
     align-items: start;
+    margin: 1rem 0 2rem;
+
+    .hero-left { display: contents; }
+    .hero-name { grid-area: name; margin: 0 0 0.35rem; }
+    .hero-left > p { grid-area: tagline; margin: 0; }
+    .hero-tagline { margin-bottom: 0; }
+    .hero-bio { grid-area: bio; margin-top: 1.25rem; }
+    .hero-bio p:last-child { margin-bottom: 0; }
   }
   .hero-portrait {
+    grid-area: photo;
     justify-self: start;
-    margin: 0.3rem 0 1rem 0.3rem;
+    margin: 0;
+
+    &::before { inset: 5px -5px -5px 5px; }
+    > p { margin: 0; }
   }
-  .hero-photo { width: 200px; height: 250px; }
+  .hero-photo { width: 72px; height: 90px; }
 }
 
 // ── Worklist: shared title-left / date-right rows ─────
@@ -1126,6 +1141,14 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     line-height: 1.5;
   }
 
+  // Work listing rows (work-item.ejs): one line of tags under the meta.
+  .worklist-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+
   // Recent-notes rows (hero-note.ejs): maturity glyph before the title.
   .note-title-line {
     display: grid;
@@ -1142,11 +1165,6 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 }
 
 @media (max-width: 540px) {
-  .worklist-label {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-  }
-
   .worklist-row .worklist-head {
     grid-template-columns: 1fr;
     gap: 0.2rem;
@@ -1169,24 +1187,13 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 
 .note-aside { font-style: italic; }
 
-.listing-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-.quarto-listing .listing-category {
-  appearance: none;
-  padding: 0.2rem 0.45rem;
-  border: 1px solid $rule-color;
-  background: rgba($surface, 0.5);
-  cursor: pointer;
-  line-height: 1.35;
-}
-
-.quarto-listing button.listing-category:focus-visible {
-  outline: 3px solid $text-technical;
-  outline-offset: 2px;
+// Index, study and tool pages: the page body already says what the title
+// block's description and dates would repeat. Both stay in front matter
+// for structured data; only the visual copy is hidden.
+// The ID selector outranks Quarto's own `display: grid` on the meta.
+.hide-title-meta #title-block-header.quarto-title-block {
+  .description,
+  .quarto-title-meta { display: none; }
 }
 
 @media (max-width: 768px) {
