@@ -131,11 +131,13 @@ h1 {
   font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
   font-weight: 300;
   font-size: 2.4rem;
-  letter-spacing: -0.02em;
+  // Neutral tracking and a text-range optical size: Fraunces' 144 display
+  // cut is drawn tight, which crowds multi-word titles at H1 size.
+  letter-spacing: 0;
   line-height: 1.1;
   padding-bottom: 0.08em;
   margin-bottom: 0.5em;
-  font-variation-settings: "opsz" 144;
+  font-variation-settings: "opsz" 48;
 
   i, em {
     font-style: italic;
