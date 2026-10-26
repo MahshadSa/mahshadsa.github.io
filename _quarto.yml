@@ -92,12 +92,12 @@ format:
     code-overflow: wrap
     link-external-newwindow: true
     smooth-scroll: true
-    fontsize: "1.05rem"
+    fontsize: "1rem"
     mainfont: "'Source Serif 4', Georgia, serif"
     monofont: "'JetBrains Mono', monospace"
     grid:
       sidebar-width: 0px
-      body-width: 720px
+      body-width: 620px
       margin-width: 0px
 
 execute:

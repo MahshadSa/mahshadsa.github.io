@@ -1,48 +1,94 @@
 /*-- scss:defaults --*/
 
-// ── Backgrounds ──────────────────────────────────────
-$light:         #f8fafa !default;
-$lightgray:     #edf0f0 !default;
-$gray:          #94a8b0 !default;
-$darkgray:      #253038 !default;
-$dark:          #0e1a20 !default;
+// Design version 2, "Sage on film". Source of truth: design/tokens.json and
+// design/README.md. Light values here; custom-dark.scss sets the dark values
+// and imports this file for the rules.
 
-// ── Palette ──────────────────────────────────────────
-// Mint is the single accent. Navy is ink: headings, technical text,
-// link hover. Rose stays defined for the draft sections only and is not
-// used by any component in this file.
-$mint:          #4a9a88 !default;
-$navy:          #1a3a5c !default;
-$rose:          #9a5a6a !default;
+// ── Slate neutrals ───────────────────────────────────
+$paper:      #f5f6f7 !default;   // page ground
+$raised:     #fcfcfd !default;   // cards, code, callouts, figure plates
+$rule:       #dfe2e6 !default;   // every border and rule
+$ink:        #1f2733 !default;   // headings, titles
+$text:       #333a45 !default;   // body
+$secondary:  #5d6572 !default;   // labels, dates, captions
 
-// Shape rule: 2px for small elements (chips, pills, tags, code, callouts,
-// buttons), 8px for containers (cards, photo, scroll boxes, pre).
+// ── Sage row (same in both themes) ───────────────────
+$sage:       #779970 !default;   // marks only on light paper, never small text
+$sage-50:    #e2fadd !default;
+$sage-100:   #d0eacb !default;
+$sage-200:   #b8d4b2 !default;
+$sage-300:   #9dbb96 !default;
+$sage-400:   #7ea176 !default;
+$sage-500:   #65845f !default;
+$sage-600:   #4e6949 !default;
+$sage-700:   #394f34 !default;
+$sage-800:   #243620 !default;
+$sage-900:   #132110 !default;
+
+// ── Mauve accent (answers the reader) ────────────────
+$mauve:      #a280a9 !default;   // marks only on light paper
+$mauve-tint: #f0e3f2 !default;
+$mauve-deep: #5d4163 !default;
+
+// ── Semantic tokens ──────────────────────────────────
+// $name-color, not $name: Sass loops in Bootstrap use $name as a loop variable.
+$name-color:  $sage-800 !default;    // my name only
+$link:        $sage-600 !default;
+$link-hover:  $mauve-deep !default;
+$focus:       $sage-600 !default;
+$highlight:   $mauve-tint !default;  // the one highlight per page, selection
+$quote-mark:  $mauve !default;
+$disc:        $sage-600 !default;
+$disc-ink:    $paper !default;
+$code-ground: $sage-50 !default;     // inline code
+$navbar-bg:   rgba($paper, 0.94) !default;
+
+// ── Type ─────────────────────────────────────────────
+$font-display: 'EB Garamond', Georgia, serif !default;
+$font-serif:   'Source Serif 4', Georgia, serif !default;
+$font-mono:    'JetBrains Mono', monospace !default;
+
+// Scale in rem at a 16px root (fontsize: 1rem in _quarto.yml).
+$fs-hero-title:    6.5rem !default;     // 104px
+$fs-name:          4rem !default;       // 64px
+$fs-h1:            3rem !default;       // 48px, page titles (not in the tokens)
+$fs-thread:        2.125rem !default;   // 34px
+$fs-h2:            2.375rem !default;   // 38px
+$fs-h3:            1.4375rem !default;  // 23px
+$fs-list-title:    1.375rem !default;   // 22px
+$fs-essay-initial: 7rem !default;       // 112px
+$fs-body:          1.1875rem !default;  // 19px
+$fs-body-small:    1.0625rem !default;  // 17px
+$fs-caption:       0.9375rem !default;  // 15px
+$fs-tile-caption:  0.8125rem !default;  // 13px
+$fs-code:          0.875rem !default;   // 14px
+$fs-label-lg:      1.375rem !default;   // 22px
+$fs-label:         1.1875rem !default;  // 19px
+$fs-label-sm:      1.0625rem !default;  // 17px
+
+// ── Shape ────────────────────────────────────────────
 $radius-small:     2px !default;
 $radius-container: 8px !default;
 $border-radius:    $radius-small !default;
 $border-radius-sm: $radius-small !default;
 $border-radius-lg: $radius-container !default;
 
-// Semantic tokens. Text tokens are chosen to meet WCAG AA at normal
-// text sizes.
-$text-primary:   $darkgray !default;
-$text-strong:    $dark !default;
-$text-secondary: #52666e !default;
-$text-accent:    #397b6d !default;
-$text-technical: $navy !default;
-$rule-color:     rgba($gray, 0.35) !default;
-$surface:        #ffffff !default;
-$navbar-bg:      rgba(248, 250, 250, 0.94) !default;
-
-// ── Legacy aliases (keeps all existing $sage/$periwinkle references working) ─
-$sage:          $mint !default;
-$periwinkle:    $rose !default;
-
-// ── Quarto variable mapping ──────────────────────────
-$body-bg:          $light !default;
-$body-color:       $text-primary !default;
-$link-color:       $text-accent !default;
-$link-hover-color: $navy !default;
+// ── Bootstrap and Quarto mapping ─────────────────────
+$body-bg:          $paper !default;
+$body-color:       $text !default;
+$headings-color:   $ink !default;
+$link-color:       $link !default;
+$link-hover-color: $link-hover !default;
+$border-color:     $rule !default;
+$primary:          $link !default;
+$light:            $paper !default;   // navbar background: light
+$dark:             $ink !default;     // navbar foreground: dark
+$navbar-fg:        $ink !default;
+$navbar-hl:        $link-hover !default;
+$footer-bg:        $paper !default;
+$footer-fg:        $secondary !default;
+$code-color:       $text !default;
+$code-bg:          $code-ground !default;
 
 $font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif !default;
 
@@ -52,40 +98,116 @@ $web-font-path: false;
 /*-- scss:rules --*/
 
 // ── Google Fonts ─────────────────────────────────────
-// Only the faces and weights the rules below use.
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+// EB Garamond for display and small-caps labels, Source Serif 4 for reading,
+// JetBrains Mono for code only. To be self-hosted later.
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
-// ── Base ─────────────────────────────────────────────
-body {
-  font-family: 'Source Serif 4', Georgia, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.82;
-  font-size: 1.05rem;
-  counter-reset: section-counter;
-  background-color: $body-bg;
+// ── Small caps ───────────────────────────────────────
+// Every label, date, status word and nav item. Never uppercase, never mono.
+@mixin small-caps($size: $fs-label) {
+  font-family: $font-display;
+  font-size: $size;
+  font-weight: 400;
+  font-variant-caps: all-small-caps;
+  font-variant-numeric: oldstyle-nums;
+  letter-spacing: 0.06em;
+  text-transform: none;
 }
 
+// ── Tokens as custom properties ──────────────────────
+// Each theme file emits its own values, so both themes switch cleanly.
 :root {
-  --site-text-primary: #{$text-primary};
-  --site-text-strong: #{$text-strong};
-  --site-text-secondary: #{$text-secondary};
-  --site-text-accent: #{$text-accent};
-  --site-rule: #{$rule-color};
-  --site-background: #{$body-bg};
-  --site-surface: #{$surface};
+  --paper: #{$paper};
+  --raised: #{$raised};
+  --rule: #{$rule};
+  --ink: #{$ink};
+  --text: #{$text};
+  --secondary: #{$secondary};
+
+  --sage: #{$sage};
+  --sage-50: #{$sage-50};
+  --sage-100: #{$sage-100};
+  --sage-200: #{$sage-200};
+  --sage-300: #{$sage-300};
+  --sage-400: #{$sage-400};
+  --sage-500: #{$sage-500};
+  --sage-600: #{$sage-600};
+  --sage-700: #{$sage-700};
+  --sage-800: #{$sage-800};
+  --sage-900: #{$sage-900};
+
+  --mauve: #{$mauve};
+  --mauve-tint: #{$mauve-tint};
+  --mauve-deep: #{$mauve-deep};
+
+  --name: #{$name-color};
+  --link: #{$link};
+  --link-hover: #{$link-hover};
+  --focus: #{$focus};
+  --highlight: #{$highlight};
+  --quote-mark: #{$quote-mark};
+  --disc: #{$disc};
+  --disc-ink: #{$disc-ink};
+  --code-ground: #{$code-ground};
+
+  --font-display: #{$font-display};
+  --font-serif: #{$font-serif};
+  --font-mono: #{$font-mono};
+  --radius-small: #{$radius-small};
+  --radius-container: #{$radius-container};
+
+  // v1 names kept for garden.css.
+  --site-text-primary: var(--text);
+  --site-text-strong: var(--ink);
+  --site-text-secondary: var(--secondary);
+  --site-text-accent: var(--link);
+  --site-rule: var(--rule);
+  --site-background: var(--paper);
+  --site-surface: var(--raised);
   --site-meta-size: 0.78rem;
   --site-meta-tracking: 0.035em;
 }
 
-::selection {
-  background: rgba($mint, 0.18);
-  color: $dark;
+// ── Base ─────────────────────────────────────────────
+body {
+  font-family: $font-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $fs-body;
+  line-height: 1.65;
+  font-variant-numeric: oldstyle-nums;
+  counter-reset: section-counter;
+  color: $text;
+  background-color: $body-bg;
 }
+
+::selection {
+  background: $highlight;
+  color: $ink;
+}
+
+// ── Focus ────────────────────────────────────────────
+// Solid sage ring, never a hover colour, never a shadow.
+:focus-visible,
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.navbar-brand:focus-visible,
+.navbar-toggler:focus-visible,
+.form-control:focus-visible {
+  outline: 2px solid $focus;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.navbar-toggler:focus,
+.btn:focus,
+.form-control:focus { box-shadow: none; }
 
 // ── Navbar ───────────────────────────────────────────
 .navbar {
-  border-bottom: 1px solid $rule-color;
+  border-bottom: 1px solid $rule;
   background: $navbar-bg !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -99,7 +221,7 @@ body {
 
 .navbar .navbar-brand,
 .navbar .navbar-title {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: $font-serif;
   font-weight: 600;
   font-size: 1.3rem !important;
   letter-spacing: 0.05em;
@@ -109,61 +231,48 @@ body {
 .navbar-nav .nav-link {
   transition: color 0.3s ease;
   padding: 0.4rem 0.9rem !important;
-  &:hover { color: $navy !important; }
+  &:hover { color: $link-hover !important; }
 }
 
 .navbar .bi {
   transition: color 0.3s ease;
-  &:hover { color: $mint; }
+  &:hover { color: $link-hover; }
 }
 
 // ── Headings ─────────────────────────────────────────
+// Emphasis is the italic of the same family, in the same colour.
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Serif 4', Georgia, serif;
-  color: $dark;
+  font-family: $font-serif;
+  color: $ink;
   line-height: 1.25;
+
+  i, em {
+    font-style: italic;
+    color: inherit;
+  }
 }
 
-// Display face: Fraunces carries the hero name, page H1s and section H2s.
-// Line-height of at least 1.1 plus a little bottom padding keeps italic
-// descenders (the "p" in "appointments") from clipping.
 h1 {
-  font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
-  font-weight: 300;
-  font-size: 2.4rem;
-  // Neutral tracking and a text-range optical size: Fraunces' 144 display
-  // cut is drawn tight, which crowds multi-word titles at H1 size.
-  letter-spacing: 0;
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: clamp(2.25rem, 1.6rem + 2.6vw, #{$fs-h1});
+  letter-spacing: -0.01em;
   line-height: 1.1;
   padding-bottom: 0.08em;
   margin-bottom: 0.5em;
-  font-variation-settings: "opsz" 48;
-
-  i, em {
-    font-style: italic;
-    color: $text-accent;
-  }
 }
 
 h2 {
-  font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
+  font-family: $font-display;
   font-weight: 400;
-  font-size: 1.9rem;
-  letter-spacing: -0.015em;
-  margin-top: 3em;
-  margin-bottom: 0.8em;
-  display: block;
-  padding-bottom: 0;
-  border-bottom: none;
+  font-size: clamp(1.875rem, 1.5rem + 1.6vw, #{$fs-h2});
+  letter-spacing: 0;
   line-height: 1.15;
+  margin-top: 2.5em;
+  margin-bottom: 0.7em;
+  display: block;
+  border-bottom: none;
   padding-bottom: 0.08em;
-  font-variation-settings: "opsz" 48, "SOFT" 30;
-
-  // Emphasis is the italic of the same family, never a second face.
-  i, em {
-    font-style: italic;
-    color: $text-accent;
-  }
 }
 
 h2::after {
@@ -172,7 +281,7 @@ h2::after {
   width: 100%;
   height: 1px;
   margin-top: 0.45rem;
-  background: linear-gradient(to right, $rule-color, transparent);
+  background: linear-gradient(to right, $rule, transparent);
 }
 
 .timeline--log h2::after,
@@ -180,45 +289,52 @@ h2::after {
 .seq-page h2::after { content: none; }
 
 h3 {
+  font-family: $font-display;
   font-weight: 600;
-  font-size: 1.2rem;
-  color: $darkgray;
+  font-size: $fs-h3;
+  line-height: 1.3;
+  color: $ink;
 }
 
 h4 {
   font-weight: 500;
   font-size: 1.1rem;
   font-style: italic;
-  color: $darkgray;
+  color: $text;
 }
 
 // ── Links ────────────────────────────────────────────
 a {
-  color: $text-accent;
+  color: $link;
   overflow-wrap: anywhere;
   text-decoration: underline;
-  text-decoration-color: rgba($mint, 0.3);
+  text-decoration-color: $sage;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease,
+    text-decoration-thickness 0.2s ease;
   &:hover {
-    color: $navy;
-    text-decoration-color: $navy;
+    color: $link-hover;
+    text-decoration-color: $link-hover;
+    text-decoration-thickness: 2px;
   }
 }
 
 // ── Horizontal rules ─────────────────────────────────
 hr {
   border: none;
-  border-top: 1px solid rgba($gray, 0.5);
+  border-top: 1px solid $rule;
+  opacity: 1;
   margin: 2.5rem 0;
   &::after {
     content: '§';
     display: block;
     text-align: center;
-    font-family: 'Source Serif 4', Georgia, serif;
+    font-family: $font-serif;
     font-size: 1.1rem;
-    color: $text-secondary;
+    color: $secondary;
     margin-top: -0.75em;
     background: $body-bg;
     width: 2em;
@@ -238,22 +354,20 @@ hr {
   .hero-left { min-width: 0; }
 
   .hero-name {
-    font-family: 'Fraunces', 'Source Serif 4', Georgia, serif;
-    font-size: clamp(2.6rem, 4.6vw, 3.4rem);
-    font-weight: 300;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+    font-family: $font-display;
+    font-size: clamp(2.75rem, 1.5rem + 5vw, #{$fs-name});
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
     padding-bottom: 0.08em;
     // Match the paragraph spacing used before the name became a semantic H1.
     margin: 0 0 1rem;
-    color: $dark;
-    font-variation-settings: "SOFT" 50, "opsz" 144;
+    color: $name-color;
     text-wrap: balance;
 
     i, em {
       font-style: italic;
-      font-weight: 300;
-      color: $text-accent;
+      color: inherit;
     }
   }
 
@@ -261,25 +375,25 @@ hr {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.82rem;
     font-weight: 500;
-    color: $text-accent;
+    color: $link;
     letter-spacing: 0.08em;
     // Wraps to two lines inside the column; keep them reading as one unit.
-    // Block, so the parent paragraph's 1.82 strut does not set the line box.
+    // Block, so the parent paragraph's strut does not set the line box.
     display: block;
     line-height: 1.6;
     margin-bottom: 2.2rem;
   }
 
   .hero-bio {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.15rem;
+    font-family: $font-serif;
+    font-size: $fs-body;
     line-height: 1.65;
-    max-width: 58ch;
-    color: $darkgray;
+    max-width: 62ch;
+    color: $text;
     text-wrap: pretty;
 
     strong {
-      color: $dark;
+      color: $ink;
       font-weight: 600;
     }
 
@@ -290,26 +404,22 @@ hr {
 }
 
 // ── Project-card panel (note body wrapper) ───────────
-// Matches the dark-mode reading box so framing is
-// consistent across themes.
 .project-card {
   position: relative;
-  background: $surface;
-  border: 1px solid rgba($gray, 0.25);
+  background: $raised;
+  border: 1px solid $rule;
   border-radius: $radius-container;
   padding: 2rem 2.2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
-// First heading inside the card should not inherit the 3em
-// section spacing. Covers both bare h2 and Quarto's section wrapper.
+// First heading inside the card should not inherit the section spacing.
+// Covers both bare h2 and Quarto's section wrapper.
 .project-card > h2:first-child,
 .project-card > section:first-child > h2:first-child {
   margin-top: 0;
 }
 
 // ── Project status pill ──────────────────────────────
-// Small mono pill, same vocabulary as .maturity-tag. Only "live" carries
-// the accent; the other states stay in ink and neutral.
 .project-status {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -321,13 +431,13 @@ hr {
   border-radius: $radius-small;
   border: 1px solid transparent;
 
-  &.live    { color: $text-accent; background: rgba($mint, 0.08); border-color: rgba($mint, 0.3); }
-  &.active  { color: $text-technical; background: transparent; border-color: $rule-color; }
-  &.planned { color: $text-secondary; background: rgba($gray, 0.08); border-color: rgba($gray, 0.35); }
+  &.live    { color: $link; background: rgba($sage, 0.08); border-color: $rule; }
+  &.active  { color: $ink; background: transparent; border-color: $rule; }
+  &.planned { color: $secondary; background: $raised; border-color: $rule; }
 }
 
 // The pill sits on the card's first line. Tighten its paragraph and keep
-// the following heading hugging the top instead of inheriting h2's 3em.
+// the following heading hugging the top.
 .project-card > p:first-child { margin: 0 0 1.5rem; }
 .project-card > p:first-child + section > h2,
 .project-card > p:first-child + h2 { margin-top: 0; }
@@ -342,11 +452,11 @@ hr {
 .project-build {
   margin-top: 2.5rem;
   padding-top: 1.2rem;
-  border-top: 1px solid rgba($gray, 0.25);
-  font-size: 0.85rem;
+  border-top: 1px solid $rule;
+  font-size: $fs-caption;
   font-style: italic;
-  line-height: 1.6;
-  color: $text-secondary;
+  line-height: 1.5;
+  color: $secondary;
 
   p { margin: 0; }
 }
@@ -364,9 +474,9 @@ hr {
   gap: 0.4em;
 
   // One treatment for all stages: the word carries the stage.
-  background: rgba($mint, 0.06);
-  color: $text-accent;
-  border: 1px solid rgba($mint, 0.2);
+  background: rgba($sage, 0.06);
+  color: $link;
+  border: 1px solid $rule;
 }
 
 .quarto-listing .maturity-tag,
@@ -378,7 +488,7 @@ hr {
 
 // ── Timeline (About page) ────────────────────────────
 .timeline {
-  border-left: 2px solid rgba($darkgray, 0.4);
+  border-left: 2px solid $rule;
   padding-left: 2rem;
   margin: 2.5rem 0;
 
@@ -394,36 +504,37 @@ hr {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: $mint;
-      border: 2px solid $light;
-      box-shadow: 0 0 0 2px rgba($gray, 0.4);
+      background: $sage;
+      border: 2px solid $paper;
+      box-shadow: 0 0 0 2px $rule;
     }
 
     .timeline-date {
       font-family: 'JetBrains Mono', monospace;
       font-size: var(--site-meta-size);
       font-weight: 500;
-      color: $text-secondary;
+      color: $secondary;
       letter-spacing: var(--site-meta-tracking);
     }
 
     .timeline-title {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 600;
+      font-family: $font-display;
+      font-size: $fs-list-title;
+      font-weight: 500;
+      line-height: 1.3;
       margin: 0.15em 0;
-      color: $dark;
+      color: $ink;
     }
 
     .timeline-desc {
-      font-size: 0.92rem;
-      color: $darkgray;
-      line-height: 1.7;
+      font-size: $fs-body-small;
+      color: $text;
+      line-height: 1.55;
     }
   }
 }
 
-// About: comma-separated keyword lines, plain small mono, no box.
+// About: comma-separated keyword lines, no box.
 // Single tags (Log) use .tag instead.
 .timeline-tags {
   display: block;
@@ -432,21 +543,21 @@ hr {
   font-size: var(--site-meta-size);
   letter-spacing: var(--site-meta-tracking);
   line-height: 1.6;
-  color: $text-secondary;
+  color: $secondary;
 }
 
 .timeline-children {
   margin-top: 1.2rem;
   padding-left: 1.2rem;
-  border-left: 1px solid rgba($mint, 0.25);
+  border-left: 1px solid $rule;
 
-  .timeline-title { color: $dark; }
+  .timeline-title { color: $ink; }
 }
 
 .timeline-child {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px dashed rgba($mint, 0.15);
+  border-bottom: 1px dashed $rule;
 
   &:last-child {
     border-bottom: none;
@@ -455,49 +566,52 @@ hr {
   }
 
   .timeline-date  { font-size: var(--site-meta-size); }
-  .timeline-title { font-size: 0.9rem; }
+  .timeline-title { font-size: $fs-body; }
 }
 
 // ── Blockquotes ──────────────────────────────────────
 blockquote {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: $font-serif;
   font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: $darkgray;
-  border-left: 3px solid $mint;
+  font-size: $fs-body;
+  line-height: 1.65;
+  color: $text;
+  border-left: 3px solid $sage;
   padding: 0.8rem 1.5rem;
   margin: 2rem 0;
-  background: rgba($lightgray, 0.5);
+  background: $raised;
   p:last-child { margin-bottom: 0; }
 }
 
 // ── Code ─────────────────────────────────────────────
 code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: $font-mono;
   font-size: 0.85em;
-  color: $darkgray;
-  background: rgba($gray, 0.18);
+  color: $text;
+  background: $code-ground;
   padding: 0.15em 0.4em;
   border-radius: $radius-small;
 }
 
 pre {
-  background: $dark !important;
-  border: 1px solid rgba($gray, 0.3);
+  background: $raised !important;
+  border: 1px solid $rule;
   border-radius: $radius-container;
   padding: 1.2rem 1.5rem;
   code {
-    color: $text-secondary;
+    color: $text;
     background: none;
     padding: 0;
-    font-size: 0.82rem;
+    font-size: $fs-code;
+    line-height: 1.6;
   }
 }
 
 // ── Tables ───────────────────────────────────────────
+// Lining, tabular numerals so columns align.
 table {
-  font-size: 0.92rem;
+  font-size: $fs-body-small;
+  font-variant-numeric: lining-nums tabular-nums;
   border-collapse: collapse;
   width: 100%;
   margin: 1.5rem 0;
@@ -508,19 +622,19 @@ table {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: $darkgray;
-    border-bottom: 2px solid rgba($gray, 0.4);
+    color: $text;
+    border-bottom: 2px solid $rule;
     padding: 0.6rem 0.8rem;
     text-align: left;
   }
 
   td {
     padding: 0.6rem 0.8rem;
-    border-bottom: 1px solid rgba($gray, 0.2);
-    color: $darkgray;
+    border-bottom: 1px solid $rule;
+    color: $text;
   }
 
-  tr:hover td { background: rgba($mint, 0.04); }
+  tr:hover td { background: $raised; }
 }
 
 .table-scroll,
@@ -531,9 +645,9 @@ table {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scrollbar-gutter: stable;
-  border: 1px solid $rule-color;
+  border: 1px solid $rule;
   border-radius: $radius-container;
-  background: rgba($surface, 0.72);
+  background: $raised;
 }
 
 body.quarto-dark .diagram-scroll {
@@ -567,16 +681,10 @@ body.quarto-dark .diagram-scroll {
   }
 }
 
-.table-scroll:focus-visible,
-.diagram-scroll:focus-visible {
-  outline: 3px solid $text-technical;
-  outline-offset: 3px;
-}
-
 // ── Callouts ─────────────────────────────────────────
 .callout { border-radius: $radius-small !important; border-left-width: 3px !important; }
 .callout-tip,
-.callout-note { border-left-color: $mint !important; background: rgba($mint, 0.04) !important; }
+.callout-note { border-left-color: $sage !important; background: $raised !important; }
 
 // ── TOC sidebar ──────────────────────────────────────
 .sidebar nav[role="doc-toc"] {
@@ -584,28 +692,28 @@ body.quarto-dark .diagram-scroll {
   font-size: 0.78rem;
   letter-spacing: 0.02em;
   a {
-    color: $text-secondary;
+    color: $secondary;
     text-decoration: none;
-    &:hover  { color: $navy; }
-    &.active { color: $dark; font-weight: 600; }
+    &:hover  { color: $link-hover; }
+    &.active { color: $ink; font-weight: 600; }
   }
 }
 
 // ── Footer ───────────────────────────────────────────
-// Rule and text sit on the 720px body column; phones keep a 16px gutter.
+// Rule and text sit on the body column; phones keep a 16px gutter.
 .nav-footer {
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--site-meta-size);
-  color: $text-secondary;
-  border-top: 1px solid rgba($gray, 0.4);
-  width: min(720px, calc(100% - 32px));
+  color: $secondary;
+  border-top: 1px solid $rule;
+  width: min(620px, calc(100% - 32px));
   margin: 5rem auto 0;
   padding: 1.5rem 0;
   text-align: left;
   letter-spacing: 0.02em;
   a {
-    color: $text-accent;
-    &:hover { color: $navy; }
+    color: $link;
+    &:hover { color: $link-hover; }
   }
 }
 
@@ -622,46 +730,47 @@ footer.footer div.nav-footer {
 // ── Quarto listing ───────────────────────────────────
 .quarto-listing {
   .listing-title {
-    font-family: 'Source Serif 4', Georgia, serif !important;
-    font-weight: 600;
-    color: $dark;
+    font-family: $font-display !important;
+    font-size: $fs-list-title;
+    font-weight: 500;
+    color: $ink;
   }
-  .listing-description { font-size: 0.92rem; color: $darkgray; }
+  .listing-description { font-size: $fs-body-small; color: $text; }
   .listing-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: var(--site-meta-size);
-    color: $text-secondary;
+    color: $secondary;
   }
 }
 
 // ── Publications ─────────────────────────────────────
 .pub-entry {
   padding: 0.7rem 0;
-  border-bottom: 1px solid rgba($gray, 0.2);
+  border-bottom: 1px solid $rule;
   &:last-child { border-bottom: none; }
   > p { margin: 0.1em 0; }
 
   .pub-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: $dark;
-    line-height: 1.35;
+    font-family: $font-display;
+    font-weight: 500;
+    font-size: $fs-list-title;
+    color: $ink;
+    line-height: 1.3;
     margin: 0 0 0.2em;
   }
   .pub-authors {
-    font-size: 0.9rem;
-    color: $text-primary;
+    font-size: $fs-body-small;
+    color: $text;
     margin: 0.1em 0;
-    line-height: 1.4;
-    strong { color: $dark; }
+    line-height: 1.45;
+    strong { color: $ink; }
   }
   .pub-venue {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 0.9rem;
-    color: $text-secondary;
+    font-family: $font-serif;
+    font-size: $fs-body-small;
+    color: $secondary;
     font-style: italic;
-    line-height: 1.4;
+    line-height: 1.45;
   }
   .pub-links {
     margin-top: 0.2em;
@@ -672,36 +781,36 @@ footer.footer div.nav-footer {
       margin-right: 1em;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: $text-accent;
+      color: $link;
       text-decoration: none;
-      &:hover { color: $navy; text-decoration: underline; }
+      &:hover { color: $link-hover; text-decoration: underline; }
     }
   }
 }
 
 // ── About page ───────────────────────────────────────
 .about-intro {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 1.18rem;
-  line-height: 1.7;
-  color: $darkgray;
-  max-width: 64ch;
+  font-family: $font-serif;
+  font-size: $fs-body;
+  line-height: 1.65;
+  color: $text;
+  max-width: 62ch;
   text-wrap: pretty;
   margin: 0.5rem 0 3.5rem;
 
   p { margin-bottom: 1.2em; }
   p:last-child { margin-bottom: 0; }
-  strong { color: $dark; font-weight: 600; }
+  strong { color: $ink; font-weight: 600; }
 }
 
 .contact-block {
   margin: 1.5rem 0 2rem;
   max-width: 62ch;
   p {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.05rem;
+    font-family: $font-serif;
+    font-size: $fs-body;
     line-height: 1.65;
-    color: $darkgray;
+    color: $text;
     text-wrap: pretty;
   }
 }
@@ -710,33 +819,33 @@ footer.footer div.nav-footer {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
-  color: $text-secondary;
+  color: $secondary;
   padding: 1rem 1.2rem;
   margin-top: 1.5rem;
-  border: 1px solid rgba($gray, 0.18);
+  border: 1px solid $rule;
   border-radius: $radius-container;
-  background: rgba($mint, 0.025);
+  background: $raised;
   line-height: 1.9;
 
   a {
-    color: $text-accent;
+    color: $link;
     text-decoration: none;
-    border-bottom: 1px solid rgba($mint, 0.25);
+    border-bottom: 1px solid $sage;
     transition: color 0.2s ease, border-color 0.2s ease;
     &:hover {
-      color: $navy;
-      border-bottom-color: $navy;
+      color: $link-hover;
+      border-bottom-color: $link-hover;
     }
   }
 }
 
 // ── Digital garden ───────────────────────────────────
 .garden-intro {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 1.15rem;
+  font-family: $font-serif;
+  font-size: $fs-body;
   line-height: 1.65;
-  color: $darkgray;
-  max-width: 60ch;
+  color: $text;
+  max-width: 62ch;
   margin: 1rem 0 2rem;
   text-wrap: pretty;
 }
@@ -745,16 +854,16 @@ footer.footer div.nav-footer {
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--site-meta-size);
   letter-spacing: var(--site-meta-tracking);
-  color: $text-secondary;
+  color: $secondary;
   padding: 0.9rem 1.1rem;
-  border: 1px solid rgba($gray, 0.18);
+  border: 1px solid $rule;
   border-radius: $radius-container;
-  background: rgba($mint, 0.025);
+  background: $raised;
   margin-bottom: 3rem;
   line-height: 1.9;
 
   strong {
-    color: $text-accent;
+    color: $link;
     font-weight: 600;
     margin: 0 0.2em;
   }
@@ -781,16 +890,13 @@ footer.footer div.nav-footer {
   grid-template-columns: 110px 1fr;
   gap: 1.5rem;
   padding: 1.4rem 0;
-  border-top: 1px solid rgba($gray, 0.14);
+  border-top: 1px solid $rule;
   align-items: baseline;
   transition: background 0.25s ease, border-color 0.25s ease;
 
-  &:hover {
-    background: linear-gradient(to right, rgba($mint, 0.03), transparent 70%);
-    border-top-color: rgba($mint, 0.4);
-  }
+  &:hover { background: $raised; }
 
-  &:last-child { border-bottom: 1px solid rgba($gray, 0.14); }
+  &:last-child { border-bottom: 1px solid $rule; }
 }
 
 .garden-row-meta {
@@ -807,7 +913,7 @@ footer.footer div.nav-footer {
 
   .garden-date {
     font-size: var(--site-meta-size);
-    color: $text-secondary;
+    color: $secondary;
     letter-spacing: var(--site-meta-tracking);
   }
 }
@@ -817,8 +923,8 @@ footer.footer div.nav-footer {
 
   .garden-entry-title {
     margin: 0 0 0.3rem;
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.1rem;
+    font-family: $font-display;
+    font-size: $fs-list-title;
     font-weight: 500;
     line-height: 1.3;
 
@@ -826,22 +932,22 @@ footer.footer div.nav-footer {
   }
 
   .garden-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.1rem;
+    font-family: $font-display;
+    font-size: $fs-list-title;
     font-weight: 500;
     line-height: 1.3;
-    color: $dark;
+    color: $ink;
     text-decoration: none;
     display: inline;
-    &:hover { color: $navy; }
+    &:hover { color: $link-hover; }
   }
 
   .garden-desc {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 0.92rem;
+    font-family: $font-serif;
+    font-size: $fs-body-small;
     font-style: italic;
     line-height: 1.55;
-    color: rgba($darkgray, 0.85);
+    color: $text;
     margin: 0 0 0.5rem 0;
     text-wrap: pretty;
     max-width: 62ch;
@@ -874,11 +980,11 @@ footer.footer div.nav-footer {
   font-weight: 400;
   letter-spacing: var(--site-meta-tracking);
   line-height: 1.5;
-  color: $text-secondary;
+  color: $secondary;
   text-transform: lowercase;
   padding: 0.15em 0.55em;
   background: none;
-  border: 1px solid $rule-color;
+  border: 1px solid $rule;
   border-radius: $radius-small;
   opacity: 1;
 }
@@ -897,11 +1003,11 @@ footer.footer div.nav-footer {
 
 // ── Subtitle ─────────────────────────────────────────
 .subtitle, .quarto-title-block .subtitle {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: $font-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.25rem;
-  color: $text-accent;
+  color: $text;
   margin-top: 0.3em;
   letter-spacing: 0;
 
@@ -917,13 +1023,13 @@ footer.footer div.nav-footer {
   width: 36px;
   height: 36px;
   margin-left: 0.6rem;
-  border: 1px solid rgba($gray, 0.4);
+  border: 1px solid $rule;
   border-radius: $radius-small;
   background: transparent;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
   text-decoration: none;
-  color: $darkgray;
+  color: $text;
 
   > i, > svg, .bi { display: none !important; }
 
@@ -933,23 +1039,18 @@ footer.footer div.nav-footer {
     width: 1rem;
     height: 1rem;
     line-height: 1;
-    background-color: $text-primary;
+    background-color: $text;
     -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/></svg>") no-repeat center / contain;
     mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/></svg>") no-repeat center / contain;
     transition: background-color 0.2s ease, transform 0.4s ease;
   }
 
-  &:hover {
-    background: rgba($mint, 0.08);
-    border-color: $mint;
-  }
+  &:hover { border-color: $link-hover; }
   &:hover::before {
-    background-color: $mint;
+    background-color: $link-hover;
     transform: rotate(15deg);
   }
 }
-
-.quarto-color-scheme-toggle:hover::before { background-color: $mint; }
 
 // Touch targets: 44x44px minimum once the navbar collapses.
 @media (max-width: 991.98px) {
@@ -980,7 +1081,6 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 
 // ── Responsive general ───────────────────────────────
 @media (max-width: 768px) {
-  .hero-section .hero-name { font-size: 2.4rem; }
   .project-card { padding: 1.4rem 1.5rem; }
 }
 // ── Log page: inline date + title row ────────────────
@@ -1043,8 +1143,8 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     content: "";
     position: absolute;
     inset: 16px -16px -16px 16px;
-    background: rgba($mint, 0.10);
-    border: 1px solid rgba($mint, 0.3);
+    background: rgba($sage, 0.10);
+    border: 1px solid $rule;
     border-radius: $radius-container;
     z-index: 0;
   }
@@ -1058,8 +1158,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   border-radius: $radius-container;
   object-fit: cover;
   object-position: center 22%;
-  border: 1px solid $rule-color;
-  // Fixed deep-teal tint so the shadow never turns into a light glow in dark mode.
+  border: 1px solid $rule;
   box-shadow: 0 18px 42px -22px rgba(8, 26, 30, 0.5);
   margin: 0;
   display: block;
@@ -1102,7 +1201,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 // ── Worklist: shared title-left / date-right rows ─────
 // Reusable across pages. Uses theme variables so it adapts
 // to light and dark automatically. Section label + stacked
-// rows, each with a serif title link and a mono meta line.
+// rows, each with a display title link and a meta line.
 .worklist {
   margin: 2.5rem 0;
 }
@@ -1112,10 +1211,10 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   font-size: var(--site-meta-size);
   text-transform: lowercase;
   letter-spacing: 0.1em;
-  color: $text-technical;
+  color: $ink;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba($gray, 0.25);
+  border-bottom: 1px solid $rule;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) max-content;
@@ -1137,16 +1236,16 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   }
 
   a {
-    color: $text-secondary;
+    color: $secondary;
     text-decoration: none;
     font-size: var(--site-meta-size);
-    &:hover { color: $navy; }
+    &:hover { color: $link-hover; }
   }
 }
 
 .worklist-row {
   padding: 0.9rem 0;
-  border-bottom: 1px solid rgba($gray, 0.12);
+  border-bottom: 1px solid $rule;
 
   // last-of-type: listings append a hidden "no matching items" div.
   &:last-of-type { border-bottom: none; }
@@ -1163,30 +1262,30 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   .worklist-entry-title { margin: 0; }
 
   .worklist-title {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.05rem;
+    font-family: $font-display;
+    font-size: $fs-list-title;
     font-weight: 500;
-    line-height: 1.4;
-    color: $dark;
+    line-height: 1.3;
+    color: $ink;
     text-decoration: none;
-    &:hover { color: $navy; }
+    &:hover { color: $link-hover; }
   }
 
   .worklist-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: var(--site-meta-size);
     letter-spacing: var(--site-meta-tracking);
-    color: $text-secondary;
+    color: $secondary;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
   .worklist-meta {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 0.9rem;
-    color: $darkgray;
+    font-family: $font-serif;
+    font-size: $fs-body-small;
+    color: $text;
     margin-top: 0.25rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   // Work listing rows (work-item.ejs): one line of tags under the meta.
@@ -1220,15 +1319,15 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 // ── Shared utilities and final responsive pass ───────
 .home-links {
   margin: 2.5rem 0 0;
-  font-size: 0.95rem;
-  color: $text-secondary;
+  font-size: $fs-body-small;
+  color: $secondary;
 
   p { margin: 0; }
 }
 
 .reference-list,
 .note-aside {
-  font-size: 0.9rem;
+  font-size: $fs-body-small;
 }
 
 .note-aside { font-style: italic; }
@@ -1243,9 +1342,6 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: clamp(2rem, 10vw, 2.4rem); }
-  h2 { font-size: clamp(1.65rem, 8.5vw, 1.9rem); }
-
   .timeline {
     padding-left: 1.25rem;
 

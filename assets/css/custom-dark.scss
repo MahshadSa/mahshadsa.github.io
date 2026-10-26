@@ -1,25 +1,29 @@
 /*-- scss:defaults --*/
 
 // Dark theme values only. All geometry and component rules live in
-// custom.scss so light and dark modes cannot drift apart.
-$light:           #0a1818;
-$lightgray:       #112020;
-$gray:            #6a8888;
-$darkgray:        #b8cece;
-$dark:            #eef4f4;
+// custom.scss so light and dark modes cannot drift apart. Sage and mauve
+// steps are written as hex because this layer's defaults load before
+// custom.scss; the comment names each token.
 
-$mint:            #5ab8a0;
-$navy:            #82add2;
-$rose:            #c89aaa;
+// ── Slate neutrals ───────────────────────────────────
+$paper:      #12161b;
+$raised:     #1a1f26;
+$rule:       #2b313a;
+$ink:        #e6eaf0;
+$text:       #c5ccd6;
+$secondary:  #959eab;
 
-$text-primary:    #b8cece;
-$text-strong:     #eef4f4;
-$text-secondary:  #88a5a5;
-$text-accent:     #72c9b2;
-$text-technical:  #9bbfe0;
-$rule-color:      rgba(136, 165, 165, 0.32);
-$surface:         #112020;
-$navbar-bg:       rgba(10, 24, 24, 0.94);
+// ── Semantic tokens ──────────────────────────────────
+$name-color:  #d0eacb;   // sage-100
+$link:        #7ea176;   // sage-400
+$link-hover:  #f0e3f2;   // mauve-tint
+$focus:       #7ea176;   // sage-400
+$highlight:   #5d4163;   // mauve-deep
+$quote-mark:  #a280a9;   // mauve
+$disc:        #7ea176;   // sage-400
+$disc-ink:    #12161b;   // paper
+$code-ground: #1a1f26;   // raised
+$navbar-bg:   rgba(18, 22, 27, 0.94);
 
 // Shape rule, mirrored from custom.scss so Bootstrap components match.
 $radius-small:     2px;
@@ -28,10 +32,22 @@ $border-radius:    $radius-small;
 $border-radius-sm: $radius-small;
 $border-radius-lg: $radius-container;
 
-$body-bg:          $light;
-$body-color:       $text-primary;
-$link-color:       $text-accent;
-$link-hover-color: #a9c9e5;
+// ── Bootstrap and Quarto mapping ─────────────────────
+$body-bg:          $paper;
+$body-color:       $text;
+$headings-color:   $ink;
+$link-color:       $link;
+$link-hover-color: $link-hover;
+$border-color:     $rule;
+$primary:          $link;
+$light:            $paper;
+$dark:             $ink;
+$navbar-fg:        $ink;
+$navbar-hl:        $link-hover;
+$footer-bg:        $paper;
+$footer-fg:        $secondary;
+$code-color:       $text;
+$code-bg:          $code-ground;
 
 $font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
 
