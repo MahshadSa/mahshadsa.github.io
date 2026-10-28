@@ -1125,6 +1125,39 @@ footer.footer div.nav-footer {
     align-items: center;
     justify-content: center;
   }
+
+  .navbar .navbar-brand,
+  .navbar .aa-DetachedSearchButton {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Small links keep their look but get a 44px hit area: an invisible
+// pseudo-element centred on the link, so nothing moves.
+.worklist-title,
+.nav-footer a,
+.quarto-title .quarto-categories a {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Heading anchors only appear on hover, so on touch screens they would be
+// invisible targets.
+@media (hover: none) {
+  .anchorjs-link { display: none !important; }
 }
 
 body.quarto-dark .quarto-color-scheme-toggle::before {
