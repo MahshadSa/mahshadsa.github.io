@@ -8,7 +8,7 @@ maturity: evergreen
 ---
 
 ::: {.note-page-meta}
-[🌲 evergreen]{.maturity-tag .evergreen} · Planted May 14, 2026, last tended September 6, 2026
+[Evergreen]{.maturity-tag .evergreen} · Planted May 14, 2026, last tended September 6, 2026
 :::
 
 Much of my recent work in ulcerative colitis has involved quantitative colonic motility on MRI.

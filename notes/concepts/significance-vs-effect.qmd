@@ -9,7 +9,7 @@ maturity: seedling
 ---
 
 ::: {.note-page-meta}
-[🌱 seedling]{.maturity-tag .seedling} · Planted May 27, 2026, last tended August 2, 2026
+[Seedling]{.maturity-tag .seedling} · Planted May 27, 2026, last tended August 2, 2026
 :::
 
 ## In plain terms

@@ -9,7 +9,7 @@ maturity: sprout
 ---
 
 ::: {.note-page-meta}
-[🌿 sprout]{.maturity-tag .sprout} · Planted May 14, 2026, last tended May 14, 2026
+[Sprout]{.maturity-tag .sprout} · Planted May 14, 2026, last tended May 14, 2026
 :::
 
 I have been working on colonic motility in ulcerative colitis for about two years now. It took me longer than I expected to understand what the word actually means, because the answer changes depending on who is talking.

@@ -8,10 +8,10 @@ maturity: seedling
 ---
 
 ::: {.note-page-meta}
-[🌱 seedling]{.maturity-tag .seedling} · Planted Month DD, YYYY · Last tended Month DD, YYYY
+[Seedling]{.maturity-tag .seedling} · Planted Month DD, YYYY · Last tended Month DD, YYYY
 :::
 
-<!-- Maturity options: [🌱 seedling]{.maturity-tag .seedling} / [🌿 sprout]{.maturity-tag .sprout} / [🌳 evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync; it drives the listing icon. -->
+<!-- Maturity options: [Seedling]{.maturity-tag .seedling} / [Sprout]{.maturity-tag .sprout} / [Evergreen]{.maturity-tag .evergreen}. Keep the YAML maturity: field in sync; it drives the maturity word in the listings. -->
 
 ## In plain terms
 

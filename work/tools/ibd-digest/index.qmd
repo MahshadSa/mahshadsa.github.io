@@ -30,21 +30,6 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </marker>
-  <style>
-    .t   { font: 400 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .ts  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
-    .th  { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .src  rect { fill: #e8f0eb; stroke: #5a7260; }
-    .src  text { fill: #2c3d30; }
-    .sem  rect { fill: #eeeef8; stroke: #6970a0; }
-    .sem  text { fill: #2e2f5a; }
-    .neu  rect { fill: #f0f0ee; stroke: #8a8a85; }
-    .neu  text { fill: #3a3a38; }
-    .must rect { fill: #fdf3e0; stroke: #b07a18; }
-    .must text { fill: #4a3200; }
-    .arch rect { fill: #faeae8; stroke: #b05040; }
-    .arch text { fill: #4a1a14; }
-  </style>
 </defs>
 
 <text class="ts" x="68"  y="18" text-anchor="middle">fetch</text>
@@ -60,14 +45,14 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
   <text class="th" x="68" y="106" text-anchor="middle" dominant-baseline="central">17 journals</text>
   <text class="ts" x="68" y="124" text-anchor="middle" dominant-baseline="central">via Crossref</text></g>
 
-<line x1="126" y1="54"  x2="156" y2="108" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="126" y1="112" x2="156" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="126" y1="54"  x2="156" y2="108" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="126" y1="112" x2="156" y2="114" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="neu"><rect x="158" y="84" width="120" height="60" rx="4" stroke-width="0.5"/>
   <text class="th" x="218" y="108" text-anchor="middle" dominant-baseline="central">DOI dedup</text>
   <text class="ts" x="218" y="126" text-anchor="middle" dominant-baseline="central">SQLite store</text></g>
 
-<line x1="278" y1="114" x2="294" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="278" y1="114" x2="294" y2="114" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="sem"><rect x="296" y="68" width="128" height="110" rx="4" stroke-width="0.5"/>
   <text class="th" x="360" y="92"  text-anchor="middle" dominant-baseline="central">SPECTER2</text>
@@ -76,7 +61,7 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
   <text class="ts" x="360" y="148" text-anchor="middle" dominant-baseline="central">percentile cutoffs</text>
   <text class="ts" x="360" y="166" text-anchor="middle" dominant-baseline="central">last 2,000 scores</text></g>
 
-<line x1="424" y1="114" x2="440" y2="114" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="424" y1="114" x2="440" y2="114" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="must"><rect x="442" y="68"  width="124" height="36" rx="4" stroke-width="0.5"/>
   <text class="ts" x="504" y="90"  text-anchor="middle" dominant-baseline="central">Must-read  p85+</text></g>
@@ -85,9 +70,9 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
 <g class="arch"><rect x="442" y="160" width="124" height="36" rx="4" stroke-width="0.5"/>
   <text class="ts" x="504" y="182" text-anchor="middle" dominant-baseline="central">Archive  &lt; p40</text></g>
 
-<line x1="566" y1="86"  x2="582" y2="104" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="566" y1="132" x2="582" y2="128" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
-<line x1="566" y1="178" x2="582" y2="152" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="566" y1="86"  x2="582" y2="104" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="566" y1="132" x2="582" y2="128" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="566" y1="178" x2="582" y2="152" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="sem"><rect x="584" y="88" width="86" height="90" rx="4" stroke-width="0.5"/>
   <text class="th" x="627" y="108" text-anchor="middle" dominant-baseline="central">Obsidian</text>
@@ -95,13 +80,13 @@ A wildcard section promotes two randomly sampled archive papers to full renderin
   <text class="ts" x="627" y="144" text-anchor="middle" dominant-baseline="central">&#9745; Relevant</text>
   <text class="ts" x="627" y="162" text-anchor="middle" dominant-baseline="central">&#9745; Read later</text></g>
 
-<line x1="627" y1="178" x2="627" y2="208" stroke="#5a7260" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="627" y1="178" x2="627" y2="208" class="flow flow-src" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="src"><rect x="584" y="210" width="86" height="48" rx="4" stroke-width="0.5"/>
   <text class="th" x="627" y="228" text-anchor="middle" dominant-baseline="central">Inbox/</text>
   <text class="ts" x="627" y="246" text-anchor="middle" dominant-baseline="central">To Read.md</text></g>
 
-<path d="M627 258 Q627 310 504 318 Q380 326 360 200" fill="none" stroke="#6970a0" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<path d="M627 258 Q627 310 504 318 Q380 326 360 200" fill="none" class="flow flow-sem" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
 <text class="ts" x="470" y="336" text-anchor="middle">step 6: feedback loop (&#9745; Relevant &#8594; corpus)</text>
 
 <g class="src"><rect x="10"  y="296" width="108" height="26" rx="3" stroke-width="0.5"/>
@@ -307,15 +292,6 @@ The telemetry file, added in the same overhaul that introduced the bug, is what 
 <title id="tier-chart-title">Tier distribution before and after threshold recalibration</title>
 <desc id="tier-chart-desc">Bar chart. Under corpus self-similarity calibration, 0 percent of papers reached must-read, 4 percent skim, 96 percent archive. Under candidate-distribution calibration, 20 percent must-read, 49 percent skim, 31 percent archive.</desc>
 <defs>
-  <style>
-    .ct  { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .cs  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
-    .cv  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .axis { stroke: #b8b8b2; stroke-width: 0.8; }
-    .bmust { fill: #b07a18; }
-    .bskim { fill: #6970a0; }
-    .barch { fill: #b05040; }
-  </style>
 </defs>
 
 <text class="ct" x="10" y="18">Where the same 1,233 papers land, under each calibration</text>

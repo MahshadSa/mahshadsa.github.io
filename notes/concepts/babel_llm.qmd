@@ -9,7 +9,7 @@ maturity: sprout
 ---
 
 ::: {.note-page-meta}
-[🌿 sprout]{.maturity-tag .sprout} · Planted April 28, 2026, last tended April 28, 2026
+[Sprout]{.maturity-tag .sprout} · Planted April 28, 2026, last tended April 28, 2026
 :::
 
 I have been reading BABEL by R.F. Kuang lately. It is a book dense with historical and etymological detail, and one idea in it has not left me alone.

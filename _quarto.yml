@@ -77,7 +77,6 @@ format:
       - _includes/favicon.html
       - _includes/schema.html
     include-after-body:
-      - _includes/reveal.html
       - _includes/cloudflare-analytics.html
     filters:
       - _filters/page-schema.lua

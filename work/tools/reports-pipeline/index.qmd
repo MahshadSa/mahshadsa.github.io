@@ -36,13 +36,6 @@ The dataset is approximately 9,800 abdominal radiology reports from a single ins
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </marker>
-  <style>
-    .t   { font: 400 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .ts  { font: 400 12px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-secondary-color, #6c757d); }
-    .th  { font: 500 14px var(--bs-font-sans-serif, sans-serif); fill: var(--bs-body-color, #212529); }
-    .done  rect { fill: #e8f0eb; stroke: #5a7260; }
-    .done  text { fill: #2c3d30; }
-  </style>
 </defs>
 
 <text class="ts" x="80"  y="16" text-anchor="middle">phase 0</text>
@@ -55,21 +48,21 @@ The dataset is approximately 9,800 abdominal radiology reports from a single ins
   <text class="ts" x="80"  y="64" text-anchor="middle" dominant-baseline="central">archive +</text>
   <text class="ts" x="80"  y="82" text-anchor="middle" dominant-baseline="central">timestamps</text></g>
 
-<line x1="150" y1="62" x2="174" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="150" y1="62" x2="174" y2="62" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="done"><rect x="176" y="26" width="140" height="72" rx="4" stroke-width="0.5"/>
   <text class="th" x="246" y="46" text-anchor="middle" dominant-baseline="central">Parse</text>
   <text class="ts" x="246" y="64" text-anchor="middle" dominant-baseline="central">structured</text>
   <text class="ts" x="246" y="82" text-anchor="middle" dominant-baseline="central">sections</text></g>
 
-<line x1="316" y1="62" x2="340" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="316" y1="62" x2="340" y2="62" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="done"><rect x="342" y="26" width="140" height="72" rx="4" stroke-width="0.5"/>
   <text class="th" x="412" y="46" text-anchor="middle" dominant-baseline="central">Clustering</text>
   <text class="ts" x="412" y="64" text-anchor="middle" dominant-baseline="central">repeat</text>
   <text class="ts" x="412" y="82" text-anchor="middle" dominant-baseline="central">patients</text></g>
 
-<line x1="482" y1="62" x2="506" y2="62" stroke="#8a8a85" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
+<line x1="482" y1="62" x2="506" y2="62" class="flow" stroke-width="0.8" fill="none" marker-end="url(#arrow)"/>
 
 <g class="done"><rect x="508" y="26" width="140" height="72" rx="4" stroke-width="0.5"/>
   <text class="th" x="578" y="46" text-anchor="middle" dominant-baseline="central">De-identify</text>

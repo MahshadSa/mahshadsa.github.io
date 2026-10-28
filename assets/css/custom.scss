@@ -41,6 +41,8 @@ $quote-mark:  $mauve !default;
 $disc:        $sage-600 !default;
 $disc-ink:    $paper !default;
 $code-ground: $sage-50 !default;     // inline code
+$diagram-sage-fill:  $sage-50 !default;     // src and done boxes
+$diagram-mauve-fill: $mauve-tint !default;  // sem boxes
 $navbar-bg:   rgba($paper, 0.94) !default;
 
 // ── Type ─────────────────────────────────────────────
@@ -686,22 +688,6 @@ table {
   background: $raised;
 }
 
-body.quarto-dark .diagram-scroll {
-  .t, .th, .ct, .cv { fill: #d8e3e3; }
-  .ts, .cs { fill: #9bb0b0; }
-  .done rect, .src rect { fill: #1e2e22; stroke: #6a9274; }
-  .done text, .src text { fill: #b8d8bf; }
-  .prog rect, .must rect { fill: #2a2010; stroke: #c29136; }
-  .prog text, .must text { fill: #efd081; }
-  .pend rect, .neu rect { fill: #242420; stroke: #85857d; }
-  .pend text, .neu text { fill: #cecec5; }
-  .sem rect { fill: #1e2438; stroke: #8290c4; }
-  .sem text { fill: #c4c9ee; }
-  .arch rect { fill: #2a1510; stroke: #c76d5e; }
-  .arch text { fill: #efb1a5; }
-  .axis { stroke: #6a6a64; }
-}
-
 .table-scroll {
   table { min-width: 42rem; margin: 0; }
 }
@@ -715,6 +701,51 @@ body.quarto-dark .diagram-scroll {
     height: auto;
     margin: 0;
   }
+}
+
+// ── Diagrams ─────────────────────────────────────────
+// Inline SVG figures on the tool pages. Status classes carry meaning, so
+// each keeps a distinct style: sage for sources and built work, mauve for
+// the semantic step, slate for neutral steps, and stroke weight or dashes
+// (not new hues) for must-read, in progress and archive. Theme values come
+// from each theme file, so dark mode needs no separate block.
+.diagram-scroll svg {
+  text { font-family: $font-serif; }
+  .t, .th, .ct { font-size: 14px; }
+  .ts, .cs, .cv { font-size: 12px; }
+  .t, .th, .ct, .cv { fill: $text; }
+  .th, .ct { font-weight: 600; }
+  .ts, .cs { fill: $secondary; }
+
+  rect { stroke-width: 1; }
+
+  .src rect, .done rect { fill: $diagram-sage-fill; stroke: $link; }
+  .src text, .done text { fill: $name-color; }
+
+  .sem rect { fill: $diagram-mauve-fill; stroke: $mauve; }
+  .sem text { fill: $link-hover; }
+
+  .neu rect, .pend rect { fill: $raised; stroke: $secondary; }
+  .neu text, .pend text { fill: $ink; }
+
+  .must rect { fill: $raised; stroke: $ink; stroke-width: 2; }
+  .must text { fill: $ink; font-weight: 600; }
+
+  .prog rect { fill: $raised; stroke: $link; stroke-dasharray: 4 3; }
+  .prog text { fill: $ink; }
+
+  .arch rect { fill: $paper; stroke: $secondary; stroke-dasharray: 4 3; }
+  .arch text { fill: $secondary; }
+
+  .flow     { stroke: $secondary; }
+  .flow-src { stroke: $link; }
+  .flow-sem { stroke: $mauve; }
+  .axis     { stroke: $secondary; stroke-width: 0.8; }
+
+  // Tier chart: the same order of weight as the tier boxes.
+  .bmust { fill: $ink; }
+  .bskim { fill: $secondary; }
+  .barch { fill: none; stroke: $secondary; stroke-width: 1.5; stroke-dasharray: 4 3; }
 }
 
 // ── Callouts ─────────────────────────────────────────
@@ -1379,20 +1410,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   .garden-legend { padding: 0.8rem; }
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-  will-change: opacity, transform;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
+// No scroll reveals or loops. Under reduced motion every transition is off.
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1401,12 +1419,5 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .reveal,
-  .reveal.is-visible {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
   }
 }
