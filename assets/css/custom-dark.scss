@@ -49,6 +49,12 @@ $footer-fg:        $secondary;
 $code-color:       $text;
 $code-bg:          $code-ground;
 
+$callout-color-note:      $link;
+$callout-color-tip:       $link;
+$callout-color-important: $ink;
+$callout-color-warning:   #a280a9;   // mauve
+$callout-color-caution:   #a280a9;   // mauve
+
 $font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
 
 // Cosmo imports Source Sans Pro, which no rule uses. The dark layer's

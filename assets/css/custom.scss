@@ -90,6 +90,14 @@ $footer-fg:        $secondary !default;
 $code-color:       $text !default;
 $code-bg:          $code-ground !default;
 
+// Callout icons: sage for notes and tips, slate and mauve for the rest.
+// The palette has no amber or red.
+$callout-color-note:      $link !default;
+$callout-color-tip:       $link !default;
+$callout-color-important: $ink !default;
+$callout-color-warning:   $mauve-deep !default;
+$callout-color-caution:   $mauve-deep !default;
+
 $font-family-sans-serif: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif !default;
 
 // Cosmo imports Source Sans Pro, which no rule uses.
@@ -156,6 +164,10 @@ $web-font-path: false;
   --radius-small: #{$radius-small};
   --radius-container: #{$radius-container};
 
+  --label-lg: #{$fs-label-lg};
+  --label: #{$fs-label};
+  --label-sm: #{$fs-label-sm};
+
   // v1 names kept for garden.css.
   --site-text-primary: var(--text);
   --site-text-strong: var(--ink);
@@ -164,8 +176,32 @@ $web-font-path: false;
   --site-rule: var(--rule);
   --site-background: var(--paper);
   --site-surface: var(--raised);
-  --site-meta-size: 0.78rem;
-  --site-meta-tracking: 0.035em;
+}
+
+// ── Reading page grid ────────────────────────────────
+// A reading page is 880px: 32px padding, the 620px text column, a 36px
+// gap, a 160px margin column for margin notes, 32px padding. Every page
+// shares the same text edge. Below 992px Quarto's own single column
+// applies and margin content falls back into the text.
+$reading-text:   620px;
+$reading-gap:    36px;
+$reading-margin: 160px;
+$reading-pad:    32px;
+$reading-page:   $reading-text + $reading-gap + $reading-margin;  // 816px inside the padding
+
+@media (min-width: 992px) {
+  #quarto-content.page-columns {
+    grid-template-columns:
+      [screen-start screen-start-inset] minmax($reading-pad, 1fr)
+      [page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, $reading-text)
+      [body-content-end body-end] $reading-gap
+      [body-end-outset] minmax(0, $reading-margin)
+      [page-end-inset page-end] minmax($reading-pad, 1fr)
+      [screen-end-inset screen-end];
+  }
+
+  // Margin notes start after the gap, not against the text.
+  #quarto-content .column-margin { grid-column: body-end-outset / page-end !important; }
 }
 
 // ── Base ─────────────────────────────────────────────
@@ -206,36 +242,58 @@ button:focus-visible,
 .form-control:focus { box-shadow: none; }
 
 // ── Navbar ───────────────────────────────────────────
+// Words in small caps, ink at rest, mauve-deep on hover. The header sits
+// in the 1040px page width.
 .navbar {
+  @include small-caps($fs-label);
   border-bottom: 1px solid $rule;
   background: $navbar-bg !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  font-size: 0.82rem;
-  text-transform: lowercase;
   padding: 0.6rem 0;
+}
+
+@media (min-width: 992px) {
+  .navbar > .navbar-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-left: $reading-pad;
+    padding-right: $reading-pad;
+  }
 }
 
 .navbar .navbar-brand,
 .navbar .navbar-title {
-  font-family: $font-serif;
-  font-weight: 600;
-  font-size: 1.3rem !important;
-  letter-spacing: 0.05em;
-  text-transform: none;
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 1.5rem !important;
+  font-variant-caps: normal;
+  letter-spacing: 0.02em;
+  color: $name-color !important;
+  transition: color 0.2s ease;
 }
 
+.navbar .navbar-brand:hover .navbar-title,
+.navbar .navbar-brand:hover { color: $link-hover !important; }
+
 .navbar-nav .nav-link {
-  transition: color 0.3s ease;
+  color: $ink !important;
+  transition: color 0.2s ease;
   padding: 0.4rem 0.9rem !important;
   &:hover { color: $link-hover !important; }
 }
 
+// Current page: a sage underline, not a colour change.
+.navbar-nav .nav-link.active .menu-text {
+  text-decoration: underline;
+  text-decoration-color: $sage;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
 .navbar .bi {
-  transition: color 0.3s ease;
+  color: $ink;
+  transition: color 0.2s ease;
   &:hover { color: $link-hover; }
 }
 
@@ -275,19 +333,6 @@ h2 {
   padding-bottom: 0.08em;
 }
 
-h2::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin-top: 0.45rem;
-  background: linear-gradient(to right, $rule, transparent);
-}
-
-.timeline--log h2::after,
-.project-card h2::after,
-.seq-page h2::after { content: none; }
-
 h3 {
   font-family: $font-display;
   font-weight: 600;
@@ -322,24 +367,23 @@ a {
   }
 }
 
-// ── Horizontal rules ─────────────────────────────────
+// ── Section breaks ───────────────────────────────────
+// Space and a centred § in sage. No line.
 hr {
-  border: none;
-  border-top: 1px solid $rule;
+  border: 0;
+  height: auto;
   opacity: 1;
-  margin: 2.5rem 0;
+  overflow: visible;
+  background: none;
+  margin: 2.75rem 0;
   &::after {
     content: '§';
     display: block;
     text-align: center;
-    font-family: $font-serif;
-    font-size: 1.1rem;
-    color: $secondary;
-    margin-top: -0.75em;
-    background: $body-bg;
-    width: 2em;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: $font-display;
+    font-size: $fs-label-lg;
+    line-height: 1;
+    color: $sage;
   }
 }
 
@@ -372,15 +416,12 @@ hr {
   }
 
   .hero-tagline {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    font-weight: 500;
+    @include small-caps($fs-label);
     color: $link;
-    letter-spacing: 0.08em;
     // Wraps to two lines inside the column; keep them reading as one unit.
     // Block, so the parent paragraph's strut does not set the line box.
     display: block;
-    line-height: 1.6;
+    line-height: 1.3;
     margin-bottom: 2.2rem;
   }
 
@@ -410,7 +451,6 @@ hr {
   border: 1px solid $rule;
   border-radius: $radius-container;
   padding: 2rem 2.2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 // First heading inside the card should not inherit the section spacing.
 // Covers both bare h2 and Quarto's section wrapper.
@@ -419,34 +459,28 @@ hr {
   margin-top: 0;
 }
 
-// ── Project status pill ──────────────────────────────
+// ── Status words ─────────────────────────────────────
+// Plain small-caps words, no pill. Live and accepted in sage, active in
+// ink, planned and paused in secondary.
 .project-status {
+  @include small-caps($fs-label);
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
-  padding: 0.28em 0.7em;
-  border-radius: $radius-small;
-  border: 1px solid transparent;
+  color: $secondary;
 
-  &.live    { color: $link; background: rgba($sage, 0.08); border-color: $rule; }
-  &.active  { color: $ink; background: transparent; border-color: $rule; }
-  &.planned { color: $secondary; background: $raised; border-color: $rule; }
+  &.live,
+  &.accepted { color: $link; }
+  &.active   { color: $ink; }
+  &.planned,
+  &.paused   { color: $secondary; }
 }
 
-// The pill sits on the card's first line. Tighten its paragraph and keep
-// the following heading hugging the top.
+// The status word sits on the card's first line. Tighten its paragraph and
+// keep the following heading hugging the top.
 .project-card > p:first-child { margin: 0 0 1.5rem; }
 .project-card > p:first-child + section > h2,
 .project-card > p:first-child + h2 { margin-top: 0; }
 
-// In-card divider: drop the § section glyph so it reads as a clean rule.
-.project-card hr {
-  margin: 2.5rem 0 1.5rem;
-  &::after { display: none; }
-}
+.project-card hr { margin: 2.25rem 0 1.25rem; }
 
 // ── Project build-credit footer ──────────────────────
 .project-build {
@@ -461,29 +495,12 @@ hr {
   p { margin: 0; }
 }
 
-// ── Garden maturity tags ─────────────────────────────
+// ── Garden maturity words ────────────────────────────
+// Seedling, Sprout, Evergreen as plain small-caps words in sage.
 .maturity-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
-  font-weight: 500;
-  padding: 0.2em 0.65em;
-  border-radius: $radius-small;
-  letter-spacing: 0.03em;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-
-  // One treatment for all stages: the word carries the stage.
-  background: rgba($sage, 0.06);
+  @include small-caps($fs-label-sm);
+  display: inline-block;
   color: $link;
-  border: 1px solid $rule;
-}
-
-.quarto-listing .maturity-tag,
-.listing-item .maturity-tag {
-  margin-bottom: 0.4rem;
-  font-size: var(--site-meta-size);
-  padding: 0.25em 0.7em;
 }
 
 // ── Timeline (About page) ────────────────────────────
@@ -506,18 +523,16 @@ hr {
       border-radius: 50%;
       background: $sage;
       border: 2px solid $paper;
-      box-shadow: 0 0 0 2px $rule;
     }
 
     .timeline-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: var(--site-meta-size);
-      font-weight: 500;
+      @include small-caps($fs-label-sm);
       color: $secondary;
-      letter-spacing: var(--site-meta-tracking);
     }
 
-    .timeline-title {
+    // Quarto copies a heading's class onto its section wrapper; style the
+    // heading or span only, so the section body keeps the reading face.
+    .timeline-title:not(section) {
       font-family: $font-display;
       font-size: $fs-list-title;
       font-weight: 500;
@@ -537,11 +552,9 @@ hr {
 // About: comma-separated keyword lines, no box.
 // Single tags (Log) use .tag instead.
 .timeline-tags {
+  @include small-caps($fs-label-sm);
   display: block;
   margin-top: 0.6rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
-  letter-spacing: var(--site-meta-tracking);
   line-height: 1.6;
   color: $secondary;
 }
@@ -551,7 +564,7 @@ hr {
   padding-left: 1.2rem;
   border-left: 1px solid $rule;
 
-  .timeline-title { color: $ink; }
+  .timeline-title:not(section) { color: $ink; }
 }
 
 .timeline-child {
@@ -565,21 +578,37 @@ hr {
     padding-bottom: 0;
   }
 
-  .timeline-date  { font-size: var(--site-meta-size); }
-  .timeline-title { font-size: $fs-body; }
+  .timeline-title:not(section) { font-size: $fs-body; }
 }
 
 // ── Blockquotes ──────────────────────────────────────
-blockquote {
+// No bar, no ground: a large opening quote mark in mauve hangs in the
+// indent, and the text is the reading face in italic.
+blockquote,
+.blockquote {
+  position: relative;
   font-family: $font-serif;
   font-style: italic;
   font-size: $fs-body;
   line-height: 1.65;
   color: $text;
-  border-left: 3px solid $sage;
-  padding: 0.8rem 1.5rem;
+  border: 0;
+  background: none;
+  padding: 0 0 0 2.25rem;
   margin: 2rem 0;
-  background: $raised;
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    left: 0;
+    top: -0.12em;
+    font-family: $font-display;
+    font-style: normal;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: $quote-mark;
+  }
+
   p:last-child { margin-bottom: 0; }
 }
 
@@ -591,6 +620,16 @@ code {
   background: $code-ground;
   padding: 0.15em 0.4em;
   border-radius: $radius-small;
+}
+
+// Quarto wraps highlighted blocks in div.sourceCode with its own grey
+// ground; the pre carries the plate instead.
+div.sourceCode {
+  background: transparent !important;
+  border: 0 !important;
+  margin-bottom: 1rem;
+
+  pre.sourceCode { margin-bottom: 0; }
 }
 
 pre {
@@ -617,13 +656,10 @@ table {
   margin: 1.5rem 0;
 
   th {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: var(--site-meta-size);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: $text;
-    border-bottom: 2px solid $rule;
+    @include small-caps($fs-label-sm);
+    font-variant-numeric: lining-nums tabular-nums;
+    color: $ink;
+    border-bottom: 1px solid $rule;
     padding: 0.6rem 0.8rem;
     text-align: left;
   }
@@ -682,15 +718,23 @@ body.quarto-dark .diagram-scroll {
 }
 
 // ── Callouts ─────────────────────────────────────────
-.callout { border-radius: $radius-small !important; border-left-width: 3px !important; }
-.callout-tip,
-.callout-note { border-left-color: $sage !important; background: $raised !important; }
+// Raised ground, 1px rule border, 2px radius, no left bar.
+.callout {
+  background: $raised !important;
+  border: 1px solid $rule !important;
+  border-left-width: 1px !important;
+  border-radius: $radius-small !important;
+  font-size: $fs-body-small;
+
+  .callout-header {
+    background: transparent !important;
+    border-bottom: 1px solid $rule;
+  }
+}
 
 // ── TOC sidebar ──────────────────────────────────────
 .sidebar nav[role="doc-toc"] {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
+  @include small-caps($fs-label-sm);
   a {
     color: $secondary;
     text-decoration: none;
@@ -700,17 +744,18 @@ body.quarto-dark .diagram-scroll {
 }
 
 // ── Footer ───────────────────────────────────────────
-// Rule and text sit on the body column; phones keep a 16px gutter.
+// Rule and text span the reading page from the text edge; phones keep a
+// 16px gutter.
 .nav-footer {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
+  @include small-caps($fs-label-sm);
   color: $secondary;
   border-top: 1px solid $rule;
-  width: min(620px, calc(100% - 32px));
+  width: min(#{$reading-text}, calc(100% - 32px));
   margin: 5rem auto 0;
   padding: 1.5rem 0;
   text-align: left;
-  letter-spacing: 0.02em;
+
+  @media (min-width: 992px) { width: $reading-page; }
   a {
     color: $link;
     &:hover { color: $link-hover; }
@@ -737,8 +782,7 @@ footer.footer div.nav-footer {
   }
   .listing-description { font-size: $fs-body-small; color: $text; }
   .listing-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: var(--site-meta-size);
+    @include small-caps($fs-label-sm);
     color: $secondary;
   }
 }
@@ -775,12 +819,8 @@ footer.footer div.nav-footer {
   .pub-links {
     margin-top: 0.2em;
     a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: var(--site-meta-size);
-      font-weight: 500;
+      @include small-caps($fs-label-sm);
       margin-right: 1em;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       color: $link;
       text-decoration: none;
       &:hover { color: $link-hover; text-decoration: underline; }
@@ -816,9 +856,7 @@ footer.footer div.nav-footer {
 }
 
 .contact-links {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  @include small-caps($fs-label-sm);
   color: $secondary;
   padding: 1rem 1.2rem;
   margin-top: 1.5rem;
@@ -851,9 +889,7 @@ footer.footer div.nav-footer {
 }
 
 .garden-legend {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
-  letter-spacing: var(--site-meta-tracking);
+  @include small-caps($fs-label-sm);
   color: $secondary;
   padding: 0.9rem 1.1rem;
   border: 1px solid $rule;
@@ -879,7 +915,6 @@ footer.footer div.nav-footer {
 
   .maturity-tag {
     min-width: 6.5rem;
-    justify-content: center;
     margin-right: 0.6rem;
     text-indent: 0;
   }
@@ -900,7 +935,6 @@ footer.footer div.nav-footer {
 }
 
 .garden-row-meta {
-  font-family: 'JetBrains Mono', monospace;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -912,9 +946,8 @@ footer.footer div.nav-footer {
   }
 
   .garden-date {
-    font-size: var(--site-meta-size);
+    @include small-caps($fs-label-sm);
     color: $secondary;
-    letter-spacing: var(--site-meta-tracking);
   }
 }
 
@@ -970,19 +1003,16 @@ footer.footer div.nav-footer {
 
 // ── Tag ──────────────────────────────────────────────
 // The one non-interactive tag style: Notes, Work rows, Log entries and
-// study-page categories. The second selector outranks Quarto's own
-// category chip (4px radius, uppercase, faded).
+// study-page categories. Small caps in secondary inside a 1px rule. The
+// second selector outranks Quarto's own category chip (4px radius,
+// uppercase, faded).
 .tag,
 .quarto-title .quarto-categories .quarto-category {
+  @include small-caps($fs-label-sm);
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
-  font-weight: 400;
-  letter-spacing: var(--site-meta-tracking);
-  line-height: 1.5;
+  line-height: 1.4;
   color: $secondary;
-  text-transform: lowercase;
-  padding: 0.15em 0.55em;
+  padding: 0 0.45em 0.08em;
   background: none;
   border: 1px solid $rule;
   border-radius: $radius-small;
@@ -1104,7 +1134,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     white-space: nowrap;
   }
 
-  .timeline-title {
+  .timeline-title:not(section) {
     margin: 0;
     line-height: 1.3;
   }
@@ -1124,7 +1154,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 // ── Hero (split): text left, portrait right ───────────
 .hero-section--split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-columns: minmax(0, 1fr) 220px;
   gap: 2.5rem;
   align-items: center;
   margin: 2rem 0 2.5rem;
@@ -1133,33 +1163,19 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 }
 
 .hero-portrait {
-  position: relative;
   justify-self: end;
   width: max-content;
-  margin: 0.3rem 0.6rem 0.3rem 0;
-
-  // soft offset accent block behind the photo
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 16px -16px -16px 16px;
-    background: rgba($sage, 0.10);
-    border: 1px solid $rule;
-    border-radius: $radius-container;
-    z-index: 0;
-  }
+  margin: 0;
 }
 
+// Portrait: 1px rule border, 8px radius, nothing else.
 .hero-photo {
-  position: relative;
-  z-index: 1;
-  width: 232px;
-  height: 290px;
+  width: 220px;
+  height: 275px;
   border-radius: $radius-container;
   object-fit: cover;
   object-position: center 22%;
   border: 1px solid $rule;
-  box-shadow: 0 18px 42px -22px rgba(8, 26, 30, 0.5);
   margin: 0;
   display: block;
 }
@@ -1192,7 +1208,6 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
     justify-self: start;
     margin: 0;
 
-    &::before { inset: 5px -5px -5px 5px; }
     > p { margin: 0; }
   }
   .hero-photo { width: 72px; height: 90px; }
@@ -1207,10 +1222,8 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 }
 
 .worklist-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: var(--site-meta-size);
-  text-transform: lowercase;
-  letter-spacing: 0.1em;
+  @include small-caps($fs-label-lg);
+  font-weight: 500;
   color: $ink;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
@@ -1236,9 +1249,9 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   }
 
   a {
+    @include small-caps($fs-label-sm);
     color: $secondary;
     text-decoration: none;
-    font-size: var(--site-meta-size);
     &:hover { color: $link-hover; }
   }
 }
@@ -1272,9 +1285,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   }
 
   .worklist-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: var(--site-meta-size);
-    letter-spacing: var(--site-meta-tracking);
+    @include small-caps($fs-label-sm);
     color: $secondary;
     white-space: nowrap;
     flex-shrink: 0;
@@ -1300,12 +1311,7 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
   .note-title-line {
     min-width: 0;
 
-    .maturity-tag {
-      margin: 0 0 0 0.4rem;
-      padding: 0.05em 0.5em;
-      vertical-align: 0.1em;
-      font-weight: 400;
-    }
+    .maturity-tag { margin-left: 0.5rem; }
   }
 }
 
@@ -1336,6 +1342,14 @@ body, .navbar, .project-card, .hero-bio, .hero-name {
 // block's description and dates would repeat. Both stay in front matter
 // for structured data; only the visual copy is hidden.
 // The ID selector outranks Quarto's own `display: grid` on the meta.
+// Title block labels (Published, Modified, Author) in small caps, not
+// Quarto's uppercase.
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading {
+  @include small-caps($fs-label-sm);
+  color: $secondary;
+  opacity: 1;
+}
+
 .hide-title-meta #title-block-header.quarto-title-block {
   .description,
   .quarto-title-meta { display: none; }

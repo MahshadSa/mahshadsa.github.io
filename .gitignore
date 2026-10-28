@@ -24,3 +24,6 @@ IBD-SEQUENCE-PUBLISHING.md
 .agents/
 .taste-skill/
 skills-lock.json
+
+# Design spec (kept locally, not published)
+design/
