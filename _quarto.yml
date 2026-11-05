@@ -96,7 +96,7 @@ format:
     monofont: "'JetBrains Mono', monospace"
     grid:
       sidebar-width: 0px
-      body-width: 620px
+      body-width: 816px
       margin-width: 0px
 
 execute:

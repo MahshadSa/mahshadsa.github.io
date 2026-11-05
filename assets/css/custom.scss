@@ -181,29 +181,40 @@ $web-font-path: false;
 }
 
 // ── Reading page grid ────────────────────────────────
-// A reading page is 880px: 32px padding, the 620px text column, a 36px
-// gap, a 160px margin column for margin notes, 32px padding. Every page
-// shares the same text edge. Below 992px Quarto's own single column
-// applies and margin content falls back into the text.
-$reading-text:   620px;
-$reading-gap:    36px;
-$reading-margin: 160px;
+// A reading page is 880px: 32px padding, one 816px column, 32px padding.
+// The column is centred and every page shares its left edge. Lists, cards,
+// figures, diagrams and tables use the full column; running text keeps the
+// $measure below. There is no margin column: margin content sits in the
+// text. Below 992px Quarto's own single column applies.
+$reading-text:   816px;
 $reading-pad:    32px;
-$reading-page:   $reading-text + $reading-gap + $reading-margin;  // 816px inside the padding
+
+// Running-text measure from design/tokens.json (body: max 58 to 62ch).
+$measure:        62ch;
 
 @media (min-width: 992px) {
   #quarto-content.page-columns {
     grid-template-columns:
       [screen-start screen-start-inset] minmax($reading-pad, 1fr)
       [page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, $reading-text)
-      [body-content-end body-end] $reading-gap
-      [body-end-outset] minmax(0, $reading-margin)
-      [page-end-inset page-end] minmax($reading-pad, 1fr)
+      [body-content-end body-end body-end-outset page-end-inset page-end] minmax($reading-pad, 1fr)
       [screen-end-inset screen-end];
   }
 
-  // Margin notes start after the gap, not against the text.
-  #quarto-content .column-margin { grid-column: body-end-outset / page-end !important; }
+  #quarto-content .column-margin { grid-column: body-content-start / body-content-end !important; }
+}
+
+// Running text holds the measure inside the wider column. Paragraphs that
+// carry an image are left free.
+main.content :is(p:not(:has(> img)), ul, ol, dl, blockquote),
+.quarto-title .description {
+  max-width: $measure;
+}
+
+// The project card wraps a whole study or tool page, so it sizes to the
+// measure plus its own padding and border instead of filling the column.
+.project-card {
+  max-width: calc(#{$measure} + 4.4rem + 2px);
 }
 
 // ── Base ─────────────────────────────────────────────
@@ -431,7 +442,7 @@ hr {
     font-family: $font-serif;
     font-size: $fs-body;
     line-height: 1.65;
-    max-width: 62ch;
+    max-width: $measure;
     color: $text;
     text-wrap: pretty;
 
@@ -798,7 +809,6 @@ table {
   padding: 1.5rem 0;
   text-align: left;
 
-  @media (min-width: 992px) { width: $reading-page; }
   a {
     color: $link;
     &:hover { color: $link-hover; }
@@ -877,7 +887,7 @@ footer.footer div.nav-footer {
   font-size: $fs-body;
   line-height: 1.65;
   color: $text;
-  max-width: 62ch;
+  max-width: $measure;
   text-wrap: pretty;
   margin: 0.5rem 0 3.5rem;
 
@@ -888,7 +898,7 @@ footer.footer div.nav-footer {
 
 .contact-block {
   margin: 1.5rem 0 2rem;
-  max-width: 62ch;
+  max-width: $measure;
   p {
     font-family: $font-serif;
     font-size: $fs-body;
@@ -926,7 +936,7 @@ footer.footer div.nav-footer {
   font-size: $fs-body;
   line-height: 1.65;
   color: $text;
-  max-width: 62ch;
+  max-width: $measure;
   margin: 1rem 0 2rem;
   text-wrap: pretty;
 }
@@ -1026,7 +1036,7 @@ footer.footer div.nav-footer {
     color: $text;
     margin: 0 0 0.5rem 0;
     text-wrap: pretty;
-    max-width: 62ch;
+    max-width: $measure;
   }
 
   .garden-cats {
