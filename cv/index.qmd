@@ -2,7 +2,7 @@
 title: "CV"
 description: "Mahshad Sarikhani's research appointments, education, publications, presentations, software, and technical skills."
 body-classes: hide-title-meta
-date-modified: 2026-10-17
+date-modified: 2026-11-05
 toc: false
 ---
 
@@ -126,19 +126,19 @@ Awarded on full scholarship.
 :::
 :::
 
+## Peer-reviewed *articles*
+
 ::: {.pub-entry}
-[Association of Colonic Motility on MR Enterography with Endoscopic Disease Activity and Chronic Structural Damage in Ulcerative Colitis]{.pub-title}
+[Association of colonic motility on magnetic resonance enterography with endoscopic disease activity and chronic structural damage in ulcerative colitis]{.pub-title}
 
-[**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi Tafreshi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
+[**Sarikhani M**, Menys A, Torabi A, Amouei M, Vahedi H, Sima AR, Naim I, Kolahdoozan S, Bhatnagar G, Colombel JF, Radmard AR.]{.pub-authors}
 
-[Accepted for publication, *Inflammatory Bowel Diseases*, September 2026. DOI to follow.]{.pub-venue}
+[*Inflammatory Bowel Diseases*. 2026. Original research article (clinical), advance access, published online November 2026. doi:10.1093/ibd/izag210]{.pub-venue}
 
 ::: {.pub-links}
-[Study page](../work/studies/uc-motility/index.qmd)
+[DOI](https://doi.org/10.1093/ibd/izag210) [Study page](../work/studies/uc-motility/index.qmd)
 :::
 :::
-
-## Peer-reviewed *articles*
 
 ::: {.pub-entry}
 [Large language models versus classical machine learning performance in COVID-19 mortality prediction using high-dimensional tabular data]{.pub-title}

@@ -3,7 +3,7 @@ title: "About"
 subtitle: "Physician-researcher in quantitative MRI and inflammatory bowel disease."
 description: "About Mahshad Sarikhani's clinical research path in quantitative MRI, inflammatory bowel disease imaging, and computational methods."
 body-classes: hide-title-meta
-date-modified: 2026-10-17
+date-modified: 2026-11-05
 schema-type: AboutPage
 toc: false
 ---
@@ -34,14 +34,14 @@ The longer version of how I got here is [here](../notes/from-operating-room-to-a
 ::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Motilent · University College London, UK]{.timeline-title}
-[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations delivered at ESGAR 2026, Montpellier. Manuscript accepted for publication in *Inflammatory Bowel Diseases* (September 2026).]{.timeline-desc}
+[Quantitative colonic motility MRI in ulcerative colitis, in collaboration with Dr. Alex Menys and Dr. Iyad Naim (Motilent, London). The work applies GIQuant-derived displacement metrics to a UC cohort validated segment by segment against Mayo Endoscopic Subscores, with a focus on the relationship between motility, disease activity, and chronic structural damage. Two oral presentations delivered at ESGAR 2026, Montpellier. Published in *Inflammatory Bowel Diseases* (2026), [doi:10.1093/ibd/izag210](https://doi.org/10.1093/ibd/izag210).]{.timeline-desc}
 [GIQuant, colonic displacement metrics, UC MRE, cross-site validation]{.timeline-tags}
 :::
 
 ::: {.timeline-child}
 [Ongoing]{.timeline-date}
 [Icahn School of Medicine at Mount Sinai, New York]{.timeline-title}
-[Prof. Jean-Frédéric Colombel (Icahn School of Medicine at Mount Sinai) is a co-author on the motility MRI manuscript, contributing clinical expertise and manuscript review.]{.timeline-desc}
+[Prof. Jean-Frédéric Colombel (Icahn School of Medicine at Mount Sinai) is a co-author on the motility MRI paper, contributing clinical expertise and manuscript review.]{.timeline-desc}
 [IBD, ulcerative colitis, clinical validation]{.timeline-tags}
 :::
 

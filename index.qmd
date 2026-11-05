@@ -3,7 +3,7 @@ title: "Mahshad Sarikhani"
 pagetitle: "Mahshad Sarikhani, MD | Quantitative MRI & IBD Imaging"
 title-prefix: ""
 description: "Physician-researcher in quantitative MR enterography for ulcerative colitis: colonic motility, Bayesian modelling of disease activity, and clinical AI."
-date-modified: 2026-10-17
+date-modified: 2026-11-05
 schema-type: ProfilePage
 toc: false
 listing:
@@ -49,10 +49,10 @@ I came to this as a clinician, so the disease question comes first for me. Most 
 ::: {.worklist-row}
 ::: {.worklist-head}
 [Colonic motility on MR enterography in ulcerative colitis](work/studies/uc-motility/index.qmd){.worklist-title}
-[Sep 2026]{.worklist-date}
+[Nov 2026]{.worklist-date}
 :::
 ::: {.worklist-meta}
-Accepted for publication in *Inflammatory Bowel Diseases*, DOI to follow. ESGAR 2026 oral and ECCO 2026 poster.
+Published in *Inflammatory Bowel Diseases*, [doi:10.1093/ibd/izag210](https://doi.org/10.1093/ibd/izag210). ESGAR 2026 oral and ECCO 2026 poster.
 :::
 :::
 

@@ -3,12 +3,22 @@ title: "Log"
 subtitle: "A working ledger of what I am building, writing, and wrestling with."
 description: "Working ledger of Mahshad Sarikhani's active research, software, and clinical validation milestones, updated as work ships or stalls."
 body-classes: hide-title-meta
-date-modified: 2026-10-04
+date-modified: 2026-11-05
 schema-type: CollectionPage
 toc: false
 ---
 
 ::: {.timeline .timeline--log}
+
+::: {.timeline-item}
+::: {.timeline-head}
+[Nov 2026]{.timeline-date} [Motility paper, published]{.timeline-title}
+:::
+::: {.timeline-desc}
+On 4 November the colonic motility paper was published online in *Inflammatory Bowel Diseases* as an advance access article. [doi:10.1093/ibd/izag210](https://doi.org/10.1093/ibd/izag210). [Study page](work/studies/uc-motility/index.qmd).
+:::
+[UC MRE]{.tag}
+:::
 
 ::: {.timeline-item}
 ::: {.timeline-head}
@@ -25,7 +35,7 @@ Submitted the Bayesian multilevel manuscript on 27 September. The study combines
 [Sep 2026]{.timeline-date} [Motility manuscript, accepted]{.timeline-title}
 :::
 ::: {.timeline-desc}
-On 24 September the colonic motility manuscript was accepted for publication in *Inflammatory Bowel Diseases*. DOI to follow. [Study page](work/studies/uc-motility/index.qmd).
+On 24 September the colonic motility manuscript was accepted for publication in *Inflammatory Bowel Diseases*. [Study page](work/studies/uc-motility/index.qmd).
 :::
 [UC MRE]{.tag}
 :::
@@ -242,4 +252,4 @@ Quarto build, custom theme, treated as both a professional presence and a digita
 
 :::
 
-*Last updated: October 2026. Updated as work ships or stalls.*
+*Last updated: November 2026. Updated as work ships or stalls.*
